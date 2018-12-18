@@ -3,7 +3,7 @@
 DOTFILES_HOME=$HOME/.dotfiles
 REPOSITORY=https://gitlab.com/TamasBarta/dotfiles.git
 
-git clone $REPOSITORY $DOTFILES_HOME
+git clone --recurse-submodules -j8 $REPOSITORY $DOTFILES_HOME
 
 $DOTFILES_HOME/zsh/fzf/install --bin
 
