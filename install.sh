@@ -25,3 +25,7 @@ vim +PluginInstall +qall
 curl -s "https://get.sdkman.io" | bash
 # Revert its modifications, since those are already in $DOTFILES_HOME/zsh/sdkman.zsh
 git -C $DOTFILES_HOME checkout -- $DOTFILES_HOME/zsh/.zshrc
+
+case `uname` in
+  Darwin) source $DOTFILES_HOME/install/macos.sh ;;
+esac
