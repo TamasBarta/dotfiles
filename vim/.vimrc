@@ -1,5 +1,6 @@
 " General
 
+syntax enable
 set nocompatible
 
 set history=500
