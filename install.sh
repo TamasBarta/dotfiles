@@ -20,3 +20,8 @@ ln -s $DOTFILES_HOME/vim/.vim $HOME/.vim
 ln -s $DOTFILES_HOME/git/.gitconfig $HOME/.gitconfig
 
 vim +PluginInstall +qall
+
+# Install SDKMAN!
+curl -s "https://get.sdkman.io" | bash
+# Revert its modifications, since those are already in $DOTFILES_HOME/zsh/sdkman.zsh
+git -C $DOTFILES_HOME checkout -- $DOTFILES_HOME/zsh/.zshrc
