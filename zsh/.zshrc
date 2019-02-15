@@ -16,3 +16,4 @@ esac
 
 source $DOTFILES_HOME/zsh/sdkman.zsh
 source $DOTFILES_HOME/zsh/rbenv.zsh
+source $DOTFILES_HOME/zsh/nodenv.zsh
