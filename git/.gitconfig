@@ -7,3 +7,6 @@
 [user]
 	name = Tamás Barta
 
+[core]
+	autocrlf = input
+	editor = vim
