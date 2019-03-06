@@ -3,6 +3,6 @@
 # Loading desktop environment specific stuff
 
 case $DESKTOP_SESSION in
-    plasma) source $DOTFILES_HOME/zsh/kde.zsh ;;
+    /usr/share/xsessions/plasma) source $DOTFILES_HOME/zsh/kde.zsh ;;
     *)
 esac
