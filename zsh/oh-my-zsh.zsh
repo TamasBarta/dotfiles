@@ -58,6 +58,6 @@ export ZSH_CUSTOM=$DOTFILES_HOME/zsh/oh-my-zsh-custom
 
 
 # Previously used: zsh-peco-history
-plugins=(git gradle grunt composer symfony2 vagrant heroku debian git-extras git-flow npm bower pip virtualbox sudo urltools zsh-syntax-highlighting)
+plugins=(git gradle grunt composer symfony2 vagrant heroku debian git-extras git-flow npm bower pip sudo urltools) 
 
 source $ZSH/oh-my-zsh.sh
