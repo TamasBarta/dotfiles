@@ -18,6 +18,7 @@ ln -s $DOTFILES_HOME/tmux/.tmux.conf $HOME/.tmux.conf
 ln -s $DOTFILES_HOME/vim/.vimrc $HOME/.vimrc
 ln -s $DOTFILES_HOME/vim/.vim $HOME/.vim
 ln -s $DOTFILES_HOME/git/.gitconfig $HOME/.gitconfig
+ln -s $DOTFILES_HOME/kitty $HOME/.config/
 
 vim +PluginInstall +qall
 
