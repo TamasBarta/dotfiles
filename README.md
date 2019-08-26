@@ -12,3 +12,6 @@ curl https://gitlab.com/TamasBarta/dotfiles/raw/master/install.sh | bash
 
 - zsh
 - tmux
+- yabai/skhd
+- kitty
+- vim (very WIP)
