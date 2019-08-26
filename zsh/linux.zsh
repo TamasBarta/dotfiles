@@ -1,5 +1,7 @@
 # Linux specific stuff
 
+alias open=xdg-open
+
 # Loading desktop environment specific stuff
 
 case $DESKTOP_SESSION in
