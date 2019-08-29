@@ -14,10 +14,10 @@ shift + alt - k : yabai -m window --swap north
 shift + alt - l : yabai -m window --swap east
 
 # move window
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - l : yabai -m window --warp east
+alt + fn - h : yabai -m window --warp west
+alt + fn - j : yabai -m window --warp south
+alt + fn - k : yabai -m window --warp north
+alt + fn - l : yabai -m window --warp east
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
@@ -131,7 +131,7 @@ alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 alt - d : yabai -m window --toggle zoom-parent
 
 # toggle window fullscreen zoom
-alt - f : yabai -m window --toggle zoom-fullscreen
+fn - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen

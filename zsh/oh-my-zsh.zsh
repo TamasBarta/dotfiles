@@ -11,7 +11,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 source $DOTFILES_HOME/zsh/powerlevel9k.zsh
 
-DEFAULT_USER=tamas
+# If it is set from work.zsh settings, I don't overwrite it
+if [ -z ${DEFAULT_USER+x} ]; then
+    DEFAULT_USER=tamas
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
