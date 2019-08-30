@@ -1,6 +1,6 @@
 # Powerlevel9k settings
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs root_indicator)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs root_indicator)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 POWERLEVEL9K_MODE='nerdfont-complete'
