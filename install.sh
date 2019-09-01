@@ -29,4 +29,5 @@ git -C $DOTFILES_HOME checkout -- $DOTFILES_HOME/zsh/.zshrc
 
 case `uname` in
   Darwin) source $DOTFILES_HOME/install/macos.sh ;;
+  Linux) source $DOTFILES_HOME/install/linux.sh ;;
 esac
