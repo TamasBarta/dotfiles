@@ -20,14 +20,14 @@ ln -s $DOTFILES_HOME/vim/.vim $HOME/.vim
 ln -s $DOTFILES_HOME/git/.gitconfig $HOME/.gitconfig
 ln -s $DOTFILES_HOME/kitty $HOME/.config/
 
+case `uname` in
+  Darwin) source $DOTFILES_HOME/install/macos.sh ;;
+  Linux) source $DOTFILES_HOME/install/linux.sh ;;
+esac
+
 vim +PluginInstall +qall
 
 # Install SDKMAN!
 curl -s "https://get.sdkman.io" | bash
 # Revert its modifications, since those are already in $DOTFILES_HOME/zsh/sdkman.zsh
 git -C $DOTFILES_HOME checkout -- $DOTFILES_HOME/zsh/.zshrc
-
-case `uname` in
-  Darwin) source $DOTFILES_HOME/install/macos.sh ;;
-  Linux) source $DOTFILES_HOME/install/linux.sh ;;
-esac

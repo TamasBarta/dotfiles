@@ -1,4 +1,4 @@
 # Install packages
 
 sudo pacman -Suyy
-sudo pacman -S kitty vim tmux zsh
+sudo pacman -S alacritty vim tmux zsh unzip zip
