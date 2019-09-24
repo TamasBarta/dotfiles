@@ -34,7 +34,7 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  90
+yabai -m config top_padding                  20
 yabai -m config bottom_padding               20
 yabai -m config left_padding                 20
 yabai -m config right_padding                20
@@ -46,5 +46,7 @@ yabai -m rule --add title="Microsoft Teams Notification" window_border=off
 yabai -m rule --add title="Microsoft Teams Notification" manage=off
 yabai -m rule --add app="Android Studio" manage=off
 yabai -m rule --add app="Android Studio" title="~/" manage=on
+yabai -m rule --add app="System Preferences" manage=off
+yabai -m rule --add app="System Preferences" window_border=off
 
 echo "yabai configuration loaded.."
