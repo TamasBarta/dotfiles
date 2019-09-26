@@ -1,1 +1,1 @@
-[[ $(which flutter) ]] && eval "$(flutter zsh-completion)"
+[ $(which flutter) 2>/dev/null ] && eval "$(flutter zsh-completion)"
