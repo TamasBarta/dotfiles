@@ -17,3 +17,9 @@ ln -s "${HOME}/Library/Application Support/Übersicht/widgets/pecan/pecan-style"
 
 # Set shell to zsh
 chsh -s /bin/zsh
+
+
+# Defaults settings
+
+# Disable automatically rearrange Spaces based on recent use
+defaults write com.apple.dock mru-spaces -bool false
