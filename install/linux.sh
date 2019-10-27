@@ -7,3 +7,5 @@ esac
 
 # Change default shell to zsh
 chsh -s /usr/bin/zsh
+
+echo "UNAME=Linux" | sudo tee -a /etc/environment

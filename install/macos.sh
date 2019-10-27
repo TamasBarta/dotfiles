@@ -23,3 +23,5 @@ chsh -s /bin/zsh
 
 # Disable automatically rearrange Spaces based on recent use
 defaults write com.apple.dock mru-spaces -bool false
+
+echo "setenv UNAME Darwin" | sudo tee -a /etc/launchd.conf

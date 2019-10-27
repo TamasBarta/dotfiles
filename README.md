@@ -13,6 +13,6 @@ curl https://gitlab.com/TamasBarta/dotfiles/raw/master/install.sh | bash
 - zsh
 - tmux
 - yabai/skhd
-- alacritty
 - kitty
 - vim (very WIP)
+- karabiner
