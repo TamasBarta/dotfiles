@@ -4,11 +4,11 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install packages
-brew install zsh ruby
+brew install zsh ruby stow
 
 # Create symlinks
-ln -s $DOTFILES_HOME/karabiner $HOME/.config/
-ln -s $DOTFILES_HOME/yabai/.yabairc $DOTFILES_HOME/yabai/.skhdrc $HOME/
+stow -d $DOTFILES_HOME karabiner
+stow -d $DOTFILES_HOME yabai
 
 # Set up Übersicht
 mkdir -p "$HOME/Library/Application Support/Übersicht/widgets"
