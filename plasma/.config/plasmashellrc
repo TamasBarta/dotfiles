@@ -1,0 +1,76 @@
+[DownloadDialog Settings]
+Height 1080=481
+Width 1920=700
+
+[FileDialogSize]
+Height 2160=890
+Width 3840=1225
+
+[KFileDialog Settings]
+Recent Files[$e]=2rl5maqjvde31.png,file:$HOME/Pictures/Wallpapers/o1dh8cl05af31.jpg,file:$HOME/Pictures/Wallpapers/jlHHdIt.jpg,file:$HOME/Pictures/Wallpapers/h6f70szyude31.png,file:$HOME/Pictures/Wallpapers/feMxjOm.gif,file:$HOME/Pictures/Wallpapers/eu4ib450jse31.png,file:$HOME/Pictures/Wallpapers/chen-dairui-257851-unsplash.jpg,file:$HOME/Pictures/Wallpapers/cF7BOorgptnnzHldR_AVmRoCvVy3qya8T9WDoeK1XjM.jpg,file:$HOME/Pictures/Wallpapers/annie-spratt-87864-unsplash.jpg,file:$HOME/Pictures/Wallpapers/121410.jpg,file:$HOME/Pictures/Wallpapers/298_wide.jpg,file:$HOME/Pictures/Wallpapers/63bwcyyqrsf31.jpg,file:$HOME/Pictures/Wallpapers/51aqhw5o10f31.png,file:$HOME/Pictures/Wallpapers/9v00wopz4fe31.jpg,file:$HOME/Pictures/Wallpapers/9fhwioyrxrf31.jpg,file:$HOME/Pictures/Wallpapers/2rl5maqjvde31.png,file:$HOME/Pictures/Wallpapers/dynamicwallpaper-lakeside-louis-coyle-master/metadata.json,file:$HOME/Pictures/Wallpapers/OsfFKJ0.jpg
+Recent URLs[$e]=file:$HOME/Pictures/Wallpapers/
+detailViewIconSize=0
+
+[KPropertiesDialog]
+Height 1080=445
+Width 1920=399
+
+[PIMEventsPlugin]
+calendars=35,36,37
+
+[PlasmaRunnerManager]
+LaunchCounts=2 services_org.zealdocs.Zeal.desktop,1 services_org.kde.dolphin.desktop,1 services_steam-native.desktop,1 services_gimp.desktop,1 services_org.kde.kmail2.desktop,3 services_code-oss.desktop,1 services_kde-gtk-config.desktop,1 unitconverter_10374842.767295597,2 services_bitwig-studio.desktop,1 services_org.manjaro.pamac.manager.desktop,5 services_bitwarden.desktop,1 services_org.kde.kontact.desktop,10 services_pamac-manager.desktop,1 services_org.kde.kcalc.desktop,1 shell_kitty,2 services_org.kde.discover.desktop,2 services_octopi.desktop,1 services_optimus-manager-qt.desktop,1 services_net.lutris.Lutris.desktop,4 services_kitty.desktop,1 services_insync.desktop,1 services_org.kde.latte-dock.desktop,1 services_kcm_fonts.desktop,1 services_org.kde.filelight.desktop,3 services_kcm_colors.desktop,5 services_firefox.desktop,1 services_kcmsmserver.desktop,3 services_steam.desktop,3 services_org.kde.konsole.desktop,1 services_kwinrules.desktop
+pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
+
+[PlasmaTransientsConfig]
+PreloadWeight=0
+
+[PlasmaViews][Panel 18]
+panelVisibility=1
+
+[PlasmaViews][Panel 18][Defaults]
+thickness=48
+
+[PlasmaViews][Panel 18][Horizontal1920]
+thickness=48
+
+[PlasmaViews][Panel 18][Horizontal3840]
+thickness=74
+
+[PlasmaViews][Panel 18][Horizontal512]
+thickness=30
+
+[PlasmaViews][Panel 18][Horizontal640]
+thickness=30
+
+[PlasmaViews][Panel 18][Horizontal960]
+thickness=30
+
+[PlasmaViews][Panel 2][Horizontal3840]
+thickness=36
+
+[PlasmaViews][Panel 35][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 37][Horizontal3840]
+thickness=72
+
+[PlasmaViews][Panel 41]
+panelVisibility=0
+
+[PlasmaViews][Panel 41][Defaults]
+thickness=27
+
+[PlasmaViews][Panel 41][Horizontal1920]
+thickness=27
+
+[Runners][unitconverter]
+Currency=HUF
+
+[ScreenConnectors]
+0=eDP-1
+1=DP-1
+2=Screen31
+
+[Updates]
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js
