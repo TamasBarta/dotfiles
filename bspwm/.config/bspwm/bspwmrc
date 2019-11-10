@@ -1,0 +1,32 @@
+#! /bin/sh
+
+sxhkd &
+compton &
+killall polybar; polybar example &
+killall optimus-manager-qt; optimus-manager-qt &
+export QT_AUTO_SCREEN_SCALE_FACTOR=2
+setxkbmap -option caps:super
+xcape -e 'Super_L=Escape'
+
+# feh --bg-fill ~/Pictures/Wallpapers/wallhaven-xl99j3.jpg &
+source ~/.fehbg
+
+bspc monitor -d I II III IV V
+
+bspc config border_width         8
+bspc config normal_border_color  "#4c566a"
+bspc config focused_border_color "#88c0d0"
+bspc config window_gap          30
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a TelegramDesktop desktop='^5'
+bspc rule -a Caprine desktop='^5'
+bspc rule -a firefox desktop='^1'
+bspc rule -a firefox-kde-opensuse desktop='^1'
+bspc rule -a Screenkey manage=off
+bspc rule -a latte-dock manage=off
+bspc rule -a kitty state=pseudo_tiled
+bspc rule -a scrcpy state=pseudo_tiled
