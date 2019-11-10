@@ -1,7 +1,8 @@
 #! /bin/sh
 
-sxhkd &
-compton &
+killall dunst; dunst &
+killall sxhkd; sxhkd &
+killall compton; compton &
 killall polybar; polybar example &
 killall optimus-manager-qt; optimus-manager-qt &
 export QT_AUTO_SCREEN_SCALE_FACTOR=2
@@ -30,3 +31,4 @@ bspc rule -a Screenkey manage=off
 bspc rule -a latte-dock manage=off
 bspc rule -a kitty state=pseudo_tiled
 bspc rule -a scrcpy state=pseudo_tiled
+bspc rule -a java-lang-Thread state=pseudo_tiled

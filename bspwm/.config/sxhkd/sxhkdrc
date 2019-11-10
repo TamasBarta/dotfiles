@@ -145,11 +145,11 @@ super + ctrl + q
 #
 
 XF86Audio{Raise,Lower}Volume
-    pactl set-sink-volume 0 {+,-}5%
-
+    pactl set-sink-volume $(pactl info | grep -Po "(?<=Default Sink: ).*") {+,-}5%
+    notify-send  $(pactl info | grep -Po "(?<=Default Sink: ).*") 
 
 XF86AudioMute
-    pactl set-sink-mute 0 toggle
+    pactl set-sink-mute $(pactl info | grep -Po "(?<=Default Sink: ).*") toggle
 
 
 XF86AudioMicMute
@@ -170,3 +170,9 @@ XF86MonBrightnessDown
 XF86Search
     xbacklight -set 0.07
 
+#
+# Android development
+#
+
+super + alt + ctrl + f
+    adb -e emu finger touch 1
