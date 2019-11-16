@@ -1,23 +1,31 @@
 #! /bin/sh
 
+# source /home/tamas/.dotfiles/zsh/.zshrc
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR=2
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+wmname LG3D
+
 killall dunst; dunst &
 killall sxhkd; sxhkd &
 killall compton; compton &
 killall polybar; polybar example &
 killall optimus-manager-qt; optimus-manager-qt &
-export QT_AUTO_SCREEN_SCALE_FACTOR=2
+killall fusuma; fusuma &
+
 setxkbmap -option caps:super
 xcape -e 'Super_L=Escape'
 
 # feh --bg-fill ~/Pictures/Wallpapers/wallhaven-xl99j3.jpg &
 source ~/.fehbg
 
-bspc monitor -d I II III IV V
+bspc monitor -d browser dev comm prod off misc
 
 bspc config border_width         8
-bspc config normal_border_color  "#4c566a"
-bspc config focused_border_color "#88c0d0"
-bspc config window_gap          30
+bspc config normal_border_color  "#292D3E"
+bspc config focused_border_color "#7EAEF1"
+bspc config window_gap          80
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -28,7 +36,8 @@ bspc rule -a Caprine desktop='^5'
 bspc rule -a firefox desktop='^1'
 bspc rule -a firefox-kde-opensuse desktop='^1'
 bspc rule -a Screenkey manage=off
-bspc rule -a latte-dock manage=off
+bspc rule -a plasmashell sticky=true manage=off state=floating layer=above
+bspc rule -a lattedock sticky=true manage=off state=floating layer=above
 bspc rule -a kitty state=pseudo_tiled
 bspc rule -a scrcpy state=pseudo_tiled
 bspc rule -a java-lang-Thread state=pseudo_tiled

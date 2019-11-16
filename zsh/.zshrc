@@ -1,5 +1,5 @@
 # Must be first
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 export DOTFILES_HOME=$HOME/.dotfiles
 
 if [ -f "$DOTFILES_HOME/.zsh/work.zsh" ]; then source $DOTFILES_HOME/.zsh/work.zsh; fi

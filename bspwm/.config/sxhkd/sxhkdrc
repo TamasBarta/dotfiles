@@ -120,6 +120,9 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# change gap size
+super + a
+	bspc config window_gap $([ `bspc config window_gap` = "0" ] && echo "80" || echo "0")
 #
 # rotate
 #
@@ -145,14 +148,14 @@ super + ctrl + q
 #
 
 XF86Audio{Raise,Lower}Volume
-    pactl set-sink-volume $(pactl info | grep -Po "(?<=Default Sink: ).*") {+,-}5%
+    $HOME/.dotfiles/scripts/set-volume.sh {+,-}5
 
 XF86AudioMute
     pactl set-sink-mute $(pactl info | grep -Po "(?<=Default Sink: ).*") toggle
 
 
 XF86AudioMicMute
-    pactl set-source-mute 1 toggle
+    pactl set-source-mute $(pactl info | grep -Po "(?<=Default Sink: ) toggle
 
 XF86AudioNext
     mpc next
