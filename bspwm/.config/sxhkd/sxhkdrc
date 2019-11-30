@@ -8,7 +8,13 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show combi -show-icons -icon-theme Papirus -display-drun "" -display-window "" -display-run ">>>" -matching fuzzy
+	rofi -show combi -show-icons
+
+super + shift + @space
+	rofi -show run -show-icons
+
+alt + Tab
+	rofi -show window -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -122,7 +128,7 @@ super + {Left,Down,Up,Right}
 
 # change gap size
 super + a
-	bspc config window_gap $([ `bspc config window_gap` = "0" ] && echo "80" || echo "0")
+	$HOME/.dotfiles/scripts/toggle-gap.sh
 #
 # rotate
 #
@@ -158,19 +164,16 @@ XF86AudioMicMute
     pactl set-source-mute $(pactl info | grep -Po "(?<=Default Sink: ) toggle
 
 XF86AudioNext
-    mpc next
+    playerctl next
 
 XF86AudioPrev
-    mpc prev
+    playerctl previous
 
-XF86MonBrightnessUp
-    xbacklight -inc 5
+XF86AudioPlay
+    playerctl play-pause
 
-XF86MonBrightnessDown
-    xbacklight -dec 5
-
-XF86Search
-    xbacklight -set 0.07
+XF86MonBrightness{Up,Down}
+    $HOME/.dotfiles/scripts/set-brightness.sh {+,-}5
 
 #
 # Android development

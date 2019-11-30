@@ -10,22 +10,25 @@ wmname LG3D
 killall dunst; dunst &
 killall sxhkd; sxhkd &
 killall compton; compton &
-killall polybar; polybar example &
+# killall polybar; polybar example &
+/home/tamas/.config/polybar/launch.sh & 
 killall optimus-manager-qt; optimus-manager-qt &
 killall fusuma; fusuma &
 
 setxkbmap -option caps:super
 xcape -e 'Super_L=Escape'
 
+xsetroot -cursor_name left_ptr
+
 # feh --bg-fill ~/Pictures/Wallpapers/wallhaven-xl99j3.jpg &
 source ~/.fehbg
 
-bspc monitor -d browser dev comm prod off misc
+bspc monitor -d browser dev comm prod off misc macos
 
 bspc config border_width         8
 bspc config normal_border_color  "#292D3E"
 bspc config focused_border_color "#7EAEF1"
-bspc config window_gap          80
+bspc config window_gap          45
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
