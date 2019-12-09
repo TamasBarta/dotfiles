@@ -7,16 +7,16 @@ git clone --recurse-submodules -j8 $REPOSITORY $DOTFILES_HOME
 
 $DOTFILES_HOME/.zsh/fzf/install --bin
 
+case `uname` in
+  Darwin) source $DOTFILES_HOME/install/macos.sh ;;
+  Linux) source $DOTFILES_HOME/install/linux.sh ;;
+esac
+
 stow -d $DOTFILES_HOME zsh
 stow -d $DOTFILES_HOME tmux
 stow -d $DOTFILES_HOME vim
 stow -d $DOTFILES_HOME git
 stow -d $DOTFILES_HOME kitty
-
-case `uname` in
-  Darwin) source $DOTFILES_HOME/install/macos.sh ;;
-  Linux) source $DOTFILES_HOME/install/linux.sh ;;
-esac
 
 vim +PluginInstall +qall
 
