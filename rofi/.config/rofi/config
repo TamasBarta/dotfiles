@@ -2,7 +2,7 @@ rofi.combi-modi:    window,drun,run,ssh
 rofi.theme:         /home/tamas/.config/rofi/custom-nord.rasi
 rofi.font:          Jetbrains Mono Nerd Font 12
 rofi.modi:          drun,run,window,ssh
-rofi.dpi:           192
+rofi.dpi:           96
 rofi.sidebar-mode:       true
 rofi.cycle:              true
 rofi.kb-mode-next:  Control+Tab,Super+space
