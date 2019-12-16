@@ -10,7 +10,7 @@ pactl set-sink-volume $sink ${1}%
 # Query amixer for the current volume and whether or not the speaker is muted
 volume="$(pamixer --get-volume)"
 mute="$(pamixer --get-mute)"
-if [[ $volume == 0 || "$mute" == "true" ]]; then
+if [ $mute = "true" ]; then
     # Show the sound muted notification
     dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "Volume muted" 
 else
