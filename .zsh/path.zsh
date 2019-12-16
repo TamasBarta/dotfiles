@@ -1,5 +1,7 @@
 # Setting up the path
 
+export PATH="$PATH:$DOTFILES_HOME/scripts"
+
 export GOPATH=$HOME/.gopath
 export PATH="$PATH:${GOPATH//://bin:}/bin"
 
