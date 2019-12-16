@@ -16,6 +16,9 @@ super + shift + @space
 alt + Tab
 	rofi -show window -show-icons
 
+super + d
+	kitty zsh -c ranger
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -150,26 +153,35 @@ super + ctrl + q
 	betterlockscreen -l
 
 #
+# notifications
+#
+
+# toggle dunst
+
+super + F2
+	if rm $HOME/.dotfiles/.dunstmuted; then killall -SIGUSR2 dunst; else killall -SIGUSR1 dunst; touch $HOME/.dotfiles/.dunstmuted; fi
+
+#
 # media keys
 #
 
-XF86Audio{Raise,Lower}Volume
-    $HOME/.dotfiles/scripts/set-volume.sh {+,-}5
+{super + F12, super + F11, XF86AudioRaiseVolume, XF86AudioLowerVolume}
+    $HOME/.dotfiles/scripts/set-volume.sh {+,-,+,-}5
 
-XF86AudioMute
-    pactl set-sink-mute $(pactl info | grep -Po "(?<=Default Sink: ).*") toggle
+{XF86AudioMute, super + F10}
+    pactl set-sink-mute $(pactl info | grep -Po "(?<=Default Sink: ).*") toggle; $HOME/.dotfiles/scripts/set-volume.sh +0
 
 
-XF86AudioMicMute
-    pactl set-source-mute $(pactl info | grep -Po "(?<=Default Sink: ) toggle
+{XF86AudioMicMute, super + F1}
+    pactl set-source-mute $(pactl info | grep -Po "(?<=Default Source: ).*") toggle
 
-XF86AudioNext
+{XF86AudioNext, super + F9}
     playerctl next
 
-XF86AudioPrev
+{XF86AudioPrev, super + F7}
     playerctl previous
 
-XF86AudioPlay
+{XF86AudioPlay, super + F8}
     playerctl play-pause
 
 XF86MonBrightness{Up,Down}
