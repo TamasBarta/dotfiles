@@ -15,6 +15,7 @@ killall compton; compton &
 # killall optimus-manager-qt; optimus-manager-qt &
 killall fusuma; fusuma &
 
+setxkbmap hu
 setxkbmap -option caps:super
 killall xcape; xcape -e 'Super_L=Escape' &
 
@@ -40,6 +41,6 @@ bspc rule -a firefox-kde-opensuse desktop='^1'
 bspc rule -a Screenkey manage=off
 bspc rule -a plasmashell sticky=true manage=off state=floating layer=above
 bspc rule -a lattedock sticky=true manage=off state=floating layer=above
-bspc rule -a kitty state=pseudo_tiled
+# bspc rule -a kitty state=pseudo_tiled
 bspc rule -a scrcpy state=pseudo_tiled
 bspc rule -a java-lang-Thread state=pseudo_tiled
