@@ -15,6 +15,8 @@ killall compton; compton &
 # killall optimus-manager-qt; optimus-manager-qt &
 killall fusuma; fusuma &
 
+if ! pgrep -x spotify; then spotify; fi &
+
 setxkbmap hu
 setxkbmap -option caps:super
 killall xcape; xcape -e 'Super_L=Escape' &
@@ -34,8 +36,12 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc desktop browser -l monocle
+
 bspc rule -a TelegramDesktop desktop='^5'
 bspc rule -a Caprine desktop='^5'
+bspc rule -a slack desktop='^3'
+bspc rule -a spotify desktop='^5'
 bspc rule -a firefox desktop='^1'
 bspc rule -a firefox-kde-opensuse desktop='^1'
 bspc rule -a Screenkey manage=off
