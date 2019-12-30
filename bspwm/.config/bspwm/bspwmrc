@@ -9,13 +9,14 @@ wmname LG3D
 
 killall dunst; dunst &
 killall sxhkd; sxhkd &
-killall compton; compton &
+killall picom; picom &
 # killall polybar; polybar example &
 /home/tamas/.config/polybar/launch.sh & 
 # killall optimus-manager-qt; optimus-manager-qt &
 killall fusuma; fusuma &
+/home/tamas/.dotfiles/scripts/apply-touchpad-settings.sh &
 
-if ! pgrep -x spotify; then spotify; fi &
+if ! pgrep -x spotify; then spotify --force-device-scale-factor=2; fi &
 
 setxkbmap hu
 setxkbmap -option caps:super
@@ -43,6 +44,7 @@ bspc rule -a Caprine desktop='^5'
 bspc rule -a slack desktop='^3'
 bspc rule -a spotify desktop='^5'
 bspc rule -a firefox desktop='^1'
+bspc rule -a steam desktop='^8' state=fullscreen
 bspc rule -a firefox-kde-opensuse desktop='^1'
 bspc rule -a Screenkey manage=off
 bspc rule -a plasmashell sticky=true manage=off state=floating layer=above
