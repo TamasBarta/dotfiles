@@ -8,8 +8,6 @@ esac
 # Change default shell to zsh
 chsh -s /usr/bin/zsh
 
-echo "UNAME=Linux" | sudo tee -a /etc/environment
-
 stow -d $DOTFILES_HOME bspwm
 stow -d $DOTFILES_HOME polybar
 stow -d $DOTFILES_HOME rofi
