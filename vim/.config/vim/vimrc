@@ -1,3 +1,10 @@
+" Environment
+set directory=$HOME/.cache/vim,~/,/tmp
+set backupdir=$HOME/.cache/vim,~/,/tmp
+set viminfo+=n$HOME/.cache/vim/viminfo
+set runtimepath=$HOME/.config/vim,$HOME/.config/vim/after,$VIM,$VIMRUNTIME
+let $MYVIMRC="$HOME/.config/vim/vimrc"
+
 " General
 
 syntax enable
@@ -9,7 +16,7 @@ filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/vim/bundle/Vundle.vim
-call vundle#begin()
+call vundle#begin('~/.config/vim/bundle')
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
