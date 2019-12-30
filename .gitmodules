@@ -14,7 +14,7 @@
 	path = zsh/oh-my-zsh-custom/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
 [submodule "vim/.vim/bundle/Vundle.vim"]
-	path = vim/.vim/bundle/Vundle.vim
+	path = vim/.config/vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "zsh/oh-my-zsh-custom/powerlevel10k"]
 	path = .zsh/oh-my-zsh-custom/powerlevel10k
