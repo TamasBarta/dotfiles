@@ -33,6 +33,10 @@ Plugin 'prabirshrestha/vim-lsp'
 Plugin 'mattn/vim-lsp-settings'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'preservim/nerdtree'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()            " required
 
 filetype plugin on

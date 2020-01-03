@@ -10,9 +10,11 @@ export GDK_DPI_SCALE=0.5
 export QT_QPA_PLATFORMTHEME=qt5ct
 wmname LG3D
 
+rm $HOME/.dotfiles/.dunstmuted
 killall dunst; dunst &
 killall sxhkd; sxhkd &
 killall picom; picom &
+killall polkit-kde-authentication-agent-1; /usr/lib/polkit-kde-authentication-agent-1 &
 # killall polybar; polybar example &
 /home/tamas/.config/polybar/launch.sh & 
 # killall optimus-manager-qt; optimus-manager-qt &
@@ -24,7 +26,7 @@ if ! pgrep -x spotify; then spotify --force-device-scale-factor=2; fi &
 setxkbmap hu
 setxkbmap -option caps:super
 killall xcape; xcape -e 'Super_L=Escape' &
-
+killall xbindkeys; xbindkeys -n -v &
 xsetroot -cursor_name left_ptr
 
 source ~/.fehbg
