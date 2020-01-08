@@ -14,6 +14,7 @@ rm $HOME/.dotfiles/.dunstmuted
 killall dunst; dunst &
 killall sxhkd; sxhkd &
 killall picom; picom &
+killall compton; compton &
 killall polkit-kde-authentication-agent-1; /usr/lib/polkit-kde-authentication-agent-1 &
 # killall polybar; polybar example &
 /home/tamas/.config/polybar/launch.sh & 
@@ -48,7 +49,6 @@ bspc rule -a TelegramDesktop desktop='^5'
 bspc rule -a Caprine desktop='^5'
 bspc rule -a slack desktop='^3'
 bspc rule -a spotify desktop='^5'
-bspc rule -a firefox desktop='^1'
 bspc rule -a steam desktop='^8' state=fullscreen
 bspc rule -a firefox-kde-opensuse desktop='^1'
 bspc rule -a Screenkey manage=off
