@@ -40,6 +40,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'drewtempelmeyer/palenight.vim'
 call vundle#end()            " required
 
 filetype plugin on
@@ -50,9 +51,21 @@ set relativenumber
 
 set backspace=indent,eol,start
 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = "palenight"
+
 set ruler
 
 " LSP stuff
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
+" Colour stuff
+if (has("termguicolors"))
+  set termguicolors
+endif
+set background=dark
+colorscheme palenight
+let g:palenight_terminal_italics=1
