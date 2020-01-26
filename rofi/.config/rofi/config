@@ -1,6 +1,6 @@
 rofi.combi-modi:    window,drun,run,ssh
 rofi.theme:         /home/tamas/.config/rofi/custom-nord.rasi
-rofi.font:          Iosevka Nerd Font 12
+rofi.font:          Jetbrains Mono 12
 rofi.modi:          drun,run,window,ssh
 rofi.dpi:           192
 rofi.sidebar-mode:       true
