@@ -22,7 +22,6 @@ killall polkit-kde-authentication-agent-1; /usr/lib/polkit-kde-authentication-ag
 killall fusuma; fusuma &
 /home/tamas/.dotfiles/scripts/apply-touchpad-settings.sh &
 
-if ! pgrep -x spotify; then spotify --force-device-scale-factor=2; fi &
 
 setxkbmap hu
 setxkbmap -option caps:super
@@ -43,17 +42,22 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc desktop browser -l monocle
+# bspc desktop browser -l monocle
 
 bspc rule -a TelegramDesktop desktop='^5'
 bspc rule -a Caprine desktop='^5'
 bspc rule -a slack desktop='^3'
-bspc rule -a spotify desktop='^5'
+bspc rule -a Spotify desktop='^5'
 bspc rule -a steam desktop='^8' state=fullscreen
-bspc rule -a firefox-kde-opensuse desktop='^1'
+# bspc rule -a firefox-kde-opensuse desktop='^1'
 bspc rule -a Screenkey manage=off
 bspc rule -a plasmashell sticky=true manage=off state=floating layer=above
 bspc rule -a lattedock sticky=true manage=off state=floating layer=above
 # bspc rule -a kitty state=pseudo_tiled
 bspc rule -a scrcpy state=pseudo_tiled
 bspc rule -a java-lang-Thread state=pseudo_tiled
+
+
+if ! pgrep -x spotify; then /usr/local/bin/spotify; fi &
+if ! pgrep -x caprine; then caprine; fi &
+if ! pgrep -x telegram-desktop; then telegram-desktop; fi &
