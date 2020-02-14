@@ -2,6 +2,7 @@
 
 export PATH="$PATH:$DOTFILES_HOME/scripts"
 
+export PATH="$PATH:$HOME/.pub-cache/bin"
 export GOPATH=$HOME/.gopath
 export PATH="$PATH:${GOPATH//://bin:}/bin"
 
