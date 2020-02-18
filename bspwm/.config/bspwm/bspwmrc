@@ -36,6 +36,9 @@ bspc monitor -d browser dev comm prod off misc macos gaming
 bspc config border_width         8
 bspc config normal_border_color  "#292D3E"
 bspc config focused_border_color "#7EAEF1"
+bspc config active_border_color  "#292D3E"
+bspc config presel_border_color  "#7EAEF1"
+bspc config urgent_border_color  "#F76D47"
 bspc config window_gap          45
 
 bspc config split_ratio          0.52
