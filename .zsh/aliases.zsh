@@ -7,3 +7,4 @@ stop adbd
 start adbd"'
 
 alias restart-plasma="killall plasmashell && kstart plasmashell"
+alias vim=nvim

@@ -150,7 +150,7 @@ super + r
 
 # lock the screen
 super + ctrl + q
-	betterlockscreen -l
+	multilockscreen -l
 
 #
 # notifications

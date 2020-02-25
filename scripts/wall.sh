@@ -1,5 +1,5 @@
 #! /bin/sh
 
-betterlockscreen -b 2.0 -u $1
-betterlockscreen -w blur
+multilockscreen --blur 2.0 -u $1 ${@:2}
+multilockscreen -w blur
 
