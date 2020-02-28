@@ -17,6 +17,7 @@ set wrap linebreak nolist
 set history=500
 
 call plug#begin('~/.config/vim/bundle')
+Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'dart-lang/dart-vim-plugin'
@@ -29,6 +30,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
 call plug#end()
 
 set number

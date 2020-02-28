@@ -22,8 +22,7 @@ killall polkit-kde-authentication-agent-1; /usr/lib/polkit-kde-authentication-ag
 killall fusuma; fusuma &
 /home/tamas/.dotfiles/scripts/apply-touchpad-settings.sh &
 
-
-setxkbmap hu
+setxkbmap gb
 setxkbmap -option caps:super
 killall xcape; xcape -e 'Super_L=Escape' &
 killall xbindkeys; xbindkeys -n -v &
@@ -58,6 +57,7 @@ bspc rule -a plasmashell sticky=true manage=off state=floating layer=above
 bspc rule -a lattedock sticky=true manage=off state=floating layer=above
 # bspc rule -a kitty state=pseudo_tiled
 bspc rule -a scrcpy state=pseudo_tiled
+bspc rule -a jetbrains-toolbox state=floating
 bspc rule -a java-lang-Thread state=pseudo_tiled
 
 

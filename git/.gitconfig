@@ -10,7 +10,7 @@
 [core]
     autocrlf = input
     editor = vim
-    compression = 0
+#    compression = 0
 [diff]
     tool = kitty
     guitool = kitty.gui
