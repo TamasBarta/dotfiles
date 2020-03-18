@@ -12,6 +12,7 @@ source $DOTFILES_HOME/.zsh/functions.zsh
 source $DOTFILES_HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $DOTFILES_HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $DOTFILES_HOME/.zsh/gradle-completion.zsh
+source $DOTFILES_HOME/.zsh/vim.zsh
 
 case `uname` in
   Darwin) source $DOTFILES_HOME/.zsh/macos.zsh ;;
