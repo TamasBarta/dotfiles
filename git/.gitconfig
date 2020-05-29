@@ -22,6 +22,6 @@
 [difftool "kitty.gui"]
     cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [http]
-    cookieFile = /home/tamas/Development/cookies.txt
+    cookieFile = /Users/tbarta/Development/cookies.txt
     postBuffer = 1048576000
     saveCookies = true
