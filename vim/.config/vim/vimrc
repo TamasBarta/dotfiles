@@ -33,6 +33,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'kaicataldo/material.vim'
 call plug#end()
 
 set number
@@ -42,7 +43,7 @@ set backspace=indent,eol,start
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = "palenight"
+let g:airline_theme = "material"
 
 " airline symbols
 let g:airline_left_sep = "\uE0B4"
@@ -63,5 +64,5 @@ if (has("termguicolors"))
   set termguicolors
 endif
 set background=dark
-colorscheme palenight
-let g:palenight_terminal_italics=1
+colorscheme material
+let g:material_terminal_italics=1

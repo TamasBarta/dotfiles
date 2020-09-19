@@ -28,7 +28,7 @@ killall xcape; xcape -e 'Super_L=Escape' &
 killall xbindkeys; xbindkeys -n -v &
 xsetroot -cursor_name left_ptr
 
-source ~/.fehbg
+~/.fehbg
 
 bspc monitor -d browser dev comm prod off misc macos gaming
 
