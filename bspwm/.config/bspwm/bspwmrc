@@ -22,8 +22,9 @@ killall polkit-kde-authentication-agent-1; /usr/lib/polkit-kde-authentication-ag
 killall fusuma; fusuma &
 /home/tamas/.dotfiles/scripts/apply-touchpad-settings.sh &
 
-setxkbmap gb
+setxkbmap hu
 setxkbmap -option caps:super
+xmodmap ~/.Xmodmap
 killall xcape; xcape -e 'Super_L=Escape' &
 killall xbindkeys; xbindkeys -n -v &
 xsetroot -cursor_name left_ptr
