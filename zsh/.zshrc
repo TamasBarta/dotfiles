@@ -5,6 +5,7 @@ export DOTFILES_HOME=$HOME/.dotfiles
 if [ -f "$DOTFILES_HOME/.zsh/work.zsh" ]; then source $DOTFILES_HOME/.zsh/work.zsh; fi
 
 source $DOTFILES_HOME/.zsh/oh-my-zsh.zsh
+source $DOTFILES_HOME/.zsh/p10k.zsh
 source $DOTFILES_HOME/.zsh/path.zsh
 source $DOTFILES_HOME/.zsh/fzf.zsh
 source $DOTFILES_HOME/.zsh/aliases.zsh
