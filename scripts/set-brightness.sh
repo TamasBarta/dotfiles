@@ -11,4 +11,4 @@ fi
 
 brightness=$(light -G)
 dunstify -a "changeBrightness" -u low -i brightness -r "$msgId" \
-    "Brightness: ${brightness:0:-3}%" "$(getProgressString 10 "<b> </b>" " " $brightness)"
+    "Brightness: ${brightness:0:-3}%" #"$(getProgressString 10 "<b> </b>" " " $brightness)"
