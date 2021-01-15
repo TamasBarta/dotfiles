@@ -1,8 +1,8 @@
 #! /bin/sh
 
-source /home/tamas/.dotfiles/.zsh/rbenv.zsh
-
-eval $(awk '$0="export "$0' /home/tamas/.config/environment.d/*.conf)
+source /home/tamas/.config/zsh/xdg.sh
+source $XDG_CONFIG_HOME/zsh/rbenv.zsh
+source $XDG_CONFIG_HOME/zsh/path.zsh
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 # export GDK_SCALE=2
@@ -11,38 +11,25 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1
 wmname LG3D
 
-rm $HOME/.dotfiles/.dunstmuted
-killall dunst; dunst &
-killall sxhkd; sxhkd &
-killall picom; picom --experimental-backends &
-killall compton; compton &
-killall polkit-kde-authentication-agent-1; /usr/lib/polkit-kde-authentication-agent-1 &
-# killall polybar; polybar example &
-/home/tamas/.config/polybar/launch.sh & 
-# killall optimus-manager-qt; optimus-manager-qt &
-killall fusuma; fusuma &
-/home/tamas/.dotfiles/scripts/apply-touchpad-settings.sh &
-
-setxkbmap hu
-setxkbmap -option caps:super
-xmodmap ~/.Xmodmap
-killall xcape; xcape -e 'Super_L=Escape' &
-killall xbindkeys; xbindkeys -n -v &
-xsetroot -cursor_name left_ptr
-
-~/.fehbg
-
-bspc monitor -d browser dev comm prod off misc macos gaming
+bspwm-desktops.sh
+# killall bspc to kill all bspc subscribes
+killall bspc
+bspc subscribe monitor | xargs -n1 bspwm-desktops.sh &
+bspc config external_rules_command external_rules.sh
 
 bspc config border_width         4
-bspc config normal_border_color  "#292D3E"
-bspc config focused_border_color "#7EAEF1"
-bspc config active_border_color  "#292D3E"
-bspc config presel_border_color  "#7EAEF1"
+bspc config left_padding         0
+bspc config right_padding        0
+bspc config top_padding          30
+bspc config bottom_padding       0
+bspc config normal_border_color  "#263238"
+bspc config focused_border_color "#6dc1b8"
+bspc config active_border_color  "#263238"
+bspc config presel_border_color  "#6dc1b8"
 bspc config urgent_border_color  "#F76D47"
-bspc config window_gap          15
+bspc config window_gap          30
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
@@ -61,8 +48,32 @@ bspc rule -a lattedock sticky=true manage=off state=floating layer=above
 bspc rule -a scrcpy state=pseudo_tiled
 bspc rule -a jetbrains-toolbox state=floating
 bspc rule -a java-lang-Thread state=pseudo_tiled
+bspc rule -a ulauncher manage=off
+bspc rule -a todoist state=floating rectangle=600x200 center=true
 
 
+
+rm $XDG_CONFIG_HOME/.dunstmuted
+killall dunst; dunst &
+killall sxhkd; sxhkd &
+killall picom; picom --experimental-backends &
+killall polkit-kde-authentication-agent-1; /usr/lib/polkit-kde-authentication-agent-1 &
+$XDG_CONFIG_HOME/polybar/launch.sh & 
+killall fusuma; fusuma &
+apply-touchpad-settings.sh &
+logitech.sh &
+
+setxkbmap -option caps:super hu
+killall xcape; xcape -e 'Super_L=Escape' &
+xsetroot -cursor_name left_ptr
+
+~/.fehbg
+
+
+
+# if ! pgrep -x volumeicon; then volumeicon; fi &
+# if ! pgrep -x cbatticon; then cbatticon; fi &
+if ! pgrep -x nm-applet; then nm-applet; fi &
 if ! pgrep -x spotify; then /usr/local/bin/spotify; fi &
-if ! pgrep -x caprine; then caprine; fi &
-if ! pgrep -x telegram-desktop; then telegram-desktop; fi &
+# if ! pgrep -x caprine; then caprine; fi &
+if ! pgrep -x telegram-deskto; then telegram-desktop; fi &

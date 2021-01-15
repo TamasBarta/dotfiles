@@ -1,0 +1,25 @@
+configuration {
+	modi: "drun,run,window,ssh";
+	font: "Iosevka Nerd Font 10";
+	show-icons: true;
+	icon-theme: "Papirus";
+	drun-display-format: "{name}";
+	disable-history: false;
+	sort: true;
+	sorting-method: "fzf";
+	cycle: true;
+	sidebar-mode: false;
+	combi-modi: "window,drun,run,ssh";
+	matching: "fuzzy";
+	hide-scrollbar: true;
+	fullscreen: false;
+	dpi: 96;
+	theme: "/home/tamas/.config/rofi/launchers/colorful/style_2.rasi";
+	display-window: "Windows";
+	display-run: ">>>";
+	display-ssh: "SSH";
+	display-drun: "";
+	display-combi: "All";
+	kb-mode-next: "Control+Tab,Super+space";
+	kb-mode-previous: "Control+ISO_Left_Tab";
+}

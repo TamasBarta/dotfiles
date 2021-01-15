@@ -1,6 +1,6 @@
 #!/bin/bash
 
-desktops=("1" "2" "3" "4" "5" "6")
+desktops=(www dev com prd off xyz)
 
 bspc monitor -d "${desktops[@]}"
 
@@ -20,7 +20,7 @@ function move_desktops_to_display {
 if [[ " ${displays[@]} " =~ " $external_monitor " ]]; then
     echo "External display config"
     if [[ ! " ${active_displays[@]} " =~ " eDP1 " ]]; then exit; fi
-    xrandr --output DP1 --mode 3440x1440 -r 99.98 || xrandr $external_monitor --auto
+    xrandr --output DP1 --mode 3440x1440 -r 99.98 || xrandr --output $external_monitor --auto
     bspc monitor $external_monitor -a $external_monitor
     bspc monitor eDP1 -a eDP1
     move_desktops_to_display $external_monitor
@@ -28,7 +28,6 @@ if [[ " ${displays[@]} " =~ " $external_monitor " ]]; then
     bspc desktop $external_monitor --remove
     bspc desktop eDP1 --remove
     # bspc monitor DP1 -d "${desktops[@]}"
-    sleep 5
     bspc monitor eDP1 --remove
     xrandr --output eDP1 --off
 else
@@ -42,7 +41,6 @@ else
     bspc desktop $external_monitor --remove
     bspc desktop eDP1 --remove
     # bspc monitor eDP1 -d "${desktops[@]}"
-    sleep 5
     bspc monitor $external_monitor --remove
     xrandr --output $external_monitor --off
 fi

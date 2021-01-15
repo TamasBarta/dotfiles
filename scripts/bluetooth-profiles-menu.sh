@@ -1,21 +1,29 @@
 #!/bin/bash
 
-devices=$(pactl list cards short | awk 'BEGIN { err = 1 } /bluez/ {print $2; err = 0} END { exit err }')
+IFS=$'\n'
 
-if [ $? -ne 0 ]; then
-	notify-send "No Bluetooth headsets available."
-	exit
-fi
+devices=($(pactl list cards | awk '/Name: / { print $2 } /device\.description/ { $1=$2=""; gsub(/(^(\s|")+|(\s|")+$)/, "", $0); print $0 }'))
 
-if [[ "${devices[@]}" =~ " " ]]; then
-	device=$(echo "$devices" | rofi -dmenu)
+device_names=($(IFS=$'\n'; for ((i=0; $i<${#devices[@]}; i=$i+2)); do echo "${devices[$i]}"; done))
+device_descriptions=($(IFS=$'\n'; for ((i=1; $i<${#devices[@]}; i=$i+2)); do echo "${devices[$i]}"; done))
+
+if [ "${#device_names[@]}" -eq 0 ]; then
+    notify-send "No Bluetooth headsets available."
+    exit
+elif [ "${#device_names[@]}" -gt 1 ]; then
+    device_index=$(echo "${device_descriptions[*]}" | rofi -i -dmenu -format 'i')
+    device="${device_names[$device_index]}"
 else
-	device=$devices
+    device=$devices
 fi
 
-available_profiles=$(pactl list cards | awk "/available: yes/ { if (name == \"$device\") { print substr(\$1, 0, length(\$1)-1) } } { if (\$1 == \"Name:\") { name = \$2 } }")
+available_profiles=($(pactl list cards | awk "/available: yes/ { if (name == \"$device\") { line = \$0; gsub(/(^[^ ]* |\\([^()]*\\)$)/, \"\", line); print substr(\$1, 0, length(\$1)-1); print line;} } { if (\$1 == \"Name:\") { name = \$2 } }"))
 
-selected_profile=$(echo $available_profiles | rofi -dmenu -sep ' ')
+available_profile_names=($(IFS=$'\n'; for ((i=0; $i<${#available_profiles[@]}; i=$i+2)); do echo "${available_profiles[$i]}"; done))
+available_profile_descriptions=($(IFS=$'\n'; for ((i=1; $i<${#available_profiles[@]}; i=$i+2)); do echo "${available_profiles[$i]}"; done))
+
+selected_profile_index=$(echo "${available_profile_descriptions[*]}" | rofi -i -dmenu -format 'i')
+selected_profile="${available_profile_names[$selected_profile_index]}"
 
 pactl set-card-profile $device $selected_profile
 

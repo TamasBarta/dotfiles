@@ -14,11 +14,11 @@ esac
 
 stow -d $DOTFILES_HOME zsh
 stow -d $DOTFILES_HOME tmux
-stow -d $DOTFILES_HOME vim
+stow -d $DOTFILES_HOME nvim
 stow -d $DOTFILES_HOME git
 stow -d $DOTFILES_HOME kitty
 
-vim +PluginInstall +qall
+nvim +PlugInstall +qall
 
 # Install SDKMAN!
 curl -s "https://get.sdkman.io" | bash

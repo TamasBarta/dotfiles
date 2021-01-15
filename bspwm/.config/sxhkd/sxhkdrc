@@ -1,6 +1,15 @@
 #
+# List of keyboard shortcuts
+#
+# If you accessed this by pressing F1, you can close this dialog by pressing 'q'.
+#
+
+#
 # wm independent hotkeys
 #
+
+F1
+	bspc rule -a kitty --one-shot state=floating && kitty -o remember_window_size=false -o initial_window_height=768 -o initial_window_width=1024 sh -c "bat ~/.config/sxhkd/sxhkdrc -l sh --style=plain --wrap=auto"
 
 # terminal emulator
 super + Return
@@ -8,7 +17,8 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show combi -show-icons
+	~/.config/rofi/launchers/colorful/launcher.sh
+	# rofi -show combi -show-icons
 
 super + shift + @space
 	rofi -show run -show-icons
@@ -16,8 +26,20 @@ super + shift + @space
 alt + Tab
 	rofi -show window -show-icons
 
-super + d
+super + ctrl + @space
+    ~/.dotfiles/scripts/rofi-emoji.sh
+
+
+# Application hotkeys
+
+super + o; r
 	kitty zsh -c ranger
+
+super + o; f
+	firefox
+
+super + o; shift + f
+	firefox --private-window
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -30,6 +52,14 @@ super + Escape
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
+
+# shutdown menu
+super + q
+    $HOME/.dotfiles/scripts/shutdown-menu.sh
+
+# shut the computer down
+super + ctrl + alt + q
+	poweroff
 
 # close and kill
 super + {_,shift + }w
@@ -68,8 +98,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# super + {p,b,comma,period}
+# 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
@@ -80,18 +110,21 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+super + {Tab}
+	bspc {node} -f last
 
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+# super + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+ctrl + alt + {Up,Down}
+	bspc desktop -f {prev,next}
 
 #
 # preselect
@@ -158,38 +191,55 @@ super + ctrl + q
 
 # toggle dunst
 
-super + F2
-	if rm $HOME/.dotfiles/.dunstmuted; then killall -SIGUSR2 dunst; else killall -SIGUSR1 dunst; touch $HOME/.dotfiles/.dunstmuted; fi
+super + F3
+	if rm $XDG_HOME_CONFIG/.dunstmuted; then killall -SIGUSR2 dunst; else killall -SIGUSR1 dunst; touch $XDG_HOME_CONFIG/.dunstmuted; fi
 
 #
 # media keys
 #
 
 {super + F12, super + F11, XF86AudioRaiseVolume, XF86AudioLowerVolume}
-    $HOME/.dotfiles/scripts/set-volume.sh {+,-,+,-}5
+    set-volume.sh {+,-,+,-}5
 
 {XF86AudioMute, super + F10}
     pactl set-sink-mute $(pactl info | grep -Po "(?<=Default Sink: ).*") toggle; $HOME/.dotfiles/scripts/set-volume.sh +0
 
 
-{XF86AudioMicMute, super + F1}
+{XF86AudioMicMute, super + F4}
     pactl set-source-mute $(pactl info | grep -Po "(?<=Default Source: ).*") toggle
 
 {XF86AudioNext, super + F9}
-    playerctl next
+    playerctl --player=spotify next
 
 {XF86AudioPrev, super + F7}
-    playerctl previous
+    playerctl --player=spotify previous
 
-{XF86AudioPlay, super + F8}
-    playerctl play-pause
+{_, shift + }{XF86AudioPlay,super + F8}
+    playerctl { ,--player=spotify , ,--player=spotify }play-pause
 
-XF86MonBrightness{Up,Down}
-    $HOME/.dotfiles/scripts/set-brightness.sh {+,-}5
+{super + F1, super + F2, XF86MonBrightnessDown, XF86MonBrightnessUp}
+    $HOME/.dotfiles/scripts/brightness.sh {-,+,-,+}10%
+
+#
+# Settings scripts shortcuts
+#
+
+super + o; b
+    $HOME/.dotfiles/scripts/bluetooth-profiles-menu.sh
 
 #
 # Android development
 #
 
+super + o; s
+    $HOME/.dotfiles/scripts/scrcpy-chooser.sh
+
 super + alt + ctrl + f
     adb -e emu finger touch 1
+
+#
+# Screenshot shortcuts
+#
+
+alt + shift + 4
+    maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i

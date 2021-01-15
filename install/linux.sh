@@ -13,4 +13,5 @@ stow -d $DOTFILES_HOME bspwm
 stow -d $DOTFILES_HOME polybar
 stow -d $DOTFILES_HOME rofi
 stow -d $DOTFILES_HOME ranger
+stow -d $DOTFILES_HOME fusuma
 
