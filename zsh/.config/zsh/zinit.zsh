@@ -35,7 +35,8 @@ zinit wait lucid for \
 
 # Load plugins with completion
 zinit wait lucid for \
-    OMZ::plugins/git/git.plugin.zsh
+    OMZ::plugins/git/git.plugin.zsh\
+    light-mode @asdf-vm/asdf
 zinit cdclear -q
 
 zinit ice wait lucid blockf as"program" pick"wd.sh" mv"_wd.sh -> _wd" atload="wd() { source wd.sh }"

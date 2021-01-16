@@ -21,8 +21,5 @@ case `uname` in
   Linux) source $HOME/.config/zsh/linux.zsh ;;
 esac
 
-source $HOME/.config/zsh/rbenv.zsh
-source $HOME/.config/zsh/nodenv.zsh
-source $HOME/.config/zsh/rust.zsh
 source $HOME/.config/zsh/flutter.zsh
 source $HOME/.config/zsh/autocompletion.zsh

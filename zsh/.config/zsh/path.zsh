@@ -3,9 +3,8 @@
 export PATH="$PATH:$DOTFILES_HOME/scripts"
 
 export PATH="$PATH:$HOME/.pub-cache/bin"
-export GOPATH=$HOME/.local/share/gopath
 export PATH="$PATH:${GOPATH//://bin:}/bin"
-export PATH="$PATH:~/.cargo/bin"
+export PATH="$PATH:$CARGO_HOME/bin"
 
 # Proguard
 export PATH=$PATH:$HOME/Library/Android/sdk/tools/proguard/bin

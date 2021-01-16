@@ -1,6 +1,7 @@
 #! /bin/sh
 
-source /home/tamas/.config/zsh/xdg.sh
+export DOTFILES_HOME=$HOME/.dotfiles
+source $HOME/.config/zsh/xdg.sh
 source $XDG_CONFIG_HOME/zsh/rbenv.zsh
 source $XDG_CONFIG_HOME/zsh/path.zsh
 
@@ -67,8 +68,7 @@ setxkbmap -option caps:super hu
 killall xcape; xcape -e 'Super_L=Escape' &
 xsetroot -cursor_name left_ptr
 
-~/.fehbg
-
+if [ -f ~/.fehbg ]; then ~/.fehbg; fi
 
 
 # if ! pgrep -x volumeicon; then volumeicon; fi &
