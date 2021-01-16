@@ -1,5 +1,5 @@
 " auto-install vim-plug
-let $VIMPLUG=stdpath('data').'/autoload/plug.vim'
+let $VIMPLUG=stdpath('data').'/site/autoload/plug.vim'
 if empty(glob($VIMPLUG))
   silent !curl -fLo $VIMPLUG --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -7,7 +7,7 @@ if empty(glob($VIMPLUG))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin(stdpath('data') . '/plugged')
+call plug#begin(stdpath('data') . '/site/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'

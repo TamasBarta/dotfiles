@@ -12,7 +12,7 @@ source $ZINIT[BIN_DIR]/zinit.zsh
 
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
-zinit snippet OMZ::plugins/gradle/gradle.plugin.zsh
+zinit snippet OMZ::plugins/gradle
 zinit pack for fzf
 
 
@@ -45,7 +45,8 @@ zinit light mfaerevaag/wd
 # Load completions
 zinit wait lucid as"completion" for \
     https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
-    https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose
+    https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose \
+    https://github.com/gradle/gradle-completion/blob/master/_gradle
 
 # Fast-syntax-highlighting & autosuggestions
 zinit ice wait lucid blockf
@@ -62,3 +63,6 @@ zplugin ice as"program" pick"$ZPFX/sdkman/bin/sdk" id-as'sdkman' run-atpull \
   atpull"SDKMAN_DIR=$ZPFX/sdkman sdk selfupdate" \
   atinit"export SDKMAN_DIR=$ZPFX/sdkman; source $ZPFX/sdkman/bin/sdkman-init.sh"
 zplugin light zdharma/null
+
+zplugin ice wait'1a' lucid atload"zpcdreplay"
+zplugin light matthieusb/zsh-sdkman

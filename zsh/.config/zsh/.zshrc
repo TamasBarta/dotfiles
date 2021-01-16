@@ -13,7 +13,6 @@ source $HOME/.config/zsh/fzf.zsh
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/bindkey.zsh
 source $HOME/.config/zsh/functions.zsh
-source $HOME/.config/zsh/gradle-completion.zsh
 source $HOME/.config/zsh/vim.zsh
 
 case `uname` in
