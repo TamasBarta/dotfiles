@@ -13,7 +13,7 @@ configuration {
 	matching: "fuzzy";
 	hide-scrollbar: true;
 	fullscreen: false;
-	dpi: 96;
+	dpi: 0;
 	theme: "/home/tamas/.config/rofi/launchers/colorful/style_2.rasi";
 	display-window: "Windows";
 	display-run: ">>>";

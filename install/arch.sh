@@ -5,7 +5,7 @@ sudo pacman -S kitty nvim tmux zsh unzip zip stow xautomation efibootmgr bspwm s
 
 git clone https://aur.archlinux.org/yay.git /tmp/yay
 cd /tmp/yay
-makepkg -i
+makepkg -is
 cd -
 rm -rf yay
 

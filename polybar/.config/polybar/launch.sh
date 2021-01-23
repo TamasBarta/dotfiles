@@ -2,6 +2,9 @@
 
 ## Add this to your wm startup file.
 
+export POLYBAR_HEIGHT=$(bc <<< "30*$SCALING")
+export POLYBAR_TRAY_MAXSIZE=$(bc <<< "16*$SCALING")
+
 # Terminate already running bar instances
 killall -q polybar
 pkill -f playerctl\ --player=spotify\ metadata\ --format\ 

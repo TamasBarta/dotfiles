@@ -20,7 +20,7 @@ function move_desktops_to_display {
 if [[ " ${displays[@]} " =~ " $external_monitor " ]]; then
     echo "External display config"
     if [[ ! " ${active_displays[@]} " =~ " eDP1 " ]]; then exit; fi
-    xrandr --output DP1 --mode 3440x1440 -r 99.98 || xrandr --output $external_monitor --auto
+    xrandr --output DP1 --mode 3440x1440 -r 99.98 --panning 6880x2880 --scale-from 6880x2880 || xrandr --output $external_monitor --auto
     bspc monitor $external_monitor -a $external_monitor
     bspc monitor eDP1 -a eDP1
     move_desktops_to_display $external_monitor
@@ -32,7 +32,7 @@ if [[ " ${displays[@]} " =~ " $external_monitor " ]]; then
     xrandr --output eDP1 --off
 else
     echo "Internal display config"
-    xrandr --output eDP1 --primary --mode 1920x1080
+    xrandr --output eDP1 --primary --mode 3840x2160
     if [[ ! " ${active_displays[@]} " =~ " $external_monitor " ]]; then exit; fi
     bspc monitor $external_monitor -a $external_monitor
     bspc monitor eDP1 -a eDP1
