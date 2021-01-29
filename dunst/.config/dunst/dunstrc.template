@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "700x10-60+120"
+    geometry = "${DUNST_GEOMETRY}"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -51,17 +51,17 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 8
+    separator_height = $DUNST_FRAME_WIDTH
 
     # Padding between text and separator.
-    padding = 20
+    padding = $DUNST_PADDING
 
     # Horizontal padding.
-    horizontal_padding = 30
+    horizontal_padding = $DUNST_HORIZONTAL_PADDING
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 8
+    frame_width = $DUNST_FRAME_WIDTH
 
     # Defines color of the frame around the notification window.
     frame_color = "#6dc1b8"
@@ -84,7 +84,7 @@
 
     ### Text ###
 
-    font = Jetbrains Mono Nerd Font 11
+    font = Iosevka Aile 11
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -156,7 +156,7 @@
     icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = $DUNST_MAX_ICON_SIZE
 
     # Paths to default icons.
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/

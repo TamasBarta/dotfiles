@@ -1,7 +1,4 @@
-vim/.config/vim/bundle
-.zsh/sdkman
-.zsh/work.zsh
-vim/.vim/.netrwhist
 .dunstmuted
 *.pyc
 .uuid
+dunst/.config/dunst/dunstrc

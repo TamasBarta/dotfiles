@@ -9,7 +9,7 @@
 #
 
 F1
-	bspc rule -a kitty --one-shot state=floating && kitty -o remember_window_size=false -o initial_window_height=768 -o initial_window_width=1024 sh -c "bat ~/.config/sxhkd/sxhkdrc -l sh --style=plain --wrap=auto"
+	bspc rule -a kitty --one-shot state=floating && kitty -o remember_window_size=false -o initial_window_height=$(printf %d $(bc <<< "$SCALING * 768")) -o initial_window_width=$(printf %d $(bc <<< "$SCALING * 1024")) sh -c "bat ~/.config/sxhkd/sxhkdrc -l sh --style=plain --wrap=auto"
 
 # terminal emulator
 super + Return
@@ -40,6 +40,9 @@ super + o; f
 
 super + o; shift + f
 	firefox --private-window
+
+super + o; d
+    set-dpi.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
