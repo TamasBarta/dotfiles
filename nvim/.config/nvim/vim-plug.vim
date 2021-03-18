@@ -28,5 +28,7 @@ Plug 'kaicataldo/material.vim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'lambdalisue/suda.vim'
 Plug 'bumaociyuan/vim-swift'
+Plug 'beeender/Comrade'
+Plug 'udalov/kotlin-vim'
 call plug#end()
 
