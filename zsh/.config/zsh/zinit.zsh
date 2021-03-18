@@ -46,7 +46,7 @@ zinit light mfaerevaag/wd
 zinit wait lucid as"completion" for \
     https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
     https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose \
-    https://github.com/gradle/gradle-completion/blob/master/_gradle
+    https://github.com/TamasBarta/gradle-completion/blob/use-gradle-user-home-env-var/_gradle
 
 # Fast-syntax-highlighting & autosuggestions
 zinit ice wait lucid blockf
@@ -55,14 +55,6 @@ zinit light zsh-users/zsh-completions
 zinit ice wait lucid atload"!_zsh_autosuggest_start"
 zinit load zsh-users/zsh-autosuggestions
 
-zinit ice wait'!' lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay; _zsh_finish_setup"
+zinit ice wait'!' lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
 zinit light zdharma/fast-syntax-highlighting
 
-zplugin ice as"program" pick"$ZPFX/sdkman/bin/sdk" id-as'sdkman' run-atpull \
-  atclone"wget https://get.sdkman.io -O scr.sh; SDKMAN_DIR=$ZPFX/sdkman bash scr.sh; rm -f ~/.zshrc" \
-  atpull"SDKMAN_DIR=$ZPFX/sdkman sdk selfupdate" \
-  atinit"export SDKMAN_DIR=$ZPFX/sdkman; source $ZPFX/sdkman/bin/sdkman-init.sh"
-zplugin light zdharma/null
-
-zplugin ice wait'1a' lucid atload"zpcdreplay"
-zplugin light matthieusb/zsh-sdkman

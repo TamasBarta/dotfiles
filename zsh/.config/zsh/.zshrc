@@ -19,6 +19,3 @@ case `uname` in
   Darwin) source $HOME/.config/zsh/macos.zsh ;;
   Linux) source $HOME/.config/zsh/linux.zsh ;;
 esac
-
-source $HOME/.config/zsh/flutter.zsh
-source $HOME/.config/zsh/autocompletion.zsh
