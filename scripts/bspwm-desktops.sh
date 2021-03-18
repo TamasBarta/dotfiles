@@ -9,7 +9,7 @@ active_displays=($(bspc query -M --names))
 
 current_desktop=$(bspc query --names --desktops --desktop focused)
 
-external_monitor="DP1"
+external_monitor="$(xrandr | awk '/ connected / {print $1}' | grep -v eDP1 | head -1)"
 
 function move_desktops_to_display {
     for desktop in "${desktops[@]}"; do
@@ -20,7 +20,7 @@ function move_desktops_to_display {
 if [[ " ${displays[@]} " =~ " $external_monitor " ]]; then
     echo "External display config"
     if [[ ! " ${active_displays[@]} " =~ " eDP1 " ]]; then exit; fi
-    xrandr --output DP1 --mode 3440x1440 -r 99.98 --panning 6880x2880 --scale-from 6880x2880 || xrandr --output $external_monitor --auto
+    xrandr --output DP1 --mode 3440x1440 -r 99.98 || xrandr --output $external_monitor --auto
     bspc monitor $external_monitor -a $external_monitor
     bspc monitor eDP1 -a eDP1
     move_desktops_to_display $external_monitor
@@ -44,3 +44,5 @@ else
     bspc monitor $external_monitor --remove
     xrandr --output $external_monitor --off
 fi
+
+wall.sh $(cat $XDG_CACHE_HOME/wallsh) &

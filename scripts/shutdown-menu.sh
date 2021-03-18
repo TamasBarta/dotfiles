@@ -5,7 +5,7 @@ options=(
     " Lock"
     "鈴 Sleep/Suspend"
     "累 Reboot"
-    "襤 Shutdown"
+    "襤 Shutdown/Power off"
 )
 case "$(echo "${options[*]}" | rofi -i -dmenu -format 'i' -p Leave)" in
     0)
