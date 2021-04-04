@@ -2,7 +2,6 @@
 
 export DOTFILES_HOME=$HOME/.dotfiles
 source $HOME/.config/zsh/xdg.sh
-source $XDG_CONFIG_HOME/zsh/rbenv.zsh
 source $XDG_CONFIG_HOME/zsh/path.zsh
 
 xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
@@ -10,8 +9,8 @@ xrandr --dpi $(xrdb -query | awk '/Xft\.dpi/ { print $2 }')
 export DPI=$(xdpyinfo | awk -F' *|x' '/resolution/ { print $3 }')
 export SCALING=0$(bc <<< "scale=5; $DPI / 96")
 
-# export GDK_SCALE=$SCALING
-# export GDK_DPI_SCALE=0$(bc <<< "scale=5; 1 / $SCALING")
+export GDK_SCALE=$SCALING
+export GDK_DPI_SCALE=0$(bc <<< "scale=5; 1 / $SCALING")
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCREEN_SCALE_FACTORS=$SCALING

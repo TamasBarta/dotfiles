@@ -12,8 +12,6 @@ export GOPATH="$XDG_DATA_HOME"/go
 export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdfrc"
 export ASDF_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/asdf"
 export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/tool-versions"
-export RBENV_ROOT="$XDG_DATA_HOME"/rbenv
-export NODENV_ROOT="$XDG_DATA_HOME"/nodenv
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
