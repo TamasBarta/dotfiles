@@ -17,6 +17,7 @@ stow -d $DOTFILES_HOME tmux
 stow -d $DOTFILES_HOME nvim
 stow -d $DOTFILES_HOME git
 stow -d $DOTFILES_HOME kitty
+stow -d $DOTFILES_HOME asdf
 
 nvim +PlugInstall +qall
 
