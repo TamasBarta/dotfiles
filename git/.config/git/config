@@ -23,6 +23,6 @@
 [difftool "kitty.gui"]
     cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [commit]
-	gpgsign = true
+    # gpgsign = true
 [github]
 	user = TamasBarta

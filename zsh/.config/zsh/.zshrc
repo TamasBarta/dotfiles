@@ -2,6 +2,7 @@
 # export TERM="xterm-256color"
 export DOTFILES_HOME=$HOME/.dotfiles
 source $HOME/.config/zsh/xdg.sh
+source $HOME/.config/zsh/env.zsh
 
 if [ -f "$HOME/.config/zsh/work.zsh" ]; then source $HOME/.config/zsh/work.zsh; fi
 

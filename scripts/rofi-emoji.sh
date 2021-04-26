@@ -5,6 +5,8 @@
 #
 #   Requirements:
 #     rofi, xsel, xdotool, curl, xmllint
+#   For Wayland:
+#     wl-clipboard, wtype
 #
 #   Usage:
 #     1. Download all emoji
@@ -81,8 +83,10 @@ function display() {
     if [ $exit_code == 0 ]; then
         sleep 0.1  # Delay pasting so the text-entry can come active
         xdotool type --clearmodifiers "${line[0]}"
+        wtype "${line[0]}"
     elif [ $exit_code == 10 ]; then
         echo -n "${line[0]}" | xsel -i -b
+        echo -n "${line[0]}" | wl-copy
     fi
 }
 

@@ -1,7 +1,7 @@
-#! /bin/sh
+#! /usr/bin/env zsh
 
 export DOTFILES_HOME=$HOME/.dotfiles
-source $HOME/.config/zsh/xdg.sh
+source $XDG_CONFIG_HOME/zsh/xdg.sh
 source $XDG_CONFIG_HOME/zsh/path.zsh
 
 xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
