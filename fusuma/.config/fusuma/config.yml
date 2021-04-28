@@ -1,13 +1,13 @@
 swipe:
   3:
     left:
-      command: "xdotool key alt+Right" # History forward 
+      command: "xdotool key alt+Right; wtype -M alt -k right -m alt" # History forward 
     right:
-      command: "xdotool key alt+Left" # History back
+      command: "xdotool key alt+Left; wtype -M alt -k left -m alt" # History back
     up:
       command: "xdotool key super" # Activity
     down:
-      command: "xdotool key ctrl+w" # Activity
+      command: "xdotool key ctrl+w; wtype -M ctrl -k w -m ctrl" # Activity
   4:
     left:
       command: "xdotool key ctrl+alt+Down" # Switch to next workspace

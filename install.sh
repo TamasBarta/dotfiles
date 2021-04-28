@@ -21,7 +21,3 @@ stow -d $DOTFILES_HOME asdf
 
 nvim +PlugInstall +qall
 
-# Install SDKMAN!
-curl -s "https://get.sdkman.io" | bash
-# Revert its modifications, since those are already in $DOTFILES_HOME/.zsh/sdkman.zsh
-git -C $DOTFILES_HOME checkout -- $DOTFILES_HOME/zsh/.zshrc

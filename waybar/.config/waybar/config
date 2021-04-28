@@ -8,21 +8,22 @@
     "modules-center": ["sway/window"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
+    "sway/workspaces": {
+        "disable-scroll": true,
     //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+        "format": "{name} - {icon}",
+        "format-icons": {
+            "1": "www",
+            "2": "dev",
+            "3": "com",
+            "4": "prd",
+            "5": "off",
+            "10": "ext",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -141,7 +142,7 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "playerctl --player=spotify metadata --format \"{{xesam:artist}} - {{xesam:title}}\nTooltip\ncustom-spotify\" --follow 2>/dev/null"
+        "exec": "playerctl --player=spotify metadata --format \"{{xesam:artist}} - {{xesam:title}}\" --follow 2>/dev/null"
         // "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
