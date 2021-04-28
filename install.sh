@@ -5,8 +5,6 @@ REPOSITORY=https://gitlab.com/TamasBarta/dotfiles.git
 
 git clone --recurse-submodules -j8 $REPOSITORY $DOTFILES_HOME
 
-$DOTFILES_HOME/.zsh/fzf/install --bin
-
 case `uname` in
   Darwin) source $DOTFILES_HOME/install/macos.sh ;;
   Linux) source $DOTFILES_HOME/install/linux.sh ;;
