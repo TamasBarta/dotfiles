@@ -5,9 +5,6 @@ case $(cat /etc/*-release | grep ID_LIKE | grep -o "[a-z]*") in
   debian) source $DOTFILES_HOME/install/debian.sh ;;
 esac
 
-# Change default shell to zsh
-chsh -s /usr/bin/zsh
-
 stow -d $DOTFILES_HOME x
 # stow -d $DOTFILES_HOME bspwm
 # stow -d $DOTFILES_HOME polybar

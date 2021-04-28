@@ -15,10 +15,6 @@ mkdir -p "$HOME/Library/Application Support/Übersicht/widgets"
 git clone https://github.com/zzzeyez/pecan.git "$HOME/Library/Application Support/Übersicht/widgets/pecan"
 ln -s "${HOME}/Library/Application Support/Übersicht/widgets/pecan/pecan-style" "/usr/local/bin/pecan-style"
 
-# Set shell to zsh
-chsh -s /bin/zsh
-
-
 # Defaults settings
 
 # Disable automatically rearrange Spaces based on recent use
