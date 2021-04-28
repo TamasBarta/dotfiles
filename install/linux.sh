@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $(cat /etc/*-release | awk -F '=' '{ if ($1 == "ID") print $2 }') in
-  archlinux) source $DOTFILES_HOME/install/arch.sh ;;
+  arch) source $DOTFILES_HOME/install/arch.sh ;;
   debian) source $DOTFILES_HOME/install/debian.sh ;;
 esac
 
