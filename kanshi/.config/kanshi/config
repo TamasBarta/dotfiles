@@ -1,0 +1,8 @@
+profile {
+    output eDP-1 enable scale 2 position 5360,430
+    output "Samsung Electric Company C34J79x H4ZN101074" enable mode 3440x1440@99.982Hz
+}
+
+profile {
+    output eDP-1 enable scale 2
+}

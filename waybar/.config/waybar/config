@@ -6,12 +6,12 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["tray", "custom/dunst", "idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "clock"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
     //     "all-outputs": true,
-        "format": "{name} - {icon}",
+        "format": "{name}",
         "format-icons": {
             "1": "www",
             "2": "dev",
@@ -56,8 +56,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": " ",
+            "deactivated": " "
         }
     },
     "tray": {
@@ -87,7 +87,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "format-icons": [" ", " "]
     },
     "battery": {
         "states": {
@@ -97,41 +97,46 @@
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}%  ",
-        "format-plugged": "{capacity}% ",
+        "format-plugged": "{capacity}%  ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        //"format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+        "format-ethernet": "Ethernet  ",
+        "format-linked": "{ifname} (No IP)  ",
+        "format-disconnected": "Disconnected ⚠ ",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-bluetooth-muted": "婢 {icon} {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}%  ",
+        "format-source-muted": " ",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/dunst": {
+        "exec": "while [ true ]; do if [[ `dunstctl is-paused` == 'false' ]]; then echo ' '; else echo ' '; fi; sleep 1; done",
+        "on-click": "dunstctl set-paused toggle"
     },
     "custom/media": {
         "format": "  {}",
@@ -145,5 +150,10 @@
         "exec": "playerctl --player=spotify metadata --format \"{{xesam:artist}} - {{xesam:title}}\" --follow 2>/dev/null"
         // "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/sunpaper": {
+      "exec": "$HOME/Pictures/Wallpapers/sunpaper/sunpaper.sh --waybar",
+      "interval": 1,
+      "return-type": "json"
     }
 }

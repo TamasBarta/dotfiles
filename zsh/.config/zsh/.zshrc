@@ -15,6 +15,7 @@ source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/bindkey.zsh
 source $HOME/.config/zsh/functions.zsh
 source $HOME/.config/zsh/vim.zsh
+source $HOME/.config/zsh/gpg.zsh
 
 case `uname` in
   Darwin) source $HOME/.config/zsh/macos.zsh ;;

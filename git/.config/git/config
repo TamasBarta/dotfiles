@@ -26,3 +26,7 @@
     gpgsign = true
 [github]
 	user = TamasBarta
+[gpg]
+	program = gpg2
+[init]
+	defaultBranch = master

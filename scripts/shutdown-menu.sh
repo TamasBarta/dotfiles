@@ -6,6 +6,7 @@ options=(
     "鈴 Sleep/Suspend"
     "累 Reboot"
     "襤 Shutdown/Power off"
+    "﫼 Logout"
 )
 case "$(echo "${options[*]}" | rofi -i -dmenu -format 'i' -p Leave)" in
     0)
@@ -19,5 +20,9 @@ case "$(echo "${options[*]}" | rofi -i -dmenu -format 'i' -p Leave)" in
         ;;
     3)
         poweroff
+        ;;
+    4)
+        swaymsg exit
+        bspc quit
         ;;
 esac
