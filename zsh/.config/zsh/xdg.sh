@@ -34,3 +34,4 @@ grep -q "^hsts-file = " $WGETRC && sed "s#^hsts-file = .*#hsts-file = $XDG_CACHE
 export LESSHISTFILE=-
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc

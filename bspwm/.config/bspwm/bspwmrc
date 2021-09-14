@@ -1,13 +1,15 @@
 #! /usr/bin/env zsh
 
 export DOTFILES_HOME=$HOME/.dotfiles
-source $XDG_CONFIG_HOME/zsh/xdg.sh
-source $XDG_CONFIG_HOME/zsh/path.zsh
+# source $XDG_CONFIG_HOME/zsh/xdg.sh
+# source $XDG_CONFIG_HOME/zsh/path.zsh
 
 xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
 xrandr --dpi $(xrdb -query | awk '/Xft\.dpi/ { print $2 }')
 export DPI=$(xdpyinfo | awk -F' *|x' '/resolution/ { print $3 }')
 export SCALING=0$(bc <<< "scale=5; $DPI / 96")
+
+export SCALING=1
 
 export GDK_SCALE=$SCALING
 export GDK_DPI_SCALE=0$(bc <<< "scale=5; 1 / $SCALING")
@@ -65,7 +67,6 @@ bspc rule -a todoist state=floating rectangle=600x200 center=true
 
 
 
-rm $XDG_CONFIG_HOME/.dunstmuted
 export DUNST_GEOMETRY="$(printf %d $(bc <<< "$SCALING * 350"))x10-$(printf %d $(bc <<< "$SCALING * 30"))+$(printf %d $(bc <<< "$SCALING * 60"))"
 export DUNST_FRAME_WIDTH=$(printf %d $(bc <<< "$SCALING * 4"))
 export DUNST_MAX_ICON_SIZE=$(printf %d $(bc <<< "$SCALING * 64"))
@@ -82,7 +83,7 @@ apply-touchpad-settings.sh &
 logitech.sh &
 
 setxkbmap -option caps:super hu
-killall xcape; xcape -e 'Super_L=Escape' &
+# killall xcape; xcape -e 'Super_L=Escape' &
 xsetroot -cursor_name left_ptr
 
 if [ -f ~/.fehbg ]; then ~/.fehbg; fi

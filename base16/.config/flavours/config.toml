@@ -1,0 +1,57 @@
+# Commands go through bash
+shell = "bash -c '{}'"
+
+# Sway supports the default '#' comments, so it can be ommited
+# 'rewrite' is also ommited, as it defaults to false
+[[item]]
+file = "~/.config/sway/config.d/00-colors.conf"
+rewrite = true
+template = "sway"
+subtemplate = "colors"
+hook = "swaymsg reload"
+# Swaymsg reload temporarily freezes input, so it's marked as not-light
+light = false
+
+# This one uses waybar 'default' subtemplate, so it can be ommited
+[[item]]
+file = "~/.config/waybar/colors.css"
+template = "waybar"
+# Waybar uses a separate color file, so we can safely rewrite the whole file
+rewrite = true
+hook = "pkill waybar; waybar & disown"
+
+[[item]]
+file = "~/.config/kitty/base16.conf"
+template = "kitty"
+rewrite = true
+hook = "kitty @ set-colors -a '~/.config/kitty/base16.conf'"
+
+[[item]]
+file = "~/.config/dunst/dunstrc"
+template = "dunst"
+hook = "killall dunst"
+
+# [[item]]
+# file = "~/.config/lvim/config.lua"
+# template = "lua"
+# start = "-- Start flavours"
+# end = "-- End flavours"
+
+# [[item]]
+# file = "~/.themes/FlatColor/colors2"
+# template = "gtk-flatcolor"
+# subtemplate = "gtk-2"
+# rewrite = true
+
+# [[item]]
+# file = "~/.themes/FlatColor/colors3"
+# template = "gtk-flatcolor"
+# subtemplate = "gtk-3"
+# rewrite = true
+# hook = "gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme FlatColor"
+
+# [[item]]
+# file = "~/.cache/wal/colors.json"
+# template = "pywal"
+# rewrite = true
+# hook = "pywalfox update"

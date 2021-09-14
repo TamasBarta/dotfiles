@@ -2,11 +2,16 @@
 # export TERM="xterm-256color"
 export DOTFILES_HOME=$HOME/.dotfiles
 source $HOME/.config/zsh/xdg.sh
-source $HOME/.config/zsh/env.zsh
+
+case `uname` in
+  Darwin) ;;
+  Linux) source $HOME/.config/zsh/env.zsh ;;
+esac
 
 if [ -f "$HOME/.config/zsh/work.zsh" ]; then source $HOME/.config/zsh/work.zsh; fi
 
 source $HOME/.config/zsh/zinit.zsh
+# source $HOME/.config/zsh/antigen.zsh
 
 source $HOME/.config/zsh/p10k.zsh
 source $HOME/.config/zsh/path.zsh

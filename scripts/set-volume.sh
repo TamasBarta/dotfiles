@@ -12,11 +12,11 @@ volume="$(pamixer --get-volume)"
 mute="$(pamixer --get-mute)"
 if [ $mute = "true" ]; then
     # Show the sound muted notification
-#    dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "Volume muted" 
+   dunstify -a "changeVolume" -u low -i audio-volume-muted -r "$msgId" "Volume muted" 
 else
     # Show the volume notification
-#    dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \
-#    "Volume: ${volume}%" "$(getProgressString 10 "<b> </b>" " " $volume)"
+   dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \
+   "Volume: ${volume}%" "$(getProgressString 10 "<b> </b>" " " $volume)"
 fi
 
 # Play the volume changed sound

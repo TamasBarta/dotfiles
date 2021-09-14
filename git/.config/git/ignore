@@ -1,5 +1,6 @@
 .idea/markdown-navigator-enh.xml
 .idea/markdown-navigator.xml
+.idea/gradle.properties
 .tool-versions
 .git
 .local
@@ -10,3 +11,6 @@
 .vscode
 .vscode-oss
 .gradle
+.directory
+local.properties
+

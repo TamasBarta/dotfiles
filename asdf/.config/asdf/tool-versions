@@ -1,6 +1,6 @@
-nodejs 16.0.0
-java adoptopenjdk-8.0.282+8
-gradle 7.0-milestone-3
-flutter 2.0.3-stable
-python 3.9.3
+nodejs 16.8.0
+java system
+gradle 7.2
+flutter 2.2.3-stable
+python system
 ruby 3.0.1

@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term kitty -1
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -31,12 +31,12 @@ output * bg ~/Pictures/Wallpapers/bg.jpg fill
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 exec swayidle -w \
-         timeout 300 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 20x20 --effect-vignette 0.5:0.5 --ring-color 6dc1b8 --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 5 --fade-in 0.2 --font "Iosevka Aile"' \
+         timeout 300 'swaylock --image ~/Pictures/Wallpapers/bg.jpg --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 20x20 --effect-vignette 0.5:0.5 --ring-color 6dc1b8 --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 5 --fade-in 0.2 --font "SF Pro"' \
          timeout 305 'swaymsg "output * dpms off"' \
          resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 20x20 --effect-vignette 0.5:0.5 --ring-color 6dc1b8 --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 0 --font "Iosevka Aile"' \
-         lock 'swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 20x20 --effect-vignette 0.5:0.5 --ring-color 6dc1b8 --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 0 --font "Iosevka Aile"' \
+         before-sleep 'swaylock --image ~/Pictures/Wallpapers/bg.jpg --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 20x20 --effect-vignette 0.5:0.5 --ring-color 6dc1b8 --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 0 --font "SF Pro"' \
+         lock 'swaylock --image ~/Pictures/Wallpapers/bg.jpg --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 20x20 --effect-vignette 0.5:0.5 --ring-color 6dc1b8 --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 0 --font "SF Pro"' \
          unlock 'pkill -9 swaylock'
 
 include /etc/sway/config.d/*
-include config.d/*
+include config.d/*.conf

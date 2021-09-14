@@ -1,4 +1,4 @@
 #!/usr/bin/zsh
 
 source ~/.zshrc
-kitty nvim $1
+kitty lvim $1

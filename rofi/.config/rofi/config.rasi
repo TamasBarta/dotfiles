@@ -11,11 +11,8 @@ configuration {
 	sidebar-mode: false;
 	combi-modi: "window,drun,run,ssh";
 	matching: "fuzzy";
-	hide-scrollbar: true;
-	fullscreen: false;
 	dpi: 0;
 	theme: "/home/tamas/.config/rofi/launchers/colorful/style_2.rasi";
-	display-window: "Windows";
 	display-run: ">>>";
 	display-ssh: "SSH";
 	display-drun: "";

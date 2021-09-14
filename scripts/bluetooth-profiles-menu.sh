@@ -2,7 +2,9 @@
 
 IFS=$'\n'
 
-devices=($(pactl list cards | awk '/Name: / { print $2 } /device\.description/ { $1=$2=""; gsub(/(^(\s|")+|(\s|")+$)/, "", $0); print $0 }'))
+device_name_filter=$1
+
+devices=($(pactl list cards | awk '/Name: / { ismatching = ($2~/'$device_name_filter'/); if (ismatching) {print $2} } /device\.description/ { $1=$2=""; gsub(/(^(\s|")+|(\s|")+$)/, "", $0); if (ismatching) {print $0} }'))
 
 device_names=($(IFS=$'\n'; for ((i=0; $i<${#devices[@]}; i=$i+2)); do echo "${devices[$i]}"; done))
 device_descriptions=($(IFS=$'\n'; for ((i=1; $i<${#devices[@]}; i=$i+2)); do echo "${devices[$i]}"; done))
@@ -12,6 +14,9 @@ if [ "${#device_names[@]}" -eq 0 ]; then
     exit
 elif [ "${#device_names[@]}" -gt 1 ]; then
     device_index=$(echo "${device_descriptions[*]}" | rofi -i -dmenu -format 'i')
+    if [ "$device_index" == "" ]; then
+      exit
+    fi
     device="${device_names[$device_index]}"
 else
     device=$devices
@@ -23,6 +28,9 @@ available_profile_names=($(IFS=$'\n'; for ((i=0; $i<${#available_profiles[@]}; i
 available_profile_descriptions=($(IFS=$'\n'; for ((i=1; $i<${#available_profiles[@]}; i=$i+2)); do echo "${available_profiles[$i]}"; done))
 
 selected_profile_index=$(echo "${available_profile_descriptions[*]}" | rofi -i -dmenu -format 'i')
+if [ "$selected_profile_index" == "" ]; then
+  exit
+fi
 selected_profile="${available_profile_names[$selected_profile_index]}"
 
 pactl set-card-profile $device $selected_profile
