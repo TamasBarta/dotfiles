@@ -1,2 +1,3 @@
-Xft.dpi: 96
-Xcursor.size: 24
+*.dpi:   192
+Xft.dpi: 192
+Xcursor.size: 48
