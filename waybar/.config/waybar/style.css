@@ -17,7 +17,8 @@ window#waybar {
 }
 
 window#waybar > * {
-    margin: 14px;
+    margin: 20px;
+    margin-bottom: 0;
 }
 
 #workspaces button {
@@ -71,17 +72,14 @@ window#waybar > * {
 {
     border-radius: 20px;
     padding: 0 10px;
-    margin: 0px 4px;
+    margin: 0px 6px;
     color: @base00;
     background-color: @base04;
 }
 #tray {
     background-color: transparent;
+    margin: 0px;
 }
-#custom-pomo {
-    margin: 0px 4px 0px -5px;
-}
-
 #tray > * > * {
     padding: 6px 8px;
     background-color: @base03;
