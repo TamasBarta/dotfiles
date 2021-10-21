@@ -55,7 +55,7 @@ lvim.builtin.which_key.mappings["r"] = {
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dap.active = true
-lvim.builtin.dashboard.active = true
+lvim.builtin.dashboard.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
