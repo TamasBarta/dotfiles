@@ -21,7 +21,6 @@ set $term kitty -1
 set $menu ~/.config/rofi/launchers/colorful/launcher.sh
 
 focus_follows_mouse no
-output * bg ~/Pictures/Wallpapers/bg.jpg fill
 
 #
 ### Idle configuration
