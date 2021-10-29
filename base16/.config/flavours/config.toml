@@ -8,9 +8,7 @@ file = "~/.config/sway/config.d/00-colors.conf"
 rewrite = true
 template = "sway"
 subtemplate = "colors"
-hook = "swaymsg reload"
-# Swaymsg reload temporarily freezes input, so it's marked as not-light
-light = false
+hook = "~/.dotfiles/scripts/reload-sway-colors.sh"
 
 # This one uses waybar 'default' subtemplate, so it can be ommited
 [[item]]
@@ -31,24 +29,37 @@ file = "~/.config/dunst/dunstrc"
 template = "dunst"
 hook = "killall dunst"
 
-# [[item]]
-# file = "~/.config/lvim/config.lua"
-# template = "lua"
-# start = "-- Start flavours"
-# end = "-- End flavours"
+[[item]]
+file = "~/.config/lvim/config.lua"
+template = "lua"
+start = "-- Start flavours"
+end = "-- End flavours"
 
-# [[item]]
-# file = "~/.themes/FlatColor/colors2"
-# template = "gtk-flatcolor"
-# subtemplate = "gtk-2"
-# rewrite = true
+[[item]]
+file = "~/.config/rofi/launchers/colorful/style_2.rasi"
+template = "rofi"
+subtemplate = "colors"
+start = "/* Start flavours */"
+end = "/* End flavours */"
 
-# [[item]]
-# file = "~/.themes/FlatColor/colors3"
-# template = "gtk-flatcolor"
-# subtemplate = "gtk-3"
-# rewrite = true
-# hook = "gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme FlatColor"
+[[item]]
+file = "~/.config/zathura/zathurarc"
+template = "zathura"
+start = "# Start flavours"
+end = "# End flavours"
+
+[[item]]
+file = "~/.themes/FlatColor/colors2"
+template = "gtk-flatcolor"
+subtemplate = "gtk-2"
+rewrite = true
+
+[[item]]
+file = "~/.themes/FlatColor/colors3"
+template = "gtk-flatcolor"
+subtemplate = "gtk-3"
+rewrite = true
+hook = "gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme FlatColor"
 
 # [[item]]
 # file = "~/.cache/wal/colors.json"

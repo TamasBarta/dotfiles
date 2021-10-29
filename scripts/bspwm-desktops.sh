@@ -32,7 +32,8 @@ if [[ " ${displays[@]} " =~ " $external_monitor " ]]; then
     xrandr --output eDP-1 --off
 else
     echo "Internal display config"
-    xrandr --output eDP-1 --primary --mode 3840x2160
+    # xrandr --output eDP-1 --primary --mode 3840x2160
+    xrandr --output eDP-1 --primary --mode 1920x1080 --panning 1920x1080
     if [[ ! " ${active_displays[@]} " =~ " $external_monitor " ]]; then exit; fi
     bspc monitor $external_monitor -a $external_monitor
     bspc monitor eDP-1 -a eDP-1
