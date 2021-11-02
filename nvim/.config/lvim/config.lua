@@ -120,6 +120,7 @@ lvim.lang.rust.formatters = { { exe = "rustfmt" } }
 -- Additional Plugins
 lvim.lsp.override = { "rust" }
 lvim.plugins = {
+	{ "chazmcgarvey/vim-mermaid" },
 	{ "rhysd/vim-grammarous" },
 	{ "marko-cerovac/material.nvim" },
 	{
