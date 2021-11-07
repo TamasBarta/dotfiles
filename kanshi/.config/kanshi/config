@@ -1,6 +1,7 @@
-profile {
-    output eDP-1 enable scale 2 position 5360,430
+profile down {
+    output eDP-1 disable
     output "Samsung Electric Company C34J79x H4ZN101074" enable mode 3440x1440@99.982Hz
+    exec cat /proc/acpi/button/lid/LID0/state | awk '{print $2}' | grep -q 'closed' && swaymsg output eDP-1 disable || swaymsg output eDP-1 enable scale 2 position 750 1440
 }
 
 profile {
