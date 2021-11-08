@@ -2,15 +2,16 @@
 
 IFS=$'\n'
 options=(
-    " Lock"
-    "鈴 Sleep/Suspend"
-    "累 Reboot"
-    "襤 Shutdown/Power off"
-    "﫼 Logout"
+    "  Lock"
+    "鈴  Sleep/Suspend"
+    "累  Reboot"
+    "  Reboot to Windows"
+    "襤  Shutdown/Power off"
+    "﫼  Logout"
 )
 case "$(echo "${options[*]}" | rofi -i -dmenu -format 'i' -p Leave)" in
     0)
-        multilockscreen -l
+        swaylock.sh
         ;;
     1)
         systemctl suspend
@@ -19,9 +20,12 @@ case "$(echo "${options[*]}" | rofi -i -dmenu -format 'i' -p Leave)" in
         reboot
         ;;
     3)
-        poweroff
+        reboot-to-windows.sh
         ;;
     4)
+        poweroff
+        ;;
+    5)
         swaymsg exit
         bspc quit
         ;;

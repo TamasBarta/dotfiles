@@ -67,7 +67,7 @@ listview {
     background-color:               @al;
     padding:                        0;
     columns:                        1;
-    lines:                          5;
+    lines:                          7;
     spacing:                        0%;
     cycle:                          false;
     dynamic:                        true;
