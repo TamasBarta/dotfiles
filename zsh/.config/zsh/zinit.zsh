@@ -5,7 +5,7 @@ ZINIT[HOME_DIR]=$HOME/.local/share/zinit
 
 if [ ! -e "${ZINIT[HOME_DIR]}" ]; then
     mkdir $ZINIT[HOME_DIR]
-    git clone https://github.com/zdharma/zinit.git $ZINIT[BIN_DIR]
+    git clone https://github.com/zdharma-continuum/zinit.git $ZINIT[BIN_DIR]
 fi
 
 source $ZINIT[BIN_DIR]/zinit.zsh
@@ -56,5 +56,5 @@ zinit ice wait lucid atload"!_zsh_autosuggest_start"
 zinit load zsh-users/zsh-autosuggestions
 
 zinit ice wait'!' lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
