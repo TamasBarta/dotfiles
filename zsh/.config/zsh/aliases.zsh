@@ -9,3 +9,5 @@ start adbd"'
 alias restart-plasma="killall plasmashell && kstart plasmashell"
 alias vim=lvim
 alias lg=lazygit
+alias which='command -v'
+

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-bg=~/Pictures/Wallpapers/bg.jpg
+bg=~/Pictures/Wallpapers/thomas-verbruggen-OIVuAKXW9VA-unsplash.jpg
 font="SF Pro"
 blur_radius=20
 grace=$1
 
-swaylock --image ~/Pictures/Wallpapers/bg.jpg \
+swaylock --image "$bg" \
   --clock \
   --indicator \
   --indicator-radius 100 \

@@ -39,9 +39,6 @@ zinit wait lucid for \
     light-mode @asdf-vm/asdf
 zinit cdclear -q
 
-zinit ice wait lucid blockf as"program" pick"wd.sh" mv"_wd.sh -> _wd" atload="wd() { source wd.sh }"
-zinit light mfaerevaag/wd
-
 # Load completions
 zinit wait lucid as"completion" for \
     https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \

@@ -18,6 +18,7 @@ export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
 export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android/emulator
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export PUB_CACHE="$XDG_CACHE_HOME"/pub
+export ANALYZER_STATE_LOCATION_OVERRIDE="$XDG_DATA_HOME/dartServer"
 
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
@@ -35,3 +36,4 @@ export LESSHISTFILE=-
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
+
