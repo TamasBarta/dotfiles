@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": [],
-    "modules-right": ["tray", "custom/dunst", "idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "clock"],
+    "modules-right": ["tray", "custom/dunst", "idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "clock", "custom/exit"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
@@ -161,5 +161,9 @@
       "exec": "$HOME/Pictures/Wallpapers/sunpaper/sunpaper.sh --waybar",
       "interval": 1,
       "return-type": "json"
-    }
+    },
+    "custom/exit": {
+        "on-click": "shutdown-menu.sh",
+        "format": "襤 "
+      }
 }
