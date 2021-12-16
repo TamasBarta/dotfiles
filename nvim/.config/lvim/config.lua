@@ -23,19 +23,24 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- lvim.builtin.telescope.on_config_done = function()
--- 	local actions = require("telescope.actions")
--- 	-- for input mode
--- 	lvim.builtin.telescope.defaults.mappings.i["<C-j>"] = actions.move_selection_next
--- 	lvim.builtin.telescope.defaults.mappings.i["<C-k>"] = actions.move_selection_previous
--- 	lvim.builtin.telescope.defaults.mappings.i["<C-n>"] = actions.cycle_history_next
--- 	lvim.builtin.telescope.defaults.mappings.i["<C-p>"] = actions.cycle_history_prev
--- 	-- for normal mode
--- 	lvim.builtin.telescope.defaults.mappings.n["<C-j>"] = actions.move_selection_next
--- 	lvim.builtin.telescope.defaults.mappings.n["<C-k>"] = actions.move_selection_previous
--- end
+local _, actions = pcall(require, "telescope.actions")
+lvim.builtin.telescope.defaults.mappings = {
+	-- for input mode
+	i = {
+		["<C-j>"] = actions.move_selection_next,
+		["<C-k>"] = actions.move_selection_previous,
+		["<C-n>"] = actions.cycle_history_next,
+		["<C-p>"] = actions.cycle_history_prev,
+	},
+	-- for normal mode
+	n = {
+		["<C-j>"] = actions.move_selection_next,
+		["<C-k>"] = actions.move_selection_previous,
+	},
+}
 
 -- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["Z"] = { "<cmd>ZenMode<CR>", "Zen mode" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
 	name = "+Trouble",
@@ -51,6 +56,12 @@ lvim.builtin.which_key.mappings["r"] = {
 	r = { "<cmd>RustRunnables<cr>", "Runnables" },
 	d = { "<cmd>RustDebuggables<cr>", "Debuggables" },
 }
+lvim.builtin.which_key.mappings["F"] = {
+	name = "+Flutter Tools",
+	r = { "<cmd>FlutterRun<cr>", "Run" },
+	d = { "<cmd>FlutterVisualDebug<cr>", "Visual Debug" },
+	D = { "<cmd>FlutterDevices<cr>", "Devices" },
+}
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -65,6 +76,7 @@ lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+lvim.builtin.project.manual_mode = true
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
@@ -132,8 +144,56 @@ lvim.lang.lua.formatters = {
 lvim.lang.rust.formatters = { { exe = "rustfmt" } }
 
 -- Additional Plugins
-lvim.lsp.override = { "rust" }
+lvim.lsp.override = { "rust", "dart" }
 lvim.plugins = {
+  {
+    "lambdalisue/suda.vim"
+  },
+  {
+    "jbyuki/instant.nvim",
+
+    config = function ()
+      vim.g.instant_username = "tamas";
+    end
+  },
+  {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        window = {
+          backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+          -- height and width can be:
+          -- * an absolute number of cells when > 1
+          -- * a percentage of the width / height of the editor when <= 1
+          -- * a function that returns the width or the height
+          width = 120, -- width of the Zen window
+          height = 1, -- height of the Zen window
+          -- by default, no options are changed for the Zen window
+          -- uncomment any of the options below, or add other vim.wo options you want to apply
+          options = {
+            signcolumn = "no", -- disable signcolumn
+            number = false, -- disable number column
+            relativenumber = false, -- disable relative numbers
+            cursorline = false, -- disable cursorline
+            cursorcolumn = false, -- disable cursor column
+            foldcolumn = "0", -- disable fold column
+            list = false, -- disable whitespace characters
+          },
+        },
+        plugins = {
+          options = {
+            enabled = true,
+            ruler = false, -- disables the ruler text in the cmd line area
+            showcmd = false, -- disables the command in the last line of the screen
+          },
+          kitty = {
+            enabled = false,
+            font = "+4", -- font size increment
+          },
+        },
+      }
+    end
+  },
 	{
 		"blackCauldron7/surround.nvim",
 		config = function()
@@ -149,25 +209,83 @@ lvim.plugins = {
 	},
 	{ "tridactyl/vim-tridactyl" },
 	{
-		"simrat39/rust-tools.nvim",
+		"akinsho/flutter-tools.nvim",
+    requires = "nvim-lua/plenary.nvim",
 		config = function()
-			require("rust-tools").setup({
-				tools = {
-					autoSetHints = true,
-					hover_with_actions = true,
-					runnables = {
-						use_telescope = true,
+			-- alternatively you can override the default configs
+			require("flutter-tools").setup({
+				ui = {
+					-- the border type to use for all floating windows, the same options/formats
+					-- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
+					border = "rounded",
+				},
+				decorations = {
+					statusline = {
+						-- set to true to be able use the 'flutter_tools_decorations.app_version' in your statusline
+						-- this will show the current version of the flutter app from the pubspec.yaml file
+						app_version = true,
+						-- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
+						-- this will show the currently running device if an application was started with a specific
+						-- device
+						device = true,
 					},
 				},
-				server = {
-					cmd = { vim.fn.stdpath("data") .. "/lspinstall/rust/rust-analyzer" },
-					on_attach = require("lsp").common_on_attach,
-					on_init = require("lsp").common_on_init,
+				debugger = { -- integrate with nvim dap + install dart code debugger
+					enabled = true,
 				},
+				-- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
+				flutter_lookup_cmd = "asdf where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
+				widget_guides = {
+					enabled = true,
+				},
+				closing_tags = {
+					-- highlight = "ErrorMsg", -- highlight for the closing tag
+					prefix = "</", -- character to use for close tag e.g. > Widget
+					enabled = true, -- set to false to disable
+				},
+				dev_log = {
+					open_cmd = "sp", -- command to use to open the log buffer
+				},
+				dev_tools = {
+					autostart = true, -- autostart devtools server if not detected
+					auto_open_browser = true, -- Automatically opens devtools in the browser
+				},
+				outline = {
+					open_cmd = "30vnew", -- command to use to open the outline buffer
+					auto_open = false, -- if true this will open the outline automatically when it is first populated
+				},
+				lsp = {
+          on_attach = require("lvim.lsp").common_on_attach,
+          on_init = require("lvim.lsp").common_on_init,
+					settings = {
+						showTodos = true,
+						completeFunctionCalls = true,
+					},
+				},
+        root_pattern = {".git"},
 			})
 		end,
-		ft = { "rust", "rs" },
 	},
+  {
+    "simrat39/rust-tools.nvim",
+    config = function()
+      require("rust-tools").setup({
+        tools = {
+          autoSetHints = true,
+          hover_with_actions = true,
+          runnables = {
+            use_telescope = true,
+          },
+        },
+        server = {
+          cmd = { vim.fn.stdpath "data" .. "/lsp_servers/rust/rust-analyzer" },
+          on_attach = require("lvim.lsp").common_on_attach,
+          on_init = require("lvim.lsp").common_on_init,
+        },
+      })
+    end,
+    ft = { "rust", "rs" },
+  },
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "BufRead",
@@ -230,4 +348,5 @@ lvim.plugins = {
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 lvim.autocommands.custom_groups = {
 	{ "BufWinEnter", "*.lua", "setlocal ts=2 sw=2" },
+	{ "FileType", "markdown", "setlocal nospell" },
 }

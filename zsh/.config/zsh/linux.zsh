@@ -19,5 +19,5 @@ _systemctl_unit_state() {
 
 
 if [ -z $DISPLAY ] && [[ "$(tty)" == "/dev/tty1" ]]; then
-  exec sway # --my-next-gpu-wont-be-nvidia
+  exec sway --my-next-gpu-wont-be-nvidia
 fi

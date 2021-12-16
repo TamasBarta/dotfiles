@@ -9,7 +9,7 @@
 
 [core]
     autocrlf = input
-    editor = nvim
+    editor = lvim
 	excludesfile = ~/.config/git/ignore
 #    compression = 0
 [diff]
