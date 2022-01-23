@@ -59,6 +59,8 @@ lvim.builtin.which_key.mappings["r"] = {
 lvim.builtin.which_key.mappings["F"] = {
 	name = "+Flutter Tools",
 	r = { "<cmd>FlutterRun<cr>", "Run" },
+	R = { "<cmd>FlutterRestart<cr>", "Restart" },
+	q = { "<cmd>FlutterQuit<cr>", "Stop" },
 	d = { "<cmd>FlutterVisualDebug<cr>", "Visual Debug" },
 	D = { "<cmd>FlutterDevices<cr>", "Devices" },
 }
@@ -70,6 +72,7 @@ lvim.builtin.dashboard.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.git_hl = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -77,6 +80,7 @@ lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.builtin.project.manual_mode = true
+lvim.builtin.project.detection_methods = { "lsp" }
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
@@ -136,15 +140,10 @@ lvim.builtin.project.manual_mode = true
 --     filetypes = { "javascript", "javascriptreact" },
 --   },
 -- }
-lvim.lang.lua.formatters = {
-	{
-		exe = "stylua",
-	},
-}
-lvim.lang.rust.formatters = { { exe = "rustfmt" } }
 
 -- Additional Plugins
-lvim.lsp.override = { "rust", "dart" }
+table.insert(lvim.lsp.override, "rust")
+table.insert(lvim.lsp.override, "dart")
 lvim.plugins = {
   {
     "lambdalisue/suda.vim"
@@ -244,10 +243,10 @@ lvim.plugins = {
 					enabled = true, -- set to false to disable
 				},
 				dev_log = {
-					open_cmd = "sp", -- command to use to open the log buffer
+					open_cmd = "tabedit", -- command to use to open the log buffer
 				},
 				dev_tools = {
-					autostart = true, -- autostart devtools server if not detected
+					autostart = false, -- autostart devtools server if not detected
 					auto_open_browser = true, -- Automatically opens devtools in the browser
 				},
 				outline = {
@@ -262,6 +261,7 @@ lvim.plugins = {
 						completeFunctionCalls = true,
 					},
 				},
+        -- I don't know if this works or not
         root_pattern = {".git"},
 			})
 		end,
@@ -289,6 +289,13 @@ lvim.plugins = {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "BufRead",
+    config = function ()
+      require'nvim-treesitter.configs'.setup {
+        context_commentstring = {
+          enable = true
+        }
+      }
+    end
 	},
 	{
 		"iamcco/markdown-preview.nvim",
