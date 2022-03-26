@@ -5,8 +5,8 @@
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": [],
-    "modules-right": ["tray", "custom/dunst", "idle_inhibitor", "pulseaudio", "network", "backlight", "battery", "battery#bat2", "clock", "custom/exit"],
+    "modules-center": ["custom/recordindicator"],
+    "modules-right": ["tray", "custom/dunst", "pulseaudio", "network", "battery", "battery#bat2", "clock", "custom/exit"],
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
@@ -148,7 +148,7 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "playerctl --player=spotify metadata --format \"{{xesam:artist}} - {{xesam:title}}\" --follow 2>/dev/null"
+        "exec": "playerctl --player=spotifyd metadata --format \"{{xesam:artist}} - {{xesam:title}}\" --follow 2>/dev/null"
         // "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
@@ -165,5 +165,10 @@
     "custom/exit": {
         "on-click": "shutdown-menu.sh",
         "format": "襤 "
+      },
+      "custom/recordindicator": {
+        "exec-if": "test ! -z \"$(pactl list source-outputs)\"",
+      "interval": 1,
+        "exec": "echo 壘"
       }
 }

@@ -14,13 +14,13 @@ focus_follows_mouse no
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-exec swayidle -w \
-         timeout 300 'swaylock.sh 5' \
-         timeout 305 'swaymsg "output * dpms off"' \
-         resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock.sh 0' \
-         lock 'swaylock.sh 0' \
-         unlock 'pkill -9 swaylock'
+# exec swayidle -w \
+#          timeout 300 'swaylock.sh 5' \
+#          timeout 305 'swaymsg "output * dpms off"' \
+#          resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock.sh 0' \
+#          lock 'swaylock.sh 0' \
+#          unlock 'pkill -9 swaylock'
 
 include /etc/sway/config.d/*
 include config.d/*.conf

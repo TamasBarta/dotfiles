@@ -50,7 +50,7 @@ zinit ice wait lucid blockf
 zinit light zsh-users/zsh-completions
 
 zinit ice wait lucid atload"!_zsh_autosuggest_start"
-zinit load zsh-users/zsh-autosuggestions
+# zinit load zsh-users/zsh-autosuggestions
 
 zinit ice wait'!' lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting

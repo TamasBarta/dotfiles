@@ -1,22 +1,28 @@
 configuration {
-	modi: "drun,run,window,ssh";
-	font: "Iosevka Nerd Font 10";
+  modi: "combi";
+	/* modi: "drun,run,window,ssh"; */
+	font: "SF Pro 12";
+	/* font: "Iosevka Nerd Font 10"; */
 	show-icons: true;
-	icon-theme: "Papirus";
+	/* icon-theme: "Papirus"; */
+	icon-theme: "We10X-green-dark";
 	drun-display-format: "{name}";
 	disable-history: false;
 	sort: true;
 	sorting-method: "fzf";
 	cycle: true;
 	sidebar-mode: false;
-	combi-modi: "window,drun,run,ssh";
+	combi-modi: "window,drun,run,ssh,meet:rofi-modi-google-meet.sh";
 	matching: "fuzzy";
 	dpi: 0;
-	theme: "/home/tamas/.config/rofi/launchers/colorful/style_2.rasi";
 	display-run: ">>>";
 	display-ssh: "SSH";
-	display-drun: "";
-	display-combi: "All";
+	display-drun: "APP";
+	display-combi: "ALL";
+	display-window: "WIN";
+	display-meet: "GML";
 	kb-mode-next: "Control+Tab,Super+space";
 	kb-mode-previous: "Control+ISO_Left_Tab";
 }
+  
+@import "theme.rasi"

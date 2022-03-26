@@ -4,6 +4,8 @@ export DOTFILES_HOME=$HOME/.dotfiles
 # source $XDG_CONFIG_HOME/zsh/xdg.sh
 # source $XDG_CONFIG_HOME/zsh/path.zsh
 
+systemctl --user mask --runtime plasma-kglobalaccel.service
+
 xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
 xrandr --dpi $(xrdb -query | awk '/Xft\.dpi/ { print $2 }')
 export DPI=$(xdpyinfo | awk -F' *|x' '/resolution/ { print $3 }')

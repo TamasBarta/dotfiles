@@ -5,7 +5,8 @@ alias open=xdg-open
 # Loading desktop environment specific stuff
 
 case $DESKTOP_SESSION in
-    /usr/share/xsessions/plasma) source $DOTFILES_HOME/.zsh/kde.zsh ;;
+    plasma) source $DOTFILES_HOME/zsh/.config/zsh/kde.zsh ;;
+    /usr/share/xsessions/plasma) source $DOTFILES_HOME/zsh/.config/zsh/kde.zsh ;;
     *)
 esac
 
@@ -19,5 +20,6 @@ _systemctl_unit_state() {
 
 
 if [ -z $DISPLAY ] && [[ "$(tty)" == "/dev/tty1" ]]; then
-  exec sway --my-next-gpu-wont-be-nvidia
+  # exec sway --my-next-gpu-wont-be-nvidia
+  exec sway --unsupported-gpu
 fi

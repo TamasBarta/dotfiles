@@ -61,6 +61,7 @@ window#waybar > * {
 #network,
 #pulseaudio,
 #custom-media,
+#custom-recordindicator,
 #custom-dunst,
 #custom-sunpaper,
 #custom-pomo,
@@ -85,6 +86,10 @@ window#waybar > * {
     padding: 6px 8px;
     background-color: @base03;
     border-radius: 30px;
+}
+
+#custom-recordindicator {
+    background-color: @base08;
 }
 
 #workspaces {
