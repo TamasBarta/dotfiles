@@ -1,9 +1,9 @@
-profile down {
-    output eDP-1
+profile dellsamsung {
+    output "Sharp Corporation 0x148D 0x00000000"
     output "Samsung Electric Company C34J79x H4ZN101074" enable mode 3440x1440@99.982Hz position 0,0
     exec cat /proc/acpi/button/lid/LID0/state | awk '{print $2}' | grep -q 'closed' && swaymsg output eDP-1 disable || swaymsg output eDP-1 enable scale 2.5 position 0 90; swaymsg output DP-1 position 1536 0
 }
 
-profile {
-    output eDP-1 enable scale 2 position 0,0
+profile dell {
+    output "Sharp Corporation 0x148D 0x00000000" enable scale 2 position 0,0
 }
