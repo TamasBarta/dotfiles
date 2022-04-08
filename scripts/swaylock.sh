@@ -1,6 +1,8 @@
 #!/bin/bash
 
-bg=~/Pictures/Wallpapers/thomas-verbruggen-OIVuAKXW9VA-unsplash.jpg
+# bg=~/Pictures/Wallpapers/thomas-verbruggen-OIVuAKXW9VA-unsplash.jpg
+bg=$(~/.config/variety/scripts/get_wallpaper)
+bg=${bg:8:-1}
 font="SF Pro"
 blur_radius=20
 grace=$1
