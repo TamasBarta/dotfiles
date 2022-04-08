@@ -48,21 +48,9 @@ template = "zathura"
 start = "# Start flavours"
 end = "# End flavours"
 
-# [[item]]
-# file = "~/.themes/FlatColor/colors2"
-# template = "gtk-flatcolor"
-# subtemplate = "gtk-2"
-# rewrite = true
+[[item]]
+file = "~/.local/share/flavours/materia-theme/gtk-colors"
+template = "materiatheme"
+rewrite = true
+hook = "~/.local/share/flavours/materia-theme/change_color.sh -o Materia ~/.local/share/flavours/materia-theme/gtk-colors -i False -t ~/.themes/; gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme Materia"
 
-# [[item]]
-# file = "~/.themes/FlatColor/colors3"
-# template = "gtk-flatcolor"
-# subtemplate = "gtk-3"
-# rewrite = true
-# hook = "gsettings set org.gnome.desktop.interface gtk-theme dummy && gsettings set org.gnome.desktop.interface gtk-theme FlatColor"
-
-# [[item]]
-# file = "~/.cache/wal/colors.json"
-# template = "pywal"
-# rewrite = true
-# hook = "pywalfox update"

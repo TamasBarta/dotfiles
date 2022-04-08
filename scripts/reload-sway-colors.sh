@@ -7,6 +7,6 @@ eval "$colors"
 
 swaymsg client.unfocused $base00 $base00 $base05
 swaymsg client.focused_inactive $base00 $base00 $base05
-swaymsg client.focused $base0E $base0E $base05
+swaymsg client.focused $base04 $base04 $base05
 swaymsg client.urgent $base08 $base08 $base05
 
