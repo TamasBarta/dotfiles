@@ -133,7 +133,7 @@
             "car": " ",
             "default": [" ", " ", " "]
         },
-        "on-click": "pavucontrol"
+        "on-click": "bluetooth-profiles-menu.sh"
     },
     "custom/dunst": {
         "exec": "while [ true ]; do if [[ `dunstctl is-paused` == 'false' ]]; then echo ' '; else echo ' '; fi; sleep 1; done",
