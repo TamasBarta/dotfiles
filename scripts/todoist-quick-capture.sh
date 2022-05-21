@@ -1,3 +1,3 @@
 #!/bin/bash
 
-todoist q "$(rofi -dmenu -p "Add Todoist task")"
+todoist-cli q "$(rofi -dmenu -p "Add Todoist task")"
