@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "material"
+lvim.colorscheme = "nightfox"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -161,6 +161,16 @@ lvim.builtin.project.detection_methods = { "lsp" }
 table.insert(lvim.lsp.override, "rust")
 table.insert(lvim.lsp.override, "dart")
 lvim.plugins = {
+  {
+    "EdenEast/nightfox.nvim",
+    tag = "v1.0.0",
+    config = function ()
+      require("nightfox").setup {
+
+      }
+    end
+
+  },
   {
     "lambdalisue/suda.vim"
   },
