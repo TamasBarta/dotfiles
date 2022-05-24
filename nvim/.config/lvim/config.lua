@@ -100,7 +100,7 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
-lvim.builtin.project.manual_mode = true
+-- lvim.builtin.project.manual_mode = true
 lvim.builtin.project.detection_methods = { "lsp" }
 -- generic LSP settings
 
@@ -110,7 +110,7 @@ lvim.builtin.project.detection_methods = { "lsp" }
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust" })
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "dart" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "dartls" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
@@ -175,6 +175,11 @@ lvim.plugins = {
       }
     end
 
+  },
+  {
+    'nvim-telescope/telescope-ui-select.nvim',
+    requires = { "nvim-telescope/telescope.nvim" },
+    disable = not lvim.builtin.telescope.active,
   },
   {
     "lambdalisue/suda.vim"
