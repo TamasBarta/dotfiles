@@ -2,3 +2,6 @@
 *.pyc
 .uuid
 dunst/.config/dunst/dunstrc
+
+karabiner/.config/karabiner/automatic_backups
+zsh/.config/zsh/.zsh_history
