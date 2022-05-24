@@ -169,7 +169,7 @@ lvim.plugins = {
   {
     "EdenEast/nightfox.nvim",
     tag = "v1.0.0",
-    config = function ()
+    config = function()
       require("nightfox").setup {
 
       }
@@ -187,7 +187,7 @@ lvim.plugins = {
   {
     "jbyuki/instant.nvim",
 
-    config = function ()
+    config = function()
       vim.g.instant_username = "tamas";
     end
   },
@@ -229,79 +229,79 @@ lvim.plugins = {
       }
     end
   },
-	{
-		"ur4ltz/surround.nvim",
-		config = function()
-			require("surround").setup({ mappings_style = "sandwich" })
-		end,
-	},
-	{ "chazmcgarvey/vim-mermaid" },
-	{ "rhysd/vim-grammarous" },
-	{ "marko-cerovac/material.nvim" },
-	{
-		"folke/trouble.nvim",
-		cmd = "TroubleToggle",
-	},
-	{ "tridactyl/vim-tridactyl" },
-	{
-		"akinsho/flutter-tools.nvim",
+  {
+    "ur4ltz/surround.nvim",
+    config = function()
+      require("surround").setup({ mappings_style = "sandwich" })
+    end,
+  },
+  { "chazmcgarvey/vim-mermaid" },
+  { "rhysd/vim-grammarous" },
+  { "marko-cerovac/material.nvim" },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
+  { "tridactyl/vim-tridactyl" },
+  {
+    "akinsho/flutter-tools.nvim",
     requires = "nvim-lua/plenary.nvim",
-		config = function()
-			-- alternatively you can override the default configs
-			require("flutter-tools").setup({
-				ui = {
-					-- the border type to use for all floating windows, the same options/formats
-					-- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
-					border = "rounded",
-				},
-				decorations = {
-					statusline = {
-						-- set to true to be able use the 'flutter_tools_decorations.app_version' in your statusline
-						-- this will show the current version of the flutter app from the pubspec.yaml file
-						app_version = true,
-						-- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
-						-- this will show the currently running device if an application was started with a specific
-						-- device
-						device = true,
-					},
-				},
-				debugger = { -- integrate with nvim dap + install dart code debugger
-					enabled = true,
-				},
-				-- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
-				flutter_lookup_cmd = "asdf where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
-				widget_guides = {
-					enabled = true,
-				},
-				closing_tags = {
-					-- highlight = "ErrorMsg", -- highlight for the closing tag
-					prefix = "</", -- character to use for close tag e.g. > Widget
-					enabled = true, -- set to false to disable
-				},
-				dev_log = {
-					open_cmd = "tabedit", -- command to use to open the log buffer
-				},
-				dev_tools = {
-					autostart = false, -- autostart devtools server if not detected
-					auto_open_browser = true, -- Automatically opens devtools in the browser
-				},
-				outline = {
-					open_cmd = "30vnew", -- command to use to open the outline buffer
-					auto_open = false, -- if true this will open the outline automatically when it is first populated
-				},
-				lsp = {
+    config = function()
+      -- alternatively you can override the default configs
+      require("flutter-tools").setup({
+        ui = {
+          -- the border type to use for all floating windows, the same options/formats
+          -- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
+          border = "rounded",
+        },
+        decorations = {
+          statusline = {
+            -- set to true to be able use the 'flutter_tools_decorations.app_version' in your statusline
+            -- this will show the current version of the flutter app from the pubspec.yaml file
+            app_version = true,
+            -- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
+            -- this will show the currently running device if an application was started with a specific
+            -- device
+            device = true,
+          },
+        },
+        debugger = { -- integrate with nvim dap + install dart code debugger
+          enabled = true,
+        },
+        -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
+        flutter_lookup_cmd = "asdf where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
+        widget_guides = {
+          enabled = true,
+        },
+        closing_tags = {
+          -- highlight = "ErrorMsg", -- highlight for the closing tag
+          prefix = "</", -- character to use for close tag e.g. > Widget
+          enabled = true, -- set to false to disable
+        },
+        dev_log = {
+          open_cmd = "tabedit", -- command to use to open the log buffer
+        },
+        dev_tools = {
+          autostart = false, -- autostart devtools server if not detected
+          auto_open_browser = true, -- Automatically opens devtools in the browser
+        },
+        outline = {
+          open_cmd = "30vnew", -- command to use to open the outline buffer
+          auto_open = false, -- if true this will open the outline automatically when it is first populated
+        },
+        lsp = {
           on_attach = require("lvim.lsp").common_on_attach,
           on_init = require("lvim.lsp").common_on_init,
-					settings = {
-						showTodos = true,
-						completeFunctionCalls = true,
-					},
-				},
+          settings = {
+            showTodos = true,
+            completeFunctionCalls = true,
+          },
+        },
         -- I don't know if this works or not
-        root_pattern = {".git"},
-			})
-		end,
-	},
+        root_pattern = { ".git" },
+      })
+    end,
+  },
   {
     "simrat39/rust-tools.nvim",
     config = function()
@@ -322,70 +322,58 @@ lvim.plugins = {
     end,
     ft = { "rust", "rs" },
   },
-	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		event = "BufRead",
-    config = function ()
-      require'nvim-treesitter.configs'.setup {
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    event = "BufRead",
+    config = function()
+      require 'nvim-treesitter.configs'.setup {
         context_commentstring = {
           enable = true
         }
       }
     end
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		ft = "markdown",
-		config = function()
-			vim.g.mkdp_auto_start = 1
-		end,
-	},
-	{
-		"windwp/nvim-spectre",
-		event = "BufRead",
-		config = function()
-			require("spectre").setup()
-		end,
-	},
-	{
-		"mattn/vim-gist",
-		event = "BufRead",
-		requires = "mattn/webapi-vim",
-	},
-	{
-		"oberblastmeister/neuron.nvim",
-		config = function()
-			require("neuron").setup({
-				virtual_titles = true,
-				mappings = true,
-				run = nil, -- function to run when in neuron dir
-				neuron_dir = "~/neuron", -- the directory of all of your notes, expanded by default (currently supports only one directory for notes, find a way to detect neuron.dhall to use any directory)
-				leader = "gz", -- the leader key to for all mappings, remember with 'go zettel'
-			})
-		end,
-	},
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "BufRead",
-		config = function()
-			require("lsp_signature").setup()
-		end,
-	},
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup({ "*" }, {
-				RGB = true, -- #RGB hex codes
-				RRGGBB = true, -- #RRGGBB hex codes
-				RRGGBBAA = true, -- #RRGGBBAA hex codes
-				rgb_fn = true, -- CSS rgb() and rgba() functions
-				hsl_fn = true, -- CSS hsl() and hsla() functions
-				css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-				css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-			})
-		end,
-	},
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
+  },
+  {
+    "windwp/nvim-spectre",
+    event = "BufRead",
+    config = function()
+      require("spectre").setup()
+    end,
+  },
+  {
+    "mattn/vim-gist",
+    event = "BufRead",
+    requires = "mattn/webapi-vim",
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function()
+      require("lsp_signature").setup()
+    end,
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({ "*" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
+    end,
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
