@@ -31,6 +31,7 @@ mkdir -p "$XDG_DATA_HOME"/wineprefixes
 export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 grep -q "^hsts-file = " $WGETRC && sed "s#^hsts-file = .*#hsts-file = $XDG_CACHE_HOME/wget-hsts#" -i $WGETRC || echo hsts-file \= "$XDG_CACHE_HOME"/wget-hsts >> $WGETRC
 export LESSHISTFILE=-
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass

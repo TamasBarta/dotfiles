@@ -4,7 +4,7 @@ export DOTFILES_HOME=$HOME/.dotfiles
 source $HOME/.config/zsh/xdg.sh
 
 case `uname` in
-  Darwin) ;;
+  Darwin) eval "$(/opt/homebrew/bin/brew shellenv)" ;;
   Linux) source $HOME/.config/zsh/env.zsh ;;
 esac
 
