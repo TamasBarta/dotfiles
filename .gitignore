@@ -7,3 +7,4 @@ karabiner/.config/karabiner/automatic_backups
 zsh/.config/zsh/.zsh_history
 
 scripts/gpg2
+zsh/.config/zsh/.zsh_sessions
