@@ -10,8 +10,9 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.colorscheme = "nightfox"
+vim.opt.cmdheight = 1
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -59,13 +60,14 @@ lvim.builtin.which_key.mappings["r"] = {
   r = { "<cmd>RustRunnables<cr>", "Runnables" },
   d = { "<cmd>RustDebuggables<cr>", "Debuggables" },
 }
-lvim.builtin.which_key.mappings["F"] = {
+lvim.builtin.which_key.mappings["f"] = {
   name = "+Flutter Tools",
-  r = { "<cmd>FlutterRun<cr>", "Run" },
-  R = { "<cmd>FlutterRestart<cr>", "Restart" },
+  R = { "<cmd>FlutterRun<cr>", "Run" },
+  r = { "<cmd>FlutterRestart<cr>", "Restart" },
   q = { "<cmd>FlutterQuit<cr>", "Stop" },
   d = { "<cmd>FlutterVisualDebug<cr>", "Visual Debug" },
   D = { "<cmd>FlutterDevices<cr>", "Devices" },
+  o = { "<cmd>FlutterOutlineToggle<cr>", "Toggle Outline" },
 }
 
 -- TODO: User Config for predefined plugins
@@ -78,7 +80,12 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.git_hl = false
 lvim.builtin.dap.active = true
-
+lvim.builtin.comment.context_commentstring = {
+  config = {
+    __default = '// %s',
+    dart = '// %s'
+  }
+}
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
@@ -99,6 +106,16 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+
+-- Bufferline
+local flutter_outline_offset = {
+  filetype = "flutterToolsOutline",
+  text = "Flutter Outline",
+  highlight = "Directory",
+  text_align = "center"
+};
+
+table.insert(lvim.builtin.bufferline.options.offsets, flutter_outline_offset)
 
 -- lvim.builtin.project.manual_mode = true
 lvim.builtin.project.detection_methods = { "lsp" }
@@ -175,6 +192,23 @@ lvim.plugins = {
       }
     end
 
+  },
+  {
+    'f-person/auto-dark-mode.nvim',
+    config = function()
+      local auto_dark_mode = require('auto-dark-mode')
+      auto_dark_mode.setup({
+        set_dark_mode = function()
+          vim.api.nvim_set_option('background', 'dark')
+          vim.cmd('colorscheme nightfox')
+        end,
+        set_light_mode = function()
+          vim.api.nvim_set_option('background', 'light')
+          vim.cmd('colorscheme dayfox')
+        end,
+      })
+      auto_dark_mode.init()
+    end
   },
   {
     'nvim-telescope/telescope-ui-select.nvim',
@@ -267,6 +301,7 @@ lvim.plugins = {
         },
         debugger = { -- integrate with nvim dap + install dart code debugger
           enabled = true,
+          run_via_dap = true,
         },
         -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
         flutter_lookup_cmd = "asdf where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
@@ -279,14 +314,16 @@ lvim.plugins = {
           enabled = true, -- set to false to disable
         },
         dev_log = {
+          enabled = true,
           open_cmd = "tabedit", -- command to use to open the log buffer
+          -- open_cmd = "10new", -- command to use to open the log buffer
         },
         dev_tools = {
           autostart = false, -- autostart devtools server if not detected
           auto_open_browser = true, -- Automatically opens devtools in the browser
         },
         outline = {
-          open_cmd = "30vnew", -- command to use to open the outline buffer
+          open_cmd = "50vnew", -- command to use to open the outline buffer
           auto_open = false, -- if true this will open the outline automatically when it is first populated
         },
         lsp = {
@@ -295,6 +332,8 @@ lvim.plugins = {
           settings = {
             showTodos = true,
             completeFunctionCalls = true,
+            renameFilesWithClasses = "prompt",
+            enableSnippets = true,
           },
         },
         -- I don't know if this works or not
@@ -321,17 +360,6 @@ lvim.plugins = {
       })
     end,
     ft = { "rust", "rs" },
-  },
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    event = "BufRead",
-    config = function()
-      require 'nvim-treesitter.configs'.setup {
-        context_commentstring = {
-          enable = true
-        }
-      }
-    end
   },
   {
     "iamcco/markdown-preview.nvim",
