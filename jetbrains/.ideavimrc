@@ -34,3 +34,6 @@ set easymotion
 
 nmap gcc <Action>(CommentByLineComment)
 vmap gc <Action>(CommentByLineComment)
+
+map <leader>sf <Action>(GoToFile)
+
