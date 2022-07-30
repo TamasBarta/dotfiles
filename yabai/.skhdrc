@@ -122,11 +122,22 @@ fn - p : yabai -m window --toggle sticky;\
           yabai -m window --grid 5:5:4:0:1:1
 
 # launcher shortcuts
-# :: shortcuts @
-# fn - o ; shortcuts
-# shortcuts < escape; default
-# shortcuts < f ; default : open -a Firefox
-# shortcuts < shift - f ; default : open -a Firefox --args -private-window
+:: shortcuts @
+fn - o ; shortcuts
+shortcuts < escape; default
+shortcuts < f : skhd -k "escape" ; open -na Firefox
+shortcuts < shift - f : skhd -k "escape" ; open -na Firefox --args -private-window
+shortcuts < s : skhd -k "escape" ; tmux new -d "scrcpy"
+shortcuts < v : skhd -k "escape" ; kitty --single-instance zsh -c "source ~/.config/zsh/.zshrc; lvim"
+
+# Home Assistant shortcuts
+:: hass @
+fn - s ; hass
+hass < escape; default
+hass < o : skhd -k "escape" ; hass-cli service call light.toggle --arguments entity_id=light.standing_lamp; hass-cli service call light.toggle --arguments entity_id=light.desk_lamp
+hass < b : skhd -k "escape" ; hass-cli service call light.toggle --arguments entity_id=light.bedroom_1; hass-cli service call light.toggle --arguments entity_id=light.bedroom_2
+hass < l : skhd -k "escape" ; hass-cli service call light.toggle --arguments entity_id=light.main
+hass < k : skhd -k "escape" ; hass-cli service call switch.toggle --arguments entity_id=switch.kettle
 
 # Android development shortcuts
 cmd + ctrl + alt - x: adb shell ps | grep lastpass | grep -Eo " [0-9]+ " | head -1 | xargs adb shell kill

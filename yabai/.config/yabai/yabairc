@@ -49,6 +49,7 @@ yabai -m rule --add title="Microsoft Teams Notification" window_border=off
 yabai -m rule --add title="Microsoft Teams Notification" manage=off
 yabai -m rule --add app="Cardhop" manage=off
 yabai -m rule --add app="Home Assistant" manage=off
+yabai -m rule --add app="Google Assistant" manage=off
 yabai -m rule --add app="Android Studio" manage=off
 yabai -m rule --add app="Android Studio" title="~/" manage=on
 yabai -m rule --add app="Android Studio" title="..." manage=on
