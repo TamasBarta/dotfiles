@@ -80,7 +80,6 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.nvimtree.git_hl = false
 lvim.builtin.dap.active = true
 lvim.builtin.comment.context_commentstring = {
@@ -473,7 +472,19 @@ lvim.plugins = {
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
-lvim.autocommands.custom_groups = {
-  { "BufWinEnter", "*.lua", "setlocal ts=2 sw=2" },
-  { "FileType", "markdown", "setlocal nospell" },
+lvim.autocommands = {
+  {
+    "BufWinEnter",
+    {
+      pattern = "*.lua",
+      command= "setlocal ts=2 sw=2"
+    }
+  },
+  {
+    "FileType",
+    {
+      pattern = "markdown",
+      command = "setlocal nospell"
+    }
+  },
 }
