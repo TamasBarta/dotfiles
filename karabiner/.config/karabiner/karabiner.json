@@ -231,7 +231,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "launchpad"
+                            "key_code": "illumination_decrement"
                         }
                     ]
                 },
@@ -241,7 +241,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "illumination_decrement"
+                            "consumer_key_code": "al_dictionary"
                         }
                     ]
                 },
