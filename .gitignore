@@ -8,3 +8,6 @@ zsh/.config/zsh/.zsh_history
 
 scripts/gpg2
 zsh/.config/zsh/.zsh_sessions
+kitty/.config/kitty/config-proxy.conf.bak
+kitty/.config/kitty/kitty.conf.bak
+
