@@ -68,6 +68,9 @@ lvim.builtin.which_key.mappings["f"] = {
   d = { "<cmd>FlutterVisualDebug<cr>", "Visual Debug" },
   D = { "<cmd>FlutterDevices<cr>", "Devices" },
   o = { "<cmd>FlutterOutlineToggle<cr>", "Toggle Outline" },
+  s = { "<cmd>silent exec \"!tmux new -d scrcpy\"<cr>", "scrcpy" },
+  c = { "<cmd>FlutterLogClear<cr>", "Clear log" },
+  g = { "<cmd>FlutterPubGet<cr>", "Run flutter pub get" },
 }
 
 -- TODO: User Config for predefined plugins
@@ -90,7 +93,7 @@ lvim.builtin.comment.context_commentstring = {
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
-  "dart",
+  -- "dart",
   "javascript",
   "json",
   "kotlin",
@@ -201,10 +204,14 @@ lvim.plugins = {
         set_dark_mode = function()
           vim.api.nvim_set_option('background', 'dark')
           vim.cmd('colorscheme nightfox')
+          vim.cmd('colorscheme nightfox')
+          io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf nightfox")
         end,
         set_light_mode = function()
           vim.api.nvim_set_option('background', 'light')
           vim.cmd('colorscheme dayfox')
+          vim.cmd('colorscheme dayfox')
+          io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf dayfox")
         end,
       })
       auto_dark_mode.init()
@@ -301,7 +308,7 @@ lvim.plugins = {
         },
         debugger = { -- integrate with nvim dap + install dart code debugger
           enabled = true,
-          run_via_dap = true,
+          run_via_dap = false,
         },
         -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
         flutter_lookup_cmd = "asdf where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
@@ -401,6 +408,67 @@ lvim.plugins = {
         css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
       })
     end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
+    config = function()
+      require("dapui").setup({
+        icons = { expanded = "▾", collapsed = "▸" },
+        mappings = {
+          -- Use a table to apply multiple mappings
+          expand = { "<CR>", "<2-LeftMouse>" },
+          open = "o",
+          remove = "d",
+          edit = "e",
+          repl = "r",
+          toggle = "t",
+        },
+        -- Expand lines larger than the window
+        -- Requires >= 0.7
+        expand_lines = vim.fn.has("nvim-0.7"),
+        -- Layouts define sections of the screen to place windows.
+        -- The position can be "left", "right", "top" or "bottom".
+        -- The size specifies the height/width depending on position. It can be an Int
+        -- or a Float. Integer specifies height/width directly (i.e. 20 lines/columns) while
+        -- Float value specifies percentage (i.e. 0.3 - 30% of available lines/columns)
+        -- Elements are the elements shown in the layout (in order).
+        -- Layouts are opened in order so that earlier layouts take priority in window sizing.
+        layouts = {
+          {
+            elements = {
+              -- Elements can be strings or table with id and size keys.
+              { id = "scopes", size = 0.25 },
+              "breakpoints",
+              "stacks",
+              "watches",
+            },
+            size = 40, -- 40 columns
+            position = "left",
+          },
+          {
+            elements = {
+              "repl",
+              "console",
+            },
+            size = 0.25, -- 25% of total lines
+            position = "bottom",
+          },
+        },
+        floating = {
+          max_height = nil, -- These can be integers or a float between 0 and 1.
+          max_width = nil, -- Floats will be treated as percentage of your screen.
+          border = "single", -- Border style. Can be "single", "double" or "rounded"
+          mappings = {
+            close = { "q", "<Esc>" },
+          },
+        },
+        windows = { indent = 1 },
+        render = {
+          max_type_length = nil, -- Can be integer or nil.
+        }
+      })
+    end
   },
 }
 
