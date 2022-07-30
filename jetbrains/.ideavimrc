@@ -1,6 +1,8 @@
 "" Source your .vimrc
 "source ~/.vimrc
 
+let mapleader=" "
+
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
@@ -35,5 +37,8 @@ set easymotion
 nmap gcc <Action>(CommentByLineComment)
 vmap gc <Action>(CommentByLineComment)
 
-map <leader>sf <Action>(GoToFile)
+nmap <leader>sf <Action>(GotoFile)
 
+nmap <leader>w <Action>(SaveAll)
+nmap gr <Action>(FindUsages)
+nmap <leader>la <Action>(ShowIntentionActions)
