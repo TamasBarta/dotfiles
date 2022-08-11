@@ -1,5 +1,5 @@
 export FZF_DEFAULT_COMMAND="fd --type file --color=always"
-export FZF_ALT_C_COMMAND="fd --type d -i --hidden --color=always --ignore-file ~/.config/git/ignore"
+export FZF_ALT_C_COMMAND="fd --type d -i --hidden --color=always --ignore-file ~/.config/git/ignore -E Library"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
 
