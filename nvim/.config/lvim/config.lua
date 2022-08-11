@@ -183,6 +183,10 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "dartls" })
 --   },
 -- }
 
+lvim.builtin.cmp.sources = vim.tbl_filter(function(source)
+  return source.name ~= "buffer"
+end , lvim.builtin.cmp.sources)
+
 -- Additional Plugins
 lvim.plugins = {
   {
