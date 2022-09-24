@@ -12,6 +12,34 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = false
 lvim.colorscheme = "nightfox"
+lvim.builtin.alpha.dashboard.section.header.val = {
+  "                                                  ",
+  "                          ,,,,                    ",
+  "              ******      ///////////             ",
+  "              ********,   /////////////           ",
+  "              **********  ///////////////         ",
+  "              **********  ////////////////        ",
+  "        ////////////////  ////////////////        ",
+  "         ///////////////  ////////////////        ",
+  "          //////////////  ///////////////         ",
+  "           ,////////////  //////////////          ",
+  "              //////////  ///////////             ",
+  "              ****//////  ,,,,,                   ",
+  "              **********                          ",
+  "              **********                          ",
+  "              **********                          ",
+  "              **********                          ",
+  "              **********                          ",
+  "               .********                          ",
+  "                  ******                          ",
+  "      ____                 _       _              ",
+  "     |  _ \\ ___  _ __     | | ___ | |__  _ __     ",
+  "     | |_) / _ \\| '_ \\ _  | |/ _ \\| '_ \\| '_ \\    ",
+  "     |  __/ (_) | |_) | |_| | (_) | | | | | | |   ",
+  "     |_|   \\___/| .__/ \\___/ \\___/|_| |_|_| |_|   ",
+  "                |_|                               ",
+  "                                                  "
+}
 vim.opt.cmdheight = 1
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -71,6 +99,10 @@ lvim.builtin.which_key.mappings["f"] = {
   s = { "<cmd>silent exec \"!tmux new -d scrcpy\"<cr>", "scrcpy" },
   c = { "<cmd>FlutterLogClear<cr>", "Clear log" },
   g = { "<cmd>FlutterPubGet<cr>", "Run flutter pub get" },
+}
+lvim.builtin.which_key.mappings["G"] = {
+  name = "+Generation tools",
+  d = { '<cmd>lua require"nvim-treesitter-dart-data-class".generate()<cr>', "Generate Dart data class methods" }
 }
 
 -- TODO: User Config for predefined plugins
@@ -185,10 +217,35 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "dartls" })
 
 lvim.builtin.cmp.sources = vim.tbl_filter(function(source)
   return source.name ~= "buffer"
-end , lvim.builtin.cmp.sources)
+end, lvim.builtin.cmp.sources)
 
 -- Additional Plugins
 lvim.plugins = {
+  {
+    "nvim-treesitter/playground",
+    config = function()
+      require "nvim-treesitter.configs".setup {
+        playground = {
+          enable = true,
+          disable = {},
+          updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+          persist_queries = false, -- Whether the query persists across vim sessions
+          keybindings = {
+            toggle_query_editor = 'o',
+            toggle_hl_groups = 'i',
+            toggle_injected_languages = 't',
+            toggle_anonymous_nodes = 'a',
+            toggle_language_display = 'I',
+            focus_language = 'f',
+            unfocus_language = 'F',
+            update = 'R',
+            goto_node = '<cr>',
+            show_help = '?',
+          },
+        }
+      }
+    end
+  },
   {
     "EdenEast/nightfox.nvim",
     tag = "v1.0.0",
@@ -473,6 +530,9 @@ lvim.plugins = {
       })
     end
   },
+  {
+    "tamasbarta/nvim-treesitter-dart-data-class"
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -481,7 +541,7 @@ lvim.autocommands = {
     "BufWinEnter",
     {
       pattern = "*.lua",
-      command= "setlocal ts=2 sw=2"
+      command = "setlocal ts=2 sw=2"
     }
   },
   {
