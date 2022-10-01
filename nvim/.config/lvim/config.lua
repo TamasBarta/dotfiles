@@ -41,6 +41,8 @@ lvim.builtin.alpha.dashboard.section.header.val = {
   "                                                  "
 }
 vim.opt.cmdheight = 1
+vim.opt.laststatus = 3
+vim.opt.showtabline = 0
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -141,18 +143,29 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
--- Bufferline
-local flutter_outline_offset = {
-  filetype = "flutterToolsOutline",
-  text = "Flutter Outline",
-  highlight = "Directory",
-  text_align = "center"
-};
+-- -- Bufferline
+-- local flutter_outline_offset = {
+--   filetype = "flutterToolsOutline",
+--   text = "Flutter Outline",
+--   highlight = "Directory",
+--   text_align = "center"
+-- };
 
-table.insert(lvim.builtin.bufferline.options.offsets, flutter_outline_offset)
+-- table.insert(lvim.builtin.bufferline.options.offsets, flutter_outline_offset)
+lvim.builtin.bufferline.active = false
 
 -- lvim.builtin.project.manual_mode = true
 lvim.builtin.project.detection_methods = { "lsp" }
+
+lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
+lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
+lvim.builtin.lualine.sections.lualine_a = {
+  { 'mode', separator = { left = '' }, right_padding = 2 },
+}
+lvim.builtin.lualine.sections.lualine_z = {
+  { 'location', separator = { right = '' }, left_padding = 2 },
+}
+
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
