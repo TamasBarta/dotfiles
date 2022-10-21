@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "nightfox"
+lvim.colorscheme = "catppuccin"
 lvim.builtin.alpha.dashboard.section.header.val = {
   "                                                  ",
   "                          ,,,,                    ",
@@ -72,8 +72,14 @@ lvim.builtin.telescope.defaults.mappings = {
     ["<C-k>"] = actions.move_selection_previous,
   },
 }
-
+lvim.builtin.telescope.extensions["ui-select"] = {
+  require("telescope.themes").get_cursor {}
+}
+lvim.builtin.telescope.on_config_done = function(telescope)
+  pcall(telescope.load_extension, "ui-select")
+end
 -- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["n"] = { '<cmd>lua require"notify".dismiss()<CR>', "Dismiss notifications" }
 lvim.builtin.which_key.mappings["Z"] = { "<cmd>ZenMode<CR>", "Zen mode" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
@@ -113,8 +119,10 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
+lvim.builtin.terminal.open_mapping = '<c-t>'
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.git_hl = false
+lvim.builtin.nvimtree.setup.view.width = 45
 lvim.builtin.dap.active = true
 lvim.builtin.comment.context_commentstring = {
   config = {
@@ -154,17 +162,20 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- table.insert(lvim.builtin.bufferline.options.offsets, flutter_outline_offset)
 lvim.builtin.bufferline.active = false
 
+lvim.builtin.breadcrumbs.active = true
+
 -- lvim.builtin.project.manual_mode = true
 lvim.builtin.project.detection_methods = { "lsp" }
 
 lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
 lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
-lvim.builtin.lualine.sections.lualine_a = {
-  { 'mode', separator = { left = '' }, right_padding = 2 },
-}
-lvim.builtin.lualine.sections.lualine_z = {
-  { 'location', separator = { right = '' }, left_padding = 2 },
-}
+
+local components = require("lvim.core.lualine.components")
+components.mode.separator = { left = lvim.builtin.lualine.options.section_separators.right }
+components.mode.padding.right = 1
+components.progress.separator = { right = lvim.builtin.lualine.options.section_separators.left }
+components.location.padding = { left = 0, right = 0 }
+
 
 -- generic LSP settings
 
@@ -173,7 +184,7 @@ lvim.builtin.lualine.sections.lualine_z = {
 
 -- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 -- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "dartls" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
@@ -235,6 +246,13 @@ end, lvim.builtin.cmp.sources)
 -- Additional Plugins
 lvim.plugins = {
   {
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      require("catppuccin").setup()
+    end
+  },
+  {
     "nvim-treesitter/playground",
     config = function()
       require "nvim-treesitter.configs".setup {
@@ -259,16 +277,7 @@ lvim.plugins = {
       }
     end
   },
-  {
-    "EdenEast/nightfox.nvim",
-    tag = "v1.0.0",
-    config = function()
-      require("nightfox").setup {
-
-      }
-    end
-
-  },
+  { 'edluffy/hologram.nvim' },
   {
     'f-person/auto-dark-mode.nvim',
     config = function()
@@ -276,18 +285,53 @@ lvim.plugins = {
       auto_dark_mode.setup({
         set_dark_mode = function()
           vim.api.nvim_set_option('background', 'dark')
-          vim.cmd('colorscheme nightfox')
-          vim.cmd('colorscheme nightfox')
-          io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf nightfox")
+          vim.cmd('Catppuccin mocha')
+          io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf mocha")
         end,
         set_light_mode = function()
           vim.api.nvim_set_option('background', 'light')
-          vim.cmd('colorscheme dayfox')
-          vim.cmd('colorscheme dayfox')
-          io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf dayfox")
+          vim.cmd('Catppuccin latte')
+          io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf latte")
         end,
       })
       auto_dark_mode.init()
+    end
+  },
+  {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup()
+    end,
+  },
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      local leap = require('leap')
+      leap.setup {
+        max_phase_one_targets = nil,
+        highlight_unlabeled_phase_one_targets = false,
+        max_highlighted_traversal_targets = 10,
+        case_sensitive = false,
+        -- Sets of characters that should match each other.
+        -- Obvious candidates are braces and quotes ('([{', ')]}', '`"\'').
+        equivalence_classes = { ' \t\r\n', },
+        substitute_chars = {},
+        -- Leaving the appropriate list empty effectively disables "smart" mode,
+        -- and forces auto-jump to be on or off.
+        safe_labels = {},
+        -- labels = { . . . },
+        special_keys = {
+          repeat_search = '<enter>',
+          next_phase_one_target = '<enter>',
+          next_target = { '<enter>', ';' },
+          prev_target = { '<tab>', ',' },
+          next_group = '<space>',
+          prev_group = '<tab>',
+          multi_accept = '<enter>',
+          multi_revert = '<backspace>',
+        },
+      }
+      leap.add_default_mappings()
     end
   },
   {
@@ -346,7 +390,7 @@ lvim.plugins = {
   {
     "ur4ltz/surround.nvim",
     config = function()
-      require("surround").setup({ mappings_style = "sandwich" })
+      require("surround").setup({ mappings_style = "surround" })
     end,
   },
   { "chazmcgarvey/vim-mermaid" },
@@ -433,7 +477,7 @@ lvim.plugins = {
           },
         },
         server = {
-          cmd = { vim.fn.stdpath "data" .. "/lsp_servers/rust/rust-analyzer" },
+          cmd = { "rustup", "run", "stable", "rust-analyzer" },
           on_attach = require("lvim.lsp").common_on_attach,
           on_init = require("lvim.lsp").common_on_init,
         },
