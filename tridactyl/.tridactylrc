@@ -260,9 +260,12 @@ alias tabclosealltoright tabcloseallto right
 alias tabclosealltoleft tabcloseallto left
 alias reibadailty jumble
 
+command insta js function iprl5(){var d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...) '+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/4AohLsqjuPEM?a=send-to-kindle&u='+encodeURIComponent(l.href)+'&t='+(new Date().getTime()));b.appendChild(z);}catch(e){alert('Please wait until the page has loaded.');}}iprl5();void(0)
+
 " Autocmds
 autocmd DocStart undefined mode ignore
 autocmd DocStart monkeytype.com mode ignore
+autocmd DocStart https://foddy.net/Athletics.html mode ignore
 autocmd DocLoad ^https://github.com/tridactyl/tridactyl/issues/new$ issue
 autocmd TriStart .* source_quiet
 
