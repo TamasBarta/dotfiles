@@ -1,5 +1,6 @@
 # open terminal
-cmd + ctrl + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# cmd + ctrl + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+cmd + ctrl + alt - return : /Applications/WezTerm.app/Contents/MacOS/wezterm
 
 # focus window
 fn - h : yabai -m window --focus west || yabai -m display --focus west
@@ -121,23 +122,34 @@ fn + shift - space : yabai -m window --toggle float;\
 fn - p : yabai -m window --toggle sticky;\
           yabai -m window --grid 5:5:4:0:1:1
 
+# media
+cmd - f10 : osascript -e '  set inputVolume to input volume of (get volume settings) \
+  if inputVolume = 0 then \
+    set inputVolume to 100 \
+  else \
+    set inputVolume to 0 \
+  end if \
+  set volume input volume inputVolume'
+
 # launcher shortcuts
 :: shortcuts @
 fn - o ; shortcuts
 shortcuts < escape; default
 shortcuts < f : skhd -k "escape" ; open -na Firefox
 shortcuts < shift - f : skhd -k "escape" ; open -na Firefox --args -private-window
-shortcuts < s : skhd -k "escape" ; tmux new -d "scrcpy"
+# shortcuts < s : skhd -k "escape" ; tmux new -d "zsh -c scrcpy > ~/log.log 2>&1"
 shortcuts < v : skhd -k "escape" ; kitty --single-instance zsh -c "source ~/.config/zsh/.zshrc; lvim"
+shortcuts < s : skhd -k "escape" ; zsh -c "source ~/.config/zsh/.zshrc; scrcpy"
 
 # Home Assistant shortcuts
 :: hass @
 fn - s ; hass
 hass < escape; default
-hass < o : skhd -k "escape" ; hass-cli service call light.toggle --arguments entity_id=light.standing_lamp; hass-cli service call light.toggle --arguments entity_id=light.desk_lamp
-hass < b : skhd -k "escape" ; hass-cli service call light.toggle --arguments entity_id=light.bedroom_1; hass-cli service call light.toggle --arguments entity_id=light.bedroom_2
-hass < l : skhd -k "escape" ; hass-cli service call light.toggle --arguments entity_id=light.main
-hass < k : skhd -k "escape" ; hass-cli service call switch.toggle --arguments entity_id=switch.kettle
+hass < space; default
+hass < o : skhd -k "space" ; hass-cli service call light.toggle --arguments entity_id=light.standing_lamp; hass-cli service call light.toggle --arguments entity_id=light.desk_lamp
+hass < b : skhd -k "space" ; hass-cli service call light.toggle --arguments entity_id=light.bedroom_1; hass-cli service call light.toggle --arguments entity_id=light.bedroom_2
+hass < l : skhd -k "space" ; hass-cli service call light.toggle --arguments entity_id=light.main
+hass < k : skhd -k "space" ; hass-cli service call switch.toggle --arguments entity_id=switch.kettle
 
 # Android development shortcuts
 cmd + ctrl + alt - x: adb shell ps | grep lastpass | grep -Eo " [0-9]+ " | head -1 | xargs adb shell kill
