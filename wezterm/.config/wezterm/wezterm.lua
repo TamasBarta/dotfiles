@@ -1,17 +1,17 @@
 local wezterm = require "wezterm"
 
 local function scheme_for_appearance(appearance)
-	if appearance:find "Dark" then
-		return "Catppuccin Mocha"
-	else
-		return "Catppuccin Latte"
-	end
+  if appearance:find "Dark" then
+    return "Catppuccin Mocha"
+  else
+    return "Catppuccin Latte"
+  end
 end
 
 return {
   color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   font = wezterm.font 'JetbrainsMono Nerd Font',
-  font_size = 16,
+  font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 16,
   line_height = 1.1,
   window_padding = {
     left = '1cell',
