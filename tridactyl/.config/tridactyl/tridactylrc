@@ -6,15 +6,16 @@ set update.lastnaggedversion 1.14.0
 set update.checkintervalsecs 86400
 set configversion 2.0
 set newtab about:home
-set searchengine sp
-set theme materia
+set colourscheme catppuccin
+set searchurls.sx https://searxng.bartatamas.hu/search?q=
+set searchengine sx
 
 " Binds
 bind gnO tabopen https://wiki.archlinux.org/index.php/Firefox
 bind goO open https://wiki.archlinux.org/index.php/Firefox
 bind gwO winopen https://wiki.archlinux.org/index.php/Firefox
-bind ;x hint -F e => { const pos = tri.dom.getAbsoluteCentre(e); tri.excmds.exclaim_quiet("xdotool mousemove --sync " + window.devicePixelRatio * pos.x + " " + window.devicePixelRatio * pos.y + "; xdotool click 1")}
-bind ;X hint -F e => { const pos = tri.dom.getAbsoluteCentre(e); tri.excmds.exclaim_quiet("xdotool mousemove --sync " + window.devicePixelRatio * pos.x + " " + window.devicePixelRatio * pos.y + "; xdotool keydown ctrl+shift; xdotool click 1; xdotool keyup ctrl+shift")}
+bind <C-Space>x hint -F e => { const pos = tri.dom.getAbsoluteCentre(e); tri.excmds.exclaim_quiet("xdotool mousemove --sync " + window.devicePixelRatio * pos.x + " " + window.devicePixelRatio * pos.y + "; xdotool click 1")}
+bind <C-Space>X hint -F e => { const pos = tri.dom.getAbsoluteCentre(e); tri.excmds.exclaim_quiet("xdotool mousemove --sync " + window.devicePixelRatio * pos.x + " " + window.devicePixelRatio * pos.y + "; xdotool keydown ctrl+shift; xdotool click 1; xdotool keyup ctrl+shift")}
 bind <A-p> pin
 bind <A-m> mute toggle
 bind <F1> help
@@ -96,52 +97,52 @@ bind ZZ qall
 bind f hint
 bind F hint -b
 bind gF hint -qb
-bind ;i hint -i
-bind ;b hint -b
-bind ;o hint
-bind ;I hint -I
-bind ;k hint -k
-bind ;K hint -K
-bind ;y hint -y
-bind ;Y hint -cF img i => tri.excmds.yankimage(tri.urlutils.getAbsoluteURL(i.src))
-bind ;p hint -p
-bind ;h hint -h
+bind <C-Space>i hint -i
+bind <C-Space>b hint -b
+bind <C-Space>o hint
+bind <C-Space>I hint -I
+bind <C-Space>k hint -k
+bind <C-Space>K hint -K
+bind <C-Space>y hint -y
+bind <C-Space>Y hint -cF img i => tri.excmds.yankimage(tri.urlutils.getAbsoluteURL(i.src))
+bind <C-Space>p hint -p
+bind <C-Space>h hint -h
 bind v hint -h
-bind ;P hint -P
-bind ;r hint -r
-bind ;s hint -s
-bind ;S hint -S
-bind ;a hint -a
-bind ;A hint -A
-bind ;; hint -; *
-bind ;# hint -#
-bind ;v hint -W mpvsafe
-bind ;w hint -w
-bind ;t hint -W tabopen
-bind ;O hint -W fillcmdline_notrail open
-bind ;W hint -W fillcmdline_notrail winopen
-bind ;T hint -W fillcmdline_notrail tabopen
-bind ;z hint -z
-bind ;m composite hint -Jpipe img src | open images.google.com/searchbyimage?image_url=
-bind ;M composite hint -Jpipe img src | tabopen images.google.com/searchbyimage?image_url=
-bind ;gi hint -qi
-bind ;gI hint -qI
-bind ;gk hint -qk
-bind ;gy hint -qy
-bind ;gp hint -qp
-bind ;gP hint -qP
-bind ;gr hint -qr
-bind ;gs hint -qs
-bind ;gS hint -qS
-bind ;ga hint -qa
-bind ;gA hint -qA
-bind ;g; hint -q;
-bind ;g# hint -q#
-bind ;gv hint -qW mpvsafe
-bind ;gw hint -qw
-bind ;gb hint -qb
-bind ;gF hint -qb
-bind ;gf hint -q
+bind <C-Space>P hint -P
+bind <C-Space>r hint -r
+bind <C-Space>s hint -s
+bind <C-Space>S hint -S
+bind <C-Space>a hint -a
+bind <C-Space>A hint -A
+bind <C-Space><Space> hint -; *
+bind <C-Space># hint -#
+bind <C-Space>v hint -W mpvsafe
+bind <C-Space>w hint -w
+bind <C-Space>t hint -W tabopen
+bind <C-Space>O hint -W fillcmdline_notrail open
+bind <C-Space>W hint -W fillcmdline_notrail winopen
+bind <C-Space>T hint -W fillcmdline_notrail tabopen
+bind <C-Space>z hint -z
+bind <C-Space>m composite hint -Jpipe img src | open images.google.com/searchbyimage?image_url=
+bind <C-Space>M composite hint -Jpipe img src | tabopen images.google.com/searchbyimage?image_url=
+bind <C-Space>gi hint -qi
+bind <C-Space>gI hint -qI
+bind <C-Space>gk hint -qk
+bind <C-Space>gy hint -qy
+bind <C-Space>gp hint -qp
+bind <C-Space>gP hint -qP
+bind <C-Space>gr hint -qr
+bind <C-Space>gs hint -qs
+bind <C-Space>gS hint -qS
+bind <C-Space>ga hint -qa
+bind <C-Space>gA hint -qA
+bind <C-Space>g; hint -q;
+bind <C-Space>g# hint -q#
+bind <C-Space>gv hint -qW mpvsafe
+bind <C-Space>gw hint -qw
+bind <C-Space>gb hint -qb
+bind <C-Space>gF hint -qb
+bind <C-Space>gf hint -q
 bind <S-Insert> mode ignore
 bind <AC-Escape> mode ignore
 bind <AC-`> mode ignore
@@ -174,7 +175,7 @@ bind <AS-c> recontain Tier
 bind gna tabopen https://calendar.google.com/calendar/u/0/r/eventedit/NnNmOGRuMzZxcGZybHBwMHEwdjFqYTQ4OWQgdGFtYXMuYmFydGFAdGllci5hcHA
 bind goa open https://calendar.google.com/calendar/u/0/r/eventedit/NnNmOGRuMzZxcGZybHBwMHEwdjFqYTQ4OWQgdGFtYXMuYmFydGFAdGllci5hcHA
 bind gwa winopen https://calendar.google.com/calendar/u/0/r/eventedit/NnNmOGRuMzZxcGZybHBwMHEwdjFqYTQ4OWQgdGFtYXMuYmFydGFAdGllci5hcHA
-bind ;V hint -V
+bind <C-Space>V hint -V
 bind gny tabopen https://www.youtube.com/
 bind goy open https://www.youtube.com/
 bind gwy winopen https://www.youtube.com/
