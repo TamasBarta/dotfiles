@@ -183,6 +183,9 @@ bind gnJ tabopen https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 bind goJ open https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 bind gwJ winopen https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 
+"Mastodon
+bind <C-Space>gm js -r mastodon.js
+
 " Aliases
 alias fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
 alias fixamo js tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""').then(tri.excmds.fillcmdline_tmp(3000, "Permissions added to user.js. Please restart Firefox to make them take affect.")))
