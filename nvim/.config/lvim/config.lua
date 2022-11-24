@@ -298,12 +298,6 @@ lvim.plugins = {
     end
   },
   {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup()
-    end,
-  },
-  {
     'ggandor/leap.nvim',
     config = function()
       local leap = require('leap')
