@@ -138,7 +138,7 @@ shortcuts < escape; default
 shortcuts < f : skhd -k "escape" ; open -na Firefox
 shortcuts < shift - f : skhd -k "escape" ; open -na Firefox --args -private-window
 # shortcuts < s : skhd -k "escape" ; tmux new -d "zsh -c scrcpy > ~/log.log 2>&1"
-shortcuts < v : skhd -k "escape" ; kitty --single-instance zsh -c "source ~/.config/zsh/.zshrc; lvim"
+shortcuts < v : skhd -k "escape" ; wezterm --single-instance zsh -c "source ~/.config/zsh/.zshrc; lvim"
 shortcuts < s : skhd -k "escape" ; zsh -c "source ~/.config/zsh/.zshrc; scrcpy"
 
 # Home Assistant shortcuts
