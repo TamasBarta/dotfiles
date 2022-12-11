@@ -252,6 +252,7 @@ lvim.plugins = {
       require("catppuccin").setup()
     end
   },
+  { "NoahTheDuke/vim-just" },
   {
     "nvim-treesitter/playground",
     config = function()
@@ -503,7 +504,9 @@ lvim.plugins = {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function()
-      require("lsp_signature").setup()
+      require("lsp_signature").setup({
+        floating_window = false,
+      })
     end,
   },
   {
@@ -603,3 +606,10 @@ lvim.autocommands = {
     }
   },
 }
+vim.api.nvim_del_augroup_by_name('_auto_resize')
+lvim.keys.insert_mode["<A-j>"] = false
+lvim.keys.insert_mode["<A-k>"] = false
+lvim.keys.normal_mode["<A-j>"] = false
+lvim.keys.normal_mode["<A-k>"] = false
+lvim.keys.visual_block_mode["<A-j>"] = false
+lvim.keys.visual_block_mode["<A-k>"] = false
