@@ -11,3 +11,4 @@ zsh/.config/zsh/.zsh_sessions
 kitty/.config/kitty/config-proxy.conf.bak
 kitty/.config/kitty/kitty.conf.bak
 
+lazygit/.config/lazygit/state.yml
