@@ -10,6 +10,8 @@ set colourscheme catppuccin
 set searchurls.sx https://searxng.bartatamas.hu/search?q=
 set searchengine sx
 
+unbind <Escape>
+
 " Binds
 bind gnO tabopen https://wiki.archlinux.org/index.php/Firefox
 bind goO open https://wiki.archlinux.org/index.php/Firefox
@@ -147,7 +149,7 @@ bind <S-Insert> mode ignore
 bind <AC-Escape> mode ignore
 bind <AC-`> mode ignore
 bind <S-Escape> mode ignore
-bind <Escape> composite mode normal ; hidecmdline
+" bind <Escape> composite mode normal ; hidecmdline
 bind <C-[> composite mode normal ; hidecmdline
 bind a current_url bmark
 bind A bmark
