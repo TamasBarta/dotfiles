@@ -85,7 +85,7 @@ sketchybar --add item space_separator left                         \
                                                                    \
            --add item front_app  left                              \
            --set front_app       script="$PLUGIN_DIR/front_app.sh" \
-                                 icon.drawing=off                  \
+                                 icon.drawing=on                  \
            --subscribe front_app front_app_switched
 
 ##### Adding Right Items #####
@@ -96,12 +96,39 @@ sketchybar --add item space_separator left                         \
 sketchybar --add item clock right                        \
            --set clock   update_freq=10                  \
                          background.padding_right=8      \
+                         background.padding_left=30      \
                          script="$PLUGIN_DIR/clock.sh"   \
                                                          \
            --add item battery right                      \
            --set battery script="$PLUGIN_DIR/battery.sh" \
                          update_freq=10                  \
            --subscribe battery system_woke
+sketchybar --add item volume right                                         \
+           --set volume script="sketchybar --set volume icon.width=\$INFO" \
+                        icon.background.drawing=on                         \
+                        icon.background.color=0xff8aadf4                   \
+                        icon.background.height=10                          \
+                        icon.background.corner_radius=3                    \
+                        icon.width=0                                       \
+                        label.drawing=off                                  \
+                        background.drawing=on                              \
+                        background.color=0xff494d64                        \
+                        background.height=10                               \
+                        background.corner_radius=3                         \
+                        background.padding_right=35                        \
+                        background.padding_left=15                         \
+                        width=100                                          \
+           --subscribe volume volume_change
+sketchybar --set volume align=left
+sketchybar --add item volume_icon right                  \
+           --set volume_icon icon=                      \
+                             background.padding_left=15  \
+                             background.padding_right=40 \
+                             label.drawing=off                 
+
+sketchybar --add item camera right \
+           --set camera icon=""   \
+                        click_script='ffmpeg -f avfoundation -video_size 1280x720 -framerate 30 -pixel_format yuyv422 -i "FaceTime HD Camera" -vcodec libx264 -preset ultrafast -tune zerolatency -f mpegts - | mpv -profile=low-latency -untimed -'
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration and

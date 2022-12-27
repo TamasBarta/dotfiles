@@ -5,4 +5,43 @@
 # focused application in the $INFO variable:
 # https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
 
-sketchybar --set $NAME label="$INFO"
+case "$INFO" in
+  "WezTerm")
+    ICON=
+  ;;
+  "Mailspring"|Mail)
+    ICON=
+  ;;
+  "Todoist")
+    ICON=﫠
+  ;;
+  "Morgen"|Calendar)
+    ICON=
+  ;;
+  "Telegram")
+    ICON=
+  ;;
+  "Spotify")
+    ICON=
+  ;;
+  "Viber"|"Messenger"|Signal)
+    ICON=
+  ;;
+  "Notion"|Obsidian)
+    ICON=
+  ;;
+  "Finder")
+    ICON=
+  ;;
+  "Slack")
+    ICON=
+  ;;
+  "Firefox")
+    ICON=
+  ;;
+  *)
+    ICON=ﬓ
+  ;;
+esac
+
+sketchybar --set $NAME label="$INFO" icon="$ICON"
