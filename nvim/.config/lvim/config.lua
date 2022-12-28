@@ -287,12 +287,12 @@ lvim.plugins = {
         set_dark_mode = function()
           vim.api.nvim_set_option('background', 'dark')
           vim.cmd('Catppuccin mocha')
-          io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf mocha")
+          -- io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf mocha")
         end,
         set_light_mode = function()
           vim.api.nvim_set_option('background', 'light')
           vim.cmd('Catppuccin latte')
-          io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf latte")
+          -- io.popen("kitty +kitten themes --reload-in=all --config-file-name=$XDG_CONFIG_HOME/kitty/config-proxy.conf latte")
         end,
       })
       auto_dark_mode.init()
