@@ -4,8 +4,7 @@ max-items 50
 
 # externel browser
 browser "open %u"
-macro m set browser "/usr/local/bin/mpv %u"; open-in-browser ; set browser "open %u"
-macro l set browser "/usr/local/bin/firefox %u"; open-in-browser ; set browser "open %u"
+macro m set browser "mpv %u"; open-in-browser ; set browser "open %u"
 
 # unbind keys
 unbind-key ENTER
