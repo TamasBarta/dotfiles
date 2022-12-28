@@ -1,1 +1,2 @@
 scripts/iam.sh filter=git-crypt diff=git-crypt
+newsboat/.config/newsboat/urls filter=git-crypt diff=git-crypt
