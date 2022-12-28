@@ -1,7 +1,7 @@
 local wezterm = require "wezterm"
 
 local function scheme_for_appearance(appearance)
-  if appearance:find "Dark" then
+  if appearance:find "Dark" or string.find(wezterm.target_triple, "linux") then
     return "Catppuccin Mocha"
   else
     return "Catppuccin Latte"
