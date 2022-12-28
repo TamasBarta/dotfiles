@@ -20,7 +20,7 @@ return {
     bottom = '0.0cell',
   },
   enable_tab_bar = false,
-  window_decorations = string.find(wezterm.target_triple, "linux") and "TITLE" or "RESIZE",
+  window_decorations = "RESIZE",
   window_frame = {
     -- The font used in the tab bar.
     -- Roboto Bold is the default; this font is bundled
