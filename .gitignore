@@ -12,3 +12,5 @@ kitty/.config/kitty/config-proxy.conf.bak
 kitty/.config/kitty/kitty.conf.bak
 
 lazygit/.config/lazygit/state.yml
+neomutt/.config/mutt/accounts
+neomutt/.config/mutt/.mailsynclastrun
