@@ -16,3 +16,6 @@ highlight article "^(Feed|Title|Author|Link|Date):" color14 default bold
 highlight article "\\((link|image|video)\\)" color8 default
 highlight article "https?://[^ ]+" color4 default
 highlight article "\[[0-9]+\]" color6 default bold
+
+highlight feedlist "===.*===" color4 default bold
+highlight feedlist ".*0/0.." default default invis

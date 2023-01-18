@@ -12,3 +12,6 @@ alias lg=lazygit
 alias which='command -v'
 
 alias cdpj="cd ~/Projects/Development/popjohn/popjohn_frontend/"
+
+alias l="lsd --long"
+alias ls="lsd"
