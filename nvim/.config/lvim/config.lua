@@ -247,7 +247,7 @@ end, lvim.builtin.cmp.sources)
 lvim.plugins = {
   {
     "catppuccin/nvim",
-    as = "catppuccin",
+    name = "catppuccin",
     config = function()
       require("catppuccin").setup()
     end
@@ -331,8 +331,8 @@ lvim.plugins = {
   },
   {
     'nvim-telescope/telescope-ui-select.nvim',
-    requires = { "nvim-telescope/telescope.nvim" },
-    disable = not lvim.builtin.telescope.active,
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    enabled = lvim.builtin.telescope.active,
   },
   {
     "lambdalisue/suda.vim"
@@ -398,7 +398,7 @@ lvim.plugins = {
   { "tridactyl/vim-tridactyl" },
   {
     "akinsho/flutter-tools.nvim",
-    requires = "nvim-lua/plenary.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
     config = function()
       -- alternatively you can override the default configs
       require("flutter-tools").setup({
@@ -482,7 +482,7 @@ lvim.plugins = {
   },
   {
     "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
+    build = "cd app && npm install",
     ft = "markdown",
     config = function()
       vim.g.mkdp_auto_start = 1
@@ -498,7 +498,7 @@ lvim.plugins = {
   {
     "mattn/vim-gist",
     event = "BufRead",
-    requires = "mattn/webapi-vim",
+    dependencies = "mattn/webapi-vim",
   },
   {
     "ray-x/lsp_signature.nvim",
@@ -525,7 +525,7 @@ lvim.plugins = {
   },
   {
     "rcarriga/nvim-dap-ui",
-    requires = { "mfussenegger/nvim-dap" },
+    dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       require("dapui").setup({
         icons = { expanded = "▾", collapsed = "▸" },

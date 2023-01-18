@@ -1,7 +1,7 @@
-nodejs system
+nodejs 19.4.0
 java openjdk-18.0.1.1
 gradle 7.2
 flutter 3.3.10-stable
 python 3.10.4
 ruby 3.1.2
-rust 1.61.0
+rust 1.66.1
