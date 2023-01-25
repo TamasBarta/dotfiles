@@ -13,5 +13,11 @@ alias which='command -v'
 
 alias cdpj="cd ~/Projects/Development/popjohn/popjohn_frontend/"
 
-alias l="lsd --long"
-alias ls="lsd"
+unalias ll
+export EXA_ICON_SPACING=2
+export LS_COLORS="$(vivid generate catppuccin-mocha)"
+alias ls="exa --group-directories-first --icons --group --classify"
+alias l="ls --long"
+alias la="l --all"
+alias lt="l --tree"
+alias lts="lt -L2"
