@@ -10,10 +10,10 @@ end
 
 return {
 	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-	-- font = wezterm.font 'JetbrainsMono Nerd Font',
-	font = wezterm.font("Iosevka Nerd Font"),
+	font = wezterm.font("JetbrainsMono Nerd Font"),
+	-- font = wezterm.font("Iosevka Nerd Font"),
 	-- font = wezterm.font("VictorMono Nerd Font"),
-	font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 17,
+	font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 16,
 	line_height = 1.1,
 	window_padding = {
 		left = "0cell",
