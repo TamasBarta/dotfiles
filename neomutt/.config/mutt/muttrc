@@ -11,3 +11,4 @@ color sidebar_highlight black cyan
 color sidebar_flagged default default
 set sort=threads
 set sort_aux=reverse-last-date-received
+set sidebar_visible = no
