@@ -1,5 +1,5 @@
-export EDITOR=lvim
-export VISUAL=lvim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # bindkey -v
 
