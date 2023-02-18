@@ -13,6 +13,7 @@ return {
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require("cmp")
+      ---@diagnostic disable-next-line: missing-parameter
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
         { name = "crates" },
       }))
@@ -23,6 +24,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
+      ---@diagnostic disable-next-line: missing-parameter
       vim.list_extend(opts.ensure_installed, { "rust", "toml" })
     end,
   },
@@ -31,6 +33,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
+      ---@diagnostic disable-next-line: missing-parameter
       vim.list_extend(opts.ensure_installed, { "codelldb", "rust-analyzer", "taplo" })
     end,
   },
@@ -92,7 +95,7 @@ return {
           require("rust-tools").setup(rust_tools_opts)
           return true
         end,
-        taplo = function(_, opts)
+        taplo = function(_, _)
           local function show_documentation()
             if vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
               require("crates").show_popup()

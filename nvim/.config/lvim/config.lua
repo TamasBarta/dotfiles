@@ -374,10 +374,10 @@ lvim.plugins = {
             ruler = false, -- disables the ruler text in the cmd line area
             showcmd = false, -- disables the command in the last line of the screen
           },
-          kitty = {
-            enabled = false,
-            font = "+4", -- font size increment
-          },
+          -- kitty = {
+          --   enabled = false,
+          --   font = "+4", -- font size increment
+          -- },
         },
       }
     end
