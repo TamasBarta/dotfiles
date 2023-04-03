@@ -1,3 +1,6 @@
 gui:
   theme:
     lightTheme: false
+git:
+  merging:
+    args: "--no-ff"
