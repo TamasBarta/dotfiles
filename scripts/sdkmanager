@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# current_java=$(asdf current java | awk '{ print $2; }')
+
+. "$ASDF_DIR"/asdf.sh
+
+asdf shell java liberica-8u302+8
+/Users/tamas/Library/Android/sdk/tools/bin/sdkmanager "$@"
+ec=$?
+asdf shell java --unset
+exit $ec
