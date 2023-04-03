@@ -1,7 +1,7 @@
 .idea/markdown-navigator-enh.xml
 .idea/markdown-navigator.xml
 .idea/gradle.properties
-.tool-versions
+#.tool-versions
 .git
 .local
 .cache
