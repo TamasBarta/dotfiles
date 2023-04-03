@@ -9,12 +9,14 @@ local function scheme_for_appearance(appearance)
 end
 
 return {
+	term = "wezterm",
 	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
 	font = wezterm.font("JetbrainsMono Nerd Font"),
 	-- font = wezterm.font("Iosevka Nerd Font"),
 	-- font = wezterm.font("VictorMono Nerd Font"),
 	font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 16,
 	line_height = 1.1,
+	front_end = "WebGpu",
 	window_padding = {
 		left = "0cell",
 		right = "0cell",
@@ -22,6 +24,7 @@ return {
 		bottom = "0.0cell",
 	},
 	enable_tab_bar = false,
+	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "RESIZE",
 	window_frame = {
 		-- The font used in the tab bar.
