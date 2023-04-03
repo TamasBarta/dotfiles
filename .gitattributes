@@ -1,2 +1,3 @@
 scripts/iam.sh filter=git-crypt diff=git-crypt
+zsh/.config/zsh/secret-env-vars.sh filter=git-crypt diff=git-crypt
 newsboat/.config/newsboat/urls filter=git-crypt diff=git-crypt
