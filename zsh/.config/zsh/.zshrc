@@ -2,6 +2,7 @@
 # export TERM="xterm-256color"
 export DOTFILES_HOME=$HOME/.dotfiles
 source $HOME/.config/zsh/xdg.sh
+source $DOTFILES_HOME/zsh/.config/zsh/secret-env-vars.sh
 
 case `uname` in
   Darwin) eval "$(/opt/homebrew/bin/brew shellenv)" ;;
