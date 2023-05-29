@@ -43,7 +43,7 @@ zinit cdclear -q
 zinit wait lucid as"completion" for \
     https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
     https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose \
-    https://github.com/TamasBarta/gradle-completion/blob/use-gradle-user-home-env-var/_gradle
+    https://github.com/gradle/gradle-completion/blob/master/_gradle
 
 # Fast-syntax-highlighting & autosuggestions
 zinit ice wait lucid blockf
