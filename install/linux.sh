@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $(cat /etc/*-release | awk -F '=' '{ if ($1 == "ID") print $2 }' | tr -d "\"") in
-  arch|manjaro-arm)
+  arch|manjaro-arm|archarm)
     source $DOTFILES_HOME/install/arch.sh ;;
   debian) source $DOTFILES_HOME/install/debian.sh ;;
   *) source $DOTFILES_HOME/install/android.sh ;;
