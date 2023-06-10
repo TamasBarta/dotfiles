@@ -1,6 +1,6 @@
 # Install packages
 
-sudo pacman --noconfirm -Suyy git go
+sudo pacman --noconfirm -Suyy git go base-devel
 
 git clone https://aur.archlinux.org/yay.git /tmp/yay
 cd /tmp/yay
