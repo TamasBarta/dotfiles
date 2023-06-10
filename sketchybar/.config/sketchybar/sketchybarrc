@@ -130,6 +130,7 @@ sketchybar --add item volume_icon right                  \
 
 sketchybar --add item camera right \
            --set camera icon=""   \
+                        label.drawing=off \
                         click_script='ffmpeg -f avfoundation -video_size 1280x720 -framerate 30 -pixel_format yuyv422 -i "FaceTime HD Camera" -vcodec libx264 -preset ultrafast -tune zerolatency -f mpegts - | mpv -profile=low-latency -untimed -'
 
 ##### Finalizing Setup #####

@@ -56,5 +56,14 @@ return {
       },
     },
     filetypes = { "dart" },
+    keys = {
+      { "<leader>Fr", "<cmd>FlutterRun<cr>",           desc = "Run" },
+      { "<leader>Fd", "<cmd>FlutterDevices<cr>",       desc = "Devices" },
+      { "<leader>Fc", "<cmd>FlutterLogClear<cr>",      desc = "Clear" },
+      { "<leader>Fo", "<cmd>FlutterOutlineToggle<cr>", desc = "Toggle outline" },
+      { "<leader>Fg", "<cmd>FlutterPubGet<cr>",        desc = "Pub Get" },
+      { "<leader>FR", "<cmd>FlutterRestart<cr>",       desc = "Restart" },
+      { "<leader>Fq", "<cmd>FlutterQuit<cr>",          desc = "Quit" },
+    },
   }, -- add lsp plugin
 }
