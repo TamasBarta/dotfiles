@@ -16,7 +16,7 @@ return {
 	-- font = wezterm.font("VictorMono Nerd Font"),
 	font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 15,
 	line_height = 1.1,
-	front_end = "WebGpu",
+	-- front_end = "WebGpu",
 	window_padding = {
 		left = "0cell",
 		right = "0cell",
