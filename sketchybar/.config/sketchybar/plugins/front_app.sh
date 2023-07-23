@@ -13,7 +13,7 @@ case "$INFO" in
     ICON=
   ;;
   "Todoist")
-    ICON=﫠
+    ICON=󰄴
   ;;
   "Morgen"|Calendar)
     ICON=
@@ -21,17 +21,20 @@ case "$INFO" in
   "Telegram")
     ICON=
   ;;
+  "SchildiChat")
+    ICON=󰴻
+  ;;
   "Spotify")
     ICON=
   ;;
   "Viber"|"Messenger"|Signal)
-    ICON=
+    ICON=󰇷
   ;;
   "Notion"|Obsidian)
     ICON=
   ;;
   "Finder")
-    ICON=
+    ICON=󰀶
   ;;
   "Slack")
     ICON=
@@ -39,8 +42,11 @@ case "$INFO" in
   "Firefox")
     ICON=
   ;;
+  "Brave Browser")
+    ICON=
+  ;;
   *)
-    ICON=ﬓ
+    ICON=󰘔
   ;;
 esac
 
