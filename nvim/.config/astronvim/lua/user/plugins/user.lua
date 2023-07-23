@@ -66,4 +66,5 @@ return {
       { "<leader>Fq", "<cmd>FlutterQuit<cr>",          desc = "Quit" },
     },
   }, -- add lsp plugin
+  "rhysd/vim-wasm",
 }
