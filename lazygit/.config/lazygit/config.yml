@@ -1,6 +1,10 @@
 gui:
   theme:
     lightTheme: false
+  showIcons: true
+  nerdFontsVersion: "3"
 git:
+  log:
+    showGraph: when-maximised
   merging:
     args: "--no-ff"
