@@ -1,1 +1,1 @@
-return "davidgranstrom/nvim-markdown-preview"
+return { "davidgranstrom/nvim-markdown-preview" }

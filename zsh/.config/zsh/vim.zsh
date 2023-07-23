@@ -1,5 +1,6 @@
 export EDITOR=nvim
 export VISUAL=nvim
+export NVIM_APPNAME=lazyvim
 
 # bindkey -v
 

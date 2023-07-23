@@ -8,6 +8,41 @@ return {
     end,
   },
 
+  -- Ensure Dart debug adapter is installed
+  {
+    "williamboman/mason.nvim",
+    optional = true,
+    opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "dart-debug-adapter" })
+      end
+    end,
+  },
+  {
+    "TamasBarta/nvim-treesitter-dart-data-class",
+    ft = "dart",
+    keys = {
+      { "<leader>G", name = "+generate" },
+      {
+        "<leader>Gd",
+        '<cmd>lua require"nvim-treesitter-dart-data-class".generate()',
+        desc = "Generate Dart data class methods",
+      },
+    },
+  },
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    ft = { "dart" },
+    dependencies = {
+      "sidlatau/neotest-dart",
+    },
+    opts = {
+      adapters = {
+        ["neotest-dart"] = {},
+      },
+    },
+  },
   {
     "akinsho/flutter-tools.nvim",
     dependencies = "nvim-lua/plenary.nvim",
@@ -65,43 +100,6 @@ return {
       },
       -- I don't know if this works or not
       root_pattern = { ".git" },
-    },
-  },
-  {
-    "folke/which-key.nvim",
-    opts = function(_, opts)
-      opts[#opts] = {
-        {
-          G = {
-            name = "Generation tools",
-          },
-        },
-        {
-          prefix = "<leader>",
-          mode = "n",
-        },
-      }
-    end,
-    -- config = function()
-    --   require("which-key").register({
-    --     G = {
-    --       name = "Generation tools",
-    --     },
-    --   }, {
-    --     prefix = "<leader>",
-    --     mode = "n",
-    --   })
-    -- end,
-  },
-  {
-    "tamasbarta/nvim-treesitter-dart-data-class",
-    ft = "dart",
-    keys = {
-      {
-        "<leader>Gd",
-        '<cmd>lua require"nvim-treesitter-dart-data-class".generate()<cr>',
-        desc = "Generate Dart data class methods",
-      },
     },
   },
 }
