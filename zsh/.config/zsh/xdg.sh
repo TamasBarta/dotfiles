@@ -48,3 +48,9 @@ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/default/config"
 export SOLARGRAPH_CACHE="$XDG_CACHE_HOME"/solargraph # what's this?
 export W3M_DIR="$XDG_DATA_HOME/w3m"
 export ANSIBLE_HOME="$XDG_DATA_HOME/ansible"
+
+
+
+# Wasmtime
+export WASMTIME_HOME="$HOME/.local/share/wasmtime"
+export PATH="$WASMTIME_HOME/bin:$PATH"
