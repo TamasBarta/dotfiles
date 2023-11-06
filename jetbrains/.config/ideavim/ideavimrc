@@ -19,12 +19,11 @@ map Q gq
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 map <leader>lf <Action>(ReformatCode)
+map <leader>cf <Action>(ReformatCode)
 
-"" Map <leader>d to start debug
-map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+"" Debugger
+map <leader>dc <Action>(Debug)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
 
 map H <Action>(Back)
 map L <Action>(Forward)
@@ -37,8 +36,28 @@ set easymotion
 nmap gcc <Action>(CommentByLineComment)
 vmap gc <Action>(CommentByLineComment)
 
+" Navigation
+nnoremap ]e :action GotoNextError<cr>
+nnoremap [e :action GotoPreviousError<cr>
+nnoremap ]g :action VcsShowNextChangeMarker<cr>
+nnoremap [g :action VcsShowPrevChangeMarker<cr>
+
+" Git
+nnoremap <leader>gd <Action>(ShowDiff)<cr>
+nnoremap <leader>ghd <Action>(ShowDiff)<cr>
+nnoremap <leader>gp <Action>(ChangeUnderCaret)<cr>
+nnoremap <leader>ghp <Action>(ChangeUnderCaret)<cr>
+nnoremap <leader>gr <Action>(RollbackLines)<cr>
+nnoremap <leader>ghr <Action>(RollbackLines)<cr>
+nnoremap <leader>gR <Action>(RollbackFile)<cr>
+nnoremap <leader>ghR <Action>(RollbackFile)<cr>
+
 nmap <leader>sf <Action>(GotoFile)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader><leader> <Action>(GotoFile)
+nmap <leader>, <Action>(RecentFiles)
 
 nmap <leader>w <Action>(SaveAll)
+nmap <c-s> <Action>(SaveAll)
 nmap gr <Action>(FindUsages)
 nmap <leader>la <Action>(ShowIntentionActions)
