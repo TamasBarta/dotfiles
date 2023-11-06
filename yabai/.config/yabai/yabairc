@@ -10,8 +10,8 @@ yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_opacity               on
 yabai -m config window_opacity_duration      0.0
-yabai -m config window_shadow                off
-yabai -m config window_border                on
+yabai -m config window_shadow                on
+yabai -m config window_border                off
 yabai -m config window_border_width          4
 yabai -m config active_window_border_color   0xffa6e3a1
 yabai -m config normal_window_border_color   0xff1e1e2e
@@ -32,8 +32,21 @@ yabai -m config bottom_padding               $GAP_SIZE
 yabai -m config left_padding                 $GAP_SIZE
 yabai -m config right_padding                $GAP_SIZE
 yabai -m config window_gap                   $GAP_SIZE
-# yabai -m config external_bar                 all:0:0
-yabai -m config external_bar                 all:38:0
+yabai -m config external_bar                 all:0:0
+# yabai -m config external_bar                 all:38:0
+
+# yabai indicator
+
+yabai -m signal --add event=mission_control_exit action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=display_added action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=display_removed action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_created action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_destroyed action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_focused action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_moved action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_resized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_minimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_deminimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
 
 # per app settings
 
