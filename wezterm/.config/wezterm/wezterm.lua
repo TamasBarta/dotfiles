@@ -14,7 +14,10 @@ return {
 	font = wezterm.font("JetbrainsMono NF"),
 	-- font = wezterm.font("Iosevka Nerd Font"),
 	-- font = wezterm.font("VictorMono Nerd Font"),
-	font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 15,
+	-- font = wezterm.font("BlexMono Nerd Font"),
+	-- font = wezterm.font("ComicShannsMono Nerd Font"),
+	-- font = wezterm.font("Hurmit Nerd Font"),
+	font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 15.5,
 	line_height = 1.1,
 	-- front_end = "WebGpu",
 	window_padding = {
