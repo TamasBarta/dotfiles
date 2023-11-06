@@ -12,19 +12,21 @@ PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar height=38               \
+sketchybar --bar height=26               \
                  blur_radius=50          \
                  position=top            \
                  sticky=off              \
                  padding_left=10         \
                  padding_right=10        \
-                 border_color=0xff6272a4 \
+                 border_color=0x11ffffff \
+                 margin=-2               \
+                 y_offset=-2             \
                  border_width=0          \
                  sticky=true             \
                  topmost=false           \
-                 shadow=false            \
+                 shadow=on               \
                  corner_radius=0         \
-                 color=0xFF1E1E2E
+                 color=0x771E1E2E
 
 ##### Changing Defaults #####
 # We now change some default values that are applied to all further items
@@ -35,7 +37,7 @@ sketchybar --default updates=when_shown                             \
                      drawing=on                                     \
                      icon.font="JetbrainsMono Nerd Font:Bold:15.0"  \
                      icon.color=0xffa6e3a1                          \
-                     label.font="JetbrainsMono Nerd Font:Bold:15.0" \
+                     label.font="SF Pro:Regular:13.0" \
                      label.color=0xffcdd6f4                         \
                      label.padding_left=4                           \
                      label.padding_right=4                          \
@@ -128,10 +130,10 @@ sketchybar --add item volume_icon right                  \
                              background.padding_right=40 \
                              label.drawing=off
 
-sketchybar --add item camera right \
-           --set camera icon="󰄀"   \
-                        label.drawing=off \
-                        click_script='ffmpeg -f avfoundation -video_size 1280x720 -framerate 30 -pixel_format yuyv422 -i "FaceTime HD Camera" -vcodec libx264 -preset ultrafast -tune zerolatency -f mpegts - | mpv -profile=low-latency -untimed -'
+# sketchybar --add item camera right \
+#            --set camera icon="󰄀"   \
+#                         label.drawing=off \
+#                         click_script='ffmpeg -f avfoundation -video_size 1280x720 -framerate 30 -pixel_format yuyv422 -i "FaceTime HD Camera" -vcodec libx264 -preset ultrafast -tune zerolatency -f mpegts - | mpv -profile=low-latency -untimed -'
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration and
