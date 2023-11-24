@@ -11,7 +11,7 @@ end
 return {
 	term = "wezterm",
 	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-	font = wezterm.font("JetbrainsMono Nerd Font"),
+	font = wezterm.font("JetbrainsMono NF"),
 	-- font = wezterm.font("Iosevka Nerd Font"),
 	-- font = wezterm.font("VictorMono Nerd Font"),
 	font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 15,
