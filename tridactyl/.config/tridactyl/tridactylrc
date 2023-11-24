@@ -1,4 +1,5 @@
 " General Settings
+set theme catppuccin
 set update.lastchecktime 1648754688816
 set update.nag true
 set update.nagwait 7
@@ -6,11 +7,29 @@ set update.lastnaggedversion 1.14.0
 set update.checkintervalsecs 86400
 set configversion 2.0
 set newtab about:home
-set colourscheme catppuccin
-set searchurls.sx https://searxng.bartatamas.hu/search?q=
 set searchengine sx
-
-unbind <Escape>
+set searchurls.sx https://searxng.bartatamas.hu/search?q=
+set searchurls.google https://www.google.com/search?q=
+set searchurls.googlelucky https://www.google.com/search?btnI=I'm+Feeling+Lucky&q=
+set searchurls.scholar https://scholar.google.com/scholar?q=
+set searchurls.googleuk https://www.google.co.uk/search?q=
+set searchurls.bing https://www.bing.com/search?q=
+set searchurls.duckduckgo https://duckduckgo.com/?q=
+set searchurls.yahoo https://search.yahoo.com/search?p=
+set searchurls.twitter https://twitter.com/search?q=
+set searchurls.wikipedia https://en.wikipedia.org/wiki/Special:Search/
+set searchurls.youtube https://www.youtube.com/results?search_query=
+set searchurls.amazon https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=
+set searchurls.amazonuk https://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=
+set searchurls.startpage https://startpage.com/do/search?language=english&cat=web&query=
+set searchurls.github https://github.com/search?utf8=✓&q=
+set searchurls.searx https://searx.me/?category_general=on&q=
+set searchurls.cnrtl http://www.cnrtl.fr/lexicographie/
+set searchurls.osm https://www.openstreetmap.org/search?query=
+set searchurls.mdn https://developer.mozilla.org/en-US/search?q=
+set searchurls.gentoo_wiki https://wiki.gentoo.org/index.php?title=Special%3ASearch&profile=default&fulltext=Search&search=
+set searchurls.qwant https://www.qwant.com/?q=
+set colourscheme catppuccin
 
 " Binds
 bind gnO tabopen https://wiki.archlinux.org/index.php/Firefox
@@ -149,7 +168,7 @@ bind <S-Insert> mode ignore
 bind <AC-Escape> mode ignore
 bind <AC-`> mode ignore
 bind <S-Escape> mode ignore
-" bind <Escape> composite mode normal ; hidecmdline
+unbind <Escape>
 bind <C-[> composite mode normal ; hidecmdline
 bind a current_url bmark
 bind A bmark
@@ -184,9 +203,61 @@ bind gwy winopen https://www.youtube.com/
 bind gnJ tabopen https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 bind goJ open https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 bind gwJ winopen https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
-
-"Mastodon
+bind ;i hint -i
+bind ;b hint -b
+bind ;o hint
+bind ;I hint -I
+bind ;k hint -k
+bind ;K hint -K
+bind ;y hint -y
+bind ;Y hint -cF img i => tri.excmds.yankimage(tri.urlutils.getAbsoluteURL(i.src))
+bind ;p hint -p
+bind ;h hint -h
+bind ;P hint -P
+bind ;r hint -r
+bind ;s hint -s
+bind ;S hint -S
+bind ;a hint -a
+bind ;A hint -A
+bind ;; hint -; *
+bind ;# hint -#
+bind ;v hint -W mpvsafe
+bind ;V hint -V
+bind ;w hint -w
+bind ;t hint -W tabopen
+bind ;O hint -W fillcmdline_notrail open 
+bind ;W hint -W fillcmdline_notrail winopen 
+bind ;T hint -W fillcmdline_notrail tabopen 
+bind ;z hint -z
+bind ;m composite hint -Jpipe img src | open images.google.com/searchbyimage?image_url=
+bind ;M composite hint -Jpipe img src | tabopen images.google.com/searchbyimage?image_url=
+bind ;gi hint -qi
+bind ;gI hint -qI
+bind ;gk hint -qk
+bind ;gy hint -qy
+bind ;gp hint -qp
+bind ;gP hint -qP
+bind ;gr hint -qr
+bind ;gs hint -qs
+bind ;gS hint -qS
+bind ;ga hint -qa
+bind ;gA hint -qA
+bind ;g; hint -q;
+bind ;g# hint -q#
+bind ;gv hint -qW mpvsafe
+bind ;gw hint -qw
+bind ;gb hint -qb
+bind ;gF hint -qb
+bind ;gf hint -q
+bind gnN tabopen moz-extension://8938aa73-1139-4008-ba48-ebe355182238/static/docs/modules/_src_excmds_.html#js
+bind goN open moz-extension://8938aa73-1139-4008-ba48-ebe355182238/static/docs/modules/_src_excmds_.html#js
+bind gwN winopen moz-extension://8938aa73-1139-4008-ba48-ebe355182238/static/docs/modules/_src_excmds_.html#js
+unbind <C-Space>mr
 bind <C-Space>gm js -r mastodon.js
+bind <A-c> recontain Tier
+unbind <escape>
+bind m gobble 1 markadd
+bind ` gobble 1 markjump
 
 " Aliases
 alias fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
@@ -265,8 +336,14 @@ alias prefremove removepref
 alias tabclosealltoright tabcloseallto right
 alias tabclosealltoleft tabcloseallto left
 alias reibadailty jumble
-
-command insta js function iprl5(){var d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...) '+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/4AohLsqjuPEM?a=send-to-kindle&u='+encodeURIComponent(l.href)+'&t='+(new Date().getTime()));b.appendChild(z);}catch(e){alert('Please wait until the page has loaded.');}}iprl5();void(0)
+alias insta js function iprl5(){var d=document,z=d.createElement('scr'+'ipt'),b=d.body,l=d.location;try{if(!b)throw(0);d.title='(Saving...) '+d.title;z.setAttribute('src',l.protocol+'//www.instapaper.com/j/4AohLsqjuPEM?a=send-to-kindle&u='+encodeURIComponent(l.href)+'&t='+(new Date().getTime()));b.appendChild(z);}catch(e){alert('Please wait until the page has loaded.');}}iprl5();void(0)
+alias tabgroupabort tgroupabort
+alias tabgroupclose tgroupclose
+alias tabgroupcreate tgroupcreate
+alias tabgrouplast tgrouplast
+alias tabgroupmove tgroupmove
+alias tabgrouprename tgrouprename
+alias tabgroupswitch tgroupswitch
 
 " Autocmds
 autocmd DocStart undefined mode ignore
