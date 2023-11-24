@@ -63,9 +63,24 @@ return {
         -- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
         border = "rounded",
       },
+      -- decorations = {
+      --   statusline = {
+      --     -- set to true to be able use the 'flutter_tools_decorations.app_version' in your statusline
+      --     -- this will show the current version of the flutter app from the pubspec.yaml file
+      --     app_version = true,
+      --     -- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
+      --     -- this will show the currently running device if an application was started with a specific
+      --     -- device
+      --     device = true,
+      --     -- set to true to be able use the 'flutter_tools_decorations.project_config' in your statusline
+      --     -- this will show the currently selected project configuration
+      --     project_config = false,
+      --   },
+      -- },
       debugger = { -- integrate with nvim dap + install dart code debugger
         enabled = true,
         run_via_dap = false,
+        exception_breakpoints = {},
       },
       -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
       flutter_lookup_cmd = "asdf where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
@@ -91,6 +106,12 @@ return {
         auto_open = false, -- if true this will open the outline automatically when it is first populated
       },
       lsp = {
+        color = { -- show the derived colours for dart variables
+          enabled = true, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
+          background = false, -- highlight the background
+          virtual_text = true, -- show the highlight using virtual text
+          virtual_text_str = "■", -- the virtual text character to highlight
+        },
         settings = {
           showTodos = true,
           completeFunctionCalls = true,
@@ -102,4 +123,22 @@ return {
       root_pattern = { ".git" },
     },
   },
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   event = "VeryLazy",
+  --   opts = function(_, opts)
+  --     print(vim.inspect(opts.sections.lualine_x))
+  --     table.insert(opts.sections.lualine_x, {
+  --       function()
+  --         return require("flutter-tools.decorations").statusline.app_version()
+  --       end,
+  --     })
+  --     table.insert(opts.sections.lualine_x, {
+  --       function()
+  --         return require("flutter-tools.decorations").statusline.device()
+  --       end,
+  --     })
+  --     return opts
+  --   end,
+  -- },
 }
