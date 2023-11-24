@@ -15,7 +15,7 @@ alias cdpj="cd ~/Projects/Development/popjohn/popjohn_frontend/"
 
 unalias ll
 export EXA_ICON_SPACING=2
-export LS_COLORS="$(vivid generate catppuccin-mocha)"
+# export LS_COLORS="$(vivid generate catppuccin-mocha)"
 alias ls="exa --group-directories-first --icons --group --classify"
 alias l="ls --long"
 alias la="l --all"
