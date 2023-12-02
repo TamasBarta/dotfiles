@@ -42,8 +42,8 @@ zinit cdclear -q
 # Load completions
 zinit wait lucid as"completion" for \
     https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker \
-    https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose \
     https://github.com/gradle/gradle-completion/blob/master/_gradle
+    # https://github.com/docker/compose/blob/main/contrib/completion/zsh/_docker-compose \
 
 # Fast-syntax-highlighting & autosuggestions
 zinit ice wait lucid blockf
