@@ -1,5 +1,7 @@
 local wezterm = require("wezterm")
 
+local config = wezterm.config_builder()
+
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") or string.find(wezterm.target_triple, "linux") then
 		return "Catppuccin Mocha"
@@ -8,56 +10,37 @@ local function scheme_for_appearance(appearance)
 	end
 end
 
-return {
-	term = "wezterm",
-	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-	font = wezterm.font("JetbrainsMono NF"),
-	-- font = wezterm.font("Iosevka Nerd Font"),
-	-- font = wezterm.font("VictorMono Nerd Font"),
-	-- font = wezterm.font("BlexMono Nerd Font"),
-	-- font = wezterm.font("ComicShannsMono Nerd Font"),
-	-- font = wezterm.font("Hurmit Nerd Font"),
-	font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 15.5,
-	line_height = 1.1,
-	-- front_end = "WebGpu",
-	window_padding = {
-		left = "0cell",
-		right = "0cell",
-		top = "0.0cell",
-		bottom = "0.0cell",
-	},
-	enable_tab_bar = false,
-	adjust_window_size_when_changing_font_size = false,
-	window_decorations = "RESIZE",
-	window_frame = {
-		-- The font used in the tab bar.
-		-- Roboto Bold is the default; this font is bundled
-		-- with wezterm.
-		-- Whatever font is selected here, it will have the
-		-- main font setting appended to it to pick up any
-		-- fallback fonts you may have used there.
-		font = wezterm.font({ family = "Roboto", weight = "Bold" }),
-		-- The size of the font in the tab bar.
-		-- Default to 10. on Windows but 12.0 on other systems
-		font_size = 13.0,
-		-- The overall background color of the tab bar when
-		-- the window is focused
-		active_titlebar_bg = "#333333",
-		-- The overall background color of the tab bar when
-		-- the window is not focused
-		inactive_titlebar_bg = "#333333",
-	},
-	colors = {
-		tab_bar = {
-			-- The color of the inactive tab bar edge/divider
-			inactive_tab_edge = "#575757",
-		},
-	},
-	keys = {
-		{
-			key = "Enter",
-			mods = "ALT",
-			action = wezterm.action.DisableDefaultAssignment,
-		},
+config.term = "wezterm"
+config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+config.font = wezterm.font_with_fallback({ "JetbrainsMono NF", "JetbrainsMono Nerd Font" })
+config.font_size = string.find(wezterm.target_triple, "linux") and 11.5 or 14
+config.line_height = 1.1
+-- config.front_end = "WebGpu"
+config.window_padding = {
+	left = "0cell",
+	right = "0cell",
+	-- top = "0",
+	top = string.find(wezterm.target_triple, "linux") and 11.5 or 56,
+	bottom = "0.0cell",
+}
+config.enable_tab_bar = false
+config.adjust_window_size_when_changing_font_size = false
+config.window_background_opacity = 0.8
+config.macos_window_background_blur = 40
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.integrated_title_button_style = string.find(wezterm.target_triple, "linux") and "Gnome" or "MacOsNative"
+config.colors = {
+	tab_bar = {
+		-- The color of the inactive tab bar edge/divider
+		inactive_tab_edge = "#575757",
 	},
 }
+config.keys = {
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
+
+return config
