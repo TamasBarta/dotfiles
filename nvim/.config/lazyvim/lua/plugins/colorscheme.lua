@@ -4,7 +4,7 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      transparent_background = true, -- disables setting the background color
+      -- transparent_background = true, -- disables setting the background color
       integrations = {
         alpha = true,
         cmp = true,

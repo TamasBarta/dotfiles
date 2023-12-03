@@ -25,8 +25,8 @@ config.window_padding = {
 }
 config.enable_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false
-config.window_background_opacity = 0.8
-config.macos_window_background_blur = 40
+-- config.window_background_opacity = 0.8
+-- config.macos_window_background_blur = 90
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.integrated_title_button_style = string.find(wezterm.target_triple, "linux") and "Gnome" or "MacOsNative"
 config.colors = {
