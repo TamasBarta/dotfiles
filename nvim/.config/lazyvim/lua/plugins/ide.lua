@@ -27,7 +27,7 @@ return {
   "mfussenegger/nvim-dap",
   {
     "rcarriga/nvim-dap-ui",
-    requires = { "mfussenegger/nvim-dap" },
+    dependencies = { "mfussenegger/nvim-dap" },
     opts = function(_, opts)
       opts.mappings = {
         expand = { "<CR>", "<2-LeftMouse>" },
@@ -44,6 +44,74 @@ return {
     "L3MON4D3/LuaSnip",
     keys = function()
       return {}
+    end,
+  },
+  {
+    "folke/edgy.nvim",
+    event = "VeryLazy",
+    opts = function(_, opts)
+      if opts.right == nil then
+        opts.right = {}
+      end
+      if opts.bottom == nil then
+        opts.right = {}
+      end
+      if opts.options == nil then
+        opts.options = {}
+      end
+      if opts.options.right == nil then
+        opts.options.right = {}
+      end
+      opts.options.right.size = 50
+
+      vim.list_extend(opts.right, {
+        {
+          ft = "dapui_scopes",
+          title = "Scopes",
+          open = function()
+            return require("dapui").open()
+          end,
+        },
+        {
+          ft = "dapui_breakpoints",
+          title = "Breakpoints",
+          open = function()
+            return require("dapui").open()
+          end,
+        },
+        {
+          ft = "dapui_stacks",
+          title = "Stacks",
+          open = function()
+            return require("dapui").open()
+          end,
+        },
+        {
+          ft = "dapui_watches",
+          title = "Watches",
+          open = function()
+            return require("dapui").open()
+          end,
+        },
+      })
+      vim.list_extend(opts.bottom, {
+        {
+          ft = "dap-repl",
+          title = "REPL",
+          open = function()
+            return require("dapui").open()
+          end,
+        },
+        {
+          ft = "dapui_console",
+          title = "DAP Console",
+          open = function()
+            return require("dapui").open()
+          end,
+        },
+      })
+
+      return opts
     end,
   },
   {

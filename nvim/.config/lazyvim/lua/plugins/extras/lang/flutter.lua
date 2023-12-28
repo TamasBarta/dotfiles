@@ -1,10 +1,20 @@
 return {
-  -- add rust to treesitter
+  -- add Dart to treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
-      ---@diagnostic disable-next-line: missing-parameter
-      vim.list_extend(opts.ensure_installed, { "dart" })
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "dart" })
+      else
+        opts.ensure_installed = { "dart" }
+      end
+      if type(opts.indent) == "table" then
+        vim.list_extend(opts.indent, { disable = { "dart" } })
+      else
+        opts.indent = { enable = true, disable = { "dart" } }
+      end
+      print(vim.inspect(opts))
+      opts.indent = { enable = true, disable = { "dart" } }
     end,
   },
 
@@ -25,7 +35,7 @@ return {
       { "<leader>G", name = "+generate" },
       {
         "<leader>Gd",
-        '<cmd>lua require"nvim-treesitter-dart-data-class".generate()',
+        '<cmd>lua require"nvim-treesitter-dart-data-class".generate()<cr>',
         desc = "Generate Dart data class methods",
       },
     },
@@ -42,6 +52,9 @@ return {
         ["neotest-dart"] = {},
       },
     },
+  },
+  {
+    "mtdl9/vim-log-highlighting",
   },
   {
     "akinsho/flutter-tools.nvim",
@@ -63,20 +76,20 @@ return {
         -- used for ":h nvim_open_win" e.g. "single" | "shadow" | {<table-of-eight-chars>}
         border = "rounded",
       },
-      -- decorations = {
-      --   statusline = {
-      --     -- set to true to be able use the 'flutter_tools_decorations.app_version' in your statusline
-      --     -- this will show the current version of the flutter app from the pubspec.yaml file
-      --     app_version = true,
-      --     -- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
-      --     -- this will show the currently running device if an application was started with a specific
-      --     -- device
-      --     device = true,
-      --     -- set to true to be able use the 'flutter_tools_decorations.project_config' in your statusline
-      --     -- this will show the currently selected project configuration
-      --     project_config = false,
-      --   },
-      -- },
+      decorations = {
+        statusline = {
+          -- set to true to be able use the 'flutter_tools_decorations.app_version' in your statusline
+          -- this will show the current version of the flutter app from the pubspec.yaml file
+          app_version = true,
+          -- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
+          -- this will show the currently running device if an application was started with a specific
+          -- device
+          device = true,
+          -- set to true to be able use the 'flutter_tools_decorations.project_config' in your statusline
+          -- this will show the currently selected project configuration
+          project_config = true,
+        },
+      },
       debugger = { -- integrate with nvim dap + install dart code debugger
         enabled = true,
         run_via_dap = false,
@@ -99,7 +112,7 @@ return {
       },
       dev_tools = {
         autostart = false, -- autostart devtools server if not detected
-        auto_open_browser = true, -- Automatically opens devtools in the browser
+        auto_open_browser = false, -- Automatically opens devtools in the browser
       },
       outline = {
         open_cmd = "50vnew", -- command to use to open the outline buffer

@@ -52,7 +52,7 @@ return {
   {
     "f-person/auto-dark-mode.nvim",
     lazy = false,
-    enalbed = function()
+    enabled = function()
       return vim.fn.has("macunix") == 1
     end,
     opts = {
