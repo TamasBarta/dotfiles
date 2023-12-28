@@ -8,8 +8,12 @@ let mapleader=" "
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=5
 
+set clipboard+=unnamed
+
 " Do incremental searching.
 set incsearch
+
+sethandler <C-r> a:vim
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -57,7 +61,7 @@ nmap <leader>ff <Action>(GotoFile)
 nmap <leader><leader> <Action>(GotoFile)
 nmap <leader>, <Action>(RecentFiles)
 
-nmap <leader>w <Action>(SaveAll)
+" nmap <leader>w <Action>(SaveAll)
 nmap <c-s> <Action>(SaveAll)
 nmap gr <Action>(FindUsages)
-nmap <leader>la <Action>(ShowIntentionActions)
+nmap <leader>ca <Action>(ShowIntentionActions)
