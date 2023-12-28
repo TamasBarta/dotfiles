@@ -50,15 +50,10 @@ yabai -m signal --add event=window_deminimized action='echo "refresh windows" | 
 
 # per app settings
 
-yabai -m rule --add title="Microsoft Teams Notification" window_border=off
-yabai -m rule --add title="Microsoft Teams Notification" manage=off
-yabai -m rule --add app="Cardhop" manage=off
+yabai -m rule --add app=".*" layer=normal
+
 yabai -m rule --add app="Home Assistant" manage=off
-yabai -m rule --add app="Google Assistant" manage=off
-yabai -m rule --add app="Android Studio" manage=off
-yabai -m rule --add app="Android Studio" title="~/" manage=on
-yabai -m rule --add app="Android Studio" title="..." manage=on
-yabai -m rule --add app="System Preferences" manage=off
-yabai -m rule --add app="System Preferences" window_border=off
+yabai -m rule --add app="Android Studio" title="Settings" manage=off
+yabai -m rule --add app="System Preferences" manage=off layer=above
 
 echo "yabai configuration loaded.."
