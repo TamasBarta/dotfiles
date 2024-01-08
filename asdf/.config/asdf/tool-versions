@@ -1,7 +1,7 @@
 nodejs 19.4.0
 java temurin-17.0.6+10
-gradle 7.2
-flutter 3.16.2-stable
+gradle 8.5
+flutter 3.18.0-0.1.pre-beta
 python 3.10.4
 ruby 3.1.2
 rust 1.61.0
