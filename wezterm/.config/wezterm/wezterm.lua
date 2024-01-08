@@ -41,6 +41,11 @@ config.keys = {
 		mods = "ALT",
 		action = wezterm.action.DisableDefaultAssignment,
 	},
+	{
+		key = "p",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
 }
 
 return config

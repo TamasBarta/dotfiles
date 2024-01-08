@@ -115,6 +115,14 @@ return {
     end,
   },
   {
+    "folke/noice.nvim",
+    opts = {
+      presets = {
+        lsp_doc_border = true,
+      },
+    },
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-emoji",
@@ -132,6 +140,11 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
 
       opts.completion.completeopt = "menu,menuone,noinsert,noselect,preview"
+
+      opts.window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<C-j>"] = cmp.mapping.select_next_item(),

@@ -4,7 +4,7 @@
 
 vim.opt.swapfile = false
 
-vim.opt.conceallevel = 0
+vim.opt.conceallevel = 2
 
 -- word wrapping
 vim.opt.lbr = true

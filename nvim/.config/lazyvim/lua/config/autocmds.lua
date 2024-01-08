@@ -29,3 +29,27 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
   group = vim.api.nvim_create_augroup("markdown_hotkeys", { clear = true }),
 })
+
+local imports = vim.api.nvim_create_augroup("folding_imports", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "rust" },
+  callback = function()
+    vim.opt_local.foldlevelstart = 19
+    vim.opt_local.foldlevel = 19
+    vim.opt_local.foldmethod = "expr"
+    vim.opt_local.foldexpr = "v:lnum==1?'>1':getline(v:lnum)=~'^ *use'?20:nvim_treesitter#foldexpr()"
+  end,
+  group = imports,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "dart" },
+  callback = function()
+    vim.opt_local.foldlevelstart = 19
+    vim.opt_local.foldlevel = 19
+    vim.opt_local.foldmethod = "expr"
+    vim.opt_local.foldexpr = "v:lnum==0?'>1':getline(v:lnum)=~'import'?20:nvim_treesitter#foldexpr()"
+  end,
+  group = imports,
+})
