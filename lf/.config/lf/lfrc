@@ -1,4 +1,5 @@
 set icons
+set sixel
 cmd open $set -f; rifle -p 0 $fx
 cmd open-with ${{
     set -f
@@ -9,3 +10,16 @@ cmd open-with ${{
 set drawbox
 map r open-with
 set previewer ~/.config/lf/preview
+
+cmd on-cd &{{
+	# display repository status in your prompt
+	if [ -d .git ] || [ -f .git ]; then
+		branch=$(git branch --show-current 2>/dev/null) || true
+		remote=$(git config --get branch.$branch.remote 2>/dev/null) || true
+		url=$(git remote get-url $remote 2>/dev/null) || true
+		fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[33;1m [GIT BRANCH:> $branch >> $url]\033[0m"
+	else
+		fmt="\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m\033[1m%f\033[0m"
+	fi
+	lf -remote "send $id set promptfmt \"$fmt\""
+}}
