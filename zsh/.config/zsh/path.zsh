@@ -1,6 +1,6 @@
 # Setting up the path
 
-export PATH="$PATH:$DOTFILES_HOME/scripts"
+export PATH="$DOTFILES_HOME/scripts:$PATH"
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cache/pub/bin"

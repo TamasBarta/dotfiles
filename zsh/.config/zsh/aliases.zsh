@@ -10,13 +10,14 @@ alias restart-plasma="killall plasmashell && kstart plasmashell"
 alias vim=nvim
 alias lg=lazygit
 alias which='command -v'
+alias pub='dart pub'
 
 alias cdpj="cd ~/Projects/Development/popjohn/popjohn_frontend/"
 
 unalias ll
 export EXA_ICON_SPACING=2
 # export LS_COLORS="$(vivid generate catppuccin-mocha)"
-alias ls="exa --group-directories-first --icons --group --classify"
+alias ls="eza --group-directories-first --icons --group --classify"
 alias l="ls --long"
 alias la="l --all"
 alias lt="l --tree"
