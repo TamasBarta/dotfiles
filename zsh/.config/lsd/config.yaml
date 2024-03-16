@@ -1,7 +1,0 @@
-color:
-  when: auto
-indicators: true
-header: true
-icons:
-  when: auto
-  separator: '  '
