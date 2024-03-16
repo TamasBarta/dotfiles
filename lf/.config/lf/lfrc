@@ -9,7 +9,13 @@ cmd open-with ${{
 }}
 set drawbox
 map r open-with
-set previewer ~/.config/lf/preview
+# set previewer ~/.config/lf/preview
+
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
 
 cmd on-cd &{{
 	# display repository status in your prompt
