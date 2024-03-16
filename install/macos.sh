@@ -26,6 +26,8 @@ brew tap koekeishiya/formulae
 brew tap withgraphite/tap
 # zathura
 brew tap zegervdv/zathura
+# fonts
+brew tap homebrew/cask-fonts
 
 # install Zathura with macOS patch
 brew install girara --HEAD
@@ -37,6 +39,8 @@ ln -s "$(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib" "$(brew --pref
 brew install zsh ruby stow homeassistant-cli bat tmux neovim lazygit topgrade lf zathura yq jq xq sops scrcpy ripgrep eza dust fd fzf zathura zathura-pdf-poppler yabai skhd borders svim sketchybar buf bundletool chafa coreutils curl wget go gnupg htop kondo just onefetch qrencode shellcheck w3m graphite tunnelto gomuks
 
 brew install --cask raycast firefox wezterm element slack spotify obsidian notion calibre signal karabiner-elements bitwarden jetbrains-toolbox todoist hiddenbar betterdisplay figma bluesnooze obs droidcam-obs krita monitorcontrol iina anydesk home-assistant telegram-desktop daisydisk insync onlyoffice minisim tableplus unnaturalscrollwheels min brave-browser
+
+brew install --cask font-jetbrains-mono-nerd-font
 
 # Create symlinks
 stow -d "$DOTFILES_HOME" karabiner
