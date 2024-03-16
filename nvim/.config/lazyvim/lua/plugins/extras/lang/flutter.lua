@@ -92,7 +92,7 @@ return {
       },
       debugger = { -- integrate with nvim dap + install dart code debugger
         enabled = true,
-        run_via_dap = false,
+        run_via_dap = true,
         exception_breakpoints = {},
       },
       -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup

@@ -22,8 +22,8 @@ return {
       },
     },
     keys = {
-      { "n", "<leader>ch", ":lua require('obsidian').util.toggle_checkbox()<CR>" },
-      { "n", "gf", ":lua require('obsidian').util.gf_passthrough()<CR>" },
+      { "<leader>ch", ":lua require('obsidian').util.toggle_checkbox()<CR>" },
+      { "gf", ":lua require('obsidian').util.gf_passthrough()<CR>" },
     },
   },
 }

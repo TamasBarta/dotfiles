@@ -10,7 +10,7 @@ return {
       if opts.options == nil then
         opts.options = {}
       end
-      opts.options.always_show_bufferline = false
+      opts.options.always_show_bufferline = true
     end,
   },
   {
@@ -28,7 +28,7 @@ return {
           end
           local device = vim.g.flutter_tools_decorations.device
           local device_name = device and (device.name or device.id) or "DEFAULT"
-          return device_name .. " | " .. vim.g.flutter_tools_decorations.app_version
+          return device_name .. "  " .. vim.g.flutter_tools_decorations.app_version
         end,
         color = "DiagnosticOk",
         cond = is_available,

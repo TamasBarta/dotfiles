@@ -175,4 +175,16 @@ return {
       })
     end,
   },
+  {
+    "FabijanZulj/blame.nvim",
+    opts = {
+      date_format = "%Y-%m-%d %H:%M:%S",
+      merge_consecutive = true,
+      virtual_style = "float",
+    },
+    keys = {
+      { "<leader>gb", "<cmd>ToggleBlame virtual<cr>", desc = "Blame" },
+      { "<leader>gB", "<cmd>ToggleBlame window<cr>", desc = "Blame (window)" },
+    },
+  },
 }

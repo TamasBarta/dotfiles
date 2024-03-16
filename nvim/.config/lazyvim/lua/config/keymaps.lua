@@ -2,8 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- vim.keymap.del({ "n", "i", "v" }, "<a-k>")
--- vim.keymap.del({ "n", "i", "v" }, "<a-j>")
+vim.keymap.del({ "n", "i", "v" }, "<a-k>")
+vim.keymap.del({ "n", "i", "v" }, "<a-j>")
 
 vim.keymap.set({ "n", "v" }, "ő", "[", { remap = true })
 vim.keymap.set({ "n", "v" }, "ú", "]", { remap = true })

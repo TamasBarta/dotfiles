@@ -1,5 +1,11 @@
 return {
   {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+  },
+  {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
@@ -58,11 +64,11 @@ return {
     opts = {
       set_dark_mode = function()
         vim.api.nvim_set_option("background", "dark")
-        vim.cmd("Catppuccin mocha")
+        -- vim.cmd("Catppuccin mocha")
       end,
       set_light_mode = function()
         vim.api.nvim_set_option("background", "light")
-        vim.cmd("Catppuccin latte")
+        -- vim.cmd("Catppuccin latte")
       end,
     },
     init = function()
