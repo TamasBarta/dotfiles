@@ -1,5 +1,5 @@
 " General Settings
-set theme catppuccin
+set theme everforest
 set update.lastchecktime 1648754688816
 set update.nag true
 set update.nagwait 7
@@ -225,9 +225,9 @@ bind ;v hint -W mpvsafe
 bind ;V hint -V
 bind ;w hint -w
 bind ;t hint -W tabopen
-bind ;O hint -W fillcmdline_notrail open 
-bind ;W hint -W fillcmdline_notrail winopen 
-bind ;T hint -W fillcmdline_notrail tabopen 
+bind ;O hint -W fillcmdline_notrail open
+bind ;W hint -W fillcmdline_notrail winopen
+bind ;T hint -W fillcmdline_notrail tabopen
 bind ;z hint -z
 bind ;m composite hint -Jpipe img src | open images.google.com/searchbyimage?image_url=
 bind ;M composite hint -Jpipe img src | tabopen images.google.com/searchbyimage?image_url=
@@ -258,6 +258,15 @@ bind <A-c> recontain Tier
 unbind <escape>
 bind m gobble 1 markadd
 bind ` gobble 1 markjump
+unbind <M-t>
+bind <A-†> tabopen -c Work about:newtab
+bind <A-&> recontain Work
+bind gnÁ tabopen https://www.notion.so/tamasbarta/5f587c55abb44ac6b216944cb5f24065?v=e525c3199401476ca7d9f33f05ada5b0
+bind goÁ open https://www.notion.so/tamasbarta/5f587c55abb44ac6b216944cb5f24065?v=e525c3199401476ca7d9f33f05ada5b0
+bind gwÁ winopen https://www.notion.so/tamasbarta/5f587c55abb44ac6b216944cb5f24065?v=e525c3199401476ca7d9f33f05ada5b0
+bind yq text2qr --timeout 5
+bind ;d hint -W tabopen --discard
+bind ;gd hint -qW tabopen --discard
 
 " Aliases
 alias fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
