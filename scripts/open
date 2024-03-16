@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Function to determine file extension based on MIME type
+opening_app() {
+	case "$1" in
+	"image/jpeg") echo "-a Preview.app" ;;
+	"image/png") echo "-a Preview.app" ;;
+	"image/gif") echo "-a Preview.app" ;;
+	"image/bmp") echo "-a Preview.app" ;;
+	"image/tiff") echo "-a Preview.app" ;;
+	"image/webp") echo "-a Preview.app" ;;
+	"image/svg+xml") echo "-a Preview.app" ;;
+	"audio/ogg") echo "-a IINA.app" ;;
+	"audio/mp4") echo "-a IINA.app" ;;
+	"audio/aac") echo "-a IINA.app" ;;
+	"audio/mpeg") echo "-a IINA.app" ;;
+	"audio/webm") echo "-a IINA.app" ;;
+	"video/webm") echo "-a IINA.app" ;;
+	"video/mp4") echo "-a IINA.app" ;;
+	"video/mpeg") echo "-a IINA.app" ;;
+	"application/pdf") echo "-a zathura-client.app" ;;
+	*) echo "" ;;
+	esac
+}
+
+file_type=$(file -b --mime-type "$1")
+opening_app=$(opening_app "$file_type")
+
+/usr/bin/open $opening_app "$1"
+exit $?
