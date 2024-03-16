@@ -1,9 +1,15 @@
 #!/bin/bash
 
 xcode-select --install
+sudo softwareupdate --install-rosetta --agree-to-license
 
 # Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [ -x "$(command -v brew)" ]; then
+	echo "Homebrew is already installed."
+else
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Add taps
 # gomuks
