@@ -50,10 +50,13 @@ yabai -m signal --add event=window_deminimized action='echo "refresh windows" | 
 
 # per app settings
 
-yabai -m rule --add app=".*" layer=normal
+yabai -m rule --add app=".*" layer=below
 
 yabai -m rule --add app="Home Assistant" manage=off
 yabai -m rule --add app="Android Studio" title="Settings" manage=off
 yabai -m rule --add app="System Preferences" manage=off layer=above
+
+# fix having no focus when the last of a window of an app in a space is closed
+yabai -m signal --add event=window_destroyed action=~/.dotfiles/scripts/yabai-on-window_destroyed.sh
 
 echo "yabai configuration loaded.."
