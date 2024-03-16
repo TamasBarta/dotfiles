@@ -4,18 +4,57 @@
     ci = commit
     st = status
     cleanup = "!git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D"
+    diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
 [user]
     name = Tamás Barta
-	email = tamas@bartatamas.hu
+    email = tamas@bartatamas.hu
 
 [core]
     autocrlf = input
-    editor = lvim
-	excludesfile = ~/.config/git/ignore
+    editor = nvim
+    excludesfile = ~/.config/git/ignore
+    attributesfile = ~/.config/git/attributes
 #    compression = 0
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    side-by-side = true
+    syntax-theme = ansi
+
+[delta "coracias-caudatus"]
+    # author: https://github.com/clnoll
+    commit-decoration-style = ol "#7536ff"
+    commit-style = "#200078"
+    file-decoration-style = none
+    file-style = omit
+    hunk-header-decoration-style = "#cfd6ff" ul
+    hunk-header-file-style = "#858dff"
+    hunk-header-line-number-style = "#7536ff"
+    hunk-header-style = file line-number syntax
+    light = true
+    line-numbers = true
+    line-numbers-left-format = "{nm:>4} ."
+    line-numbers-left-style = "#e3ab02"
+    line-numbers-minus-style = "#ff38b6"
+    line-numbers-plus-style = "#00e0c2"
+    line-numbers-right-format = "{np:>4}  "
+    line-numbers-right-style = white
+    line-numbers-zero-style = "#cccccc"
+    minus-emph-style = bold "#ff3838" "#ffe3f7"
+    minus-style = "#ff0080"
+    plus-emph-style = "#008a81" bold "#00ffbf"
+    plus-style = syntax "#cffff3"
+    syntax-theme = GitHub
+[merge]
+    conflictstyle = diff3
 [diff]
     tool = kitty
     guitool = kitty.gui
+    colorMoved = default
 [difftool]
     prompt = false
     trustExitCode = true
@@ -31,3 +70,9 @@
 	program = gpg2
 [init]
 	defaultBranch = master
+[diff "image"]
+	command = ~/Desktop/git-diff-image/git_diff_image
+[remote "origin"]
+	prune = true
+[pull]
+	ff = only
