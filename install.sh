@@ -52,7 +52,7 @@ stow -d "$DOTFILES_HOME" lf
 stow -d "$DOTFILES_HOME" zathura
 stow -d "$DOTFILES_HOME" tridactyl
 stow -d "$DOTFILES_HOME" jetbrains
-stow -d "$DOTFILES_HOME" spotifyd
+stow -d "$DOTFILES_HOME" spotify
 stow -d "$DOTFILES_HOME" neofetch
 stow -d "$DOTFILES_HOME" newsboat
 stow -d "$DOTFILES_HOME" neomutt
