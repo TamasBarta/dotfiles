@@ -13,7 +13,6 @@ return {
       else
         opts.indent = { enable = true, disable = { "dart" } }
       end
-      print(vim.inspect(opts))
       opts.indent = { enable = true, disable = { "dart" } }
     end,
   },
@@ -140,7 +139,6 @@ return {
   --   "nvim-lualine/lualine.nvim",
   --   event = "VeryLazy",
   --   opts = function(_, opts)
-  --     print(vim.inspect(opts.sections.lualine_x))
   --     table.insert(opts.sections.lualine_x, {
   --       function()
   --         return require("flutter-tools.decorations").statusline.app_version()
