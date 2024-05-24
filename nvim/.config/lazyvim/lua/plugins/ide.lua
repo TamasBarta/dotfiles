@@ -27,7 +27,10 @@ return {
   "mfussenegger/nvim-dap",
   {
     "rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap" },
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio",
+    },
     opts = function(_, opts)
       opts.mappings = {
         expand = { "<CR>", "<2-LeftMouse>" },
@@ -54,7 +57,7 @@ return {
         opts.right = {}
       end
       if opts.bottom == nil then
-        opts.right = {}
+        opts.bottom = {}
       end
       if opts.options == nil then
         opts.options = {}
