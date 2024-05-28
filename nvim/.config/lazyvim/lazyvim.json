@@ -5,6 +5,8 @@
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.editor.dial",
+    "lazyvim.plugins.extras.editor.navic",
+    "lazyvim.plugins.extras.editor.refactoring",
     "lazyvim.plugins.extras.editor.trouble-v3",
     "lazyvim.plugins.extras.lang.ansible",
     "lazyvim.plugins.extras.lang.clangd",
@@ -21,14 +23,17 @@
     "lazyvim.plugins.extras.lang.terraform",
     "lazyvim.plugins.extras.lang.toml",
     "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.lsp.none-ls",
     "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.ui.edgy",
     "lazyvim.plugins.extras.util.mini-hipatterns",
+    "lazyvim.plugins.extras.util.project",
     "plugins.extras.lang.flutter",
     "plugins.extras.lang.swift"
   ],
   "news": {
     "NEWS.md": "4964"
   },
-  "version": 4
+  "version": 5
 }

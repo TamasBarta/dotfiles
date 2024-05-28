@@ -15,6 +15,7 @@ local isLinux = string.find(wezterm.target_triple, "linux")
 config.term = "wezterm"
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 config.font = wezterm.font_with_fallback({ "JetbrainsMono NF", "JetbrainsMono Nerd Font" })
+config.font = wezterm.font_with_fallback({ "MonaspiceNe Nerd Font" })
 config.font_size = isLinux and 11.5 or 14
 config.line_height = 1.3
 -- config.front_end = "WebGpu"

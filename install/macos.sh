@@ -43,6 +43,7 @@ brew install zsh ruby stow homeassistant-cli bat tmux neovim lazygit topgrade lf
 brew install --cask raycast firefox wezterm element slack spotify obsidian notion calibre signal karabiner-elements bitwarden jetbrains-toolbox todoist hiddenbar betterdisplay figma bluesnooze obs droidcam-obs krita monitorcontrol iina anydesk home-assistant telegram-desktop daisydisk insync onlyoffice minisim tableplus unnaturalscrollwheels min brave-browser gpg-suite
 
 brew install --cask font-jetbrains-mono-nerd-font
+brew install --cask font-monaspace-nerd-font
 
 # Download proper Hungarian keyboard layout
 wget -O - https://raw.githubusercontent.com/zaki/mac-hun-keyboard/master/Hungarian_Win.keylayout | sudo tee /Library/Keyboard\ Layouts/Hungarian_Win.keylayout
