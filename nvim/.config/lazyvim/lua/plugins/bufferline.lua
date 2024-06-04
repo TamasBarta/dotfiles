@@ -11,6 +11,7 @@ return {
         opts.options = {}
       end
       opts.options.always_show_bufferline = true
+      opts.options.separator_style = "slant"
     end,
   },
   {

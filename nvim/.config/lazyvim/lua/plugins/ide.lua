@@ -189,8 +189,8 @@ return {
       end,
     },
     keys = {
-      { "<leader>gb", "<cmd>ToggleBlame virtual<cr>", desc = "Blame" },
-      { "<leader>gB", "<cmd>ToggleBlame window<cr>", desc = "Blame (window)" },
+      { "<leader>gB", "<cmd>BlameToggle virtual<cr>", desc = "Blame" },
+      { "<leader>gb", "<cmd>BlameToggle window<cr>", desc = "Blame (window)" },
     },
   },
 }

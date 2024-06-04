@@ -5,4 +5,7 @@ return {
       opts.open_mapping = [[<c-t>]]
     end,
   },
+  {
+    "norcalli/nvim-terminal.lua",
+  },
 }
