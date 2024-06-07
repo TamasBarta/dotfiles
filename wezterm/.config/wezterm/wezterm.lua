@@ -4,9 +4,9 @@ local config = wezterm.config_builder()
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") or string.find(wezterm.target_triple, "linux") then
-		return "Catppuccin Mocha"
+		return "Everforest Dark Hard (Gogh)"
 	else
-		return "Catppuccin Latte"
+		return "Everforest Light Hard (Gogh)"
 	end
 end
 
@@ -23,13 +23,13 @@ config.window_padding = {
 	left = "0cell",
 	right = "0cell",
 	-- top = "0",
-	top = isLinux and 11.5 or 56,
+	top = isLinux and 0 or 56,
 	bottom = "0.0cell",
 }
 config.enable_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false
 if isLinux then
-	config.window_background_opacity = 0.9
+	config.window_background_opacity = 0.8
 	-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 	-- config.integrated_title_button_style = "Gnome"
 else
