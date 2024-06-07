@@ -10,7 +10,7 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      -- transparent_background = true, -- disables setting the background color
+      transparent_background = true, -- disables setting the background color
       integrations = {
         alpha = true,
         cmp = true,
@@ -63,11 +63,13 @@ return {
     end,
     opts = {
       set_dark_mode = function()
-        vim.api.nvim_set_option("background", "dark")
+        -- vim.api.nvim_set_option("background", "dark")
+        vim.opt.background = "dark"
         -- vim.cmd("Catppuccin mocha")
       end,
       set_light_mode = function()
-        vim.api.nvim_set_option("background", "light")
+        -- vim.api.nvim_set_option("background", "light")
+        vim.opt.background = "light"
         -- vim.cmd("Catppuccin latte")
       end,
     },
