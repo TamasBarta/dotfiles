@@ -29,3 +29,9 @@ cmd on-cd &{{
 	fi
 	lf -remote "send $id set promptfmt \"$fmt\""
 }}
+
+cmd set-wallpaper &{{
+  swww img --transition-fps 100 --transition-step 60 --transition-type center "$fx"
+}}
+map b set-wallpaper
+map * push :glob-select
