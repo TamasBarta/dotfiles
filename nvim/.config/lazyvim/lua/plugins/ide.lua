@@ -167,22 +167,14 @@ return {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-          -- they way you will only jump inside the snippet region
-          elseif luasnip.expand_or_jumpable() then
+          if luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
-          elseif has_words_before() then
-            cmp.complete()
           else
             fallback()
           end
         end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif luasnip.jumpable(-1) then
+          if luasnip.jumpable(-1) then
             luasnip.jump(-1)
           else
             fallback()
@@ -205,5 +197,16 @@ return {
       { "<leader>gB", "<cmd>BlameToggle virtual<cr>", desc = "Blame" },
       { "<leader>gb", "<cmd>BlameToggle window<cr>", desc = "Blame (window)" },
     },
+  },
+  {
+    "andythigpen/nvim-coverage",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = true,
+    keys = {
+      { "<leader>uC", "<cmd>CoverageToggle<cr>", desc = "Coverage" },
+    },
+    -- config = function()
+    --   require("coverage").setup()
+    -- end,
   },
 }
