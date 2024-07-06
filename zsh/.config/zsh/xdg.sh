@@ -21,7 +21,6 @@ export ANDROID_HOME="$XDG_DATA_HOME"/android
 export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
 export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android/emulator
 export ANDROID_AVD_HOME="$ANDROID_EMULATOR_HOME/avd"
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export PUB_CACHE="$XDG_CACHE_HOME"/pub
 export ANALYZER_STATE_LOCATION_OVERRIDE="$XDG_DATA_HOME/dartServer"
 
