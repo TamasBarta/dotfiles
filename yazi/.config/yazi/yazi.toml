@@ -1,0 +1,8 @@
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+]
+
+append_previewers = [
+  { name = "*", run = "hexyl" },
+]
