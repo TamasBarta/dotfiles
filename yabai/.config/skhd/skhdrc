@@ -151,7 +151,7 @@ hass < space; default
 hass < o : skhd -k "space" ; hass-cli service call light.toggle --arguments entity_id=light.standing_lamp; hass-cli service call light.toggle --arguments entity_id=light.desk_lamp
 hass < b : skhd -k "space" ; hass-cli service call light.toggle --arguments entity_id=light.bedroom_1; hass-cli service call light.toggle --arguments entity_id=light.bedroom_2
 hass < l : skhd -k "space" ; hass-cli service call light.toggle --arguments entity_id=light.main
-hass < k : skhd -k "space" ; hass-cli service call switch.toggle --arguments entity_id=switch.kettle
+hass < k : skhd -k "space" ; hass-cli service call switch.toggle --arguments entity_id=switch.ikea_of_sweden_tradfri_control_outlet_switch
 
 # Android development shortcuts
 cmd + ctrl + alt - x: adb shell ps | grep lastpass | grep -Eo " [0-9]+ " | head -1 | xargs adb shell kill
