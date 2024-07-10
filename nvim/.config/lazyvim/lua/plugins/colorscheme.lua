@@ -88,9 +88,9 @@ return {
   {
     "f-person/auto-dark-mode.nvim",
     lazy = false,
-    enabled = function()
-      return vim.fn.has("macunix") == 1
-    end,
+    -- enabled = function()
+    --   return vim.fn.has("macunix") == 1
+    -- end,
     opts = {
       set_dark_mode = function()
         -- vim.api.nvim_set_option("background", "dark")

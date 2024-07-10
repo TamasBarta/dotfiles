@@ -1,115 +1,154 @@
-@import 'colors.css';
+@import "colors.css";
 
 * {
-    border: none;
-    border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: 'SF Pro', 'Iosevka Nerd Font';
-    font-size: 14px;
-    min-height: 0;
+  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
 }
 
 window#waybar {
-    color: @base05;
-    transition-property: background-color;
-    transition-duration: .5s;
-    background-color: transparent;
+  background-color: transparent;
+  border-radius: 13px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
-window#waybar > * {
-    margin: 20px;
-    margin-bottom: 0;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: inherit;
-    font-weight: inherit;
-}
-
-#workspaces button:first-child {
-    border-bottom-left-radius: 40px;
-    border-top-left-radius: 40px;
-}
-#workspaces button:last-child {
-    border-bottom-right-radius: 40px;
-    border-top-right-radius: 40px;
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+  background-color: @surface2;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #workspaces button.focused {
-    background: rgba(0, 0, 0, 0.4);
-    color: #fff;
+  background-color: @lavender;
+  box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
-    background-color: @base08;
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #64727d;
+  box-shadow: inset 0 -3px #ffffff;
 }
 
 #clock,
 #battery,
 #cpu,
 #memory,
-#disk,
 #temperature,
-#backlight,
 #network,
-#pulseaudio,
-#custom-media,
-#custom-recordindicator,
-#custom-dunst,
-#custom-sunpaper,
-#custom-pomo,
-#custom-exit,
-#mode,
-#idle_inhibitor,
-#mpd
-,#tray
-,#workspaces
-{
-    border-radius: 20px;
-    padding: 0 10px;
-    margin: 0px 6px;
-    color: @base00;
-    background-color: @base04;
-}
-#tray {
-    background-color: transparent;
-    margin: 0px;
-}
-#tray > * > * {
-    padding: 6px 8px;
-    background-color: @base03;
-    border-radius: 30px;
+#tray,
+#pulseaudio {
+  padding: 0 10px;
 }
 
-#custom-recordindicator {
-    background-color: @base08;
+#pulseaudio {
+  color: @green;
 }
 
-#workspaces {
-padding: 0;
+#network {
+  color: @yellow;
+}
+
+#temperature {
+  color: @sapphire;
+}
+
+#backlight {
+  color: @teal;
+}
+
+#battery {
+  color: @peach;
+}
+
+#clock {
+  color: @maroon;
+}
+
+#window {
+  color: @text;
+}
+
+.modules-right,
+.modules-left,
+.modules-center {
+  background-color: @base-transparent;
+  border-radius: 15px;
+
+  border: solid 4px @green;
+  padding: 5px 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.modules-right,
+.modules-left {
+  box-shadow: 0 2px 4px 4px rgba(0,0,0,0.5);
+}
+
+.modules-center {
+  background-color: transparent;
+  border:none;
+}
+
+.modules-left {
+  margin-left: 30px;
+}
+.modules-right {
+  margin-right: 30px;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @sapphire;
 }
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+  to {
+    color: #000000;
+  }
 }
 
+/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: @base08;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
+label:focus {
+  background-color: #000000;
+}
+
+#pulseaudio.muted {
+  color: @text;
+}

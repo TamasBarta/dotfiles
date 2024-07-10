@@ -1,5 +1,4 @@
 #!/bin/bash
 
-
 echo "kutya|Kutya
-cicmic|Macska" | rofi_with_names -p wat
+cicmic|Macska" | rofi_with_names.sh -p wat

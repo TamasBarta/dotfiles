@@ -1,28 +1,44 @@
 configuration {
   modi: "combi";
-	/* modi: "drun,run,window,ssh"; */
-	font: "SF Pro 12";
-	/* font: "Iosevka Nerd Font 10"; */
+	modi: "combi,drun,run,window,ssh"; 
+	combi-modi: "drun,run,ssh";
+	// combi-modi: "window,drun,run,ssh,meet:rofi-modi-google-meet.sh";
+
+  /* Keys */
+  kb-row-up: "Up,Control+k";
+  kb-row-down: "Down,Control+j";
+  kb-row-left: "Control+h";
+  kb-row-right: "Control+l";
+  kb-accept-entry: "Control+m,Return,KP_Enter";
+  kb-remove-to-eol: "Control+Shift+e";
+  kb-remove-char-back: "BackSpace,Shift+BackSpace";
+  kb-mode-complete: "Tab";
+  kb-element-next: "Control+n";
+  kb-element-prev: "Control+p";
+	kb-mode-next: "Control+Tab,Super+space";
+	kb-mode-previous: "Control+ISO_Left_Tab";
+
 	show-icons: true;
-	/* icon-theme: "Papirus"; */
-	icon-theme: "We10X-green-dark";
-	drun-display-format: "{name}";
 	disable-history: false;
 	sort: true;
 	sorting-method: "fzf";
 	cycle: true;
-	sidebar-mode: false;
-	combi-modi: "window,drun,run,ssh,meet:rofi-modi-google-meet.sh";
 	matching: "fuzzy";
-	dpi: 0;
-	display-run: ">>>";
-	display-ssh: "SSH";
-	display-drun: "APP";
-	display-combi: "ALL";
-	display-window: "WIN";
-	display-meet: "GML";
-	kb-mode-next: "Control+Tab,Super+space";
-	kb-mode-previous: "Control+ISO_Left_Tab";
+  terminal: "wezterm";
+  location: 0;
+  hide-scrollbar: true;
+
+  display-combi: " 󰍉 ";
+  display-drun: "  ";
+  display-run: "  ";
+  display-window: " 󰕰 ";
+  display-ssh: " 󰣀 ";
+  display-Network: " 󰤨 ";
+  sidebar-mode: true;
+
+
 }
-  
-@import "theme.rasi"
+
+
+@theme "theme.rasi"
+

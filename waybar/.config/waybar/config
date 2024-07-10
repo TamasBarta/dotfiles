@@ -1,174 +1,111 @@
 {
-    "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "height": 48, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-    "modules-center": ["custom/recordindicator"],
-    "modules-right": ["tray", "custom/dunst", "pulseaudio", "network", "battery", "battery#bat2", "clock", "custom/exit"],
-    // Modules configuration
-    "sway/workspaces": {
-        "disable-scroll": true,
-    //     "all-outputs": true,
-        "format": "{index}: {icon} ",
-        "format-icons": {
-            "1:www": "",
-            "2:dev": "",
-            "3:com": "聆",
-            "4:prd": "",
-            "5:off": "",
-            "6:rnd": "﫸",
-            "10:ext": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        },
+  "reload_style_on_change": true,
+  "position": "top",
+  "height": 100,
+  "modules-left": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    // "temperature",
+    "backlight",
+    "pulseaudio",
+    "network",
+    "battery",
+    "clock"
+  ],
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 100,
+    "rewrite": {
+      "": "Hyprland"
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+    "separate-outputs": true
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "active": " "
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 0 // 5 workspaces by default on every monitor
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " ",
-            "deactivated": " "
-        }
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}%  "
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "󰉬",
+      "",
+      "󰉪"
+    ]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": "󰃨  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "{cidr} 󰈀",
+    "tooltip-format": "{ifname} via {gwaddr} 󰈀",
+    "format-linked": "{ifname} (No IP) 󰈀",
+    "format-disconnected": " ⚠ ",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "backlight": {
+    "format": " {icon} {percent}%",
+    "format-icons": [
+      "󰃟"
+    ],
+    "on-click": "darkman toggle"
+  },
+  "pulseaudio": {
+    "format": " {icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+    "format-muted": "󰝟 {format_source}",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "󰂑",
+      "headset": "󰂑",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": [" ", " "]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}%  ",
-        "format-plugged": "{capacity}%  ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)  ",
-        //"format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
-        "format-ethernet": "Ethernet  ",
-        "format-linked": "{ifname} (No IP)  ",
-        "format-disconnected": "Disconnected ⚠ ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "婢 {icon} {format_source}",
-        "format-muted": "婢 {format_source}",
-        "format-source": "{volume}%  ",
-        "format-source-muted": " ",
-        "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
-            "default": [" ", " ", " "]
-        },
-        "on-click": "bluetooth-profiles-menu.sh"
-    },
-    "custom/dunst": {
-        "exec": "while [ true ]; do if [[ `dunstctl is-paused` == 'false' ]]; then echo ' '; else echo ' '; fi; sleep 1; done",
-        "on-click": "dunstctl set-paused toggle"
-    },
-    "custom/media": {
-        "format": "  {}",
-        "return-type": "aosdf",
-        // "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "playerctl --player=spotifyd metadata --format \"{{xesam:artist}} - {{xesam:title}}\" --follow 2>/dev/null"
-        // "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/pomo": {
-      "exec": "echo \"🍅 $(pomo status)\"",
-      "interval": 1,
-    }
-,
-    "custom/sunpaper": {
-      "exec": "$HOME/Pictures/Wallpapers/sunpaper/sunpaper.sh --waybar",
-      "interval": 1,
-      "return-type": "json"
-    },
-    "custom/exit": {
-        "on-click": "shutdown-menu.sh",
-        "format": "襤 "
-      },
-      "custom/recordindicator": {
-        "exec-if": "test ! -z \"$(pactl list source-outputs)\"",
-      "interval": 1,
-        "exec": "echo 壘"
-      }
+    "on-click": "pavucontrol"
+  }
 }

@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 #
+# Gist https://gist.github.com/mmirus/840c907f02dfb491a150be4e459893d1
+#
+# Forked from https://gist.github.com/omc8db/d95462784bc1c5c41f7f489df5dbc377
+#
 #   Use rofi to pick emoji because that's what this
 #   century is about apparently...
 #
 #   Requirements:
-#     rofi, xsel, xdotool, curl, xmllint
-#   For Wayland:
-#     wl-clipboard, wtype
+#     rofi, wtype, wl-copy, curl
 #
 #   Usage:
 #     1. Download all emoji
@@ -25,85 +27,50 @@
 # Where to save the emojis file.
 EMOJI_FILE="$HOME/.cache/emojis.txt"
 
-# Urls of emoji to download.
-# You can remove what you don't need.
-URLS=(
-    'https://emojipedia.org/people/'
-    'https://emojipedia.org/nature/'
-    'https://emojipedia.org/food-drink/'
-    'https://emojipedia.org/activity/'
-    'https://emojipedia.org/travel-places/'
-    'https://emojipedia.org/objects/'
-    'https://emojipedia.org/symbols/'
-    'https://emojipedia.org/flags/'
-)
-
-
 function notify() {
-    if [ "$(command -v notify-send)" ]; then
-        notify-send "$1" "$2"
-    fi
+	if [ "$(command -v notify-send)" ]; then
+		notify-send "$1" "$2"
+	fi
 }
-
 
 function download() {
-    notify `basename "$0"` 'Downloading all emoji for your pleasure'
+	notify "$(basename "$0")" 'Downloading all emoji for your pleasure'
 
-    echo "" > "$EMOJI_FILE"
+	curl https://unicode.org/emoji/charts/full-emoji-list.html |
+		grep -Po "class='(chars|name)'>\K[^<]+" |
+		paste - - >"$EMOJI_FILE"
 
-    for url in "${URLS[@]}"; do
-        echo "Downloading: $url"
-
-        # Download the list of emoji and remove all the junk around it
-        emojis=$(curl -s "$url" | \
-                 xmllint --html \
-                         --xpath '//ul[@class="emoji-list"]' - 2>/dev/null)
-
-        # Get rid of starting/closing ul tags
-        emojis=$(echo "$emojis" | head -n -1 | tail -n +1)
-
-        # Extract the emoji and its description
-        emojis=$(echo "$emojis" | \
-                 sed -rn 's/.*<span class="emoji">(.*)<\/span> (.*)<\/a><\/li>/\1 \2/p')
-
-        echo "$emojis" >> "$EMOJI_FILE"
-    done
-
-    notify `basename "$0"` "We're all set!"
+	notify "$(basename "$0")" "We're all set!"
 }
-
 
 function display() {
-    emoji=$(cat "$EMOJI_FILE" | grep -v '#' | grep -v '^[[:space:]]*$')
-    line=$(echo "$emoji" | rofi -dmenu -i -p emoji -kb-custom-1 Ctrl+c $@)
-    exit_code=$?
+	emoji=$(grep -v '#' "$EMOJI_FILE" | grep -v '^[[:space:]]*$')
+	line=$(echo "$emoji" | rofi -dmenu -i -p emoji -kb-secondary-copy "" -kb-custom-1 Ctrl+c -theme-str 'configuration {show-icons:false;} element {padding: 20px;} listview{columns:8;}' "$@")
+	exit_code=$?
 
-    line=($line)
+	IFS=$'\t' read -r -a line <<<"$line"
 
-    if [ $exit_code == 0 ]; then
-        sleep 0.1  # Delay pasting so the text-entry can come active
-        xdotool type --clearmodifiers "${line[0]}"
-        wtype "${line[0]}"
-    elif [ $exit_code == 10 ]; then
-        echo -n "${line[0]}" | xsel -i -b
-        echo -n "${line[0]}" | wl-copy
-    fi
+	if [ $exit_code == 0 ]; then
+		sleep 0.1 # Delay pasting so the text-entry can come active
+		wtype "${line[0]}"
+	elif [ $exit_code == 10 ]; then
+		echo -n "${line[0]}" | wl-copy
+	fi
 }
-
 
 # Some simple argparsing
 if [[ "$1" =~ -D|--download ]]; then
-    download
-    exit 0
+	download
+	exit 0
 elif [[ "$1" =~ -h|--help ]]; then
-    echo "usage: $0 [-D|--download]"
-    exit 0
+	echo "usage: $0 [-D|--download]"
+	exit 0
 fi
 
 # Download all emoji if they don't exist yet
 if [ ! -f "$EMOJI_FILE" ]; then
-    download
+	download
 fi
 
 # display displays :)
-display
+display "$@"
