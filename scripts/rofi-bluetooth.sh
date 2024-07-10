@@ -305,7 +305,7 @@ show_menu() {
 }
 
 # Rofi command to pipe into, can add any options here
-rofi_command="rofi -dmenu $* -p -theme-str 'listview{columns:1;}'"
+rofi_command="rofi -dmenu $* -i -p"
 
 case "$1" in
 --status)

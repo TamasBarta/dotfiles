@@ -3,10 +3,15 @@
   "position": "top",
   "height": 100,
   "modules-left": [
+    "hyprland/workspaces",
     "hyprland/window"
   ],
+  "modules-center": [],
   "modules-right": [
     "tray",
+    "privacy",
+    "hyprland/submap",
+    "hyprland/language",
     // "temperature",
     "backlight",
     "pulseaudio",
@@ -14,13 +19,48 @@
     "battery",
     "clock"
   ],
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
+  },
   "hyprland/window": {
     "format": "{}",
     "max-length": 100,
     "rewrite": {
-      "": "Hyprland"
+      "": "Hyprland",
+      "(.*) — Mozilla Firefox": "$1"
     },
+    "icon": true,
+    "icon-size": 18,
     "separate-outputs": true
+  },
+  "hyprland/submap": {
+    "format": "󱊷  {}",
+    "max-length": 12,
+    "tooltip": false
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-hu": "hu",
+    "format-gb": "gb"
   },
   "hyprland/workspaces": {
     "format": "{icon}",

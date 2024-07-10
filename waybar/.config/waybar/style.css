@@ -62,6 +62,8 @@ button:hover {
 #temperature,
 #network,
 #tray,
+#submap,
+#language,
 #pulseaudio {
   padding: 0 10px;
 }
@@ -92,6 +94,14 @@ button:hover {
 
 #window {
   color: @text;
+}
+
+#language {
+  color: @blue;
+}
+
+#submap {
+  color: @levander;
 }
 
 .modules-right,
