@@ -64,7 +64,8 @@ button:hover {
 #tray,
 #submap,
 #language,
-#pulseaudio {
+#pulseaudio,
+#privacy {
   padding: 0 10px;
 }
 
@@ -102,6 +103,10 @@ button:hover {
 
 #submap {
   color: @levander;
+}
+
+#privacy {
+  color: @red;
 }
 
 .modules-right,
