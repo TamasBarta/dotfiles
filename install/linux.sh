@@ -2,10 +2,12 @@
 
 case $(cat /etc/*-release | awk -F '=' '{ if ($1 == "ID") print $2 }' | tr -d "\"") in
 arch | manjaro-arm | archarm)
-	source $DOTFILES_HOME/install/arch.sh
+	source "$DOTFILES_HOME/install/arch.sh"
 	;;
-debian) source $DOTFILES_HOME/install/debian.sh ;;
-*) source $DOTFILES_HOME/install/android.sh ;;
+fedora | fedora-asahi-remix)
+	source "$DOTFIELS_HOME/install/fedora.sh"
+	;;
+*) source "$DOTFILES_HOME/install/android.sh" ;;
 esac
 
 stow -d $DOTFILES_HOME rofi

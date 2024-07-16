@@ -48,7 +48,7 @@ stow -d "$DOTFILES_HOME" git
 stow -d "$DOTFILES_HOME" wezterm
 stow -d "$DOTFILES_HOME" asdf
 stow -d "$DOTFILES_HOME" topgrade
-stow -d "$DOTFILES_HOME" lf
+stow -d "$DOTFILES_HOME" yazi
 stow -d "$DOTFILES_HOME" zathura
 stow -d "$DOTFILES_HOME" tridactyl
 stow -d "$DOTFILES_HOME" jetbrains
