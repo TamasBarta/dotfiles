@@ -1,3 +1,5 @@
 #!/bin/sh
 
-flatpak run com.brave.Browser --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --app=$1
+chromium-browser --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer \
+	--ozone-platform=wayland \
+	--app="$1"

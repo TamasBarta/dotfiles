@@ -34,7 +34,7 @@ button:hover {
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;
-  color: #ffffff;
+  color: @text;
 }
 
 #workspaces button:hover {
@@ -145,7 +145,8 @@ button:hover {
 
 @keyframes blink {
   to {
-    color: #000000;
+    /*color: #000000;*/
+    background-color: transparent;
   }
 }
 
