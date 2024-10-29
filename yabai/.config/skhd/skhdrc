@@ -1,5 +1,4 @@
 # open terminal
-# cmd + ctrl + alt - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 cmd + ctrl + alt - return : /Applications/WezTerm.app/Contents/MacOS/wezterm
 
 cmd - h : echo "Hide application shortcut is disabled :)"

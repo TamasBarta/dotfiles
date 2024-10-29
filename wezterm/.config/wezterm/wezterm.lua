@@ -1,19 +1,24 @@
 local wezterm = require("wezterm")
 
+local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm")
+
 local config = wezterm.config_builder()
 
-local function scheme_for_appearance(appearance)
+local function theme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Catppuccin Mocha"
+		return theme.main
 	else
-		return "Catppuccin Latte"
+		return theme.dawn
 	end
 end
 
 local isLinux = string.find(wezterm.target_triple, "linux")
 
+local theme_variant = theme_for_appearance(wezterm.gui.get_appearance())
+
 config.term = "wezterm"
-config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+config.colors = theme_variant.colors()
+config.window_frame = theme_variant.window_frame()
 config.font = wezterm.font_with_fallback({ "JetbrainsMono NF", "JetbrainsMono Nerd Font" })
 -- config.font = wezterm.font_with_fallback({ "MonaspiceNe NF", "MonaspiceNe Nerd Font" })
 config.font_size = isLinux and 11.5 or 14
@@ -28,12 +33,12 @@ config.window_padding = {
 }
 config.enable_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1
 if isLinux then
 	-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 	-- config.integrated_title_button_style = "Gnome"
 else
-	config.macos_window_background_blur = 90
+	-- config.macos_window_background_blur = 90
 	-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 	config.window_decorations = "RESIZE"
 	-- config.integrated_title_button_style = "MacOsNative"

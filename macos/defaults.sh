@@ -92,6 +92,9 @@ defaults write com.apple.screencapture type -string "png"
 # Finder                                                                      #
 ###############################################################################
 
+# Disable desktop icons
+defaults write com.apple.finder CreateDesktop -bool false
+
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
 
@@ -170,10 +173,10 @@ dockItems=(
 	"/Applications/Firefox.app"
 	"/Applications/WezTerm.app"
 	"$HOME/Applications/Android Studio.app"
-	"/System/Applications/Mail.app"
+	"/Applications/Thunderbird.app"
 	"/Applications/Element.app"
 	"/Applications/Slack.app"
-	"/System/Applications/Calendar.app"
+	"/Applications/Notion Calendar.app"
 	"/Applications/Toggl Track.app"
 	"/Applications/Todoist.app"
 	"/Applications/Spotify.app"
