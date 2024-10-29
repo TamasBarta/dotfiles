@@ -1,24 +1,24 @@
 # Install packages
 
-sudo pacman --noconfirm -Suyy git go base-devel
+sudo pacman --noconfirm -Suyy git base-devel
 
-git clone https://aur.archlinux.org/yay.git /tmp/yay
-cd /tmp/yay
+git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
+cd /tmp/yay-bin
 makepkg -is
 cd -
-rm -rf /tmp/yay
+rm -rf /tmp/yay-bin
 
 # common
-yay --noconfirm -S neovim tmux zsh unzip zip efibootmgr qt5ct wmname dunst \
-	adapta-gtk-theme network-manager-applet htop filelight kvantum-qt5 playerctl \
-	libratbag telegram-desktop spotify spotifywm-git bitwarden-bin bc \
-	rofi-lbonn-wayland-git jetbrains-toolbox fzf nerd-fonts-iosevka \
-	ttf-iosevka-aile insync papirus-icon-theme bluez pavucontrol paprefs \
+yay --noconfirm -S neovim tmux zsh unzip zip efibootmgr wmname dunst \
+	network-manager-applet htop filelight playerctl \
+	telegram-desktop spotify spotifywm-git bitwarden-bin bc \
+	rofi-lbonn-wayland-git jetbrains-toolbox nerd-fonts-iosevka \
+	ttf-iosevka-aile insync bluez pavucontrol paprefs \
 	android-tools android-udev android-sdk spicetify-cli spicetify-themes-git \
-	brightnessctl firefox blueman keyd-git exa vivid jq go fzf xxd
+	brightnessctl firefox blueman keyd-git exa jq go fzf xxd
 
 # pipewire version
 yay --noconfirm -S pipewire pipewire-pulse pipewire-jack-dropin pipewire-jack pipewire-media-session
 
-# sway version
-yay --noconfirm -S sway rofi-lbonn-wayland-git waybar slurp grim swappy wtype wl-clipboard
+# Hyprland version
+yay --noconfirm -S rofi-wayland waybar slurp grim swappy wtype wl-clipboard hyprland hy3
