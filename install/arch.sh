@@ -15,7 +15,7 @@ yay --needed --noconfirm -S neovim tmux zsh unzip zip efibootmgr wmname dunst \
 	jetbrains-toolbox nerd-fonts-iosevka \
 	ttf-iosevka-aile insync bluez pavucontrol paprefs \
 	android-tools android-udev android-sdk spicetify-cli spicetify-themes-git \
-	brightnessctl firefox blueman keyd-git exa jq go fzf xxd
+	brightnessctl firefox blueman keyd-git exa jq go fzf xxd wezterm
 
 # pipewire version
 yay --needed --noconfirm -S pipewire pipewire-pulse pipewire-jack-dropin pipewire-jack pipewire-media-session
