@@ -8,12 +8,10 @@ debian) source $DOTFILES_HOME/install/debian.sh ;;
 *) source $DOTFILES_HOME/install/android.sh ;;
 esac
 
-# stow -d $DOTFILES_HOME bspwm
-# stow -d $DOTFILES_HOME polybar
 stow -d $DOTFILES_HOME rofi
-stow -d $DOTFILES_HOME ranger
-stow -d $DOTFILES_HOME fusuma
-stow -d $DOTFILES_HOME sway
+stow -d $DOTFILES_HOME hyprland
 stow -d $DOTFILES_HOME waybar
 stow -d $DOTFILES_HOME systemd
 stow -d $DOTFILES_HOME dunst
+stow -d $DOTFILES_HOME xdg-desktop-portal
+stow -d $DOTFILES_HOME darkman
