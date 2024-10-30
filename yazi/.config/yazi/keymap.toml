@@ -11,3 +11,9 @@ run = '''
 on = ["c", "m"]
 run = "plugin chmod"
 desc = "Chmod on selected files"
+[[manager.prepend_keymap]]
+on = ["g", "w"]
+desc = "Set as wallpaper"
+run = '''
+  shell 'wall.sh "$@" 2>/dev/null &' --confirm
+'''
