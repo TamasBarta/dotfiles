@@ -30,7 +30,6 @@ zinit snippet OMZ::plugins/common-aliases/common-aliases.plugin.zsh
 
 # Load OMZ plugins
 zinit wait lucid for \
-    OMZ::plugins/sudo/sudo.plugin.zsh \
     OMZ::plugins/fzf/fzf.plugin.zsh
 
 # Load plugins with completion
