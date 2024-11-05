@@ -170,7 +170,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 # the Dock to launch apps.
 defaults write com.apple.dock persistent-apps -array
 dockItems=(
-	"/Applications/Firefox.app"
+	"/Applications/Zen Browser.app"
 	"/Applications/WezTerm.app"
 	"$HOME/Applications/Android Studio.app"
 	"/Applications/Thunderbird.app"
@@ -180,6 +180,7 @@ dockItems=(
 	"/Applications/Toggl Track.app"
 	"/Applications/Todoist.app"
 	"/Applications/Spotify.app"
+	"/Applications/Obsidian.app"
 	"/Applications/Notion.app"
 	"/Applications/Bitwarden.app"
 	"/Applications/Home Assistant.app"
