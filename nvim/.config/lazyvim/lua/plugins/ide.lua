@@ -19,6 +19,16 @@ return {
     end,
   },
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      sources = {
+        "filesystem", -- keep this if you want to use the filesystem source
+        -- "buffers",  -- comment or remove this line to disable buffers source
+        -- "git_status",  -- comment or remove this line to disable git_status source
+      },
+    },
+  },
+  {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
     keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
