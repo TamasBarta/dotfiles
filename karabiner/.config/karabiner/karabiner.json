@@ -208,39 +208,6 @@
                             "to": [{ "key_code": "left_control" }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 12594,
-                        "vendor_id": 42789
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "b" },
-                            "to": [{ "key_code": "vk_none" }]
-                        },
-                        {
-                            "from": { "key_code": "escape" },
-                            "to": [{ "key_code": "vk_none" }]
-                        },
-                        {
-                            "from": { "key_code": "f5" },
-                            "to": [{ "key_code": "vk_none" }]
-                        },
-                        {
-                            "from": { "key_code": "left_arrow" },
-                            "to": [{ "key_code": "page_up" }]
-                        },
-                        {
-                            "from": { "key_code": "left_shift" },
-                            "to": [{ "key_code": "vk_none" }]
-                        },
-                        {
-                            "from": { "key_code": "right_arrow" },
-                            "to": [{ "key_code": "page_down" }]
-                        }
-                    ]
                 }
             ],
             "fn_function_keys": [
@@ -273,7 +240,10 @@
                     "to": [{ "key_code": "right_option" }]
                 }
             ],
-            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "keyboard_type_v2": "iso"
+            }
         }
     ]
 }
