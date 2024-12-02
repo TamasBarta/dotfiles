@@ -13,7 +13,7 @@ source $ZINIT[BIN_DIR]/zinit.zsh
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit snippet OMZ::plugins/gradle
-zinit pack for fzf
+# zinit pack for fzf
 
 
 
