@@ -78,3 +78,5 @@
 	ff = only
 [rerere]
 	enabled = true
+[pager]
+	diff = diffnav
