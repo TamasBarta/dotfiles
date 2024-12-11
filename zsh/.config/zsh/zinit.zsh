@@ -34,7 +34,6 @@ zinit wait lucid for \
 
 # Load plugins with completion
 zinit wait lucid for \
-    OMZ::plugins/git/git.plugin.zsh\
     light-mode @asdf-vm/asdf
 zinit cdclear -q
 
