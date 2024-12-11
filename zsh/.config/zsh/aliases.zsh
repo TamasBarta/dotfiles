@@ -9,6 +9,7 @@ start adbd"'
 alias restart-plasma="killall plasmashell && kstart plasmashell"
 alias vim=nvim
 alias lg=lazygit
+alias gg=git-graph
 alias which='command -v'
 alias pub='dart pub'
 
