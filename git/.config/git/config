@@ -5,6 +5,7 @@
     st = status
     cleanup = "!git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D"
     diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
+	adog = log --all --decorate --oneline --graph
 [user]
     name = Tamás Barta
     email = tamas@bartatamas.hu
