@@ -267,6 +267,10 @@ bind gwÁ winopen https://www.notion.so/tamasbarta/5f587c55abb44ac6b216944cb5f24
 bind yq text2qr --timeout 5
 bind ;d hint -W tabopen --discard
 bind ;gd hint -qW tabopen --discard
+unbind --mode=ex <C-j>
+bind --mode=ex <C-j> ex.next_completion
+unbind --mode=ex <C-k>
+bind --mode=ex <C-k> ex.prev_completion
 
 " Aliases
 alias fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
