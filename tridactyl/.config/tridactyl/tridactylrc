@@ -1,5 +1,5 @@
 " General Settings
-set theme catppuccin
+set theme shydactyl
 set update.lastchecktime 1648754688816
 set update.nag true
 set update.nagwait 7
@@ -29,7 +29,7 @@ set searchurls.osm https://www.openstreetmap.org/search?query=
 set searchurls.mdn https://developer.mozilla.org/en-US/search?q=
 set searchurls.gentoo_wiki https://wiki.gentoo.org/index.php?title=Special%3ASearch&profile=default&fulltext=Search&search=
 set searchurls.qwant https://www.qwant.com/?q=
-set colourscheme catppuccin
+set colourscheme shydactyl
 
 " Binds
 bind gnO tabopen https://wiki.archlinux.org/index.php/Firefox
