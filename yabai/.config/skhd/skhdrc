@@ -136,8 +136,8 @@ cmd - f10 : osascript -e '  set inputVolume to input volume of (get volume setti
 :: shortcuts @
 fn - o ; shortcuts
 shortcuts < escape; default
-shortcuts < f : skhd -k "escape" ; open -na "Zen Browser"
-shortcuts < shift - f : skhd -k "escape" ; open -na "Zen Browser" --args -private-window
+shortcuts < f : skhd -k "escape" ; open -na "Firefox"
+shortcuts < shift - f : skhd -k "escape" ; open -na "Firefox" --args -private-window
 # shortcuts < s : skhd -k "escape" ; tmux new -d "zsh -c scrcpy > ~/log.log 2>&1"
 shortcuts < v : skhd -k "escape" ; wezterm --single-instance zsh -c "source ~/.config/zsh/.zshrc; lvim"
 shortcuts < s : skhd -k "escape" ; zsh -c "source ~/.config/zsh/.zshrc; scrcpy"
