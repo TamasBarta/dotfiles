@@ -170,9 +170,10 @@ defaults write com.apple.dock show-process-indicators -bool true
 # the Dock to launch apps.
 defaults write com.apple.dock persistent-apps -array
 dockItems=(
-	"/Applications/Zen Browser.app"
+	"/Applications/Firefox.app"
 	"/Applications/WezTerm.app"
 	"$HOME/Applications/Android Studio.app"
+	"/Applications/Xcode.app"
 	"/Applications/Thunderbird.app"
 	"/Applications/Element.app"
 	"/Applications/Slack.app"
