@@ -38,12 +38,11 @@ mkdir -p "$(brew --prefix zathura)/lib/zathura"
 ln -s "$(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib" "$(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib"
 
 # Install packages
-brew install zsh ruby stow homeassistant-cli bat tmux neovim lazygit topgrade lf zathura yq jq xq sops scrcpy ripgrep eza dust fd fzf zathura zathura-pdf-poppler yabai skhd borders svim sketchybar buf bundletool chafa coreutils curl wget go gnupg htop kondo just onefetch qrencode shellcheck w3m graphite tunnelto gomuks pinentry-mac keyboardswitcher git-crypt bitwarden-cli gh luarocks git-delta awscli session-manager-plugin autoconf bison re2c gd libiconv libzip m4 android-sdk android-platform-tools swiftlint swiftformat ctpv yt-dlp pandoc spicetify-cli mpv oh-my-posh kdoctor yazi unar gtk4 glow hexyl lazydocker firebase-cli graphviz
+brew install zsh ruby stow homeassistant-cli bat tmux neovim lazygit topgrade lf zathura yq jq xq sops scrcpy ripgrep eza dust fd fzf zathura zathura-pdf-poppler yabai skhd borders svim sketchybar buf bundletool chafa coreutils curl wget go gnupg htop kondo just onefetch qrencode shellcheck w3m graphite tunnelto gomuks pinentry-mac keyboardswitcher git-crypt bitwarden-cli gh luarocks git-delta awscli session-manager-plugin autoconf bison re2c gd libiconv libzip m4 android-sdk android-platform-tools swiftlint swiftformat ctpv yt-dlp pandoc spicetify-cli mpv oh-my-posh kdoctor yazi unar gtk4 glow hexyl lazydocker firebase-cli graphviz tag imagemagick dos2unix dlvhdr/formulae/diffnav ansible
 
-brew install --cask raycast firefox wezterm element slack spotify obsidian notion calibre signal karabiner-elements bitwarden jetbrains-toolbox todoist hiddenbar betterdisplay figma bluesnooze obs droidcam-obs krita monitorcontrol iina anydesk home-assistant telegram-desktop daisydisk insync onlyoffice minisim tableplus unnaturalscrollwheels min brave-browser gpg-suite notion-calendar thunderbird waydabber/betterdisplay/betterdisplaycli
+brew install --cask raycast firefox wezterm element slack spotify obsidian notion calibre signal karabiner-elements bitwarden jetbrains-toolbox todoist hiddenbar betterdisplay figma bluesnooze obs droidcam-obs krita monitorcontrol iina anydesk home-assistant telegram-desktop daisydisk insync onlyoffice minisim tableplus unnaturalscrollwheels min brave-browser gpg-suite notion-calendar thunderbird waydabber/betterdisplay/betterdisplaycli muzzle viber syncthing minisim fx-cast-bridge
 
-brew install --cask font-jetbrains-mono-nerd-font
-brew install --cask font-monaspace-nerd-font
+brew install --cask font-jetbrains-mono-nerd-font font-monaspace-nerd-font font-blex-mono-nerd-font font-iosevka-nerd-font
 
 # Download proper Hungarian keyboard layout
 wget -O - https://raw.githubusercontent.com/zaki/mac-hun-keyboard/master/Hungarian_Win.keylayout | sudo tee /Library/Keyboard\ Layouts/Hungarian_Win.keylayout
