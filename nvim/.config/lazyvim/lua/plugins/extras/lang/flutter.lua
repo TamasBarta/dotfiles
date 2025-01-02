@@ -1,20 +1,26 @@
 return {
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        {
+          mode = "n",
+          { "<leader>F", group = "Flutter tools", icon = { icon = "󱗆 ", color = "cyan" } },
+        },
+        {
+          mode = "n",
+          { "<leader>G", group = "generate", icon = { icon = " ", color = "red" } },
+        },
+      },
+    },
+  },
   -- add Dart to treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "dart" })
-      else
-        opts.ensure_installed = { "dart" }
-      end
-      if type(opts.indent) == "table" then
-        vim.list_extend(opts.indent, { disable = { "dart" } })
-      else
-        opts.indent = { enable = true, disable = { "dart" } }
-      end
-      opts.indent = { enable = true, disable = { "dart" } }
-    end,
+    opts = {
+      ensure_installed = { "dart" },
+      indent = { enable = true, disable = { "dart" } },
+    },
   },
 
   -- Ensure Dart debug adapter is installed
@@ -54,10 +60,14 @@ return {
   },
   {
     "mtdl9/vim-log-highlighting",
+    lazy = true,
   },
   {
     "akinsho/flutter-tools.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
+    },
     keys = {
       { "<leader>F", name = "+Flutter tools" },
       { "<leader>FR", "<cmd>FlutterRun<cr>", desc = "Run" },
@@ -66,7 +76,8 @@ return {
       { "<leader>Fe", "<cmd>FlutterEmulators<cr>", desc = "Start emulator" },
       { "<leader>Fq", "<cmd>FlutterQuit<cr>", desc = "Stop Flutter app" },
       { "<leader>Fc", "<cmd>FlutterLogClear<cr>", desc = "Clear logs" },
-      { "<leader>Ft", "<cmd>FlutterOutlineToggle<cr>", desc = "Toggle outline" },
+      { "<leader>Fo", "<cmd>FlutterOutlineToggle<cr>", desc = "Toggle outline" },
+      { "<leader>Ft", "<cmd>FlutterOpenDevTools<cr>", desc = "Open Flutter DevTools" },
     },
     ft = "dart",
     opts = {
@@ -101,7 +112,7 @@ return {
       },
       closing_tags = {
         -- highlight = "ErrorMsg", -- highlight for the closing tag
-        prefix = "</", -- character to use for close tag e.g. > Widget
+        prefix = "⇥ ", -- character to use for close tag e.g. > Widget
         enabled = true, -- set to false to disable
       },
       dev_log = {
@@ -110,7 +121,7 @@ return {
         -- open_cmd = "10new", -- command to use to open the log buffer
       },
       dev_tools = {
-        autostart = false, -- autostart devtools server if not detected
+        autostart = true, -- autostart devtools server if not detected
         auto_open_browser = false, -- Automatically opens devtools in the browser
       },
       outline = {

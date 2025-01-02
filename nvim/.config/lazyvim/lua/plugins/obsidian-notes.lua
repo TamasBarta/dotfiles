@@ -10,7 +10,7 @@ return {
       "nvim-lua/plenary.nvim",
       -- Optionals:
       "hrsh7th/nvim-cmp",
-      "nvim-telescope/telescope.nvim",
+      -- "nvim-telescope/telescope.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
     opts = {

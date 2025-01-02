@@ -36,4 +36,19 @@ return {
       },
     },
   },
+  {
+    "FabijanZulj/blame.nvim",
+    opts = {
+      date_format = "%Y-%m-%d %H:%M:%S",
+      merge_consecutive = true,
+      virtual_style = "float",
+      format = function(blame)
+        return string.format("%s %s %s", blame.author, blame.date, blame.summary)
+      end,
+    },
+    keys = {
+      { "<leader>gB", "<cmd>BlameToggle virtual<cr>", desc = "Blame" },
+      { "<leader>gb", "<cmd>BlameToggle window<cr>", desc = "Blame (window)" },
+    },
+  },
 }

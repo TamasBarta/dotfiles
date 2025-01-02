@@ -20,12 +20,12 @@ end
 local M = {}
 M.execute_command = execute_command
 M.organize_imports = function()
-  execute_command("edit.organizeImports")
+  execute_command("dart.edit.organizeImports")
 end
 M.fix_all = function()
-  execute_command("edit.fixAll")
+  execute_command("dart.edit.fixAll")
 end
 M.sort_members = function()
-  execute_command("edit.sortMembers")
+  execute_command("dart.edit.sortMembers")
 end
 return M
