@@ -23,3 +23,5 @@ alias l="ls --long"
 alias la="l --all"
 alias lt="l --tree"
 alias lts="lt -L2"
+
+alias yt-mp3="yt-dlp --extract-audio --audio-format=mp3"
