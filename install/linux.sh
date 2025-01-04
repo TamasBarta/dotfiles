@@ -10,7 +10,7 @@ fedora | fedora-asahi-remix)
 *) source "$DOTFILES_HOME/install/android.sh" ;;
 esac
 
-sudo usermod -G docker "$USER"
+sudo usermod -aG docker "$USER"
 sudo cp "$DOTFILES_HOME"/keyd/etc/keyd/default.conf /etc/keyd/default.conf
 
 stow -d "$DOTFILES_HOME" rofi
