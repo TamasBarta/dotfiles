@@ -10,10 +10,16 @@ fedora | fedora-asahi-remix)
 *) source "$DOTFILES_HOME/install/android.sh" ;;
 esac
 
-stow -d $DOTFILES_HOME rofi
-stow -d $DOTFILES_HOME hyprland
-stow -d $DOTFILES_HOME waybar
-stow -d $DOTFILES_HOME systemd
-stow -d $DOTFILES_HOME dunst
-stow -d $DOTFILES_HOME xdg-desktop-portal
-stow -d $DOTFILES_HOME darkman
+sudo usermod -G docker "$USER"
+sudo cp "$DOTFILES_HOME"/keyd/etc/keyd/default.conf /etc/keyd/default.conf
+
+stow -d "$DOTFILES_HOME" rofi
+stow -d "$DOTFILES_HOME" hyprland
+stow -d "$DOTFILES_HOME" waybar
+stow -d "$DOTFILES_HOME" systemd
+stow -d "$DOTFILES_HOME" dunst
+stow -d "$DOTFILES_HOME" xdg-desktop-portal
+stow -d "$DOTFILES_HOME" darkman
+
+sudo systemctl enable --now keyd
+sudo systemctl enable --now bluetooth

@@ -58,3 +58,6 @@ stow -d "$DOTFILES_HOME" newsboat
 stow -d "$DOTFILES_HOME" neomutt
 stow -d "$DOTFILES_HOME" yazi
 stow -d "$DOTFILES_HOME" mpv
+
+cd "$DOTFILES_HOME" || exit
+git remote set-url origin git@gitlab.com/TamasBarta/dotfiles.git

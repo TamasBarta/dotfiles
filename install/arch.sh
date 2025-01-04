@@ -13,12 +13,14 @@ fi
 # common
 yay --needed --noconfirm -S neovim tmux zsh unzip zip efibootmgr wmname dunst \
 	network-manager-applet htop filelight playerctl \
-	lazygit git-crypt bolt eza \
+	lazygit git-crypt bolt eza keyd darkman bluez \
 	telegram-desktop spotifywm-git bitwarden-bin bc \
-	jetbrains-toolbox nerd-fonts-iosevka \
+	jetbrains-toolbox nerd-fonts-iosevka inter-font \
 	ttf-iosevka-aile insync bluez pavucontrol paprefs \
 	android-tools android-udev android-sdk spicetify-cli spicetify-themes-git \
-	brightnessctl firefox blueman keyd-git jq go fzf xxd wezterm
+	brightnessctl firefox blueman jq go fzf xxd wezterm yazi \
+	innoextract cabextract xp-pen-tablet flatpak docker docker-compose \
+	goldwarden diffnav
 
 # this shit has GPG keys often failing to import
 yay --needed --noconfirm -S spotify
