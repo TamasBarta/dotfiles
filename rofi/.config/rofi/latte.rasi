@@ -1,5 +1,5 @@
 * {
-    win-bg-col: rgba( 239, 240, 245, 0.95);
+    win-bg-col: rgba( 239, 240, 245, 0.7);
     bg-col:  #eff1f5;
     bg-col-light: #eff1f5;
     border-col: #40a02b;

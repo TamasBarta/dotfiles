@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir "$HOME/.local/share/dark-mode.d/"
+mkdir "$HOME/.local/share/light-mode.d/"
+
 case $(cat /etc/*-release | awk -F '=' '{ if ($1 == "ID") print $2 }' | tr -d "\"") in
 arch | manjaro-arm | archarm)
 	source "$DOTFILES_HOME/install/arch.sh"

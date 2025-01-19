@@ -12,6 +12,14 @@ local function theme_for_appearance(appearance)
 	end
 end
 
+local function opacity_for_appearance(appearance)
+	if appearance:find("Dark") then
+		return 0.9
+	else
+		return 0.7
+	end
+end
+
 local isLinux = string.find(wezterm.target_triple, "linux")
 
 local theme_variant = theme_for_appearance(wezterm.gui.get_appearance())
@@ -33,12 +41,12 @@ config.window_padding = {
 }
 config.enable_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false
-config.window_background_opacity = 1
+config.window_background_opacity = opacity_for_appearance(wezterm.gui.get_appearance())
 if isLinux then
 	-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 	config.integrated_title_button_style = "Gnome"
 else
-	-- config.macos_window_background_blur = 90
+	config.macos_window_background_blur = 90
 	-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 	config.window_decorations = "RESIZE"
 	-- config.integrated_title_button_style = "MacOsNative"

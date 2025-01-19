@@ -4,9 +4,9 @@ sudo pacman --noconfirm -Suyy git base-devel
 
 if ! [ -x "$(command -v yay)" ]; then
 	git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
-	cd /tmp/yay-bin
+	cd /tmp/yay-bin || exit
 	makepkg -is
-	cd -
+	cd - || exit
 	rm -rf /tmp/yay-bin
 fi
 
@@ -18,9 +18,13 @@ yay --needed --noconfirm -S neovim tmux zsh unzip zip efibootmgr wmname dunst \
 	jetbrains-toolbox nerd-fonts-iosevka inter-font \
 	ttf-iosevka-aile insync bluez pavucontrol paprefs \
 	android-tools android-udev android-sdk spicetify-cli spicetify-themes-git \
-	brightnessctl firefox blueman jq go fzf xxd wezterm yazi \
+	brightnessctl firefox blueman jq go fzf xxd wezterm-git yazi \
 	innoextract cabextract xp-pen-tablet flatpak docker docker-compose \
-	goldwarden diffnav
+	goldwarden diffnav bind linux-headers obs-studio droidcam-obs-plugin \
+	droidcam v4l2loopback-dc-dkms ansible aws-cli aws-session-manager-plugin \
+	scrcpy lazydocker dust zathura zathura-pdf-poppler sbctl fx_cast-bin \
+	ddcci-driver-linux-dkms thunderbird slack-desktop-wayland ttf-joypixels \
+	rofi-calc rofi-rbw auto-cpufreq python-homeassistant-cli
 
 # this shit has GPG keys often failing to import
 yay --needed --noconfirm -S spotify

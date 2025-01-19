@@ -1,4 +1,9 @@
 {
+  // "output": [
+  //   "eDP-1",
+  //   "DP-2",
+  //   "DP-8"
+  // ],
   "reload_style_on_change": true,
   "position": "top",
   "height": 100,
@@ -11,7 +16,7 @@
     "tray",
     "privacy",
     "hyprland/submap",
-    "hyprland/language",
+    // "hyprland/language",
     // "temperature",
     "backlight",
     "pulseaudio",
@@ -43,7 +48,7 @@
       "": "Hyprland",
       "(.*) — Mozilla Firefox": "$1"
     },
-    "icon": true,
+    "icon": false,
     "icon-size": 18,
     "separate-outputs": true
   },

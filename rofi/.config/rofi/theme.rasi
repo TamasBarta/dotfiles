@@ -79,6 +79,8 @@ element selected {
 
 mode-switcher {
     spacing: 0;
+    border-color: rgba(255,255,255,0.1);
+    border: 1px 0 0 0;
 }
 
 button {

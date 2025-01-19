@@ -1,7 +1,7 @@
 @import "colors.css";
 
 * {
-  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Inter", "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -34,11 +34,15 @@ button:hover {
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;
-  color: @text;
+  color: @overlay2;
 }
 
 #workspaces button:hover {
   background: rgba(0, 0, 0, 0.2);
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+  color: @text;
 }
 
 #workspaces button.focused {
@@ -47,7 +51,7 @@ button:hover {
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: @red;
 }
 
 #mode {
@@ -61,12 +65,12 @@ button:hover {
 #memory,
 #temperature,
 #network,
-#tray,
 #submap,
 #language,
 #pulseaudio,
+#backlight,
 #privacy {
-  padding: 0 10px;
+  padding: 0 8px;
 }
 
 #pulseaudio {
@@ -95,10 +99,14 @@ button:hover {
 
 #window {
   color: @text;
+  margin: 0px 15px;
 }
 
 #language {
   color: @blue;
+}
+#language > * {
+  padding: 0 0px;
 }
 
 #submap {
@@ -107,6 +115,14 @@ button:hover {
 
 #privacy {
   color: @red;
+}
+
+#tray {
+  padding: 0;
+}
+
+#tray > * > * {
+  margin: 0 10px;
 }
 
 .modules-right,
