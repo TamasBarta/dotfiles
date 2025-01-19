@@ -1,8 +1,14 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
 [plugin]
 prepend_previewers = [
   { name = "*.md", run = "glow" },
+  { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+  { name = "*.avif", run = "magick" },
 ]
 
 append_previewers = [
   { name = "*", run = "hexyl" },
+  { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+  { name = "*.avif", run = "magick" },
 ]
