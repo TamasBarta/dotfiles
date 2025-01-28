@@ -5,7 +5,7 @@ options=(
 	"󰍁  Lock"
 	"󰒲  Sleep/Suspend"
 	"󰑐  Reboot"
-	"  Reboot to Windows"
+	"󱊞  Reboot to USB"
 	"󰐥  Shutdown/Power off"
 	"󰗽  Logout"
 )
@@ -17,17 +17,16 @@ case "$(echo "${options[*]}" | rofi -i -dmenu -format 'i' -p Leave)" in
 	systemctl suspend
 	;;
 2)
-	reboot
+	systemctl reboot
 	;;
 3)
-	reboot-to-windows.sh
+	SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+	bash -c "$SCRIPT_DIR/reboot-to-windows.sh"
 	;;
 4)
-	poweroff
+	systemctl poweroff
 	;;
 5)
-	hyprctl dispatch exit
-	swaymsg exit
-	bspc quit
+	loginctl terminate-session $XDG_SESSION_ID
 	;;
 esac

@@ -7,5 +7,6 @@ done < <(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-g
 export ANDROID_HOME=$HOME/Android/Sdk
 export CHROME_EXECUTABLE=$(which brave 2>/dev/null)
 export SPICETIFY_INSTALL="$HOME/.spicetify"
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 # if [ -z "${SSH_AUTH_SOCK:+x}" ]; then eval $(ssh-agent); fi

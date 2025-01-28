@@ -66,7 +66,7 @@
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "active": " "
+      "active": ""
     },
     "sort-by-number": true,
     "persistent-workspaces": {
@@ -114,7 +114,7 @@
     ]
   },
   "network": {
-    "format-wifi": "  {signalStrength}%",
+    "format-wifi": "   {signalStrength}%",
     "format-ethernet": "{cidr} 󰈀",
     "tooltip-format": "{ifname} via {gwaddr} 󰈀",
     "format-linked": "{ifname} (No IP) 󰈀",
@@ -122,14 +122,14 @@
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "backlight": {
-    "format": " {icon} {percent}%",
+    "format": " {icon}  {percent}%",
     "format-icons": [
       "󰃟"
     ],
     "on-click": "darkman toggle"
   },
   "pulseaudio": {
-    "format": " {icon} {volume}%",
+    "format": "{icon}  {volume}%",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": "󰝟 {icon} {format_source}",
     "format-muted": "󰝟 {format_source}",
