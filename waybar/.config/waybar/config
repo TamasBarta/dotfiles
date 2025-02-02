@@ -46,7 +46,7 @@
     "max-length": 100,
     "rewrite": {
       "": "Hyprland",
-      "(.*) — Mozilla Firefox": "$1"
+      "(.*) — Mozilla Firefox.*": "$1"
     },
     "icon": false,
     "icon-size": 18,
