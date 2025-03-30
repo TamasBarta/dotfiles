@@ -1,5 +1,32 @@
-[plugin]
-deps = [{ use = "Reledia/hexyl", rev = "39d3d4e" }, { use = "Reledia/glow", rev = "c2ed51e" }, { use = "yazi-rs/plugins:full-border", rev = "7afba3a" }, { use = "yazi-rs/plugins:chmod", rev = "7afba3a" }, { use = "yazi-rs/plugins:max-preview", rev = "7afba3a" }, { use = "yazi-rs/plugins:mactag", rev = "7afba3a" }]
+[[plugin.deps]]
+use = "Reledia/hexyl"
+rev = "39d3d4e"
+hash = ""
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "c2ed51e"
+hash = "136ce00885041aeee5cf582ccf7a46dc"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "7afba3a"
+hash = "3a73613fc702a5f8369791b3401f52f1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "7afba3a"
+hash = "36c82bb433078e8e752351d961cac777"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "7afba3a"
+hash = "9bc26d10d2f6e2aa93b10905b1b76979"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mactag"
+rev = "7afba3a"
+hash = "9759a0a172de3a891922e106cd9bac10"
 
 [flavor]
 deps = []
