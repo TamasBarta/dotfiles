@@ -4,7 +4,7 @@
 . "$ASDF_DIR"/asdf.sh
 
 asdf shell java liberica-8u302+8
-/Users/tamas/Library/Android/sdk/tools/bin/avdmanager "$@"
+"$ANDROID_HOME"/tools/bin/avdmanager "$@"
 ec=$?
 asdf shell java --unset
 exit $ec
