@@ -33,8 +33,8 @@ zinit wait lucid for \
     OMZ::plugins/fzf/fzf.plugin.zsh
 
 # Load plugins with completion
-# zinit wait lucid for \
-#     light-mode @asdf-vm/asdf
+zinit wait lucid for \
+    light-mode @asdf-vm/asdf
 zinit cdclear -q
 
 # Load completions

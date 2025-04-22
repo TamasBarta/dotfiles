@@ -7,11 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-case `uname` in
-  Darwin) eval "$(/opt/homebrew/bin/brew shellenv)" ;;
-  Linux) source $HOME/.config/zsh/env.zsh ;;
-esac
-
 if [ -f "$HOME/.config/zsh/work.zsh" ]; then source $HOME/.config/zsh/work.zsh; fi
 
 source $HOME/.config/zsh/zinit.zsh
