@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "Reledia/hexyl"
 rev = "39d3d4e"
-hash = ""
+hash = "dd624cbaff94af65f39fd86bc57b340"
 
 [[plugin.deps]]
 use = "Reledia/glow"
