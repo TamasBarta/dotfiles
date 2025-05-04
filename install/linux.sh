@@ -10,10 +10,14 @@ arch | manjaro-arm | archarm)
 fedora | fedora-asahi-remix)
 	source "$DOTFIELS_HOME/install/fedora.sh"
 	;;
+ubuntu | debian)
+	source "$DOTFILES_HOME/install/debian.sh"
+	;;
 *) source "$DOTFILES_HOME/install/android.sh" ;;
 esac
 
 sudo usermod -aG docker "$USER"
+sudo mkdir -p /etc/keyd
 sudo cp "$DOTFILES_HOME"/keyd/etc/keyd/default.conf /etc/keyd/default.conf
 
 stow -d "$DOTFILES_HOME" rofi
