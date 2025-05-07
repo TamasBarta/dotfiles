@@ -7,11 +7,11 @@ local M = {}
 M.apply_to_config = function(config)
 	local catppuccin = wezterm.plugin.require("https://github.com/catppuccin/wezterm")
 	if isDark then
-		catppuccin.apply_to_config(config, { variant = "mocha" })
+		catppuccin.apply_to_config(config, { flavor = "mocha" })
 		config.window_background_opacity = 0.9
 	else
-		catppuccin.apply_to_config(config, { variant = "latte" })
-		config.window_background_opacity = 0.6
+		catppuccin.apply_to_config(config, { flavor = "latte" })
+		config.window_background_opacity = 0.85
 	end
 end
 

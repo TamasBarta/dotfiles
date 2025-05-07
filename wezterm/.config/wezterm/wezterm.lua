@@ -33,5 +33,6 @@ config.max_fps = 160
 require("lua.theme").apply_to_config(config)
 require("lua.tabline").apply_to_config(config)
 config.keys = require("lua.keymaps")
+require("lua.smart-splits").apply_to_config(config)
 
 return config
