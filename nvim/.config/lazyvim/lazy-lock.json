@@ -59,6 +59,7 @@
   "nvim-dap-virtual-text": { "branch": "master", "commit": "df66808cd78b5a97576bbaeee95ed5ca385a9750" },
   "nvim-jdtls": { "branch": "master", "commit": "5ecf13c53c9a66ee97c200970029ab2ebe1c1112" },
   "nvim-lint": { "branch": "master", "commit": "d698d3b6fd7b1b85657d05a2a31d843ddb682c63" },
+  "nvim-lsp-file-operations": { "branch": "master", "commit": "9744b738183a5adca0f916527922078a965515ed" },
   "nvim-lspconfig": { "branch": "master", "commit": "92c7b5a51e970f6a40e1873e3254b05d5bc93ea8" },
   "nvim-navic": { "branch": "master", "commit": "39231352aec0d1e09cebbffdd9dc20a5dc691ffe" },
   "nvim-nio": { "branch": "master", "commit": "21f5324bfac14e22ba26553caf69ec76ae8a7662" },
@@ -73,9 +74,9 @@
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "refactoring.nvim": { "branch": "master", "commit": "2be7ea3f10b7e59658f5abf6dffc50b5d61964d6" },
   "render-markdown.nvim": { "branch": "main", "commit": "dfc1299d9f32b53b34b7ac6c3a7553b5fd29977f" },
-  "rose-pine": { "branch": "main", "commit": "96ff3993a67356ee85d1cdab9be652cdc1c5d1ac" },
   "rustaceanvim": { "branch": "master", "commit": "69636cedf0d6aabf0eac3dfbce24883fe1051a3d" },
   "scope.nvim": { "branch": "main", "commit": "3fc963e75f88990a9467ff72b8eea667a69c30a2" },
+  "smart-splits.nvim": { "branch": "master", "commit": "fdb4e812b615bbdc94b403a0c0b21c9e0af2cf2a" },
   "smear-cursor.nvim": { "branch": "main", "commit": "a20e2682b551c610bdd1becbf95f6f3b8a896f9a" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "suda.vim": { "branch": "master", "commit": "9adda7d195222d4e2854efb2a88005a120296c47" },
@@ -99,6 +100,6 @@
   "vim-tridactyl": { "branch": "master", "commit": "fdd069bde3a34c786abed4601b6d59a065590ad9" },
   "vim-wasm": { "branch": "master", "commit": "8ee107a8c2034ef2b195fc82214ed2b4530a99b6" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
-  "xbase": { "branch": "master", "commit": "30ed3e638434ee7a09d7dad46562fc6925300145" },
+  "xcodebuild.nvim": { "branch": "main", "commit": "47f2fb2f8578292dc9b9410030b6bc1a0b187d1f" },
   "yanky.nvim": { "branch": "main", "commit": "04775cc6e10ef038c397c407bc17f00a2f52b378" }
 }
