@@ -10,10 +10,10 @@ fn - k : aerospace focus up    --boundaries all-monitors-outer-frame ; yabai -m 
 fn - l : aerospace focus right --boundaries all-monitors-outer-frame ; yabai -m window --focus east || yabai -m display --focus east
 
 # swap window
-shift + fn - h : aerospace move left ; yabai -m window --swap west
-shift + fn - j : aerospace move down ; yabai -m window --swap south
-shift + fn - k : aerospace move up   ; yabai -m window --swap north
-shift + fn - l : aerospace move right; yabai -m window --swap east
+shift + fn - h : aerospace move left ; yabai3 move west
+shift + fn - j : aerospace move down ; yabai3 move south
+shift + fn - k : aerospace move up   ; yabai3 move north
+shift + fn - l : aerospace move right; yabai3 move east
 
 # # move window
 # alt + fn - h : yabai -m window --warp west
