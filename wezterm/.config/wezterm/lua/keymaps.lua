@@ -33,4 +33,9 @@ return {
 	{ key = "h", mods = "SUPER", action = wezterm.action.ActivateTabRelative(-1) },
 	{ key = "l", mods = "SUPER", action = wezterm.action.ActivateTabRelative(1) },
 	{ key = "z", mods = "SUPER", action = wezterm.action.TogglePaneZoomState },
+	{
+		key = "W",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.ShowLauncherArgs({ flags = "WORKSPACES" }),
+	},
 }
