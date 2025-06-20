@@ -5,10 +5,11 @@ set update.nagwait 7
 set update.lastnaggedversion 1.14.0
 set update.checkintervalsecs 86400
 set configversion 2.0
-set newtab about:home
-set searchengine sx
+set newtab about:blank
+set searchengine g
 set searchurls.sx https://searxng.bartatamas.hu/search?q=
 set searchurls.google https://www.google.com/search?q=
+set searchurls.g https://www.google.com/search?q=
 set searchurls.googlelucky https://www.google.com/search?btnI=I'm+Feeling+Lucky&q=
 set searchurls.scholar https://scholar.google.com/scholar?q=
 set searchurls.googleuk https://www.google.co.uk/search?q=
@@ -18,6 +19,7 @@ set searchurls.yahoo https://search.yahoo.com/search?p=
 set searchurls.twitter https://twitter.com/search?q=
 set searchurls.wikipedia https://en.wikipedia.org/wiki/Special:Search/
 set searchurls.youtube https://www.youtube.com/results?search_query=
+set searchurls.y https://www.youtube.com/results?search_query=
 set searchurls.amazon https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=
 set searchurls.amazonuk https://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=
 set searchurls.startpage https://startpage.com/do/search?language=english&cat=web&query=
@@ -28,8 +30,12 @@ set searchurls.osm https://www.openstreetmap.org/search?query=
 set searchurls.mdn https://developer.mozilla.org/en-US/search?q=
 set searchurls.gentoo_wiki https://wiki.gentoo.org/index.php?title=Special%3ASearch&profile=default&fulltext=Search&search=
 set searchurls.qwant https://www.qwant.com/?q=
-set colourscheme catppuccin
-set theme catppuccin
+set searchurls.aru https://www.arukereso.hu/CategorySearch.php?st=
+set searchurls.alza https://www.alza.hu/search.htm?exps=
+set searchurls.pub https://pub.dev/packages?q=
+set searchurls.npm https://www.npmjs.com/search?q=
+set colourscheme auto
+set theme auto
 
 " Binds
 bind gnO tabopen https://wiki.archlinux.org/index.php/Firefox
@@ -63,7 +69,8 @@ bind gH home true
 bind p clipboard open
 bind P clipboard tabopen
 bind j scrollline 10
-bind <C-e> scrollline 10
+" bind <C-e> scrollline 10
+unbund <C-e>
 bind k scrollline -10
 bind <C-y> scrollline -10
 bind h scrollpx -50
@@ -98,8 +105,6 @@ bind g! jumble
 bind g; changelistjump -1
 bind J tabprev
 bind K tabnext
-bind gt tabnext_gt
-bind gT tabprev
 bind g^ tabfirst
 bind g0 tabfirst
 bind g$ tablast
@@ -183,7 +188,7 @@ bind zI zoom 3
 bind zO zoom 0.3
 bind . repeat
 bind <AS-ArrowUp><AS-ArrowUp><AS-ArrowDown><AS-ArrowDown><AS-ArrowLeft><AS-ArrowRight><AS-ArrowLeft><AS-ArrowRight>ba open https://www.youtube.com/watch?v=M3iOROuTuMA
-bind <A-t> fillcmdline tabopen -c Tier https://meet.google.com/
+bind <A-t> fillcmdline tabopen -c Dina https://meet.google.com/
 bind / fillcmdline find
 bind n findnext
 bind ? fillcmdline find -?
@@ -191,18 +196,7 @@ bind N findnext -1
 bind i nmode ignore 1 mode normal
 bind gd tabdetach
 bind gD composite tabduplicate; tabdetach
-bind <S-A-c> recontain Tier
-bind <AS-c> recontain Tier
-bind gna tabopen https://calendar.google.com/calendar/u/0/r/eventedit/NnNmOGRuMzZxcGZybHBwMHEwdjFqYTQ4OWQgdGFtYXMuYmFydGFAdGllci5hcHA
-bind goa open https://calendar.google.com/calendar/u/0/r/eventedit/NnNmOGRuMzZxcGZybHBwMHEwdjFqYTQ4OWQgdGFtYXMuYmFydGFAdGllci5hcHA
-bind gwa winopen https://calendar.google.com/calendar/u/0/r/eventedit/NnNmOGRuMzZxcGZybHBwMHEwdjFqYTQ4OWQgdGFtYXMuYmFydGFAdGllci5hcHA
 bind <C-Space>V hint -V
-bind gny tabopen https://www.youtube.com/
-bind goy open https://www.youtube.com/
-bind gwy winopen https://www.youtube.com/
-bind gnJ tabopen https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
-bind goJ open https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
-bind gwJ winopen https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 bind ;i hint -i
 bind ;b hint -b
 bind ;o hint
@@ -249,21 +243,12 @@ bind ;gw hint -qw
 bind ;gb hint -qb
 bind ;gF hint -qb
 bind ;gf hint -q
-bind gnN tabopen moz-extension://8938aa73-1139-4008-ba48-ebe355182238/static/docs/modules/_src_excmds_.html#js
-bind goN open moz-extension://8938aa73-1139-4008-ba48-ebe355182238/static/docs/modules/_src_excmds_.html#js
-bind gwN winopen moz-extension://8938aa73-1139-4008-ba48-ebe355182238/static/docs/modules/_src_excmds_.html#js
 unbind <C-Space>mr
 bind <C-Space>gm js -r mastodon.js
-bind <A-c> recontain Tier
 unbind <escape>
 bind m gobble 1 markadd
 bind ` gobble 1 markjump
 unbind <M-t>
-bind <A-†> tabopen -c Work about:newtab
-bind <A-&> recontain Work
-bind gnÁ tabopen https://www.notion.so/tamasbarta/5f587c55abb44ac6b216944cb5f24065?v=e525c3199401476ca7d9f33f05ada5b0
-bind goÁ open https://www.notion.so/tamasbarta/5f587c55abb44ac6b216944cb5f24065?v=e525c3199401476ca7d9f33f05ada5b0
-bind gwÁ winopen https://www.notion.so/tamasbarta/5f587c55abb44ac6b216944cb5f24065?v=e525c3199401476ca7d9f33f05ada5b0
 bind yq text2qr --timeout 5
 bind ;d hint -W tabopen --discard
 bind ;gd hint -qW tabopen --discard
@@ -271,6 +256,17 @@ unbind --mode=ex <C-j>
 bind --mode=ex <C-j> ex.next_completion
 unbind --mode=ex <C-k>
 bind --mode=ex <C-k> ex.prev_completion
+bind cp recontain Personal
+bind cd recontain Dina
+bind cs recontain Side
+bind ci recontain Interstate
+bind <c-space>dn tabopen https://app-new.nostromo.io/timesheet?e21vZHVsZTp0aW1lc2hlZXQscHJvamVjdDoxMDU1Mn0=
+
+bind <c-e> editor
+bind --mode=input <c-e> editor
+
+bind gt jsb browser.runtime.sendMessage('simple-tab-groups@drive4ik', { "action": "load-next-group" });
+bind gT jsb browser.runtime.sendMessage('simple-tab-groups@drive4ik', { "action": "load-first-group" });
 
 " Aliases
 alias fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
@@ -357,6 +353,8 @@ alias tabgrouplast tgrouplast
 alias tabgroupmove tgroupmove
 alias tabgrouprename tgrouprename
 alias tabgroupswitch tgroupswitch
+
+autocontain -s youtube.com Personal
 
 " Autocmds
 autocmd DocStart undefined mode ignore
