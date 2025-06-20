@@ -11,3 +11,11 @@ message_user_color = true
 
 [macros.normal]
 "gc" = ":chats<Enter>"
+"gss" = ":spaces<Enter>"
+"guu" = ":unreads<Enter>"
+"guc" = ":unreads clear<Enter>"
+
+"rr" = ":reply<Enter>i"
+"rh" = ":react ❤️<Enter>"
+"rl" = ":react 👍<Enter>"
+"dd" = ":redact<Enter>"
