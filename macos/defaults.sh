@@ -171,12 +171,13 @@ defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.dock persistent-apps -array
 dockItems=(
 	"/Applications/Firefox.app"
+	"/Applications/Brave Browser.app"
 	"/Applications/WezTerm.app"
 	"$HOME/Applications/Android Studio.app"
 	"/Applications/Xcode.app"
 	"/Applications/Thunderbird.app"
 	"/Applications/Slack.app"
-	"/Applications/Element.app"
+	"/Applications/Beeper Desktop.app"
 	"/Applications/Viber.app"
 	"/Applications/Notion Calendar.app"
 	"/Applications/Toggl Track.app"
@@ -188,6 +189,7 @@ dockItems=(
 	"/Applications/Bitwarden.app"
 	"/Applications/Home Assistant.app"
 	"/Applications/Figma.app"
+	"/Applications/BeaconEmitter.app"
 	"/System/Applications/System Settings.app"
 )
 for dockItem in "${dockItems[@]}"; do
