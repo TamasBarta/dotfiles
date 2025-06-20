@@ -95,6 +95,9 @@ fn + shift - 0 : aerospace move-node-to-workspace 10; yabai -m window --space 10
 # toggle desktop offset
 fn - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
+# toggle window parent zoom
+fn - d : yabai -m window --toggle zoom-parent
+
 # toggle window fullscreen zoom
 fn - f : aerospace fullscreen ; yabai -m window --toggle zoom-fullscreen
 fn + shift - f : aerospace fullscreen --no-outer-gaps ; yabai -m window --toggle zoom-fullscreen
@@ -129,9 +132,7 @@ fn - o ; shortcuts
 shortcuts < escape; default
 shortcuts < f : skhd -k "escape" ; open -na "Firefox"
 shortcuts < shift - f : skhd -k "escape" ; open -na "Firefox" --args -private-window
-# shortcuts < s : skhd -k "escape" ; tmux new -d "zsh -c scrcpy > ~/log.log 2>&1"
-shortcuts < v : skhd -k "escape" ; wezterm --single-instance zsh -c "source ~/.config/zsh/.zshrc; lvim"
-shortcuts < s : skhd -k "escape" ; zsh -c "source ~/.config/zsh/.zshrc; scrcpy"
+shortcuts < s : skhd -k "escape" ; zsh -c "source ~/.config/zsh/.zshrc; scrcpy-chooser.sh"
 
 # resizing shortcuts
 :: resize @
