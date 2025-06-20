@@ -2,16 +2,16 @@ return {
   {
     "sindrets/diffview.nvim",
   },
-  {
-    "pwntester/octo.nvim",
-    enabled = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = true,
-  },
+  -- {
+  --   "pwntester/octo.nvim",
+  --   enabled = false,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   config = true,
+  -- },
   {
     "ThePrimeagen/git-worktree.nvim",
     dependencies = {

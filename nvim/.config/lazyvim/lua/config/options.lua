@@ -11,6 +11,8 @@ vim.opt.conceallevel = 2
 vim.opt.lbr = true
 vim.opt.breakindent = true
 
+vim.o.guifont = "JetBrainsMono Nerd Font:h14"
+
 -------------------------------
 --- LazyVim Options         ---
 -------------------------------
