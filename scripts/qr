@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "$1" | qrencode -o - -t UTF8
