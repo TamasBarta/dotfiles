@@ -1,0 +1,13 @@
+default_profile = "tamas"
+
+[profiles.tamas]
+user_id = "@tamas:bartatamas.hu"
+url = "https://matrix.bartatamas.hu"
+
+[settings]
+username_display = "displayname"
+image_preview = {}
+message_user_color = true
+
+[macros.normal]
+"gc" = ":chats<Enter>"
