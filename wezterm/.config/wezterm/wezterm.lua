@@ -12,6 +12,8 @@ config.command_palette_font_size = isLinux and 11.5 or 17
 config.line_height = 1.15
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.adjust_window_size_when_changing_font_size = false
+config.use_fancy_tab_bar = false
+config.enable_tab_bar = false
 if isLinux then
 	if isGnome then
 		config.window_background_opacity = 1
@@ -31,7 +33,7 @@ config.term = "wezterm"
 config.max_fps = 160
 
 require("lua.theme").apply_to_config(config)
-require("lua.tabline").apply_to_config(config)
+-- require("lua.tabline").apply_to_config(config)
 config.keys = require("lua.keymaps")
 require("lua.smart-splits").apply_to_config(config)
 
