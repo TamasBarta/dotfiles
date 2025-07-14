@@ -12,3 +12,4 @@ lazygit/.config/lazygit/state.yml
 neomutt/.config/mutt/accounts
 neomutt/.config/mutt/.mailsynclastrun
 spotify/.config/spotify-tui/.spotify_token_cache.json
+btop/.config/btop/btop.log
