@@ -208,6 +208,24 @@
                             "to": [{ "key_code": "left_control" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 53287,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 1810,
+                        "vendor_id": 13364
+                    },
+                    "ignore": false
                 }
             ],
             "fn_function_keys": [
