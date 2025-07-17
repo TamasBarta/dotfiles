@@ -11,13 +11,17 @@ return {
       hints = { enabled = false },
 
       ---@alias AvanteProvider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-      provider = "copilot", -- Recommend using Claude
+      provider = "claude", -- Recommend using Claude
       auto_suggestions_provider = "copilot", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-3-5-sonnet-20241022",
-        temperature = 0,
-        max_tokens = 4096,
+      providers = {
+        claude = {
+          endpoint = "https://api.anthropic.com",
+          model = "claude-sonnet-4",
+          extra_request_body = {
+            temperature = 0.75,
+            max_tokens = 4096,
+          },
+        },
       },
 
       -- File selector configuration
