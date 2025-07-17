@@ -1,7 +1,9 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
 [[mgr.prepend_keymap]]
-on = ["T"]
-run = "plugin max-preview"
-desc = "Maximize or restore preview"
+on = "T"
+run = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"
 [[mgr.prepend_keymap]]
 on = ["<C-n>"]
 run = '''
@@ -17,3 +19,13 @@ desc = "Set as wallpaper"
 run = '''
   shell 'wall.sh "$@" 2>/dev/null &'
 '''
+
+[[mgr.prepend_keymap]]
+on = "+"
+run = "plugin zoom 1"
+desc = "Zoom in hovered file"
+
+[[mgr.prepend_keymap]]
+on = "-"
+run = "plugin zoom -1"
+desc = "Zoom out hovered file"

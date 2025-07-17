@@ -1,32 +1,39 @@
 [[plugin.deps]]
-use = "Reledia/hexyl"
-rev = "39d3d4e"
-hash = "dd624cbaff94af65f39fd86bc57b340"
-
-[[plugin.deps]]
-use = "Reledia/glow"
-rev = "c2ed51e"
-hash = "136ce00885041aeee5cf582ccf7a46dc"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "7afba3a"
-hash = "3a73613fc702a5f8369791b3401f52f1"
+rev = "b886025"
+hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "7afba3a"
-hash = "36c82bb433078e8e752351d961cac777"
-
-[[plugin.deps]]
-use = "yazi-rs/plugins:max-preview"
-rev = "7afba3a"
-hash = "9bc26d10d2f6e2aa93b10905b1b76979"
+rev = "b886025"
+hash = "1adc12c2b2b025411ab61eb8f0879574"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mactag"
-rev = "7afba3a"
-hash = "9759a0a172de3a891922e106cd9bac10"
+rev = "b886025"
+hash = "72dfb25e9d0c015365827431e28df322"
 
-[flavor]
-deps = []
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "b886025"
+hash = "2143a53182dbbe935a1abd1623424aa5"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "b886025"
+hash = "23d704e18d864036fc65c188bc6b2e47"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "b886025"
+hash = "d6f60c24d8c0cf57a855bf46115b2502"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "d3fd3a5"
+hash = "288a0dedd5d13b28605cf82c05326dcd"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-latte"
+rev = "d3fd3a5"
+hash = "a4d508772dc7b20d739a2f9a1d2d396f"

@@ -1,14 +1,25 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
-[plugin]
-prepend_previewers = [
-  { name = "*.md", run = "glow" },
-  { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
-  { name = "*.avif", run = "magick" },
-]
+[[plugin.prepend_previewers]]
+name = "*.md"
+run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
 
-append_previewers = [
-  { name = "*", run = "hexyl" },
-  { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
-  { name = "*.avif", run = "magick" },
-]
+[[plugin.prepend_previewers]]
+name = "image/{avif,hei?,jxl,svg+xml}"
+run = 'magick'
+
+[[plugin.prepend_previewers]]
+name = "*.avif"
+run = 'magick'
+
+[[plugin.append_previewers]]
+name = "*"
+run = 'piper -- hexyl --border=none --terminal-width=$w "$1"'
+
+[[plugin.append_previewers]]
+mime = "image/{avif,hei?,jxl,svg+xml}"
+run = "magick"
+
+[[plugin.append_previewers]]
+name = "*.avif"
+run = "magick"
