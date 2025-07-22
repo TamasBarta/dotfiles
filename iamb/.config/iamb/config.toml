@@ -9,6 +9,9 @@ username_display = "displayname"
 image_preview = {}
 message_user_color = true
 
+[settings.sort]
+chats = ["favorite", "lowpriority", "unread", "recent", "name"]
+
 [macros.normal]
 "gc" = ":chats<Enter>"
 "gss" = ":spaces<Enter>"
