@@ -20,7 +20,7 @@ if isLinux then
 		config.integrated_title_button_style = "Gnome"
 		config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 	else
-		config.window_decorations = "RESIZE"
+		-- config.window_decorations = "RESIZE"
 	end
 else
 	config.macos_window_background_blur = 90

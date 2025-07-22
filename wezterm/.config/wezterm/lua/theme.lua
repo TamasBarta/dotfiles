@@ -13,6 +13,7 @@ M.apply_to_config = function(config)
 		catppuccin.apply_to_config(config, { flavor = "latte" })
 		config.window_background_opacity = 0.85
 	end
+	config.window_background_opacity = 1
 end
 
 return M
