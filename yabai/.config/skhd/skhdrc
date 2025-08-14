@@ -131,6 +131,7 @@ cmd - f10 : osascript -e '  set inputVolume to input volume of (get volume setti
 fn - o ; shortcuts
 shortcuts < escape; default
 shortcuts < f : skhd -k "escape" ; open -na "Firefox"
+shortcuts < c : skhd -k "escape" ; pgrep -q caffeinate && pkill caffeinate || caffeinate -misu &
 shortcuts < shift - f : skhd -k "escape" ; open -na "Firefox" --args -private-window
 shortcuts < s : skhd -k "escape" ; zsh -c "source ~/.config/zsh/.zshrc; scrcpy-chooser.sh"
 
