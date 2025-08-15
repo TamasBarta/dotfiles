@@ -2,7 +2,7 @@ nodejs 23.6.0
 java temurin-17.0.6+10
 gradle 8.5
 flutter 3.29.3-stable
-python 3.12.11
+python system
 ruby 3.3.0
 rust 1.86.0
 # php 8.2.9
