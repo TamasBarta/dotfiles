@@ -8,7 +8,7 @@
       "top": 2,
       "left": 4,
       "right": 4
-    }
+    },
   },
   "display": {
     "key": {
@@ -16,10 +16,12 @@
     },
     "separator": ": ",
     "bar": {
-      "borderRight": " ]",
-      "borderLeft": "[ ",
-      "border": true,
+      "border": {
+        "left": "[ ",
+        "right": " ]",
+      },
     },
+    "disableLinewrap": true,
     "color": "green",
   },
   "modules": [

@@ -10,6 +10,8 @@ window#waybar {
   border-radius: 13px;
   transition-property: background-color;
   transition-duration: 0.5s;
+  background-color: @base;
+  border-radius: 0;
 }
 
 button {
@@ -135,11 +137,16 @@ button:hover {
   padding: 5px 15px;
   margin-top: 30px;
   margin-bottom: 30px;
+
+  margin: 0;
+  border: solid 0 transparent;
+  border-radius: 0;
 }
 
 .modules-right,
 .modules-left {
   box-shadow: 0 2px 4px 4px rgba(0,0,0,0.5);
+  box-shadow: none;
 }
 
 .modules-center {
@@ -149,9 +156,11 @@ button:hover {
 
 .modules-left {
   margin-left: 30px;
+  margin: 0;
 }
 .modules-right {
   margin-right: 30px;
+  margin: 0;
 }
 
 #battery.charging,

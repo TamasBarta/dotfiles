@@ -13,7 +13,7 @@ element-text, element-icon , mode-switcher {
 window {
     background-color: transparent;
     transparency: "real";
-    padding: 30px;
+    // padding: 30px;
 }
 
 mainbox {

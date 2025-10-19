@@ -4,7 +4,7 @@ is_closed=$(grep -c closed /proc/acpi/button/lid/*/state)
 if [[ $is_closed -eq 1 ]]; then
 	hyprctl --instance 0 keyword monitor "desc:$built_in,disable"
 else
-	hyprctl keyword monitor "desc:$built_in,highrr,1000x1080,2"
+	hyprctl keyword monitor "desc:$built_in,highrr,1000x1080,1.6666666"
 fi
 
 # Samsung ultrawide

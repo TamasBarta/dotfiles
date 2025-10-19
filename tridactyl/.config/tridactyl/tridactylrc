@@ -256,10 +256,11 @@ unbind --mode=ex <C-j>
 bind --mode=ex <C-j> ex.next_completion
 unbind --mode=ex <C-k>
 bind --mode=ex <C-k> ex.prev_completion
-bind cp recontain Personal
+bind cp recontain ''
 bind cd recontain Dina
-bind cs recontain Side
+bind cf recontain Freelance
 bind ci recontain Interstate
+bind gv jsb -r view.js
 bind <c-space>dn tabopen https://app-new.nostromo.io/timesheet?e21vZHVsZTp0aW1lc2hlZXQscHJvamVjdDoxMDU1Mn0=
 
 bind <c-e> editor
