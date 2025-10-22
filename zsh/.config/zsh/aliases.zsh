@@ -32,3 +32,7 @@ function y() {
 }
 
 alias yt-mp3="yt-dlp --extract-audio --audio-format=mp3"
+
+alias j=just
+
+alias ai=opencode

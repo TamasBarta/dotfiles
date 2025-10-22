@@ -15,8 +15,6 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+setopt complete_aliases
 mkdir -p $(dirname $HISTFILE)
 
-mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
-# compinit -d ${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-$ZSH_VERSION
-# . "/home/tamas/.local/share/cargo/env"
