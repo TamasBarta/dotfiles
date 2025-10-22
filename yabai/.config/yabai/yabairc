@@ -31,6 +31,24 @@ yabai -m config window_gap $GAP_SIZE
 yabai -m config external_bar all:42:0
 # yabai -m config external_bar                 all:0:0
 
+NOTCH_UUID="37D8832A-2D66-02CA-B9F7-8F30A301B230"
+NORMAL_BAR=25
+NOTCH_BAR=42
+
+yabai -m signal --add event=display_added action="if [[ \"\$(yabai -m query --displays | jq \".[\$YABAI_DISPLAY_ID].uuid\")\" =~ \"$NOTCH_UUID\" ]]; then yabai -m config external_bar main:$NORMAL_BAR:0; elif [[ \"\$(yabai -m query --displays | jq '.[].uuid')\" =~ \"$NOTCH_UUID\" ]]; then yabai -m config external_bar main:$NORMAL_BAR:0; else yabai -m config external_bar all:$NORMAL_BAR:0; fi"
+yabai -m signal --add event=display_removed action="if [[ \"\$(yabai -m query --displays | jq \".[\$YABAI_DISPLAY_ID].uuid\")\" =~ \"$NOTCH_UUID\" ]]; then yabai -m config external_bar all:$NORMAL_BAR:0; elif [[ \"\$(yabai -m query --displays | jq '.[].uuid')\" =~ \"$NOTCH_UUID\" ]]; then yabai -m config external_bar all:$NOTCH_BAR:0; fi"
+
+# global settings
+if [[ "$(yabai -m query --displays | jq '.[].uuid')" =~ "$NOTCH_UUID" ]]; then
+	if [ "$(yabai -m query --displays | jq length)" -gt "1" ]; then
+		yabai -m config external_bar main:$NORMAL_BAR:0
+	else
+		yabai -m config external_bar all:$NOTCH_BAR:0
+	fi
+else
+	yabai -m config external_bar all:$NORMAL_BAR:0
+fi
+
 # per app settings
 
 yabai -m rule --add app=".*" layer=below
