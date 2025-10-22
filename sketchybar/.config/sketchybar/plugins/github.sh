@@ -1,7 +1,11 @@
 #!/bin/sh
 
-# The $NAME variable is passed from sketchybar and holds the name of
-# the item invoking this script:
-# https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
+LABEL="$(gh api notifications -q 'length')"
 
-sketchybar --set "$NAME" update_freq=300 icon=󰊤 label="$(gh api notifications -q 'length')" click_script="open https://github.com/notifications"
+if [ "$LABEL" -eq 0 ]; then
+	COLOR=0xffa6e3a1
+else
+	COLOR=0xfff38ba8
+fi
+
+sketchybar --set "$NAME" update_freq=300 icon=󰊤 icon.color="$COLOR" label="$LABEL" click_script="open https://github.com/notifications"

@@ -1,31 +1,26 @@
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
-
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 ##### Bar Appearance #####
-# Configuring the general appearance of the bar.
-# These are only some of the options available. For all options see:
-# https://felixkratz.github.io/SketchyBar/config/bar
-# If you are looking for other colors, see the color picker:
-# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+bar=(
+  position=top
+  height=24
+  notch_display_height=35
+  blur_radius=30
+  # color=0x40000000
+  color=0xFF1e1e2e
+)
+sketchybar --bar "${bar[@]}"
 
 ##### Changing Defaults #####
-# We now change some default values, which are applied to all further items.
-# For a full list of all available item properties see:
-# https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
   padding_left=5
   padding_right=5
   icon.font="JetBrainsMono Nerd Font:Bold:17.0"
   label.font="JetBrainsMono Nerd Font:Bold:14.0"
-  icon.color=0xffffffff
-  label.color=0xffffffff
+  icon.color=0xffa6e3a1
+  label.color=0xffcdd6f4
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
@@ -45,9 +40,12 @@ do
   space=(
     space="$sid"
     icon="${SPACE_ICONS[i]}"
-    icon.padding_left=7
-    icon.padding_right=7
-    background.color=0x40ffffff
+    icon.padding_left=14
+    icon.padding_right=14
+    padding_left=0
+    padding_right=0
+    icon.color=0xFFFFFFFF
+    background.color=0xff11111b
     background.corner_radius=5
     background.height=25
     label.drawing=off
@@ -89,7 +87,11 @@ sketchybar --add item clock right \
            --add item github right \
            --set github script="$PLUGIN_DIR/github.sh" \
            --add item caffeinate right \
-           --set caffeinate script="$PLUGIN_DIR/caffeinate.sh"
+           --set caffeinate script="$PLUGIN_DIR/caffeinate.sh" \
+           --add item weather right \
+           --set weather script="$PLUGIN_DIR/weather.sh" \
+           --add item calendar right \
+           --set calendar script="$PLUGIN_DIR/calendar.sh" \
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
