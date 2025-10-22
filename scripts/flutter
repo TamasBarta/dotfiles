@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+REAL_FLUTTER="$ASDF_DATA_DIR/shims/flutter"
+TIMEOUT="${FLUTTER_DEVICE_TIMEOUT:-10}"
+
+cmd="$1"
+shift
+
+# Only touch commands where the timeout matters
+case "$cmd" in
+run | attach | devices)
+	for a in "$@"; do
+		[[ "$a" == --device-timeout* ]] && exec "$REAL_FLUTTER" "$cmd" "$@"
+	done
+	exec "$REAL_FLUTTER" --suppress-analytics --no-version-check "$cmd" --device-timeout "$TIMEOUT" "$@"
+	;;
+*)
+	exec "$REAL_FLUTTER" --suppress-analytics --no-version-check "$cmd" "$@"
+	;;
+esac
