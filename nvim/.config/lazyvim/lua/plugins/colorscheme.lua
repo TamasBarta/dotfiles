@@ -57,6 +57,7 @@ return {
       end,
       integrations = {
         alpha = true,
+        bufferline = true,
         cmp = true,
         gitsigns = true,
         illuminate = true,
@@ -93,6 +94,7 @@ return {
   },
   {
     "nvim-lualine/lualine.nvim",
+    optional = true,
     opts = {
       options = {
         theme = "catppuccin",

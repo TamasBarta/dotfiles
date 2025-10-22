@@ -20,6 +20,14 @@ return {
         provider = "fzf", -- Avoid native provider issues
         provider_opts = {},
       },
+      behaviour = {
+        enable_token_counting = false,
+      },
+      windows = {
+        sidebar_header = {
+          enabled = false,
+        },
+      },
     },
     build = LazyVim.is_win() and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or "make",
   },

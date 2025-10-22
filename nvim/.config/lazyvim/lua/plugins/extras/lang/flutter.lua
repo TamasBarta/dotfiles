@@ -104,6 +104,13 @@ return {
         enabled = true,
         run_via_dap = true,
         exception_breakpoints = {},
+        register_configurations = function(paths)
+          local dap = require("dap")
+          for _, config in ipairs(dap.configurations.dart or {}) do
+            config.debugSdkLibraries = true
+            config.debugExternalPackageLibraries = true
+          end
+        end,
       },
       -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
       flutter_lookup_cmd = "asdf where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
