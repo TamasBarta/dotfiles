@@ -52,6 +52,6 @@ stow -d "$DOTFILES_HOME" karabiner
 stow -d "$DOTFILES_HOME" yabai
 stow -d "$DOTFILES_HOME" sketchybar
 
-source "$DOTFILES_HOME"/macos/defaults.sh
+source macos-defaults.sh
 
 echo "setenv UNAME Darwin" | sudo tee -a /etc/launchd.conf
