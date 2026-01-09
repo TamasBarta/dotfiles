@@ -1,0 +1,23 @@
+include "config.d/00-workspaces.kdl"
+include "config.d/10-app-rules.kdl"
+include "config.d/20-outputs.kdl"
+include "config.d/30-input.kdl"
+include "config.d/30-layout.kdl"
+include "config.d/30-overview.kdl"
+include "config.d/40-hotkeys.kdl"
+include "config.d/90-autostart.kdl"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+    slowdown 0.5
+}
+
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+include "./noctalia.kdl"

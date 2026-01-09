@@ -37,7 +37,7 @@ export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle BUNDLE_USER_CACHE="$XDG_CACH
 export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 
 mkdir -p "$XDG_DATA_HOME"/wineprefixes
-export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
+# export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default
 
 # export TERMINFO="$XDG_DATA_HOME"/terminfo
 export TERMINFO_DIRS="$TERMINFO_DIRS:$XDG_DATA_HOME/terminfo:/usr/share/terminfo:/etc/terminfo"
@@ -46,7 +46,7 @@ export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 grep -q "^hsts-file = " "$WGETRC" && sed "s#^hsts-file = .*#hsts-file = $XDG_CACHE_HOME/wget-hsts#" -i "$WGETRC" || echo hsts-file \= "$XDG_CACHE_HOME"/wget-hsts >>"$WGETRC"
 export LESSHISTFILE=-
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
-export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+# export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export MBSYNCRC="$XDG_CONFIG_HOME"/isync/mbsyncrc
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/default/config"
 export SOLARGRAPH_CACHE="$XDG_CACHE_HOME"/solargraph # what's this?

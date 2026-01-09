@@ -1,0 +1,30 @@
+workspace "one" {
+    open-on-output "Samsung Electric Company C34J79x H4ZN101074"
+}
+workspace "two" {
+    open-on-output "Samsung Electric Company C34J79x H4ZN101074"
+}
+workspace "three" {
+    open-on-output "Samsung Electric Company C34J79x H4ZN101074"
+}
+workspace "four" {
+    open-on-output "Samsung Electric Company C34J79x H4ZN101074"
+}
+workspace "five" {
+    open-on-output "Samsung Electric Company C34J79x H4ZN101074"
+}
+workspace "six" {
+    open-on-output "Samsung Electric Company C34J79x H4ZN101074"
+}
+workspace "seven" {
+    open-on-output "Samsung Electric Company C34J79x H4ZN101074"
+}
+workspace "eight" {
+    open-on-output "Samsung Electric Company C34J79x H4ZN101074"
+}
+workspace "nine" {
+    open-on-output "PNP(AOC) U28G2G6B PPYM9JA002130"
+}
+workspace "ten" {
+    open-on-output "PNP(UGD) CD130FH 20210908"
+}

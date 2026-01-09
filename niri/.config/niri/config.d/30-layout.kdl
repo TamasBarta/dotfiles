@@ -1,0 +1,56 @@
+layout {
+    gaps 30
+
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    center-focused-column "never"
+
+    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        // fixed 1920
+    }
+
+    // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
+    // preset-window-heights { }
+
+    // You can change the default width of the new windows.
+    // default-column-width { proportion 0.5; }
+    // If you leave the brackets empty, the windows themselves will decide their initial width.
+    default-column-width {}
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 4
+        active-color "#a6e3a1"
+        inactive-color "#1e1e2e"
+        urgent-color "#f38ba8"
+    }
+
+    // You can enable drop shadows for windows.
+    shadow {
+        on
+        // draw-behind-window true
+        softness 40
+        spread 5
+        offset x=0 y=2
+        color "#00000099"
+    }
+}
+
+prefer-no-csd
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}

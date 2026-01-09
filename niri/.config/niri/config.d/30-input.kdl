@@ -1,0 +1,38 @@
+input {
+    keyboard {
+        xkb {
+            layout "hu"
+            options "caps:super,apple:alupckeys,compose:rwin"
+        }
+        repeat-delay 250
+        repeat-rate 60
+    }
+
+    touchpad {
+        natural-scroll
+        scroll-method "two-finger"
+        tap-button-map "left-right-middle"
+        click-method "clickfinger"
+    }
+
+    tablet {
+        // off
+        // map-to-output "eDP-1"
+        // left-handed
+        // calibration-matrix 1.0 0.0 0.0 0.0 1.0 0.0
+    }
+
+    touch {
+        // off
+        map-to-output "eDP-1"
+        // calibration-matrix 1.0 0.0 0.0 0.0 1.0 0.0
+    }
+
+    // disable-power-key-handling
+    // warp-mouse-to-focus
+    // focus-follows-mouse max-scroll-amount="0%"
+    // workspace-auto-back-and-forth
+
+    mod-key "Super"
+    mod-key-nested "Alt"
+}
