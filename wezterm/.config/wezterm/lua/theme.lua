@@ -5,6 +5,7 @@ local isDark = wezterm.gui.get_appearance():find("Dark")
 local M = {}
 
 M.apply_to_config = function(config)
+	-- config.color_scheme = "Noctalia"
 	local catppuccin = wezterm.plugin.require("https://github.com/catppuccin/wezterm")
 	if isDark then
 		catppuccin.apply_to_config(config, { flavor = "mocha" })
