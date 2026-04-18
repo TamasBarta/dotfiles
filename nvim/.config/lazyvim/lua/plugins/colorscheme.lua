@@ -23,6 +23,7 @@ return {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
+    priority = 1000,
     opts = {
       -- transparent_background = true, -- disables setting the background color
       custom_highlights = function(C)
@@ -89,7 +90,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "catppuccin-nvim",
     },
   },
   {
@@ -97,7 +98,7 @@ return {
     optional = true,
     opts = {
       options = {
-        theme = "catppuccin",
+        theme = "catppuccin-nvim",
       },
     },
   },

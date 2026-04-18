@@ -1,5 +1,6 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.ai.sidekick",
     "lazyvim.plugins.extras.coding.luasnip",
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.coding.yanky",
@@ -36,7 +37,6 @@
     "lazyvim.plugins.extras.util.mini-hipatterns",
     "lazyvim.plugins.extras.util.octo",
     "lazyvim.plugins.extras.util.project",
-    "plugins.extras.avante",
     "plugins.extras.lang.flutter",
     "plugins.extras.lang.godot",
     "plugins.extras.lang.kotlin"
