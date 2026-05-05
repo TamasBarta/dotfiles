@@ -1,6 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
+	{ key = "u", mods = "SHIFT|CTRL", action = wezterm.action.DisableDefaultAssignment },
 	{ key = "Enter", mods = "ALT", action = wezterm.action.DisableDefaultAssignment },
 	{ key = "p", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 	{
