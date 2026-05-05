@@ -32,14 +32,14 @@
     "lazyvim.plugins.extras.lsp.none-ls",
     "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.edgy",
-    "lazyvim.plugins.extras.ui.smear-cursor",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns",
     "lazyvim.plugins.extras.util.octo",
     "lazyvim.plugins.extras.util.project",
     "plugins.extras.lang.flutter",
     "plugins.extras.lang.godot",
-    "plugins.extras.lang.kotlin"
+    "plugins.extras.lang.kotlin",
+    "plugins.extras.opencode"
   ],
   "install_version": 7,
   "news": {
