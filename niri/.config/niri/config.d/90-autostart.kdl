@@ -41,13 +41,13 @@ window-rule {
 // space 5
 spawn-at-startup "gtk-launch spotify"
 window-rule {
-    match app-id=r#"^spotify$"# at-startup=true
+    match app-id=r#"^spotify$"#
     open-on-workspace "5"
     open-focused false
 }
 spawn-at-startup "gtk-launch io.element.Element"
 window-rule {
-    match app-id=r#"^io\.element\.Element$"# at-startup=true
+    match app-id=r#"^Element$"#
     open-on-workspace "5"
     open-focused false
 }

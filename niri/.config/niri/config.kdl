@@ -1,3 +1,8 @@
+
+window-rule {
+    match app-id=r#"^notion-calendar-electron$"#
+    open-on-workspace "4"
+}
 include "config.d/00-workspaces.kdl"
 include "config.d/10-app-rules.kdl"
 include "config.d/20-outputs.kdl"
