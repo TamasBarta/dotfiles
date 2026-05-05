@@ -14,6 +14,7 @@ case "$(echo "${options[*]}" | rofi -i -dmenu -format 'i' -p Leave)" in
 	loginctl lock-session
 	;;
 1)
+	loginctl lock-session
 	systemctl suspend
 	;;
 2)
