@@ -1,3 +1,5 @@
+aerc/.config/aerc/accounts.conf filter=git-crypt diff=git-crypt
+aerc/.config/isync/mbsyncrc filter=git-crypt diff=git-crypt
 scripts/iam.sh filter=git-crypt diff=git-crypt
 scripts/device_passwords/** filter=git-crypt diff=git-crypt
 zsh/.config/zsh/secret-env-vars.sh filter=git-crypt diff=git-crypt

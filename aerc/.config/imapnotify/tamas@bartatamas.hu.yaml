@@ -1,0 +1,8 @@
+host: mail.bartatamas.hu
+port: 993
+tls: true
+username: tamas@bartatamas.hu
+passwordCmd: "pass tamas@bartatamas.hu"
+onNewMail: "mbsync -c ~/.config/isync/mbsyncrc tamas@bartatamas.hu"
+boxes:
+  - INBOX
