@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [[ "$1" == "" ]]; then
-	readlink -f ~/Pictures/Wallpaper
-	exit 1
+  readlink -f ~/Pictures/Wallpaper
+  exit 1
 fi
 
 swww img --transition-type center --transition-step 30 --transition-fps 100 "$1"
@@ -19,5 +19,6 @@ qs -c noctalia-shell ipc call wallpaper set "$1" DP-6
 qs -c noctalia-shell ipc call wallpaper set "$1" DP-7
 qs -c noctalia-shell ipc call wallpaper set "$1" DP-8
 qs -c noctalia-shell ipc call wallpaper set "$1" DP-9
+qs -c noctalia-shell ipc call wallpaper set "$1" DP-10
 
 systemctl --user try-restart hyprpaper.service
