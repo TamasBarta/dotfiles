@@ -34,6 +34,7 @@ layer-rule {
 
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"firefox$"# title=r#"^Extension: "#
     open-floating true
 }
 
@@ -45,6 +46,7 @@ window-rule {
     match app-id=r#"^Bitwarden$"#
     match app-id="waydroid.com.x8bit.bitwarden"
     match app-id=r#"^Element$"#
+    match app-id=r#"firefox$"# title=r#"^Extension: "#
 
     block-out-from "screen-capture"
 
