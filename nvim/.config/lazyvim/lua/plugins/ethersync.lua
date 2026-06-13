@@ -1,7 +1,7 @@
 return {
   {
-    "ethersync/ethersync-nvim",
-    keys = { { "<leader>j", "<cmd>EthersyncJumpToCursor<cr>" } },
+    "teamtype/teamtype-nvim",
+    keys = { { "<leader>j", "<cmd>TeamtypeJumpToCursor<cr>" } },
     lazy = false,
   },
 }

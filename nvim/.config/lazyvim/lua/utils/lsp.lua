@@ -13,8 +13,7 @@ local execute_command = function(command)
       },
     },
   }
-  ---@diagnostic disable-next-line: missing-parameter
-  vim.lsp.buf_request_sync(cur_buf, "workspace/executeCommand", params)
+  vim.lsp.buf_request_sync(cur_buf, "workspace/executeCommand", params, 2000)
 end
 
 local M = {}

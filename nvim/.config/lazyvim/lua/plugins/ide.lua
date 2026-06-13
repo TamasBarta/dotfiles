@@ -20,6 +20,7 @@ return {
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
+    optional = true,
     opts = {
       sources = {
         "filesystem", -- keep this if you want to use the filesystem source

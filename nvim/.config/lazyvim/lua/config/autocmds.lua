@@ -9,8 +9,9 @@ vim.api.nvim_del_augroup_by_name("lazyvim_resize_splits")
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.dart" },
   callback = function()
-    local is_autoformat_on = vim.g.autoformat_enabled
-    if not is_autoformat_on then
+    -- vim.b.autoformat (buffer-local) takes precedence, falls back to vim.g.autoformat
+    local autoformat = vim.F.if_nil(vim.b.autoformat, vim.F.if_nil(vim.g.autoformat, true))
+    if not autoformat then
       return
     end
     require("utils.lsp").fix_all()

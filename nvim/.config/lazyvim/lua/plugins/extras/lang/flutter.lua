@@ -136,12 +136,6 @@ return {
         auto_open = false, -- if true this will open the outline automatically when it is first populated
       },
       lsp = {
-        color = { -- show the derived colours for dart variables
-          enabled = true, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
-          background = false, -- highlight the background
-          virtual_text = true, -- show the highlight using virtual text
-          virtual_text_str = "■", -- the virtual text character to highlight
-        },
         settings = {
           showTodos = true,
           completeFunctionCalls = true,
