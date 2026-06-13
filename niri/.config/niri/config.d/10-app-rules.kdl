@@ -1,17 +1,25 @@
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-/-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+// Block out mako notifications from screencasts.
+layer-rule {
+    match namespace=r#".*notifications.*"#
+    block-out-from "screen-capture"
 }
+
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"# at-startup=true
-    open-on-workspace "2"
-    open-focused false
+    match app-id=r#"^org\.wezfurlong\.wezterm|com\.mitchellh\.ghostty|foot$"# at-startup=true
+    open-on-workspace "two"
 }
+
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm|com\.mitchellh\.ghostty|foot$"#
+    default-column-width { 
+        proportion 0.33333
+    }
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
 
 window-rule {
     match app-id=r#"firefox"#
@@ -24,25 +32,31 @@ layer-rule {
   place-within-backdrop true
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
+    match title=r#"Private Browsing"#
+    match app-id="chat-schildi-revenge-MainKt"
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"^Bitwarden$"#
+    match app-id="waydroid.com.x8bit.bitwarden"
+    match app-id=r#"^Element$"#
 
     block-out-from "screen-capture"
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="scrcpy"
+    default-column-width {
+        fixed 600
+    }
 }
 
 layer-rule {
@@ -56,5 +70,64 @@ layer-rule {
         color "#00000099"
     }
 
+    background-effect {
+        blur true
+        xray false
+    }
+
     geometry-corner-radius 10
+}
+
+
+/* Noctalia: blur everywhere without xray for a better look */
+layer-rule {
+  match namespace=r#"^noctalia-(background|launcher-overlay|dock)-.*$"#
+  background-effect {
+    xray false
+    blur true
+  }
+}
+
+// Visible apps
+
+// space 1
+window-rule {
+    match app-id=r#"^firefox$"# at-startup=true
+    open-on-workspace "one"
+}
+
+// space 3
+window-rule {
+    match app-id="org.mozilla.Thunderbird"
+    open-on-workspace "three"
+}
+
+// space 4
+window-rule {
+    match app-id=r#"^notion-calendar-electron$"#
+    open-on-workspace "four"
+    default-column-width { 
+        proportion 0.66667
+    }
+}
+
+window-rule {
+    match app-id="chrome-app.todoist.com__app_today-Default"
+    open-on-workspace "four"
+    default-column-width { 
+        proportion 0.33333
+    }
+}
+
+
+// space 5
+window-rule {
+    match app-id=r#"^Spotify$"#
+    open-on-workspace "five"
+}
+
+window-rule {
+    match app-id="chat-schildi-revenge-MainKt"
+    match app-id=r#"^Element$"#
+    open-on-workspace "five"
 }
