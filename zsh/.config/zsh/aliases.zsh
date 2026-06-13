@@ -12,6 +12,7 @@ alias lg=lazygit
 alias gg=git-graph
 alias which='command -v'
 alias pub='dart pub'
+alias rgh='rg --hidden '
 
 alias cdpj="cd ~/Projects/Development/popjohn/popjohn_frontend/"
 
