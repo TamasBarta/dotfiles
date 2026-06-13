@@ -30,10 +30,10 @@ menu:
         cmd: "firefox --private-window"
       - key: "s"
         desc: "scrcpy device chooser"
-        cmd: "~/.dotfiles/scripts/scrcpy-chooser.sh"
+        cmd: "zsh -ilc ~/.dotfiles/scripts/scrcpy-chooser.sh"
       - key: "b"
         desc: "Bluetooth menu"
-        cmd: "~/.dotfiles/scripts/rofi-bluetooth.sh"
+        cmd: "zsh -ilc ~/.dotfiles/scripts/rofi-bluetooth.sh"
       - key: "B"
         desc: "rofi-rbw"
         cmd: "rofi-rbw"
@@ -43,18 +43,21 @@ menu:
       - key: "d"
         desc: "Display settings (wdisplays)"
         cmd: "wdisplays"
-      - key: "d"
-        desc: "Display settings (wdisplays)"
-        cmd: "wdisplays"
       - key: "h"
         desc: "Home Assistant PWA"
-        cmd: "~/.dotfiles/scripts/pwa.sh $HASS_SERVER"
+        cmd: "zsh -ilc '~/.dotfiles/scripts/pwa.sh $HASS_SERVER'"
+      - key: "m"
+        desc: "aerc"
+        cmd: "zsh -ilc '~/.dotfiles/scripts/term.sh aerc'"
+      - key: "M"
+        desc: "aerc"
+        cmd: "zsh -ilc '~/.dotfiles/scripts/term.sh aerc -I mailto:'"
       - key: "t"
         desc: "Todoist PWA"
-        cmd: "~/.dotfiles/scripts/pwa.sh https://todoist.com/"
+        cmd: "~/.dotfiles/scripts/pwa.sh https://app.todoist.com/app"
       - key: "c"
         desc: "Preview Camera"
-        cmd: "~/.dotfiles/scripts/preview-camera.sh"
+        cmd: "zsh -ilc ~/.dotfiles/scripts/preview-camera.sh"
       - key: "l"
         desc: Laptop Screen
         submenu:
@@ -88,6 +91,9 @@ menu:
   - key: "s"
     desc: Home Assistant
     submenu:
-      - key: "s"
-        desc: Toggle Office Lights
-        cmd: hass-cli service call light.toggle --arguments entity_id=light.desk_lamp
+      - key: "o"
+        desc: 󱉕 Toggle Office Lights
+        cmd: "zsh -ilc 'hass-cli service call light.toggle --arguments entity_id=light.office_light; hass-cli service call light.toggle --arguments entity_id=light.office_desk_lamp'"
+      - key: "f"
+        desc: 󰈐 Toggle Fan
+        cmd: "zsh -ilc 'hass-cli service call fan.toggle --arguments entity_id=fan.fan'"
