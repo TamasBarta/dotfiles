@@ -1,5 +1,11 @@
 local wezterm = require("wezterm")
 
+-- Workaround for niri clipboard issue: re-copy clipboard on window focus
+-- https://github.com/wezterm/wezterm/issues/6685
+wezterm.on("window-focus-changed", function(window, pane)
+	wezterm.run_child_process({ "sh", "-c", "wl-paste -n | wl-copy" })
+end)
+
 local config = wezterm.config_builder()
 
 local isLinux = wezterm.target_triple:find("linux")
@@ -9,7 +15,7 @@ local isGnome = (os.getenv("XDG_CURRENT_DESKTOP") or ""):find("gnome") or false
 config.font = wezterm.font_with_fallback({ "JetbrainsMono NF", "JetbrainsMono Nerd Font" })
 config.font_size = isLinux and 11.5 or 14
 config.command_palette_font_size = isLinux and 11.5 or 17
-config.line_height = 1.15
+-- config.line_height = 1.15
 config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.adjust_window_size_when_changing_font_size = false
 config.use_fancy_tab_bar = false
