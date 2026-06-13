@@ -1,0 +1,81 @@
+# =============================================================================
+# Ghostty Configuration
+# Ported from Wezterm
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Font
+# -----------------------------------------------------------------------------
+font-family = JetBrainsMono Nerd Font
+font-size = 11.5
+
+# -----------------------------------------------------------------------------
+# Layout
+# -----------------------------------------------------------------------------
+# Approximates wezterm's line-height: 1.15
+# adjust-cell-height = 15%
+
+# Equivalent of window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+window-padding-x = 0
+window-padding-y = 0
+
+# -----------------------------------------------------------------------------
+# Window
+# -----------------------------------------------------------------------------
+# On Linux/niri, window decorations are handled by the compositor.
+# On macOS, you can tweak window-decoration and titlebar style.
+window-decoration = true
+
+# Hide tab bar (equivalent of wezterm's enable_tab_bar = false)
+window-show-tab-bar = never
+
+# macOS-specific (ignored on Linux)
+macos-titlebar-style = tabs
+background-blur = 90
+
+gtk-single-instance = true
+
+# -----------------------------------------------------------------------------
+# Theme (Catppuccin)
+# -----------------------------------------------------------------------------
+# Ghostty has Catppuccin built-in and supports auto switching with system
+# dark/light mode — no plugin needed.
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+
+# -----------------------------------------------------------------------------
+# Opacity
+# -----------------------------------------------------------------------------
+# Split the difference between wezterm's 0.9 (dark) / 0.85 (light)
+background-opacity = 0.875
+
+# -----------------------------------------------------------------------------
+# Terminal
+# -----------------------------------------------------------------------------
+# Wezterm sets TERM=wezterm. Ghostty uses its own terminfo; no setting needed.
+
+# -----------------------------------------------------------------------------
+# Keybindings
+# -----------------------------------------------------------------------------
+
+# --- Split navigation (port of smart-splits move: ALT+h/j/k/l) ---
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+
+# --- Split resize (alt+shift to avoid conflict with move bindings) ---
+keybind = alt+shift+h=resize_split:left,10
+keybind = alt+shift+j=resize_split:down,10
+keybind = alt+shift+k=resize_split:up,10
+keybind = alt+shift+l=resize_split:right,10
+
+# --- Toggle pane zoom (Super+z) ---
+keybind = super+z=toggle_split_zoom
+
+# --- Tab navigation (Super+h/l) ---
+keybind = super+h=previous_tab
+keybind = super+l=next_tab
+
+# --- Scroll (Shift+PageUp/Down) ---
+keybind = shift+page_up=scroll_page_up
+keybind = shift+page_down=scroll_page_down
