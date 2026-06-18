@@ -22,3 +22,4 @@ chats = ["favorite", "lowpriority", "unread", "recent", "name"]
 "rh" = ":react ❤️<Enter>"
 "rl" = ":react 👍<Enter>"
 "dd" = ":redact<Enter>"
+"O" = ":open<Enter>"
