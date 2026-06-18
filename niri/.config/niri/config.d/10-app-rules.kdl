@@ -133,3 +133,15 @@ window-rule {
     match app-id=r#"^Element$"#
     open-on-workspace "five"
 }
+
+// space 6
+window-rule {
+    match app-id=r#"^obsidian$"#
+    open-on-workspace "six"
+}
+
+// space 9
+window-rule {
+    match app-id=r#"^com\.obsproject\.Studio$"#
+    open-on-workspace "nine"
+}
