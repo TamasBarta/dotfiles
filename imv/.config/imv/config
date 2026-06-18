@@ -1,0 +1,20 @@
+[options]
+background = 1a1a1a
+scaling_mode = full
+upscaling_method = nearest_neighbour
+loop_input = true
+overlay = true
+overlay_position_bottom = true
+overlay_text = [$imv_current_index/$imv_file_count] $imv_current_file ($imv_width x $imv_height) $imv_scale%
+title_text = imv - $imv_current_file
+suppress_default_binds = false
+
+[binds]
+l = next
+h = prev
+<Shift+J> = pan 0 -50
+<Shift+K> = pan 0 50
+<Shift+L> = pan -50 0
+<Shift+H> = pan 50 0
+<Shift+R> = rotate by 90
+y = exec sh -c 'convert "$imv_current_file" png:- | wl-copy --type image/png &'
