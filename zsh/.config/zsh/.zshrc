@@ -17,6 +17,7 @@ if [ -f "$HOME/.config/zsh/work.zsh" ]; then source $HOME/.config/zsh/work.zsh; 
 source $HOME/.config/zsh/zinit.zsh
 
 source $HOME/.config/zsh/p10k.zsh
+# eval "$(starship init zsh)"
 source $HOME/.config/zsh/fzf.zsh
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/bindkey.zsh

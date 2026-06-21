@@ -15,7 +15,18 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit snippet OMZ::plugins/gradle
 # zinit pack for fzf
 
+zinit as="command" lucid from="gh-r" for \
+    id-as="usage" \
+    atpull="%atclone" \
+    jdx/usage
+    #atload='eval "$(mise activate zsh)"' \
 
+zinit as="command" lucid from="gh-r" for \
+    id-as="mise" mv="mise* -> mise" \
+    atclone="./mise* completion zsh > _mise" \
+    atpull="%atclone" \
+    atload='eval "$(mise activate zsh)"' \
+    jdx/mise
 
 # Load core OMZ snippets
 zinit snippet OMZ::lib/functions.zsh

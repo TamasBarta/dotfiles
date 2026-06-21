@@ -19,4 +19,4 @@ export PATH=$ANDROID_HOME/tools/bin:$PATH
 # export PATH=$HOME/Library/Android/sdk/tools:$PATH
 # export PATH=$HOME/Library/Android/sdk/tools/bin:$PATH
 
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
+# export PATH="$ASDF_DATA_DIR/shims:$PATH"
