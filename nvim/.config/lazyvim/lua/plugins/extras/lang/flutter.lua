@@ -113,7 +113,7 @@ return {
         end,
       },
       -- flutter_path = "<full/path/if/needed>", -- <-- this takes priority over the lookup
-      flutter_lookup_cmd = "asdf where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
+      flutter_lookup_cmd = "mise where flutter", -- example "dirname $(which flutter)" or "asdf where flutter"
       widget_guides = {
         enabled = true,
       },
