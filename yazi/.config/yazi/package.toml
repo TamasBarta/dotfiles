@@ -1,39 +1,41 @@
+#:schema https://yazi-rs.github.io/schemas/package.json
+
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "19dc890"
-hash = "3996fc74044bc44144b323686f887e1"
+rev = "38efe09"
+hash = "7b625412411be411153886894d9acaf"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:chmod"
-rev = "19dc890"
-hash = "5b2eb0cc2050cec1e4de83cfa51a5b90"
+rev = "38efe09"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mactag"
-rev = "19dc890"
-hash = "326eb39db39c855a1d564b777b810f05"
+rev = "38efe09"
+hash = "235256b396f4da77ff8f5b8eacd7c113"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "19dc890"
-hash = "b26d542e75151835d7bc885f6dda74cb"
+rev = "38efe09"
+hash = "12126fca34f9f1802bb57b88292f57af"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:zoom"
-rev = "19dc890"
-hash = "9dee2bf990ea941ccf67df74bca45468"
+rev = "38efe09"
+hash = "e8e279463ee99c940e6945a14cf4aa9e"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "19dc890"
-hash = "8a7c58225816a163a6e8730c0adafbc8"
+rev = "38efe09"
+hash = "9c7987da2d2a2120dac33abb64132004"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "ffe6e3a"
-hash = "b951d27afe197d154f6da9683b46c5f8"
+rev = "0f9204b"
+hash = "7dfe41c9c3d9be76da8a844263d0bbed"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-latte"
-rev = "ffe6e3a"
-hash = "525675a9180ed23a097b07399627294a"
+rev = "0f9204b"
+hash = "b8f46853c27707115f25f3423a47bd38"

@@ -1,18 +1,21 @@
-"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+#:schema https://yazi-rs.github.io/schemas/keymap.json
 
 [[mgr.prepend_keymap]]
 on = "T"
 run = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
+
 [[mgr.prepend_keymap]]
 on = ["<C-n>"]
 run = '''
   shell 'ripdrag "$@" -x 2>/dev/null &' --confirm
 '''
+
 [[mgr.prepend_keymap]]
 on = ["c", "m"]
 run = "plugin chmod"
 desc = "Chmod on selected files"
+
 [[mgr.prepend_keymap]]
 on = ["g", "w"]
 desc = "Set as wallpaper"
