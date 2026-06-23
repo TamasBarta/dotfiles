@@ -1,6 +1,6 @@
 # Theming
 font: JetBrainsMono Nerd Font 12
-background: "#1e1e2e"
+background: "#1e1e2e99"
 color: "#cdd6f4"
 border: "#a6e3a1"
 separator: " ➜ "
@@ -46,6 +46,9 @@ menu:
       - key: "h"
         desc: "Home Assistant PWA"
         cmd: "zsh -ilc '~/.dotfiles/scripts/pwa.sh $HASS_SERVER'"
+      - key: "e"
+        desc: "yazi"
+        cmd: "zsh -ilc '~/.dotfiles/scripts/term.sh yazi'"
       - key: "m"
         desc: "aerc"
         cmd: "zsh -ilc '~/.dotfiles/scripts/term.sh aerc'"

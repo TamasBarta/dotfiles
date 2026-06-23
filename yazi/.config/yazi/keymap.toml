@@ -6,9 +6,9 @@ run = "plugin toggle-pane max-preview"
 desc = "Maximize or restore the preview pane"
 
 [[mgr.prepend_keymap]]
-on = ["<C-n>"]
+on = ["g", "D"]
 run = '''
-  shell 'ripdrag "$@" -x 2>/dev/null &' --confirm
+  shell 'blobdrop "$@" 2>/dev/null &'
 '''
 
 [[mgr.prepend_keymap]]
@@ -32,3 +32,8 @@ desc = "Zoom in hovered file"
 on = "-"
 run = "plugin zoom -1"
 desc = "Zoom out hovered file"
+
+[[mgr.prepend_keymap]]
+on = ["c", "c"]
+run = "shell 'for f in \"$@\"; do echo \"file://$f\"; done | wl-copy -t text/uri-list' 2>/dev/null &"
+desc = "Copy selected files to clipboard (Nautilus-style)"

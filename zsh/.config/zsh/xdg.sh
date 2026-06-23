@@ -4,7 +4,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 # only if we're running linux
 if [ "$(uname)" = "Linux" ]; then
-	export XDG_RUNTIME_DIR=/run/user/$UID
+  export XDG_RUNTIME_DIR=/run/user/$UID
 fi
 
 mkdir -p "$XDG_CONFIG_HOME"
@@ -18,6 +18,9 @@ export GOPATH="$XDG_DATA_HOME"/go
 export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdfrc"
 export ASDF_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/asdf"
 # export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/tool-versions"
+
+export PI_CODING_AGENT_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/pi/agent"
+export PI_CODING_AGENT_SESSION_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/pi/agent/sessions"
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 

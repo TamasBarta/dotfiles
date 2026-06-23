@@ -20,6 +20,11 @@ window-rule {
     }
 }
 
+window-rule {
+    match app-id="blobdrop"
+    open-floating true
+}
+
 
 window-rule {
     match app-id=r#"firefox"#
@@ -63,6 +68,7 @@ window-rule {
 
 layer-rule {
     match namespace="rofi"
+    match namespace="wlr_which_key"
 
     shadow {
         on
