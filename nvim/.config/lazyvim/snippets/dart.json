@@ -1,0 +1,12 @@
+{
+  "Flutter Widget Test": {
+    "prefix": "fwt",
+    "body": [
+      "testWidgets('${1:test name}', (WidgetTester tester) async {",
+      "",
+      "\t$0",
+      "});"
+    ],
+    "description": "Flutter widget test"
+  }
+}
