@@ -46,6 +46,7 @@ window-rule {
 window-rule {
     match title=r#"Private Browsing"#
     match app-id="chat-schildi-revenge-MainKt"
+    match app-id=r#"^com-artemchep-keyguard-MainKt$"#
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     match app-id=r#"^Bitwarden$"#
