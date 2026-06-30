@@ -14,6 +14,8 @@ vim.opt.breakindent = true
 
 vim.o.guifont = "JetBrainsMono Nerd Font:h14"
 
+vim.opt.spelllang = { "en", "hu" }
+
 -------------------------------
 --- LazyVim Options         ---
 -------------------------------

@@ -13,7 +13,7 @@ font-size = 11.5
 # Layout
 # -----------------------------------------------------------------------------
 # Approximates wezterm's line-height: 1.15
-# adjust-cell-height = 15%
+adjust-cell-height = 10%
 
 # Equivalent of window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 window-padding-x = 0
