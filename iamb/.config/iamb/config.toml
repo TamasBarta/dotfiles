@@ -23,3 +23,4 @@ chats = ["favorite", "lowpriority", "unread", "recent", "name"]
 "rl" = ":react 👍<Enter>"
 "dd" = ":redact<Enter>"
 "O" = ":open<Enter>"
+"e" = ":edit<Enter>A"
