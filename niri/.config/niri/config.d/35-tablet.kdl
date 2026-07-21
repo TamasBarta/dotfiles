@@ -1,5 +1,7 @@
 input {
     tablet {
-        map-to-focused-output
+        // OTD handles its own mapping
+        // map-to-focused-output
+        // map-to-output "PNP(UGD) CD130FH 20210908"
     }
 }

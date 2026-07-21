@@ -50,6 +50,7 @@ window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     match app-id=r#"^Bitwarden$"#
+    match app-id=r#"^viber$"#
     match app-id="waydroid.com.x8bit.bitwarden"
     match app-id=r#"^Element$"#
     match app-id=r#"firefox$"# title=r#"^Extension: "#

@@ -23,3 +23,60 @@ run = "magick"
 [[plugin.append_previewers]]
 url = "*.avif"
 run = "magick"
+
+[[plugin.prepend_previewers]]
+url = "*.kra{,~}"
+run = 'krita-preview'
+
+[[plugin.prepend_preloaders]]
+url = "*.kra{,~}"
+run = 'krita-preview'
+
+[[plugin.prepend_previewers]]
+url = "*.typ"
+run = 'preview-typst'
+
+[[plugin.prepend_preloaders]]
+url = "*.typ"
+run = 'preview-typst'
+
+[[plugin.prepend_previewers]]
+url = "*.epub"
+run = 'preview-epub'
+
+[[plugin.prepend_preloaders]]
+url = "*.epub"
+run = 'preview-epub'
+
+[[plugin.prepend_previewers]]
+url = "*.cb{z,r}"
+run = 'preview-cbz'
+
+[[plugin.prepend_preloaders]]
+url = "*.cb{z,r}"
+run = 'preview-cbz'
+
+[[plugin.prepend_previewers]]
+mime = "application/ms-opentype"
+run = 'font-sample'
+
+[[plugin.prepend_preloaders]]
+mime = "application/ms-opentype"
+run = 'font-sample'
+
+[[plugin.prepend_previewers]]
+mime = "font/*"
+run = 'font-sample'
+
+[[plugin.prepend_preloaders]]
+mime = "font/*"
+run = 'font-sample'
+
+[[plugin.prepend_previewers]]
+url = "*.{otf,ttf,woff,woff2}"
+run = 'font-sample'
+
+[[plugin.prepend_preloaders]]
+url = "*.{otf,ttf,woff,woff2}"
+run = 'font-sample'
+

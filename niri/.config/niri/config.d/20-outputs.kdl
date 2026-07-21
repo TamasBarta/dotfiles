@@ -10,11 +10,11 @@ output "PNP(AOC) U28G2G6B PPYM9JA002130" {
     position x=3440 y=0
 }
 
-// output "PNP(UGD) CD130FH 20210908" {
-//     mode "1920x1080@60.042"
-//     scale 1.25
-//     position x=1904 y=1440
-// }
+output "PNP(UGD) CD130FH 20210908" {
+    mode "1920x1080@60.042"
+    scale 1.25
+    position x=1904 y=1440
+}
 
 output "PNP(UGD) CD130FH 20210908" {
     mode "1920x1080@60.042"

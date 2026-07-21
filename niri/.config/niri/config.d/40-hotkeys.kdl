@@ -214,4 +214,5 @@ binds {
     Mod+Ctrl+Space { spawn-sh "/home/tamas/.dotfiles/scripts/rofi-emoji.sh"; }
     Mod+Ctrl+Shift+Space { spawn "darkman" "toggle"; }
     Alt+Ctrl+Shift+Q { spawn "rofi-rbw" "--clipboarder" "wl-copy" "--typer" "wtype"; }
+    Mod+Ctrl+C { spawn-sh "  rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | wl-copy\""; }
 }

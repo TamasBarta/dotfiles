@@ -64,6 +64,9 @@ menu:
       - key: "l"
         desc: Laptop Screen
         submenu:
+          - key: "r"
+            desc: "Toggle refresh rate"
+            cmd: "zsh -ilc toggle-refresh-rate.sh"
           - key: "s"
             desc: Scale
             submenu:
