@@ -32,7 +32,8 @@ else
 	config.macos_window_background_blur = 90
 	config.integrated_title_button_style = "MacOsNative"
 	config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-	config.window_decorations = "RESIZE"
+	config.window_padding.top = 50
+	-- config.window_decorations = "RESIZE"
 end
 config.hyperlink_rules = {}
 config.term = "wezterm"

@@ -91,3 +91,14 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.lsp.buf_attach_client(0, client_id)
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.diagnostic.config({
+      virtual_text = false,
+      underline = false,
+      signs = false,
+    }, vim.api.nvim_get_current_buf())
+  end,
+})
