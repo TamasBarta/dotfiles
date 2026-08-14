@@ -11,9 +11,9 @@ sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do
-	sudo -n true
-	sleep 60
-	kill -0 "$$" || exit
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
 done 2>/dev/null &
 
 ###############################################################################
@@ -170,30 +170,32 @@ defaults write com.apple.dock show-process-indicators -bool true
 # the Dock to launch apps.
 defaults write com.apple.dock persistent-apps -array
 dockItems=(
-	"/Applications/Firefox.app"
-	"/Applications/Brave Browser.app"
-	"/Applications/WezTerm.app"
-	"$HOME/Applications/Android Studio.app"
-	"/Applications/Xcode.app"
-	"/Applications/Thunderbird.app"
-	"/Applications/Slack.app"
-	"/Applications/Beeper Desktop.app"
-	"/Applications/Viber.app"
-	"/Applications/Notion Calendar.app"
-	"/Applications/Toggl Track.app"
-	"/Applications/Todoist.app"
-	"/Applications/Sunsama.app"
-	"/Applications/Spotify.app"
-	"/Applications/Obsidian.app"
-	"/Applications/Notion.app"
-	"/Applications/Bitwarden.app"
-	"/Applications/Home Assistant.app"
-	"/Applications/Figma.app"
-	"/Applications/BeaconEmitter.app"
-	"/System/Applications/System Settings.app"
+  "/Applications/Firefox.app"
+  "/Applications/Brave Browser.app"
+  "/Applications/WezTerm.app"
+  "$HOME/Applications/Android Studio.app"
+  "/Applications/Xcode.app"
+  "/Applications/Thunderbird.app"
+  "/Applications/Microsoft Teams.app"
+  # "/Applications/Slack.app"
+  # "/Applications/Beeper Desktop.app"
+  # "/Applications/Viber.app"
+  # "/Applications/Notion Calendar.app"
+  "/System/Applications/Calendar.app"
+  # "/Applications/Toggl Track.app"
+  "/Applications/Todoist.app"
+  # "/Applications/Sunsama.app"
+  "/Applications/Spotify.app"
+  "/Applications/Obsidian.app"
+  # "/Applications/Notion.app"
+  "/Applications/Bitwarden.app"
+  # "/Applications/Home Assistant.app"
+  # "/Applications/Figma.app"
+  # "/Applications/BeaconEmitter.app"
+  "/System/Applications/System Settings.app"
 )
 for dockItem in "${dockItems[@]}"; do
-	defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$dockItem</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+  defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$dockItem</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 done
 
 # Show only open applications in the Dock
@@ -255,13 +257,13 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 ###############################################################################
 
 for app in "Activity Monitor" \
-	"cfprefsd" \
-	"Contacts" \
-	"Dock" \
-	"Finder" \
-	"Mail" \
-	"Photos" \
-	"SystemUIServer"; do
-	killall "${app}" &>/dev/null
+  "cfprefsd" \
+  "Contacts" \
+  "Dock" \
+  "Finder" \
+  "Mail" \
+  "Photos" \
+  "SystemUIServer"; do
+  killall "${app}" &>/dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

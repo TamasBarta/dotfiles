@@ -15,8 +15,8 @@ mkdir -p "$XDG_CACHE_HOME"
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export GOPATH="$XDG_DATA_HOME"/go
-export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdfrc"
-export ASDF_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/asdf"
+# export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdfrc"
+# export ASDF_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/asdf"
 # export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/tool-versions"
 
 export PI_CODING_AGENT_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/pi/agent"
@@ -24,10 +24,10 @@ export PI_CODING_AGENT_SESSION_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/pi/agen
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
-export ANDROID_HOME="$XDG_DATA_HOME"/android/sdk
-export ANDROID_USER_HOME=$HOME/.android
-export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android/emulator
-export ANDROID_AVD_HOME="$ANDROID_EMULATOR_HOME/avd"
+# export ANDROID_HOME="$XDG_DATA_HOME"/android/sdk
+# export ANDROID_USER_HOME=$HOME/.android
+# export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android/emulator
+# export ANDROID_AVD_HOME="$ANDROID_EMULATOR_HOME/avd"
 
 export PUB_CACHE="$XDG_CACHE_HOME"/pub
 export ANALYZER_STATE_LOCATION_OVERRIDE="$XDG_DATA_HOME/dartServer"

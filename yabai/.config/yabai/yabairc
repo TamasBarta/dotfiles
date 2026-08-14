@@ -40,13 +40,13 @@ yabai -m signal --add event=display_removed action="if [[ \"\$(yabai -m query --
 
 # global settings
 if [[ "$(yabai -m query --displays | jq '.[].uuid')" =~ "$NOTCH_UUID" ]]; then
-	if [ "$(yabai -m query --displays | jq length)" -gt "1" ]; then
-		yabai -m config external_bar main:$NORMAL_BAR:0
-	else
-		yabai -m config external_bar all:$NOTCH_BAR:0
-	fi
+  if [ "$(yabai -m query --displays | jq length)" -gt "1" ]; then
+    yabai -m config external_bar main:$NORMAL_BAR:0
+  else
+    yabai -m config external_bar all:$NOTCH_BAR:0
+  fi
 else
-	yabai -m config external_bar all:$NORMAL_BAR:0
+  yabai -m config external_bar all:$NORMAL_BAR:0
 fi
 
 # per app settings
@@ -55,6 +55,7 @@ yabai -m rule --add app=".*" layer=below
 
 yabai -m rule --add app="Home Assistant" manage=off
 yabai -m rule --add app="Android Studio" title="Settings" manage=off
+yabai -m rule --add app="Android Studio" title="Non-Project Files Protection" manage=off
 yabai -m rule --add app="System Preferences" manage=off layer=above
 yabai -m rule --add app="floatterm" manage=off
 

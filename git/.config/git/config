@@ -11,7 +11,7 @@
     email = tamas@bartatamas.hu
 
 [core]
-    autocrlf = input
+	autocrlf = input
     editor = nvim
     excludesfile = ~/.config/git/ignore
     attributesfile = ~/.config/git/attributes
@@ -87,3 +87,5 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers

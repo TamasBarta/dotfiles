@@ -16,9 +16,29 @@ vim.o.guifont = "JetBrainsMono Nerd Font:h14"
 
 vim.opt.spelllang = { "en", "hu" }
 
+vim.g.maplocalleader = "ű"
+
 -------------------------------
 --- LazyVim Options         ---
 -------------------------------
 -- disable all animations
 vim.g.snacks_animate = false
 vim.g.lazyvim_rust_diagnostics = "bacon-ls"
+
+if vim.env.SSH_TTY then
+  local osc52 = require("vim.ui.clipboard.osc52")
+
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = osc52.copy("+"),
+      ["*"] = osc52.copy("*"),
+    },
+    paste = {
+      ["+"] = osc52.paste("+"),
+      ["*"] = osc52.paste("*"),
+    },
+  }
+
+  vim.opt.clipboard:append("unnamedplus")
+end
