@@ -97,26 +97,26 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace "one";}
-    Mod+2 { focus-workspace "two";}
-    Mod+3 { focus-workspace "three";}
-    Mod+4 { focus-workspace "four";}
-    Mod+5 { focus-workspace "five";}
-    Mod+6 { focus-workspace "six";}
-    Mod+7 { focus-workspace "seven";}
-    Mod+8 { focus-workspace "eight";}
-    Mod+9 { focus-workspace "nine";}
-    Mod+0 { focus-workspace "ten"; }
-    Mod+Shift+1 { move-column-to-workspace "one";}
-    Mod+Shift+2 { move-column-to-workspace "two";}
-    Mod+Shift+3 { move-column-to-workspace "three";}
-    Mod+Shift+4 { move-column-to-workspace "four";}
-    Mod+Shift+5 { move-column-to-workspace "five";}
-    Mod+Shift+6 { move-column-to-workspace "six";}
-    Mod+Shift+7 { move-column-to-workspace "seven";}
-    Mod+Shift+8 { move-column-to-workspace "eight";}
-    Mod+Shift+9 { move-column-to-workspace "nine";}
-    Mod+Shift+0 { move-column-to-workspace "ten"; }
+    Mod+1 { focus-workspace "1 one";}
+    Mod+2 { focus-workspace "2 two";}
+    Mod+3 { focus-workspace "3 three";}
+    Mod+4 { focus-workspace "4 four";}
+    Mod+5 { focus-workspace "5 five";}
+    Mod+6 { focus-workspace "6 six";}
+    Mod+7 { focus-workspace "7 seven";}
+    Mod+8 { focus-workspace "8 eight";}
+    Mod+9 { focus-workspace "9 nine";}
+    Mod+0 { focus-workspace "0 ten"; }
+    Mod+Shift+1 { move-column-to-workspace "1 one";}
+    Mod+Shift+2 { move-column-to-workspace "2 two";}
+    Mod+Shift+3 { move-column-to-workspace "3 three";}
+    Mod+Shift+4 { move-column-to-workspace "4 four";}
+    Mod+Shift+5 { move-column-to-workspace "5 five";}
+    Mod+Shift+6 { move-column-to-workspace "6 six";}
+    Mod+Shift+7 { move-column-to-workspace "7 seven";}
+    Mod+Shift+8 { move-column-to-workspace "8 eight";}
+    Mod+Shift+9 { move-column-to-workspace "9 nine";}
+    Mod+Shift+0 { move-column-to-workspace "0 ten"; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
@@ -215,4 +215,5 @@ binds {
     Mod+Ctrl+Shift+Space { spawn "darkman" "toggle"; }
     Alt+Ctrl+Shift+Q { spawn "rofi-rbw" "--clipboarder" "wl-copy" "--typer" "wtype"; }
     Mod+Ctrl+C { spawn-sh "  rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | wl-copy\""; }
+    Mod+V { spawn-sh "rsclip toggle"; }
 }

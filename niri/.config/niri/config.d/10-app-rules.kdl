@@ -6,7 +6,7 @@ layer-rule {
 
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm|com\.mitchellh\.ghostty|foot$"# at-startup=true
-    open-on-workspace "two"
+    open-on-workspace "2 two"
 }
 
 window-rule {
@@ -70,6 +70,7 @@ window-rule {
 
 layer-rule {
     match namespace="rofi"
+    match namespace="rsclip"
     match namespace="wlr_which_key"
 
     shadow {
@@ -103,19 +104,19 @@ layer-rule {
 // space 1
 window-rule {
     match app-id=r#"^firefox$"# at-startup=true
-    open-on-workspace "one"
+    open-on-workspace "1 one"
 }
 
 // space 3
 window-rule {
     match app-id="org.mozilla.Thunderbird"
-    open-on-workspace "three"
+    open-on-workspace "3 three"
 }
 
 // space 4
 window-rule {
     match app-id=r#"^notion-calendar-electron$"#
-    open-on-workspace "four"
+    open-on-workspace "4 four"
     default-column-width { 
         proportion 0.66667
     }
@@ -123,7 +124,7 @@ window-rule {
 
 window-rule {
     match app-id="chrome-app.todoist.com__app_today-Default"
-    open-on-workspace "four"
+    open-on-workspace "4 four"
     default-column-width { 
         proportion 0.33333
     }
@@ -133,23 +134,28 @@ window-rule {
 // space 5
 window-rule {
     match app-id=r#"^Spotify$"#
-    open-on-workspace "five"
+    open-on-workspace "5 five"
 }
 
 window-rule {
     match app-id="chat-schildi-revenge-MainKt"
     match app-id=r#"^Element$"#
-    open-on-workspace "five"
+    open-on-workspace "5 five"
 }
 
 // space 6
 window-rule {
     match app-id=r#"^obsidian$"#
-    open-on-workspace "six"
+    open-on-workspace "6 six"
 }
 
 // space 9
 window-rule {
     match app-id=r#"^com\.obsproject\.Studio$"#
-    open-on-workspace "nine"
+    open-on-workspace "9 nine"
+}
+
+window-rule {
+    match app-id=r#"^steam_app_"#
+    open-fullscreen true
 }

@@ -27,3 +27,9 @@ output "eDP-1" {
     scale 1.75
     position x=0 y=1440
 }
+
+output "Technical Concepts Ltd Beyond TV 0x00010000" {
+    mode "2560x1440@119.998"
+    scale 2
+    position x=0 y=720
+}
