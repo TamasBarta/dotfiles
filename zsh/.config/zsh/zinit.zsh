@@ -28,6 +28,8 @@ zinit as="command" lucid from="gh-r" for \
     atload='eval "$(mise activate zsh)"' \
     jdx/mise
 
+zinit load atuinsh/atuin
+
 # Load core OMZ snippets
 zinit snippet OMZ::lib/functions.zsh
 zinit snippet OMZ::lib/completion.zsh
@@ -40,8 +42,8 @@ zinit snippet OMZ::lib/theme-and-appearance.zsh
 zinit snippet OMZ::plugins/common-aliases/common-aliases.plugin.zsh
 
 # Load OMZ plugins
-zinit wait lucid for \
-    OMZ::plugins/fzf/fzf.plugin.zsh
+# zinit wait lucid for \
+#     OMZ::plugins/fzf/fzf.plugin.zsh
 
 # Load plugins with completion
 # zinit wait lucid for \
