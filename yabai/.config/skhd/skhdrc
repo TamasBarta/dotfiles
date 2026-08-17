@@ -2,6 +2,7 @@
 cmd + ctrl + alt - return : /Applications/WezTerm.app/Contents/MacOS/wezterm
 
 cmd - h : echo "Hide application shortcut is disabled :)"
+cmd - m : echo "Minimize application shortcut is disabled :)"
 
 # focus window
 fn - h : aerospace focus left  --boundaries all-monitors-outer-frame ; yabai -m window --focus west || yabai -m display --focus west
