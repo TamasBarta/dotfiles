@@ -71,28 +71,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "kotlin",
-  callback = function()
-    local cmd = { "kotlin-lsp.sh", "--stdio" }
-    -- local function find_git_root(fname)
-    --   local git_dir = vim.fs.find(".git", { path = fname, upward = true })[1]
-    --   return git_dir and vim.fs.dirname(git_dir) or vim.fn.getcwd()
-    -- end
-    --
-    -- local root_dir = find_git_root(vim.api.nvim_buf_get_name(0))
-
-    local client_id = vim.lsp.start({
-      cmd = cmd,
-      name = "kotlin_ls",
-      root_markers = { "androidproject" },
-      filetypes = { "kotlin" },
-    })
-
-    vim.lsp.buf_attach_client(0, client_id)
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
     vim.diagnostic.config({

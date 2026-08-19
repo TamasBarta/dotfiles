@@ -1,0 +1,9 @@
+{
+  "Variable default value": {
+    "prefix": "defval",
+    "body": [
+      "${1:VAR_NAME}=\"\\${$1:-${2:value}}\""
+    ],
+    "description": "Set default value for variable"
+  }
+}

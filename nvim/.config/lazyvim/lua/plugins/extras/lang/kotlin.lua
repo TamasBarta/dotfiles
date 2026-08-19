@@ -1,7 +1,7 @@
 return {
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "ktlint" } },
+    opts = { ensure_installed = { "ktlint", "kotlin-lsp" } },
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -17,6 +17,28 @@ return {
         nls.builtins.diagnostics.ktlint,
       })
     end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        kotlin_language_server = {
+          enabled = false,
+        },
+        kotlin_lsp = {},
+        kmp_lsp = {
+          cmd = { "kmp-lsp" },
+          filetypes = { "kotlin", "java", "swift" },
+          root_markers = {
+            "build.gradle",
+            "build.gradle.kts",
+            "settings.gradle",
+            "settings.gradle.kts",
+            "pom.xml",
+          },
+        },
+      },
+    },
   },
   {
     "mfussenegger/nvim-dap",
