@@ -2,3 +2,8 @@ cliamp.log
 resume.json
 cliamp.sock
 cliamp.sock.pid
+ytmusic_cache.json
+ytmusic_classification.json
+ytmusic_credentials.json
+spotify_credentials.json
+history.toml
