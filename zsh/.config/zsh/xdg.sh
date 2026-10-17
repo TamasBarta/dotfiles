@@ -59,3 +59,7 @@ export ANSIBLE_HOME="$XDG_DATA_HOME/ansible"
 # Wasmtime
 export WASMTIME_HOME="$HOME/.local/share/wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
+
+# lazygit: merge the matugen theme on top of the main config
+export LG_CONFIG_FILE="$XDG_CONFIG_HOME/lazygit/config.yml"
+[ -f "$XDG_CONFIG_HOME/lazygit/themes/matugen.yml" ] && LG_CONFIG_FILE="$LG_CONFIG_FILE,$XDG_CONFIG_HOME/lazygit/themes/matugen.yml"
