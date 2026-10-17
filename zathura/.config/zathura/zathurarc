@@ -68,3 +68,5 @@ set highlight-active-color	  "#F5C2E7"
 
 set recolor true
 map R set recolor
+
+include "matugenrc"
