@@ -40,7 +40,6 @@ gtk-single-instance = true
 # -----------------------------------------------------------------------------
 # Ghostty has Catppuccin built-in and supports auto switching with system
 # dark/light mode — no plugin needed.
-theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 
 # -----------------------------------------------------------------------------
 # Opacity
@@ -79,3 +78,4 @@ keybind = super+l=next_tab
 # --- Scroll (Shift+PageUp/Down) ---
 keybind = shift+page_up=scroll_page_up
 keybind = shift+page_down=scroll_page_down
+theme = matugen
