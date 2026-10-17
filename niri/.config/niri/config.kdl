@@ -26,4 +26,6 @@ animations {
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
-include "./noctalia.kdl"
+
+
+include "matugen.kdl"

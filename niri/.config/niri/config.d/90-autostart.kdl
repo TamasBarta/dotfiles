@@ -1,5 +1,6 @@
 // Daemons
 
-spawn-at-startup "hypridle"
-spawn-at-startup "hyprlock"
-
+// spawn-at-startup "hypridle"
+// spawn-at-startup "hyprlock"
+spawn-at-startup "noctalia"
+spawn-at-startup "xembedsniproxy"

@@ -1,6 +1,7 @@
 // Block out mako notifications from screencasts.
 layer-rule {
     match namespace=r#".*notifications.*"#
+    match namespace=r#"noctalia-notification"#
     block-out-from "screen-capture"
 }
 
@@ -10,7 +11,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm|com\.mitchellh\.ghostty|foot$"#
+    match app-id=r#"^org\.wezfurlong\.wezterm|com\.mitchellh\.ghostty|foot|org\.pwmt\.zathura$"#
     default-column-width { 
         proportion 0.33333
     }
@@ -33,10 +34,16 @@ window-rule {
 
 // Set the overview wallpaper on the backdrop.
 layer-rule {
-  match namespace="^noctalia-overview*"
+  match namespace="^noctalia-backdrop*"
   place-within-backdrop true
 }
-
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray false
+    }
+}
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     match app-id=r#"firefox$"# title=r#"^Extension: "#
@@ -115,9 +122,9 @@ window-rule {
 
 // space 4
 window-rule {
-    match app-id=r#"^notion-calendar-electron$"#
+    match app-id="chrome-calendar.notion.so__-Default"
     open-on-workspace "4 four"
-    default-column-width { 
+    default-column-width {
         proportion 0.66667
     }
 }
@@ -125,7 +132,7 @@ window-rule {
 window-rule {
     match app-id="chrome-app.todoist.com__app_today-Default"
     open-on-workspace "4 four"
-    default-column-width { 
+    default-column-width {
         proportion 0.33333
     }
 }
@@ -156,6 +163,6 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^steam_app_"#
+    match app-id=r#"^steam_app_[^d]"#
     open-fullscreen true
 }
