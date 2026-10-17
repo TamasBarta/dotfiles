@@ -53,6 +53,11 @@ use = "walldmtd/krita-preview"
 rev = "2a1e66e"
 hash = "b2ae411155320dfc312e0be472978144"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "4dc7f1b"
+hash = "187cc58ba7ac3befd49c342129e6f1b6"
+
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
 rev = "0f9204b"

@@ -80,3 +80,11 @@ run = 'font-sample'
 url = "*.{otf,ttf,woff,woff2}"
 run = 'font-sample'
 
+[[opener.kra-imv]]
+run = 'imv-kra "%s1"'
+orphan = true
+desc = "Preview with imv"
+for = "unix"
+
+[open]
+prepend_rules = [{ url = "*.kra{,~}", use = ["kra-imv", "open"] }]

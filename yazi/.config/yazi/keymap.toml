@@ -8,7 +8,7 @@ desc = "Maximize or restore the preview pane"
 [[mgr.prepend_keymap]]
 on = ["g", "D"]
 run = '''
-  shell 'blobdrop "$@" 2>/dev/null &'
+  shell 'blobdrop %s 2>/dev/null &'
 '''
 
 [[mgr.prepend_keymap]]
@@ -20,7 +20,7 @@ desc = "Chmod on selected files"
 on = ["g", "w"]
 desc = "Set as wallpaper"
 run = '''
-  shell 'wall.sh "$@" 2>/dev/null &'
+  shell 'wall.sh %h 2>/dev/null &'
 '''
 
 [[mgr.prepend_keymap]]
@@ -35,5 +35,10 @@ desc = "Zoom out hovered file"
 
 [[mgr.prepend_keymap]]
 on = ["c", "c"]
-run = "shell 'for f in \"$@\"; do echo \"file://$f\"; done | wl-copy -t text/uri-list' 2>/dev/null &"
+run = "shell 'for f in %s; do echo \"file://$f\"; done | wl-copy -t text/uri-list 2>/dev/null &'"
 desc = "Copy selected files to clipboard (Nautilus-style)"
+
+[[mgr.prepend_keymap]]
+on = "<Enter>"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
