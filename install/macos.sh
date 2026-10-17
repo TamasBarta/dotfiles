@@ -11,22 +11,11 @@ else
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Add taps
-# tunnelto
-brew tap agrinman/tap
-# borders, sketchybar, svim
-brew tap felixkratz/formulae
-# yabai, skhd
-brew tap koekeishiya/formulae
-# keyboardSwitcher
-brew tap lutzifer/homebrew-tap
+# Remove packages and taps that are not in the Brewfile
+brew bundle cleanup --force --file "$DOTFILES_HOME/install/Brewfile"
 
-# Install packages
-brew install zsh ruby stow homeassistant-cli bat tmux neovim lazygit topgrade lf yq jq xq sops scrcpy ripgrep eza dust fd fzf koekeishiya/formulae/yabai koekeishiya/formulae/skhd borders svim sketchybar buf bundletool chafa coreutils curl wget go gnupg htop kondo just onefetch qrencode shellcheck w3m graphite tunnelto pinentry-mac keyboardswitcher git-crypt bitwarden-cli gh luarocks git-delta awscli session-manager-plugin autoconf bison re2c gd libiconv libzip m4 android-platform-tools swiftlint swiftformat ctpv yt-dlp pandoc spicetify-cli mpv oh-my-posh kdoctor yazi unar gtk4 glow hexyl lazydocker firebase-cli graphviz tag imagemagick dos2unix ansible eza ripgrep fd lcov opencode btop herdr exiftool spotify_player iamb bjarneo/cliamp/cliamp
-
-brew install --cask raycast firefox wezterm slack spotify obsidian karabiner-elements bitwarden jetbrains-toolbox todoist hiddenbar betterdisplay figma bluesnooze obs droidcam-obs krita monitorcontrol iina anydesk home-assistant telegram-desktop daisydisk insync onlyoffice minisim tableplus unnaturalscrollwheels min brave-browser gpg-suite notion-calendar thunderbird muzzle viber syncthing minisim schildichat utm
-
-brew install --cask font-jetbrains-mono-nerd-font font-monaspace-nerd-font font-blex-mono-nerd-font font-iosevka-nerd-font
+# Install packages from Brewfile
+brew bundle --file "$DOTFILES_HOME/install/Brewfile"
 
 # Download proper Hungarian keyboard layout
 wget -O - https://raw.githubusercontent.com/zaki/mac-hun-keyboard/master/Hungarian_Win.keylayout | sudo tee /Library/Keyboard\ Layouts/Hungarian_Win.keylayout
