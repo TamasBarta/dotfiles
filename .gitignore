@@ -17,3 +17,4 @@ btop/.config/btop/btop.log
 /wezterm/.config/wezterm/colors/Matugen.toml
 /tmux/.config/tmux/themes/matugen.conf
 /bat/.config/bat/themes/matugen.tmTheme
+/btop/.config/btop/themes/matugen.theme
