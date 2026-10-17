@@ -5,20 +5,12 @@ if [[ "$1" == "" ]]; then
   exit 1
 fi
 
-swww img --transition-type center --transition-step 30 --transition-fps 100 "$1"
+new_wallpaper="$1"
 
-ln -sf "$1" ~/Pictures/Wallpaper
+if [[ "$new_wallpaper" == ~/Pictures/Wallpaper ]]; then
+  new_wallpaper="$(readlink -f "$new_wallpaper")"
+fi
 
-qs -c noctalia-shell ipc call wallpaper set "$1" eDP-1
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-1
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-2
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-3
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-4
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-5
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-6
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-7
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-8
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-9
-qs -c noctalia-shell ipc call wallpaper set "$1" DP-10
-
-systemctl --user try-restart hyprpaper.service
+ln -sf "$new_wallpaper" ~/Pictures/Wallpaper
+noctalia msg wallpaper-set "$new_wallpaper"
+matugen image -t scheme-tonal-spot -m smart "$new_wallpaper" --source-color-index 0

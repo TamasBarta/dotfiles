@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+set -u
+
+if (($# == 0)); then
+    exec imv
+fi
+
+cache_dir=$(mktemp -d "${TMPDIR:-/tmp}/imv-kra.XXXXXX")
+trap 'rm -rf -- "$cache_dir"' EXIT INT TERM
+
+images=()
+counter=0
+
+add_kra() {
+    local source=$1
+    local output="$cache_dir/$(printf '%06d' "$counter")-%s.png"
+    local base=${source##*/}
+    output=${output//%s/${base%.*}}
+
+    if ! unzip -p -- "$source" mergedimage.png >"$output" 2>/dev/null || [[ ! -s "$output" ]]; then
+        if ! unzip -p -- "$source" preview.png >"$output" 2>/dev/null || [[ ! -s "$output" ]]; then
+            rm -f -- "$output"
+            return
+        fi
+    fi
+
+    images+=("$output")
+    ((counter += 1))
+}
+
+add_file() {
+    local path=$1
+    local mime
+
+    if [[ "$path" =~ \.(kra|kra~|krz)$ ]]; then
+        add_kra "$path"
+        return
+    fi
+
+    [[ -f "$path" ]] || return
+    mime=$(file --brief --mime-type -- "$path" 2>/dev/null || true)
+    [[ "$mime" == image/* ]] && images+=("$path")
+}
+
+for path in "$@"; do
+    if [[ -d "$path" ]]; then
+        while IFS= read -r -d '' file; do
+            add_file "$file"
+        done < <(find "$path" -type f -print0)
+    else
+        add_file "$path"
+    fi
+done
+
+((${#images[@]} > 0)) || exit 1
+exec imv "${images[@]}"
