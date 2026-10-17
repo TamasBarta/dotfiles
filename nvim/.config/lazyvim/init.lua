@@ -3,3 +3,6 @@ package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/shar
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+
+-- local ok, matugen = pcall(require, 'matugen')
+-- if ok then matugen.setup() end
