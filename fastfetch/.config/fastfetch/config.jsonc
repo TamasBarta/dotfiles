@@ -9,20 +9,34 @@
       "left": 4,
       "right": 4
     },
+    "color": {
+      "1": "#afd163",
+      "2": "#bfcb63"
+    }
   },
   "display": {
     "key": {
-      "width": 20,
+      "width": 20
     },
     "separator": ": ",
     "bar": {
       "border": {
         "left": "[ ",
-        "right": " ]",
-      },
+        "right": " ]"
+      }
     },
     "disableLinewrap": true,
-    "color": "green",
+    "color": {
+      "keys": "#afd18c",
+      "title": "#bfcbad"
+    },
+    "percent": {
+      "color": {
+        "green": "#a0cfcc",
+        "yellow": "#afd18c",
+        "red": "#ffb4ab"
+      }
+    }
   },
   "modules": [
     "break",
@@ -40,13 +54,10 @@
     "display",
     "de",
     "wm",
-    // "wmtheme",
-    // "theme",
-    // "icons",
     "terminal",
     "terminalfont",
     "break",
     "colors",
-    "break",
+    "break"
   ]
 }
