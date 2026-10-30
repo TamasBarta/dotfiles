@@ -42,6 +42,12 @@ esac
 stow -d "$DOTFILES_HOME" zsh
 stow -d "$DOTFILES_HOME" bat
 stow -d "$DOTFILES_HOME" tmux
+
+# tmux plugins live in the XDG data dir; tpm needs a running server to install them
+git clone https://github.com/tmux-plugins/tpm "$HOME/.local/share/tmux/plugins/tpm"
+tmux -f "$HOME/.config/tmux/tmux.conf" new-session -d -s tpm-install \
+  && "$HOME/.local/share/tmux/plugins/tpm/bin/install_plugins"
+tmux kill-session -t tpm-install
 stow -d "$DOTFILES_HOME" nvim
 stow -d "$DOTFILES_HOME" lazygit
 stow -d "$DOTFILES_HOME" git
