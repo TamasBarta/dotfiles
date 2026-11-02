@@ -1,0 +1,9 @@
+[user]
+	email = tamas.barta@pay10.eu
+	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILB2K1R3W2HZSmsathlyQkw+Qh/p2QfjlF75KsYaNfYb
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+[commit]
+	gpgsign = true

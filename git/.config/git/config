@@ -89,3 +89,5 @@
 	helper = !/usr/bin/gh auth git-credential
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
+[includeIf "gitdir:~/Projects/Development/pay10/"]
+	path = ~/.config/git/pay10
