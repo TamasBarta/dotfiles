@@ -13,6 +13,8 @@ neomutt/.config/mutt/accounts
 neomutt/.config/mutt/.mailsynclastrun
 spotify/.config/spotify-tui/.spotify_token_cache.json
 btop/.config/btop/btop.log
+
+# Matugen
 /zathura/.config/zathura/matugenrc
 /wezterm/.config/wezterm/colors/Matugen.toml
 /tmux/.config/tmux/themes/matugen.conf
@@ -22,3 +24,8 @@ btop/.config/btop/btop.log
 /foot/.config/foot/themes/matugen
 /niri/.config/niri/matugen.kdl
 /lazygit/.config/lazygit/themes/matugen.yml
+
+
+# MacOS
+/nvim/.config/lazyvim/lua/plugins/mr-narrative.lua
+/fnox/.config/fnox/config.toml
