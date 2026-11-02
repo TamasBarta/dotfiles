@@ -127,6 +127,9 @@ cmd - f10 : osascript -e '  set inputVolume to input volume of (get volume setti
   end if \
   set volume input volume inputVolume'
 
+# voice dictation
+cmd + ctrl + alt - space : voxtype record toggle
+
 # launcher shortcuts
 :: shortcuts @
 fn - o ; shortcuts
