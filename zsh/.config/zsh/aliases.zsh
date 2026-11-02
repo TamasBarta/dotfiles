@@ -38,3 +38,4 @@ alias j=just
 
 alias ai=opencode
 alias mr='mise run'
+alias wm=workmux
