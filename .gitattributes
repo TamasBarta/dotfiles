@@ -7,3 +7,4 @@ newsboat/.config/newsboat/urls filter=git-crypt diff=git-crypt
 spotify/.config/spotify-tui/client.yml filter=git-crypt diff=git-crypt
 tridactyl/.config/tridactyl/view.js filter=git-crypt diff=git-crypt
 tridactyl/.config/tridactyl/view-tab.js filter=git-crypt diff=git-crypt
+tridactyl/.config/tridactyl/workrc filter=git-crypt diff=git-crypt

@@ -1,3 +1,5 @@
+sanitise tridactyllocal tridactylsync
+
 " General Settings
 set update.lastchecktime 1648754688816
 set update.nag true
@@ -6,8 +8,7 @@ set update.lastnaggedversion 1.14.0
 set update.checkintervalsecs 86400
 set configversion 2.0
 set newtab about:blank
-set searchengine g
-set searchurls.sx https://searxng.bartatamas.hu/search?q=
+set searchengine sp
 set searchurls.google https://www.google.com/search?q=
 set searchurls.g https://www.google.com/search?q=
 set searchurls.googlelucky https://www.google.com/search?btnI=I'm+Feeling+Lucky&q=
@@ -188,7 +189,6 @@ bind zI zoom 3
 bind zO zoom 0.3
 bind . repeat
 bind <AS-ArrowUp><AS-ArrowUp><AS-ArrowDown><AS-ArrowDown><AS-ArrowLeft><AS-ArrowRight><AS-ArrowLeft><AS-ArrowRight>ba open https://www.youtube.com/watch?v=M3iOROuTuMA
-bind <A-t> fillcmdline tabopen -c Dina https://meet.google.com/
 bind / fillcmdline find
 bind n findnext
 bind ? fillcmdline find -?
@@ -256,10 +256,8 @@ unbind --mode=ex <C-j>
 bind --mode=ex <C-j> ex.next_completion
 unbind --mode=ex <C-k>
 bind --mode=ex <C-k> ex.prev_completion
-bind cp recontain ''
-bind cd recontain Dina
-bind cf recontain Freelance
-bind ci recontain Interstate
+bind cpa recontain ''
+bind cpe recontain Personal
 bind gv jsb -r view.js
 bind <c-space>dn tabopen https://app-new.nostromo.io/timesheet?e21vZHVsZTp0aW1lc2hlZXQscHJvamVjdDoxMDU1Mn0=
 
@@ -355,7 +353,13 @@ alias tabgroupmove tgroupmove
 alias tabgrouprename tgrouprename
 alias tabgroupswitch tgroupswitch
 
-autocontain -s youtube.com Personal
+autocontain -s youtube\.com Personal
+" autocontain -s maps\.google\.com Personal
+autocontain -u ^https?://([^/]*\.|)google\.com/maps Personal
+autocontain -s facebook\.com Facebook
+autocontain -s instagram\.com Facebook
+autocontain -s photos\.google\.com Personal
+autocontain -s drive\.google\.com Personal
 
 " Autocmds
 autocmd DocStart undefined mode ignore
@@ -363,6 +367,9 @@ autocmd DocStart monkeytype.com mode ignore
 autocmd DocStart https://foddy.net/Athletics.html mode ignore
 autocmd DocLoad ^https://github.com/tridactyl/tridactyl/issues/new$ issue
 autocmd TriStart .* source_quiet
+
+"
+source workrc
 
 " For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
 " vim: set filetype=tridactyl
