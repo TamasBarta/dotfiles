@@ -18,7 +18,8 @@ binds {
     // Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
     // Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     // Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/launch.sh -combi-modi drun,window,ssh"; }
+    // Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/launch.sh -combi-modi drun,window,ssh"; }
+    Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+Control+Alt+Space hotkey-overlay-title="Toggle Handy recording for transcription" { spawn-sh "voxtype record toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
 
@@ -205,6 +206,7 @@ binds {
     Ctrl+Alt+Delete { quit; }
     Mod+Q { spawn-sh "/home/tamas/.dotfiles/scripts/shutdown-menu.sh"; }
     // Mod+Alt+Q { spawn-sh "loginctl terminate-session $XDG_SESSION_ID"; }
+    Ctrl+Alt+Q { spawn-sh "loginctl lock-session"; }
 
 
     Mod+O { spawn-sh "wlr-which-key --initial-keys 'o'"; }

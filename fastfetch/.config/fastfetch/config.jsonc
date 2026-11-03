@@ -10,8 +10,8 @@
       "right": 4
     },
     "color": {
-      "1": "#afd163",
-      "2": "#bfcb63"
+      "1": "#63d6c0",
+      "2": "#63ccc3"
     }
   },
   "display": {
@@ -27,13 +27,13 @@
     },
     "disableLinewrap": true,
     "color": {
-      "keys": "#afd18c",
-      "title": "#bfcbad"
+      "keys": "#85d6c0",
+      "title": "#b1ccc3"
     },
     "percent": {
       "color": {
-        "green": "#a0cfcc",
-        "yellow": "#afd18c",
+        "green": "#a9cbe3",
+        "yellow": "#85d6c0",
         "red": "#ffb4ab"
       }
     }
