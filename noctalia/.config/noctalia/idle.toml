@@ -1,0 +1,27 @@
+# Idle behaviors (replaces hypridle). Written 2026-11-18.
+[idle]
+behavior_order = ["dim", "lock", "screen-off", "suspend"]
+pre_action_fade_seconds = 2.0
+
+# 2 min: dim display and turn off keyboard backlight
+[idle.behavior.dim]
+timeout = 120
+action = "command"
+command = "brightnessctl -s set 10; brightnessctl -sd rgb:kbd_backlight set 0"
+resume_command = "brightnessctl -r; brightnessctl -rd rgb:kbd_backlight"
+
+# 5 min: lock
+[idle.behavior.lock]
+timeout = 300
+action = "lock"
+
+# 5.5 min: monitors off (back on automatically on activity)
+[idle.behavior.screen-off]
+timeout = 330
+action = "screen_off"
+
+# 15 min: lock + suspend, only when on battery
+[idle.behavior.suspend]
+timeout = 900
+action = "command"
+command = "[ \"$(cat /sys/class/power_supply/ADP1/online)\" = 0 ] && noctalia msg session lock-and-suspend"
