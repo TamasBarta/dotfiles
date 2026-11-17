@@ -1,0 +1,24 @@
+#!/bin/sh
+# Launch Battle.net via Lutris, running xembedsniproxy (XEmbed tray -> SNI bridge)
+# only while Battle.net is alive. The proxy is stopped afterwards if we started it.
+
+started=0
+if ! pgrep -x xembedsniproxy >/dev/null; then
+	xembedsniproxy >/dev/null 2>&1 &
+	started=1
+fi
+
+env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/22
+
+# lutris may hand off and return immediately: wait for Battle.net to appear (<=3 min), then to exit.
+i=0
+while ! pgrep -f 'Battle\.net\.exe' >/dev/null && [ "$i" -lt 90 ]; do
+	sleep 2
+	i=$((i + 1))
+done
+while pgrep -f 'Battle\.net\.exe' >/dev/null; do
+	sleep 10
+done
+
+[ "$started" = 1 ] && pkill -x xembedsniproxy
+exit 0

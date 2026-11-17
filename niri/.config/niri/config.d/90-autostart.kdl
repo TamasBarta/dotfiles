@@ -3,4 +3,4 @@
 // spawn-at-startup "hypridle"
 // spawn-at-startup "hyprlock"
 spawn-at-startup "noctalia"
-spawn-at-startup "xembedsniproxy"
+// spawn-at-startup "xembedsniproxy"  // now started on demand by battlenet-launch
