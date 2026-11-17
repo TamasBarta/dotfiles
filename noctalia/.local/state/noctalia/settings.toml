@@ -1,0 +1,662 @@
+config_version = 16
+
+[backdrop]
+blur_intensity = 0.69999998435378075
+enabled = true
+tint_intensity = 0.84999998100101948
+
+[bar.default]
+center = []
+end = [ "privacy", "group:g4", "group:g2", "group:g1", "group:g3", "session", "bar" ]
+margin_ends = 0
+padding = 8
+radius = 30
+radius_top_left = 0
+radius_top_right = 0
+start = [ "launcher", "workspaces", "media", "audio_visualizer" ]
+widget_spacing = 16
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    foreground = "secondary"
+    id = "g1"
+    members = [ "input_volume", "volume", "brightness", "battery" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    foreground = "tertiary"
+    id = "g2"
+    members = [ "network", "bluetooth" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    foreground = "primary"
+    id = "g3"
+    members = [ "weather", "clock" ]
+    opacity = 1.0
+    padding = 16.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g4"
+    members = [
+        "widget",
+        "widget_3",
+        "widget_2",
+        "status_2",
+        "status_3",
+        "caffeine",
+        "notifications",
+        "clipboard",
+        "tray"
+    ]
+    opacity = 1.0
+    padding = 6.0
+
+[brightness]
+enable_ddcutil = true
+minimum_brightness = 0.099999997764825821
+sync_all_monitors = true
+
+[calendar]
+enabled = true
+refresh_minutes = 5
+
+    [calendar.account.personal_google]
+    type = "google"
+
+[control_center]
+sidebar = "full"
+sidebar_section = "none"
+
+    [control_center.calendar]
+    show_week_numbers = true
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000004", "desktop-widget-0000000000000005" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000004]
+    box_height = 736.0
+    box_width = 1152.0
+    cx = 823.0
+    cy = 368.0
+    output = "eDP-1"
+    placement_height = 1029.0
+    placement_width = 1646.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000004.settings]
+        background = false
+        color = "#A4C9C7"
+        font_family = "Chivo"
+        shadow = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000005]
+    box_height = 1680.0
+    box_width = 1760.0
+    cx = 1296.0
+    cy = 608.0
+    output = "DP-6"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "fancy_audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000005.settings]
+        background = false
+        bar_width = 0.5
+        bloom_intensity = 1.0
+        fade_when_idle = true
+        inner_diameter = 0.20000000000000001
+        primary_color = "error"
+        rotation_speed = 0.0
+        secondary_color = "secondary"
+        sensitivity = 1.3999999999999999
+        visualization_mode = "bars"
+
+[dock]
+enabled = true
+launcher_position = "start"
+pinned = [ "firefox", "org.wezfurlong.wezterm", "org.mozilla.Thunderbird", "spotify", "io.element.Element" ]
+radius = 80
+reserve_space = false
+show_dots = true
+smart_auto_hide = true
+
+[hot_corners.top_left]
+action = "window_switcher"
+
+[location]
+address = "Budapest, Hungary"
+
+[lockscreen]
+blur_intensity = 0.0
+tint_intensity = 0.37999999150633812
+transition = [ "zoom" ]
+transition_duration = 200
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@DP-5",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-login-box@DP-8",
+    "lockscreen-login-box@DP-2",
+    "lockscreen-login-box@DP-7",
+    "lockscreen-login-box@DP-6",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-login-box@DP-9"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 1720.0
+    cy = 1258.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1720.0
+    cy = 1258.0
+    output = "DP-2"
+    placement_height = 1440.0
+    placement_width = 3440.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-5"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 768.0
+    cy = 659.25
+    output = "DP-5"
+    placement_height = 864.0
+    placement_width = 1536.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-5".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-6"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-6"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-6".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-7"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-7"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-7".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-8"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-8"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-8".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-9"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-9"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-9".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 823.0
+    cy = 820.913330078125
+    output = "eDP-1"
+    placement_height = 1029.0
+    placement_width = 1646.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 112.0
+    box_width = 288.0
+    cx = 823.0
+    cy = 210.5
+    output = "eDP-1"
+    placement_height = 1029.0
+    placement_width = 1646.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 48.0
+    box_width = 96.0
+    cx = 823.0
+    cy = 290.5
+    output = "eDP-1"
+    placement_height = 1029.0
+    placement_width = 1646.0
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 80.0
+    box_width = 80.0
+    cx = 823.0
+    cy = 682.5
+    output = "eDP-1"
+    placement_height = 1029.0
+    placement_width = 1646.0
+    rotation = 0.0
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+        background_radius = 32
+        image_path = "/home/tamas/Pictures/People/avatar.jpg"
+        opacity = 1.0
+
+[notification]
+offset_y = 20
+
+[osd]
+offset_y = 20
+orientation = "vertical"
+position_vertical = "top_right"
+
+[plugin_settings."cleboost/ssh-launcher"]
+terminal = "wezterm"
+
+[plugin_settings."icefish/phone-operate"]
+battery_display = "hidden"
+enable_charging_animation = false
+record = true
+
+[plugin_settings."noctalia/wallpaper_depth"]
+feather = 29
+threshold = 21
+
+[plugins]
+enabled = [
+    "yuuto/arch-updater",
+    "noctalia/bitwarden",
+    "oldirtty/color_picker",
+    "cleboost/ssh-launcher",
+    "icefish/phone-operate",
+    "gabedunn/voxtype"
+]
+
+[shell]
+app_icon_color = "primary"
+app_icon_colorize = true
+avatar_path = "/var/lib/AccountsService/icons/tamas"
+font_family = "Inter SemiBold"
+polkit_agent = true
+
+    [shell.animation]
+    speed = 3.1000000461935997
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    categories = false
+    compact = true
+    default_view = "pinned"
+    layout = "simple"
+    pinned = [ "waydroid.org.mozilla.firefox" ]
+    show_app_actions = true
+
+    [shell.panel]
+    clipboard_placement = "attached"
+    launcher_placement = "attached"
+    open_near_click_control_center = true
+    polkit_placement = "attached"
+    transparency_mode = "soft"
+
+    [shell.screen_corners]
+    enabled = true
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Everforest"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "faithful"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "foot", "gtk3", "gtk4", "ghostty", "kcolorscheme", "niri", "qt", "wezterm" ]
+    community_ids = [
+        "opencode",
+        "pi-agent",
+        "feishin",
+        "spicetify",
+        "pywalfox",
+        "neovim",
+        "obsidian",
+        "zed",
+        "steam",
+        "rofi",
+        "fastfetch",
+        "obs",
+        "zathura",
+        "bat",
+        "fzf",
+        "glow",
+        "herdr",
+        "lazygit",
+        "tmux",
+        "yazi"
+    ]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+transition = [ "wipe" ]
+
+    [wallpaper.default]
+    path = "/home/tamas/Pictures/Wallpapers/dimitar-donovski-RyvVnWaWbjI-unsplash.jpg"
+
+    [wallpaper.last]
+    path = "/home/tamas/Pictures/Wallpapers/dimitar-donovski-RyvVnWaWbjI-unsplash.jpg"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/tamas/Pictures/Wallpapers/dimitar-donovski-RyvVnWaWbjI-unsplash.jpg"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/tamas/Pictures/Wallpapers/dimitar-donovski-RyvVnWaWbjI-unsplash.jpg"
+
+    [wallpaper.monitors.DP-6]
+    path = "/home/tamas/Pictures/Wallpapers/dimitar-donovski-RyvVnWaWbjI-unsplash.jpg"
+
+    [wallpaper.monitors.DP-7]
+    path = "/home/tamas/Pictures/Wallpapers/dimitar-donovski-RyvVnWaWbjI-unsplash.jpg"
+
+    [wallpaper.monitors.DP-8]
+    path = "/home/tamas/Pictures/Wallpapers/lisette-verwoerd-4lnzD0569kc-unsplash.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/tamas/Pictures/Wallpapers/dimitar-donovski-RyvVnWaWbjI-unsplash.jpg"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Catppuccin"
+    palette_source = "builtin"
+    path = "/home/tamas/Pictures/Wallpapers/wallhaven-lywpjl.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Catppuccin"
+    palette_source = "builtin"
+    path = "/home/tamas/Pictures/Wallpapers/wallhaven-vg6dqp.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Catppuccin"
+    palette_source = "builtin"
+    path = "/home/tamas/Pictures/Wallpapers/wallhaven-kxw3p1.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Catppuccin"
+    palette_source = "builtin"
+    path = "/home/tamas/Pictures/Wallpapers/wallhaven-vq7gx3.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Catppuccin"
+    palette_source = "builtin"
+    path = "/home/tamas/Pictures/Wallpapers/wallhaven-yqg6r7.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Catppuccin"
+    palette_source = "builtin"
+    path = "/home/tamas/Pictures/Wallpapers/wallhaven-655407.jpg"
+    theme_mode = "dark"
+
+[widget.bar]
+type = "icefish/phone-connect:bar"
+
+[widget.clock]
+format = "{:%b %d %H:%M}"
+
+[widget.launcher]
+enabled = false
+
+[widget.privacy]
+active_color = "error"
+capsule = true
+hide_inactive = true
+icon_spacing = 12
+
+[widget.status_2]
+type = "gabedunn/voxtype:status"
+
+[widget.status_3]
+type = "icefish/phone-operate:status"
+
+[widget.tray]
+detached_panel = true
+drawer = true
+drawer_columns = 4
+hide_passive = false
+
+[widget.weather]
+show_condition = false
+
+[widget.widget]
+color = "error"
+hide_on_empty = true
+type = "yuuto/arch-updater:widget"
+
+[widget.widget_2]
+enabled = false
+type = "weinguyen/opencode-companion:widget"
+
+[widget.widget_3]
+type = "oldirtty/color_picker:widget"
+
+[widget.workspaces]
+active_pill_size = 2.3999999999999999
+capsule_radius = "auto"
+hide_when_empty = true
+label_source = "name"
+occupied_color = "surface_container"
