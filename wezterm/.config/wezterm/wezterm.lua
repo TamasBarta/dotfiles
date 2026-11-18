@@ -38,7 +38,7 @@ else
 end
 config.hyperlink_rules = {}
 config.term = "wezterm"
-config.max_fps = 160
+config.max_fps = 100
 
 require("lua.theme").apply_to_config(config)
 -- require("lua.tabline").apply_to_config(config)
