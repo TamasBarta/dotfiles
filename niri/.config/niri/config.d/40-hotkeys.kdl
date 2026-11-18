@@ -131,7 +131,7 @@ binds {
     Mod+U  { consume-or-expel-window-left; }
     Mod+I { consume-or-expel-window-right; }
 
-    Mod+Comma { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
+    Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
 
     // // Consume one window from the right to the bottom of the focused column.
     // Mod+Comma  { consume-window-into-column; }
